@@ -16,8 +16,8 @@ const HOVER_STYLEBOX := preload("res://Scenes/CardUI/new_hover_box_flat.tres")
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var targets: Array[Node] = []
-@onready var original_index := self.get_index()
 
+var original_index := 0
 var parent: Control
 var tween: Tween
 var playable := true: set = _set_playable

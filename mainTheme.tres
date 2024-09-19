@@ -10,6 +10,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color(0.881937, 0.881937, 0.881937, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4n5g"]
 
@@ -19,7 +20,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.259294, 0.259294, 0.259293, 1)
+border_color = Color(0.197937, 0.197937, 0.197937, 1)
 
 [resource]
 default_font = ExtResource("1_fs82v")
@@ -29,5 +30,6 @@ Button/styles/focus = SubResource("StyleBoxEmpty_v4n5g")
 Button/styles/hover = ExtResource("2_rep76")
 Button/styles/normal = ExtResource("1_i4gkt")
 Button/styles/pressed = SubResource("StyleBoxFlat_m1lo0")
+Label/colors/font_color = Color(1, 1, 1, 1)
 Panel/styles/panel = ExtResource("1_i4gkt")
 PanelContainer/styles/panel = ExtResource("1_i4gkt")

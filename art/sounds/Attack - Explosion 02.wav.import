@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ekyxbxhivim3"
+path="res://.godot/imported/Attack - Explosion 02.wav-38485d62920cc7035ccf515f9d36a9ea.sample"
+
+[deps]
+
+source_file="res://art/sounds/Attack - Explosion 02.wav"
+dest_files=["res://.godot/imported/Attack - Explosion 02.wav-38485d62920cc7035ccf515f9d36a9ea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

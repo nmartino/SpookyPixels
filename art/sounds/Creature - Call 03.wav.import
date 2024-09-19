@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfvus1tf233a"
+path="res://.godot/imported/Creature - Call 03.wav-f0dec69bab57c71366f181d1eb1997da.sample"
+
+[deps]
+
+source_file="res://art/sounds/Creature - Call 03.wav"
+dest_files=["res://.godot/imported/Creature - Call 03.wav-f0dec69bab57c71366f181d1eb1997da.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

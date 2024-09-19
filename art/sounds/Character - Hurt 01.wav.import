@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bilbutydykh5v"
+path="res://.godot/imported/Character - Hurt 01.wav-4debfc99023b1a2aaa441a765faf77c5.sample"
+
+[deps]
+
+source_file="res://art/sounds/Character - Hurt 01.wav"
+dest_files=["res://.godot/imported/Character - Hurt 01.wav-4debfc99023b1a2aaa441a765faf77c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

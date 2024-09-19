@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=22 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Texture2D" uid="uid://dvpwoykj6uhlr" path="res://art/1bit/background.png" id="1_ahs7a"]
 [ext_resource type="Script" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
@@ -6,20 +6,44 @@
 [ext_resource type="Script" path="res://Scenes/UI/hand.gd" id="2_x8kit"]
 [ext_resource type="PackedScene" uid="uid://css6f6l0luv0i" path="res://Scenes/card_target_selector/card_target_selector.tscn" id="3_n30ip"]
 [ext_resource type="PackedScene" uid="uid://bjpre2elyenf6" path="res://Scenes/Player/player.tscn" id="3_spkpv"]
-[ext_resource type="Resource" uid="uid://ci7le4qxgbiut" path="res://enemies/enemy1/test_enemy.tres" id="3_t5kbl"]
+[ext_resource type="AudioStream" uid="uid://dlxq3kaphatmb" path="res://art/Tyrant_s-Downfall.mp3" id="3_vgqd8"]
+[ext_resource type="Script" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
 [ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
+[ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Script" path="res://Scenes/Player/player_handeler.gd" id="8_1ftam"]
 [ext_resource type="Script" path="res://Scenes/UI/battle_ui.gd" id="8_7h1jk"]
+[ext_resource type="Resource" uid="uid://vyfgwimrjqh0" path="res://enemies/enemy2/enemy2.tres" id="8_bk2s1"]
 [ext_resource type="PackedScene" uid="uid://bg7tf3vrpwfff" path="res://Scenes/CardUI/mana_ui.tscn" id="11_6goif"]
 [ext_resource type="PackedScene" uid="uid://xlssvxwqgfut" path="res://Scenes/UI/tool_tip.tscn" id="12_rw2qe"]
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="13_3eywo"]
+[ext_resource type="Script" path="res://Scenes/UI/white_flash.gd" id="15_2ee3c"]
+[ext_resource type="PackedScene" uid="uid://bjijnp3e7egu2" path="res://Scenes/UI/battle_over_panel.tscn" id="17_4r3ak"]
+[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="19_g6anp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skmmx"]
 size = Vector2(256, 100)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5cn3s"]
+shader = ExtResource("19_g6anp")
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/scan_line_amount = 0.144
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.09
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -6.519
+shader_parameter/pixel_strength = -1.5
+
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_l8vlc")
 char_stats = ExtResource("4_q8sq6")
+music = ExtResource("3_vgqd8")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -35,12 +59,24 @@ position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_skmmx")
 debug_color = Color(0, 0.6, 0.701961, 0.156863)
 
-[node name="Enemy" parent="." instance=ExtResource("2_sol3y")]
-position = Vector2(211, 78)
-stats = ExtResource("3_t5kbl")
+[node name="EnemyHandeler" type="Node2D" parent="."]
+position = Vector2(-5, 0)
+script = ExtResource("4_cpenc")
+
+[node name="Enemy2" parent="EnemyHandeler" instance=ExtResource("2_sol3y")]
+position = Vector2(169, 57)
+stats = ExtResource("8_bk2s1")
+
+[node name="Enemy" parent="EnemyHandeler" instance=ExtResource("2_sol3y")]
+position = Vector2(205, 80)
+stats = ExtResource("5_cv3sj")
+
+[node name="Enemy2-2" parent="EnemyHandeler" instance=ExtResource("2_sol3y")]
+position = Vector2(239, 59)
+stats = ExtResource("8_bk2s1")
 
 [node name="Player" parent="." instance=ExtResource("3_spkpv")]
-position = Vector2(40, 71)
+position = Vector2(52, 77)
 stats = ExtResource("4_q8sq6")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_n30ip")]
@@ -58,9 +94,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -30.0
-offset_right = 75.0
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 60.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -87,3 +124,39 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_3eywo")
 text = "End Turn"
+
+[node name="WhiteFlash" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("15_2ee3c")
+
+[node name="ColorRect" type="ColorRect" parent="WhiteFlash"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Timer" type="Timer" parent="WhiteFlash"]
+wait_time = 0.1
+one_shot = true
+
+[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("17_4r3ak")]
+visible = false
+
+[node name="CRTShader" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="CRTShader"]
+process_priority = 4
+material = SubResource("ShaderMaterial_5cn3s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

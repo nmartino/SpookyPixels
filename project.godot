@@ -10,14 +10,19 @@ config_version=5
 
 [application]
 
-config/name="1bitSlayTheSpire"
+config/name="Monochrome Abyss"
 run/main_scene="res://Scenes/Battle/battle.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.png"
+boot_splash/image="res://art/splash/godot splash.png"
+config/icon="res://icon3.png"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
 Events="*res://global/events.gd"
+Shaker="*res://global/shaker.gd"
+MusicPlayer="*res://global/music_player.tscn"
+SFXPlayer="*res://global/sfx_player.tscn"
 
 [display]
 
@@ -26,6 +31,10 @@ window/size/viewport_height=144
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom="res://mainTheme.tres"
 
 [input]
 

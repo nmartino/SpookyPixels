@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scenes/CardUI/card_state_machine.gd" id="3_cfb8f"]
 [ext_resource type="StyleBox" uid="uid://div08pvywxm5d" path="res://Scenes/CardUI/card_base_stylebox.tres" id="3_or21u"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_base_state.gd" id="4_8xx32"]
-[ext_resource type="Texture2D" uid="uid://dykx4povoqt5i" path="res://art/1bit/tile_0106.png" id="4_arysb"]
+[ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="4_pii4y"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_clicked_state.gd" id="5_sqg5f"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_dragged_state.gd" id="6_cqs34"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_released_state.gd" id="7_igcgs"]
@@ -59,7 +59,7 @@ offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("4_arysb")
+texture = ExtResource("4_pii4y")
 expand_mode = 1
 stretch_mode = 5
 

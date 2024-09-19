@@ -1,6 +1,9 @@
 class_name Player
 extends Node2D
 
+const INVERTED_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
+const ATTACKFX := preload("res://Scenes/attacksFx/attack_fx.tscn")
+
 @export var stats: CharacterStats : set = set_character_stats
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -27,7 +30,28 @@ func update_stats() -> void:
 func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
-	stats.take_damage(damage)
 	
-	if stats.health <= 0:
-		queue_free()
+	sprite_2d.material = INVERTED_SPRITE_MATERIAL
+	
+	var tween:= create_tween()
+	tween.tween_callback(Shaker.shake.bind(self,16,0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.17)
+	
+	var attackFx = ATTACKFX.instantiate()
+	add_child(attackFx)
+	attackFx.explosion.play("player_fx")
+	attackFx.explosion.animation_finished.connect(
+		func():
+			attackFx.queue_free()
+	)
+	
+	tween.finished.connect(
+		func():
+			sprite_2d.material = null
+			
+			if stats.health <= 0:
+				Events.player_died.emit()
+				queue_free()
+	)
+	

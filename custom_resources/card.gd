@@ -16,6 +16,7 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 @export var sound: AudioStream
 
 
+
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
 

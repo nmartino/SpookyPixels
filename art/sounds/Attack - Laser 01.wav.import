@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckhh8e65aq4sx"
+path="res://.godot/imported/Attack - Laser 01.wav-b97de4adb5c371b3a89377024995a26b.sample"
+
+[deps]
+
+source_file="res://art/sounds/Attack - Laser 01.wav"
+dest_files=["res://.godot/imported/Attack - Laser 01.wav-b97de4adb5c371b3a89377024995a26b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

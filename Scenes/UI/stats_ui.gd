@@ -6,6 +6,7 @@ extends HBoxContainer
 @onready var health: HBoxContainer = $Health
 @onready var health_label: Label = %HealthLabel
 
+var cantidad : int = 0
 
 func update_stats(stats: Stats) -> void:
 	block_label.text = str(stats.block)
@@ -13,6 +14,3 @@ func update_stats(stats: Stats) -> void:
 	
 	block.visible = stats.block > 0
 	health.visible = stats.health > 0
-	
-	print("block:"+str(stats.block))
-	print("hp:"+str(stats.health))
