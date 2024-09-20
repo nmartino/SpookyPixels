@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_5nq6b"]
 [ext_resource type="Script" path="res://enemies/enemy2/enemy_2_attack_action.gd" id="2_uw57q"]
-[ext_resource type="Texture2D" uid="uid://biuw2aebn1wsq" path="res://art/1bit/tile_0103.png" id="3_01mv7"]
+[ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="3_0l5gq"]
 [ext_resource type="Script" path="res://enemies/enemy2/enemy_2_block_action.gd" id="3_im7k1"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_o6tma"]
 [ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_p0j2a"]
-[ext_resource type="Texture2D" uid="uid://dh11uy0ngoflm" path="res://art/1bit/shield1.png" id="7_jp2l8"]
+[ext_resource type="Texture2D" uid="uid://bpnvbh3odv0mc" path="res://art/1bit/shield12.png" id="7_juf4i"]
 [ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="8_tca6y"]
 
 [sub_resource type="Resource" id="Resource_43xon"]
 script = ExtResource("4_o6tma")
 number = "3x2"
-icon = ExtResource("3_01mv7")
+icon = ExtResource("3_0l5gq")
 
 [sub_resource type="Resource" id="Resource_30fu1"]
 script = ExtResource("4_o6tma")
 number = ""
-icon = ExtResource("7_jp2l8")
+icon = ExtResource("7_juf4i")
 
 [node name="Enemy2AI" type="Node"]
 script = ExtResource("1_5nq6b")

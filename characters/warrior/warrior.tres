@@ -1,13 +1,19 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://bj4cudlc1sj74"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://bj4cudlc1sj74"]
 
-[ext_resource type="Texture2D" uid="uid://dg64cpvxtb5hs" path="res://art/1bit/Testeo character1.png" id="1_novo3"]
+[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="1_g77s3"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_rj4dh"]
+[ext_resource type="Texture2D" uid="uid://cvjylrer35uya" path="res://art/1bit/orcoArt/Testeo character1 002.png" id="2_cy3tl"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_xt1eb"]
 
 [resource]
 script = ExtResource("1_rj4dh")
+character_name = "BattleKnight"
+description = "Steel answers his command.
+Honor guides her strikes."
+portrait = ExtResource("1_g77s3")
 starting_deck = ExtResource("3_xt1eb")
 cards_per_turn = 4
 max_mana = 3
 max_health = 35
-art = ExtResource("1_novo3")
+art = ExtResource("1_g77s3")
+hurt = ExtResource("2_cy3tl")

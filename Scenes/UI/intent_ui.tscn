@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1ljp0670bmc6"]
 
 [ext_resource type="Script" path="res://Scenes/UI/intent_ui.gd" id="1_rkkk4"]
-[ext_resource type="Texture2D" uid="uid://biuw2aebn1wsq" path="res://art/1bit/tile_0103.png" id="2_j8fco"]
+[ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="2_23uqh"]
 
 [node name="IntentUI" type="HBoxContainer"]
 anchors_preset = 5
@@ -11,14 +11,14 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
-theme_override_constants/separation = -2
+theme_override_constants/separation = 1
 alignment = 1
 script = ExtResource("1_rkkk4")
 
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
-texture = ExtResource("2_j8fco")
+texture = ExtResource("2_23uqh")
 expand_mode = 1
 stretch_mode = 5
 

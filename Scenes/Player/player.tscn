@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjpre2elyenf6"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_807gn"]
-[ext_resource type="Texture2D" uid="uid://dg64cpvxtb5hs" path="res://art/1bit/Testeo character1.png" id="2_2jqcj"]
+[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="2_4qii3"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="2_dsp15"]
 
 [node name="Player" type="Node2D" groups=["player"]]
@@ -9,7 +9,7 @@ script = ExtResource("1_807gn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3, -7)
-texture = ExtResource("2_2jqcj")
+texture = ExtResource("2_4qii3")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_dsp15")]
 offset_left = -43.0

@@ -2,24 +2,24 @@
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_df8mf"]
 [ext_resource type="Script" path="res://enemies/enemy1/enemy1_attack_action.gd" id="2_yyhbg"]
-[ext_resource type="Texture2D" uid="uid://biuw2aebn1wsq" path="res://art/1bit/tile_0103.png" id="3_fcnj7"]
+[ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="3_mfbxr"]
 [ext_resource type="Script" path="res://enemies/enemy1/enemy1_block_action.gd" id="3_oxq2u"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_0si7o"]
 [ext_resource type="Script" path="res://enemies/enemy1/enemy1_mega_block_action.gd" id="4_34bad"]
 [ext_resource type="AudioStream" uid="uid://bkteguqpl8g6j" path="res://art/sounds/Attack - Bite 01.wav" id="5_dr3hq"]
-[ext_resource type="Texture2D" uid="uid://dh11uy0ngoflm" path="res://art/1bit/shield1.png" id="7_o4hij"]
+[ext_resource type="Texture2D" uid="uid://bpnvbh3odv0mc" path="res://art/1bit/shield12.png" id="7_pojhn"]
 [ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="8_6lnfy"]
 [ext_resource type="Texture2D" uid="uid://jksqoi5n0fuo" path="res://art/1bit/shield2.png" id="10_r1t0c"]
 
 [sub_resource type="Resource" id="Resource_e1pop"]
 script = ExtResource("4_0si7o")
 number = "7"
-icon = ExtResource("3_fcnj7")
+icon = ExtResource("3_mfbxr")
 
 [sub_resource type="Resource" id="Resource_giykw"]
 script = ExtResource("4_0si7o")
 number = ""
-icon = ExtResource("7_o4hij")
+icon = ExtResource("7_pojhn")
 
 [sub_resource type="Resource" id="Resource_wvs0k"]
 script = ExtResource("4_0si7o")

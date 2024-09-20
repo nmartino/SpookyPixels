@@ -1,0 +1,215 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnk4qwr531lrr"]
+
+[ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
+[ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
+[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_048iv"]
+[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="4_mrygs"]
+[ext_resource type="Texture2D" uid="uid://tqyib1drb0u7" path="res://art/1bit/orcoArt/Testeo enemy2 001.png" id="4_q8pqj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_reaam"]
+line_spacing = 10.0
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0.333333, 1, 1, 0.654902)
+shadow_size = 10
+shadow_color = Color(0.333333, 1, 1, 0.380392)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="Animation" id="Animation_wgfis"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sd6vq"]
+resource_name = "fade_in"
+
+[sub_resource type="Animation" id="Animation_mhcjx"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ie85"]
+_data = {
+"RESET": SubResource("Animation_wgfis"),
+"fade_in": SubResource("Animation_sd6vq"),
+"fade_out": SubResource("Animation_mhcjx")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuhyv"]
+shader = ExtResource("4_mrygs")
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/scan_line_amount = 0.144
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.09
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -6.519
+shader_parameter/pixel_strength = -1.5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2cy6r")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c0bsd")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -64.0
+offset_right = 124.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Monocrome 
+Abyss"
+label_settings = SubResource("LabelSettings_reaam")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -4.0
+offset_right = 30.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+metadata/_edit_lock_ = true
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "Continue"
+
+[node name="New Run" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "New Run"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "Exit
+"
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(39, 105)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("3_048iv")
+
+[node name="Enemy2" type="Sprite2D" parent="."]
+position = Vector2(214, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("4_q8pqj")
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ie85")
+}
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.333333, 1, 1)
+
+[node name="CRTShader" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="CRTShader"]
+process_priority = 4
+material = SubResource("ShaderMaterial_kuhyv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/New Run" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="animation_finished" from="transition" to="." method="_on_transition_animation_finished"]

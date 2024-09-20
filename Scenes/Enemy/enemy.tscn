@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0511bjl6j8f3"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_utljw"]
+[ext_resource type="Texture2D" uid="uid://cvnmbmxh3nbxs" path="res://art/1bit/orcoArt/Testeo enemy1 001.png" id="2_4h8p7"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_wbtpx"]
-[ext_resource type="Texture2D" uid="uid://dset0ft7muk7w" path="res://art/1bit/Testeo enemy1.png" id="2_y85yk"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="3_qxoj6"]
 [ext_resource type="PackedScene" uid="uid://c1ljp0670bmc6" path="res://Scenes/UI/intent_ui.tscn" id="5_xhtot"]
 
@@ -14,7 +14,7 @@ collision_layer = 4
 script = ExtResource("1_utljw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_y85yk")
+texture = ExtResource("2_4h8p7")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false

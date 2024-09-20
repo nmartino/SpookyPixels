@@ -31,13 +31,13 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
 	
-	sprite_2d.material = INVERTED_SPRITE_MATERIAL
+	#sprite_2d.material = INVERTED_SPRITE_MATERIAL
 	
 	var tween:= create_tween()
 	tween.tween_callback(Shaker.shake.bind(self,16,0.15))
 	tween.tween_callback(stats.take_damage.bind(damage))
 	tween.tween_interval(0.17)
-	
+	sprite_2d.texture = stats.hurt
 	var attackFx = ATTACKFX.instantiate()
 	add_child(attackFx)
 	attackFx.explosion.play("player_fx")
@@ -49,7 +49,7 @@ func take_damage(damage: int) -> void:
 	tween.finished.connect(
 		func():
 			sprite_2d.material = null
-			
+			sprite_2d.texture = stats.art
 			if stats.health <= 0:
 				Events.player_died.emit()
 				queue_free()

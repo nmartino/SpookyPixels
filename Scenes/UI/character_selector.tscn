@@ -1,0 +1,322 @@
+[gd_scene load_steps=16 format=3 uid="uid://kcpqegmrn1e"]
+
+[ext_resource type="Script" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
+[ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="2_7uh0c"]
+[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_2qdrl"]
+[ext_resource type="Texture2D" uid="uid://d3sit4wcpy21m" path="res://art/1bit/dobleaxe1.png" id="3_b6fwd"]
+[ext_resource type="Texture2D" uid="uid://dyv7l76444dm1" path="res://art/1bit/staff1.png" id="4_m7amx"]
+[ext_resource type="Texture2D" uid="uid://ccieqrjev1gxt" path="res://art/1bit/bow1.png" id="5_k1gvy"]
+[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="6_n2uh2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se34b"]
+bg_color = Color(0.6, 0.6, 0.6, 0.407843)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbo2t"]
+line_spacing = 10.0
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0.823529, 0.823529, 0.384314)
+shadow_size = 10
+shadow_color = Color(0.333333, 1, 1, 0.380392)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ay8wa"]
+line_spacing = 5.0
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0.823529, 0.823529, 0.384314)
+shadow_size = 10
+shadow_color = Color(0.333333, 1, 1, 0.380392)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_betg8"]
+
+[sub_resource type="Animation" id="Animation_11t0f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ggujc"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jdilk"]
+_data = {
+"RESET": SubResource("Animation_11t0f"),
+"fade_in": SubResource("Animation_ggujc")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnwul"]
+shader = ExtResource("6_n2uh2")
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/scan_line_amount = 0.144
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.09
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -6.519
+shader_parameter/pixel_strength = -1.5
+
+[node name="CharacterSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3k8x")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7uh0c")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -65.0
+offset_right = 105.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_se34b")
+
+[node name="CharacterText" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -32.5
+offset_right = 104.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Panel/CharacterText"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Battle Knight"
+label_settings = SubResource("LabelSettings_gbo2t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Panel/CharacterText"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Steel answers his command.
+Honor guides her strikes."
+label_settings = SubResource("LabelSettings_ay8wa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterPortrait" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -69.0
+offset_right = 69.0
+offset_bottom = -9.0
+grow_vertical = 0
+texture = ExtResource("3_2qdrl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -26.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Start"
+
+[node name="CharacterButtons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = 7.0
+offset_right = 82.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="WarriorButton" type="Button" parent="CharacterButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_betg8")
+
+[node name="icon" type="TextureRect" parent="CharacterButtons/WarriorButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_b6fwd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MageButton" type="Button" parent="CharacterButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_betg8")
+
+[node name="icon" type="TextureRect" parent="CharacterButtons/MageButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_m7amx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AssasinButton" type="Button" parent="CharacterButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_betg8")
+
+[node name="icon" type="TextureRect" parent="CharacterButtons/AssasinButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_k1gvy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jdilk")
+}
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.333333, 1, 1)
+
+[node name="CRTShader" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="CRTShader"]
+process_priority = 4
+material = SubResource("ShaderMaterial_lnwul")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CharacterButtons/WarriorButton" to="." method="_on_warrior_button_pressed"]
+[connection signal="pressed" from="CharacterButtons/MageButton" to="." method="_on_mage_button_pressed"]
+[connection signal="pressed" from="CharacterButtons/AssasinButton" to="." method="_on_assasin_button_pressed"]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://b86t384c0ch53"]
+
+[ext_resource type="Texture2D" uid="uid://denk2cqdgp200" path="res://art/1bit/mage1.png" id="1_at7qa"]
+[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
+[ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_v6hda"]
+
+[resource]
+script = ExtResource("1_uswfi")
+character_name = "Mage"
+description = "Darkness bends to him.
+Flames heed his call."
+portrait = ExtResource("1_at7qa")
+starting_deck = ExtResource("3_v6hda")
+cards_per_turn = 3
+max_mana = 4
+max_health = 27
+art = ExtResource("1_at7qa")
