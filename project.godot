@@ -13,8 +13,8 @@ config_version=5
 config/name="Monochrome Abyss"
 run/main_scene="res://Scenes/Battle/battle.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-boot_splash/image="res://art/splash/godot splash.png"
-config/icon="res://icon3.png"
+boot_splash/image="res://art/splash/godot splash2.png"
+config/icon="res://icon2.png"
 boot_splash/minimum_display_time=3000
 
 [autoload]

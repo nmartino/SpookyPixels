@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://kcpqegmrn1e"]
+[gd_scene load_steps=17 format=3 uid="uid://kcpqegmrn1e"]
 
 [ext_resource type="Script" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
 [ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="2_7uh0c"]
+[ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_yqcao"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_2qdrl"]
 [ext_resource type="Texture2D" uid="uid://d3sit4wcpy21m" path="res://art/1bit/dobleaxe1.png" id="3_b6fwd"]
 [ext_resource type="Texture2D" uid="uid://dyv7l76444dm1" path="res://art/1bit/staff1.png" id="4_m7amx"]
@@ -117,6 +118,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3k8x")
+run_startup = ExtResource("2_yqcao")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

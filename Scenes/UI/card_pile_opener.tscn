@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw500f1i5gcmf"]
+
+[ext_resource type="Texture2D" uid="uid://sxpicb7w1tck" path="res://art/draw.png" id="1_l12kb"]
+[ext_resource type="Script" path="res://Scenes/UI/card_pile_opener.gd" id="2_6md8j"]
+
+[node name="CardPileOpener" type="TextureButton"]
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = ExtResource("1_l12kb")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_6md8j")

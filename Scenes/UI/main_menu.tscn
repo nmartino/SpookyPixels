@@ -196,7 +196,7 @@ grow_vertical = 2
 color = Color(1, 0.333333, 1, 1)
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
-layer = 4
+layer = 5
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4

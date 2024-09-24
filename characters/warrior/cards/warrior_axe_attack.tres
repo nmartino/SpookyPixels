@@ -11,5 +11,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_umsn6")
-tooltip_text = "[center]Deal [color='FF0000']6[/color] Damage.[/center]"
+tooltip_text = "[center]Deal [color='ff55ff']6[/color] Damage.[/center]"
 sound = ExtResource("3_r0jlm")
