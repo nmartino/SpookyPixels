@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1gnqxutl2eog"]
+[gd_scene load_steps=11 format=3 uid="uid://d1gnqxutl2eog"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_2py4n"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_ui.gd" id="2_ajvja"]
+[ext_resource type="PackedScene" uid="uid://bmvfg5yegqglk" path="res://Scenes/UI/card_visuals.tscn" id="3_2l165"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_state_machine.gd" id="3_cfb8f"]
-[ext_resource type="StyleBox" uid="uid://div08pvywxm5d" path="res://Scenes/CardUI/card_base_stylebox.tres" id="3_or21u"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_base_state.gd" id="4_8xx32"]
-[ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="4_pii4y"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_clicked_state.gd" id="5_sqg5f"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_dragged_state.gd" id="6_cqs34"]
 [ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_released_state.gd" id="7_igcgs"]
@@ -27,41 +26,10 @@ grow_vertical = 2
 theme = ExtResource("1_2py4n")
 script = ExtResource("2_ajvja")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CardVisuals" parent="." instance=ExtResource("3_2l165")]
+offset_right = 25.0
+offset_bottom = 30.0
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("3_or21u")
-
-[node name="Cost" type="Label" parent="."]
-layout_mode = 0
-offset_right = 10.0
-offset_bottom = 10.0
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 8.5
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("4_pii4y")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

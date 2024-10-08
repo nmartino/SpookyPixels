@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bjpre2elyenf6" path="res://Scenes/Player/player.tscn" id="3_spkpv"]
 [ext_resource type="AudioStream" uid="uid://dlxq3kaphatmb" path="res://art/Tyrant_s-Downfall.mp3" id="3_vgqd8"]
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
-[ext_resource type="Texture2D" uid="uid://dn53w5rf6pep2" path="res://art/1bit/background/gUH6Uv7r.png" id="4_i41kg"]
 [ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
+[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="4_ui3ls"]
 [ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Script" path="res://Scenes/Player/player_handeler.gd" id="8_1ftam"]
 [ext_resource type="Script" path="res://Scenes/UI/battle_ui.gd" id="8_7h1jk"]
@@ -34,9 +34,8 @@ music = ExtResource("3_vgqd8")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(-20, -21)
-scale = Vector2(0.287298, 0.288097)
-texture = ExtResource("4_i41kg")
+unique_name_in_owner = true
+texture = ExtResource("4_ui3ls")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -49,7 +48,7 @@ shape = SubResource("RectangleShape2D_skmmx")
 debug_color = Color(0, 0.6, 0.701961, 0.156863)
 
 [node name="EnemyHandeler" type="Node2D" parent="."]
-position = Vector2(-3, 5)
+position = Vector2(-9, 9)
 script = ExtResource("4_cpenc")
 
 [node name="Enemy2" parent="EnemyHandeler" instance=ExtResource("2_sol3y")]
@@ -104,9 +103,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -54.0
-offset_top = -43.0
+offset_top = -40.0
 offset_right = -9.0
-offset_bottom = -29.0
+offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_3eywo")
@@ -165,8 +164,8 @@ horizontal_alignment = 2
 layer = 4
 
 [node name="ToolTip" parent="BattleUI/ToolTipLayer" instance=ExtResource("12_rw2qe")]
-offset_top = 6.0
-offset_bottom = 43.0
+offset_top = 3.0
+offset_bottom = 46.0
 
 [node name="WhiteFlash" type="CanvasLayer" parent="."]
 layer = 2

@@ -9,7 +9,7 @@ func reset_enemy_actions()-> void:
 	for child in get_children():
 		enemy = child as Enemy
 		enemy.current_action = null
-		enemy.update_action()
+		enemy.update_action() 
 		
 func start_turn() -> void:
 	if get_child_count() == 0:

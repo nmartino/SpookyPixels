@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=11 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_frqca"]
+[ext_resource type="PackedScene" uid="uid://h8raeqewus5h" path="res://Scenes/UI/gold_ui.tscn" id="4_176gq"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
 [ext_resource type="Texture2D" uid="uid://b3qf12ya5vqjv" path="res://art/deck.png" id="5_y0tcp"]
 [ext_resource type="Texture2D" uid="uid://dg28spu0yy8jh" path="res://art/deck_pressed.png" id="6_42h24"]
@@ -42,6 +43,7 @@ alignment = 1
 
 [node name="MapButton" type="Button" parent="DebugButtons"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "MapButton"
 
@@ -52,22 +54,26 @@ text = "BattleButton"
 
 [node name="ShopButton" type="Button" parent="DebugButtons"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "ShopButton"
 
 [node name="RewardButton" type="Button" parent="DebugButtons"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "RewardButton"
 
 [node name="CampfireButton" type="Button" parent="DebugButtons"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "CampfireButton
 "
 
 [node name="TreasureButton" type="Button" parent="DebugButtons"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "TreasureButton
 "
@@ -87,6 +93,10 @@ custom_minimum_size = Vector2(0, 18)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+
+[node name="GoldUI" parent="TopBar/BarItems" instance=ExtResource("4_176gq")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="PlaceHolder" type="Control" parent="TopBar/BarItems"]
 layout_mode = 2

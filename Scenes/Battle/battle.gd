@@ -1,14 +1,28 @@
 extends Node2D
 
+var backgrounds := [
+	preload("res://art/1bit/orcoArt/Sprite Fondos testeo1.png"),
+	preload("res://art/1bit/orcoArt/Sprite Fondos testeo2.png"),
+	preload("res://art/1bit/orcoArt/Sprite Fondos testeo3.png"),
+	preload("res://art/1bit/orcoArt/Sprite Fondos testeo4.png"),
+	preload("res://art/1bit/orcoArt/Sprite Fondos testeo5.png"),
+	preload("res://art/1bit/orcoArt/Sprite Fondos testeo6.png")
+]
+
 @export var char_stats: CharacterStats
 @export var music: AudioStream
 
+@onready var background: Sprite2D = %Background
 @onready var battle_ui: BattleUI = $BattleUI 
 @onready var player_handeler: PlayerHandeler = $PlayerHandeler 
 @onready var enemy_handeler: EnemyHandeler = $EnemyHandeler 
 @onready var player: Player = $Player 
 
+
+
 func _ready() -> void:
+	background.texture = backgrounds.pick_random()
+
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats

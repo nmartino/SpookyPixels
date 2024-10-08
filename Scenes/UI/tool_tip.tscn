@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_p0cnb"]
 [ext_resource type="Script" path="res://Scenes/UI/tool_tip.gd" id="2_qqdyy"]
-[ext_resource type="Texture2D" uid="uid://ca4yri8s7kwuo" path="res://art/1bit/tile_0119.png" id="2_sgykc"]
+[ext_resource type="Texture2D" uid="uid://5sryc72ckfy2" path="res://art/1bit/orcoArt/axe_attack.png" id="3_ewojc"]
 
 [node name="ToolTip" type="PanelContainer"]
 anchors_preset = 5
@@ -30,7 +30,7 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture = ExtResource("2_sgykc")
+texture = ExtResource("3_ewojc")
 expand_mode = 1
 stretch_mode = 5
 
@@ -39,16 +39,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="PlaceHolder" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 5)
+custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ToolTipText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(20, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/line_separation = 2
 bbcode_enabled = true
-text = "ToolTip description
-ToolTip description"
+text = "[center]At the start of your turn, gain[color='55ffff'] 2 Strength[/color].[/center]"

@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_0si7o"]
 [ext_resource type="Script" path="res://enemies/enemy1/enemy1_mega_block_action.gd" id="4_34bad"]
 [ext_resource type="AudioStream" uid="uid://bkteguqpl8g6j" path="res://art/sounds/Attack - Bite 01.wav" id="5_dr3hq"]
-[ext_resource type="Texture2D" uid="uid://bpnvbh3odv0mc" path="res://art/1bit/shield12.png" id="7_pojhn"]
+[ext_resource type="Texture2D" uid="uid://b2qwxd464ud" path="res://art/1bit/orcoArt/shield_block.png" id="7_w4250"]
 [ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="8_6lnfy"]
-[ext_resource type="Texture2D" uid="uid://jksqoi5n0fuo" path="res://art/1bit/shield2.png" id="10_r1t0c"]
+[ext_resource type="Texture2D" uid="uid://otwerlg3c0eh" path="res://art/1bit/orcoArt/shield_mega_block.png" id="10_4yck2"]
 
 [sub_resource type="Resource" id="Resource_e1pop"]
 script = ExtResource("4_0si7o")
@@ -19,12 +19,12 @@ icon = ExtResource("3_mfbxr")
 [sub_resource type="Resource" id="Resource_giykw"]
 script = ExtResource("4_0si7o")
 number = ""
-icon = ExtResource("7_pojhn")
+icon = ExtResource("7_w4250")
 
 [sub_resource type="Resource" id="Resource_wvs0k"]
 script = ExtResource("4_0si7o")
 number = ""
-icon = ExtResource("10_r1t0c")
+icon = ExtResource("10_4yck2")
 
 [node name="Enemy1AI" type="Node"]
 script = ExtResource("1_df8mf")
