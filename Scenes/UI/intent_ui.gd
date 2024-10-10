@@ -4,7 +4,6 @@ extends HBoxContainer
 @onready var icon: TextureRect = $Icon
 @onready var number: Label = $Number
 
-
 func update_intent(intent: Intent)-> void:
 	if not intent:
 		hide()

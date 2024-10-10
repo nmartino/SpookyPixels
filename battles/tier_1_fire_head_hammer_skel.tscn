@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://lf1f1wpu7g61"]
+
+[ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="1_kr311"]
+[ext_resource type="Resource" uid="uid://vyfgwimrjqh0" path="res://enemies/enemy2/enemy2.tres" id="2_3hsxe"]
+[ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="3_yg2rx"]
+
+[node name="Tier1FireHeadHammerSkel" type="Node2D"]
+
+[node name="Enemy2" parent="." instance=ExtResource("1_kr311")]
+position = Vector2(181, 60)
+stats = ExtResource("3_yg2rx")
+
+[node name="Enemy" parent="." instance=ExtResource("1_kr311")]
+position = Vector2(223, 68)
+stats = ExtResource("2_3hsxe")

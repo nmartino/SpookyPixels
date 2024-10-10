@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=12 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
+[ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_cs2oa"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_frqca"]
 [ext_resource type="PackedScene" uid="uid://h8raeqewus5h" path="res://Scenes/UI/gold_ui.tscn" id="4_176gq"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
@@ -29,6 +30,7 @@ shader_parameter/pixel_strength = -1.5
 
 [node name="Run" type="Node"]
 script = ExtResource("1_677sc")
+music = ExtResource("2_cs2oa")
 run_startup = ExtResource("2_frqca")
 
 [node name="Map" parent="." instance=ExtResource("1_lttax")]
@@ -49,6 +51,7 @@ text = "MapButton"
 
 [node name="BattleButton" type="Button" parent="DebugButtons"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "BattleButton"
 

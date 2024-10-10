@@ -8,6 +8,7 @@ const CAMPFIRE_SCENE := preload("res://Scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://Scenes/Shop/shop.tscn")
 const TREASURE_SCENE = preload("res://Scenes/treasure/treasure.tscn")
 
+@export var music: AudioStream
 @export var run_startup: RunStartup
 
 @onready var map: Map = $Map
@@ -75,10 +76,16 @@ func _setup_top_bar():
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
 
+func _on_battle_room_entered(room: Room) ->void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	battle_scene.char_stats = character
+	battle_scene.battle_stats = preload("res://battles/tier_0_2fireheads.tres")
+	battle_scene.start_battle()
+
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.TREASURE:
 			_change_view(TREASURE_SCENE)
 		Room.Type.CAMPFIRE:
@@ -86,7 +93,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -99,6 +106,7 @@ func _on_battle_won() -> void:
 	reward_scene.add_card_reward()
 
 func _show_map()->void:
+	MusicPlayer.play(music, true)		
 	if current_view.get_child_count()> 0:
 		current_view.get_child(0).queue_free()
 	map.show_map()

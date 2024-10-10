@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqhy4ko0r1q1"
+path="res://.godot/imported/(Loop) Dungeon.wav-4a951d33c5388d0e49080e8866bd2eb6.sample"
+
+[deps]
+
+source_file="res://art/(Loop) Dungeon.wav"
+dest_files=["res://.godot/imported/(Loop) Dungeon.wav-4a951d33c5388d0e49080e8866bd2eb6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

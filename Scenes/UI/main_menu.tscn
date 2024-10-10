@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=13 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
+[ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_v6yvt"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_048iv"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="4_mrygs"]
 [ext_resource type="Texture2D" uid="uid://tqyib1drb0u7" path="res://art/1bit/orcoArt/Testeo enemy2 001.png" id="4_q8pqj"]
@@ -48,6 +49,8 @@ resource_name = "fade_in"
 
 [sub_resource type="Animation" id="Animation_mhcjx"]
 resource_name = "fade_out"
+length = 0.5
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,7 +58,7 @@ tracks/0/path = NodePath("transition/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -105,6 +108,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2cy6r")
+music = ExtResource("2_v6yvt")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]

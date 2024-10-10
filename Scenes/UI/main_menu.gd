@@ -2,12 +2,15 @@ extends Control
 
 const CHAR_SELECTOR_SCENE := preload("res://Scenes/UI/character_selector.tscn")
 
+@export var music: AudioStream
+
 @onready var transition: AnimationPlayer = $transition
 @onready var continue_button: Button = %Continue
 
 
 func _ready() -> void:
 	get_tree().paused = false
+	MusicPlayer.play(music, true)
 
 func _on_continue_pressed() -> void:
 	print("continue run")

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_507gj"]
 [ext_resource type="PackedScene" uid="uid://dcglj16xnklfw" path="res://enemies/enemy2/enemy2_ai.tscn" id="1_y6s01"]
-[ext_resource type="Texture2D" uid="uid://cvnmbmxh3nbxs" path="res://art/1bit/orcoArt/Testeo enemy1 001.png" id="2_obk2p"]
-[ext_resource type="Texture2D" uid="uid://dqeu6yjvhtkdh" path="res://art/1bit/orcoArt/Testeo enemy1 002.png" id="3_a7nm4"]
+[ext_resource type="Texture2D" uid="uid://do6i51u216eop" path="res://art/1bit/orcoArt/Undead enemy4 001.png" id="2_1hiln"]
+[ext_resource type="Texture2D" uid="uid://cu4ryh36jy364" path="res://art/1bit/orcoArt/Undead enemy4 002.png" id="3_onohg"]
 
 [resource]
 script = ExtResource("1_507gj")
 ai = ExtResource("1_y6s01")
 max_health = 15
-art = ExtResource("2_obk2p")
-hurt = ExtResource("3_a7nm4")
+art = ExtResource("2_1hiln")
+hurt = ExtResource("3_onohg")

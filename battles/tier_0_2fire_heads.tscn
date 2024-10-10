@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0gvoliio2ivo"]
+
+[ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="1_3321i"]
+[ext_resource type="Resource" uid="uid://vyfgwimrjqh0" path="res://enemies/enemy2/enemy2.tres" id="2_jvmjf"]
+
+[node name="Tier02FireHeads" type="Node2D"]
+
+[node name="Enemy2" parent="." instance=ExtResource("1_3321i")]
+position = Vector2(169, 57)
+stats = ExtResource("2_jvmjf")
+
+[node name="Enemy" parent="." instance=ExtResource("1_3321i")]
+position = Vector2(205, 68)
+stats = ExtResource("2_jvmjf")

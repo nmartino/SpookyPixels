@@ -3,9 +3,9 @@ extends Node
 
 const X_DIST := 30
 const Y_DIST := 25
-const PLACEMENT_RANDOMNESS := 5
+const PLACEMENT_RANDOMNESS := 8
 const FLOORS := 15
-const MAP_WIDTH := 7
+const MAP_WIDTH := 6
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 10.0
 const SHOP_ROOM_WEIGHT := 2.5
@@ -51,7 +51,7 @@ func _generate_initial_grid() -> Array[Array]:
 			
 			#el nivel del boss no tiene una Y random
 			if i == FLOORS-1:
-				current_room.position.y = (i+1)* -Y_DIST
+				current_room.position.y = (i+1) * -Y_DIST
 			
 			adjacent_rooms.append(current_room)
 			
@@ -81,7 +81,7 @@ func _setup_connection(i: int, j: int) -> int:
 	var current_room := map_data[i][j] as Room
 	
 	while not next_room or _would_cross_existing_path(i,j,next_room):
-		var random_j := clampi(randi_range(j-1, j+2), 0, MAP_WIDTH - 1)
+		var random_j := clampi(randi_range(j-1, j+1), 0, MAP_WIDTH - 1)
 		next_room = map_data[i+1][random_j]
 		
 	current_room.next_rooms.append(next_room)

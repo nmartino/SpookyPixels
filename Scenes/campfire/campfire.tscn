@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds4hjaky65w3y"]
+[gd_scene load_steps=3 format=3 uid="uid://ds4hjaky65w3y"]
 
 [ext_resource type="Script" path="res://Scenes/campfire/campfire.gd" id="1_n3jar"]
+[ext_resource type="AudioStream" uid="uid://bko3lvy4b04i" path="res://art/(Loop) Sanctuary.wav" id="2_75l24"]
 
 [node name="Campfire" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_n3jar")
+music = ExtResource("2_75l24")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
