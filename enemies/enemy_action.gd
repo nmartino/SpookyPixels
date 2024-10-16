@@ -19,3 +19,6 @@ func is_perfomable()-> bool:
 	
 func perform_action() -> void:
 	pass
+
+func update_intent_text() -> void:
+	intent.current_text = intent.base_text

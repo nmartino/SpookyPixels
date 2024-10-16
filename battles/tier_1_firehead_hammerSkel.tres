@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="BattleClass" load_steps=2 format=3 uid="uid://bsqv6nc3owf4a"]
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://bsqv6nc3owf4a"]
 
 [ext_resource type="Script" path="res://custom_resources/battle_stats.gd" id="1_0iiv2"]
+[ext_resource type="PackedScene" uid="uid://lf1f1wpu7g61" path="res://battles/tier_1_fire_head_hammer_skel.tscn" id="1_2wjwd"]
 
 [resource]
 script = ExtResource("1_0iiv2")
@@ -8,3 +9,4 @@ battle_tier = 1
 weight = 2.0
 gold_reward_min = 63
 gold_reward_max = 80
+enemies = ExtResource("1_2wjwd")

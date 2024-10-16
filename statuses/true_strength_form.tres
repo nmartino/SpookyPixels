@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TrueStrengthFormStatus" load_steps=4 format=3 uid="uid://dnwwsaeriyj88"]
+
+[ext_resource type="Texture2D" uid="uid://cw7e2wcqdv6jd" path="res://art/1bit/true_strength_form_icon.png" id="1_xjreg"]
+[ext_resource type="Script" path="res://statuses/true_strength_form.gd" id="2_ok0lq"]
+[ext_resource type="AudioStream" uid="uid://vbnke8vpvkkc" path="res://art/sounds/UI - Swipe 01.wav" id="3_dsr2k"]
+
+[resource]
+script = ExtResource("2_ok0lq")
+id = "True Strength Form"
+type = 0
+stack_type = 0
+can_expire = false
+duration = 0
+stacks = 0
+icon = ExtResource("1_xjreg")
+tooltip = "[center]True Strength Form: At the start of its turn, gains  [color='ff55ff']2 Strength[/color].[/center]"
+sound = ExtResource("3_dsr2k")

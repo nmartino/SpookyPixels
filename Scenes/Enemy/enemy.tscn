@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0511bjl6j8f3"]
+[gd_scene load_steps=10 format=3 uid="uid://c0511bjl6j8f3"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_utljw"]
 [ext_resource type="Texture2D" uid="uid://do6i51u216eop" path="res://art/1bit/orcoArt/Undead enemy4 001.png" id="2_m6edx"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_wbtpx"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="3_qxoj6"]
 [ext_resource type="PackedScene" uid="uid://c1ljp0670bmc6" path="res://Scenes/UI/intent_ui.tscn" id="5_xhtot"]
+[ext_resource type="PackedScene" uid="uid://cuqex5rqjyym" path="res://Scenes/Status_handler/status_handeler.tscn" id="6_x0tw5"]
+[ext_resource type="PackedScene" uid="uid://caj6eeau7nkcr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="7_kn7cp"]
+[ext_resource type="PackedScene" uid="uid://c5iuw4qotc0vy" path="res://Scenes/modifier_handler/modifier.tscn" id="8_h3nno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyi54"]
 size = Vector2(30, 31)
@@ -37,6 +40,20 @@ offset_left = -22.0
 offset_top = -32.0
 offset_right = 18.0
 offset_bottom = -16.0
+
+[node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_x0tw5")]
+offset_left = -25.0
+offset_top = -50.0
+offset_right = -25.0
+offset_bottom = -50.0
+status_owner = NodePath("..")
+
+[node name="ModifierHandler" parent="." instance=ExtResource("7_kn7cp")]
+
+[node name="DamageDealtModifier" parent="ModifierHandler" instance=ExtResource("8_h3nno")]
+
+[node name="DamageTakenModifier" parent="ModifierHandler" instance=ExtResource("8_h3nno")]
+type = 1
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

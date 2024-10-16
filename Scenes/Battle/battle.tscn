@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=26 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://u574gsqbnwp6" path="res://art/discard.png" id="18_wjnot"]
 [ext_resource type="Texture2D" uid="uid://cbgyir2o3i84v" path="res://art/discard_pressed.png" id="20_4cohi"]
 [ext_resource type="PackedScene" uid="uid://cm4qn36ne6lgl" path="res://Scenes/UI/card_pile_view.tscn" id="21_dekfb"]
+[ext_resource type="PackedScene" uid="uid://camxsiavn7baf" path="res://Scenes/UI/status_view.tscn" id="21_qqhbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skmmx"]
 size = Vector2(256, 100)
@@ -64,19 +65,20 @@ position = Vector2(239, 59)
 stats = ExtResource("8_bk2s1")
 
 [node name="Player" parent="." instance=ExtResource("3_spkpv")]
-position = Vector2(52, 77)
+position = Vector2(48, 80)
 stats = ExtResource("4_q8sq6")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_n30ip")]
 
-[node name="PlayerHandeler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+[node name="PlayerHandeler" type="Node" parent="." node_paths=PackedStringArray("player", "hand")]
 script = ExtResource("8_1ftam")
+player = NodePath("../Player")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("8_7h1jk")
 
-[node name="Hand" type="HBoxContainer" parent="BattleUI"]
+[node name="Hand" type="HBoxContainer" parent="BattleUI" node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -90,6 +92,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_x8kit")
+player = NodePath("../../Player")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("11_6goif")]
 offset_top = -43.0
@@ -166,6 +169,9 @@ layer = 4
 [node name="ToolTip" parent="BattleUI/ToolTipLayer" instance=ExtResource("12_rw2qe")]
 offset_top = 3.0
 offset_bottom = 46.0
+
+[node name="StatusView" parent="BattleUI/ToolTipLayer" instance=ExtResource("21_qqhbv")]
+visible = false
 
 [node name="WhiteFlash" type="CanvasLayer" parent="."]
 layer = 2

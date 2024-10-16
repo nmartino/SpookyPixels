@@ -5,12 +5,12 @@
 [ext_resource type="StyleBox" uid="uid://3qutiygysg6r" path="res://Scenes/CardUI/new_hover_box_flat.tres" id="2_rep76"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3ev2"]
-bg_color = Color(0.0470588, 0.0470588, 0.0470588, 0.611765)
+bg_color = Color(0.0470588, 0.0470588, 0.0470588, 0.662745)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.881937, 0.881937, 0.881937, 1)
+border_color = Color(0.282353, 0.282353, 0.282353, 0.670588)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4n5g"]
 
@@ -20,7 +20,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.197937, 0.197937, 0.197937, 1)
+border_color = Color(1, 0.333333, 1, 1)
 
 [resource]
 default_font = ExtResource("1_fs82v")

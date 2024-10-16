@@ -11,6 +11,7 @@ type = 0
 target = 2
 rarity = 0
 cost = 2
+exhausts = false
 icon = ExtResource("1_xuai6")
-tooltip_text = "[center]Deal [color='ff55ff']4[/color] Damage to all enemies.[/center]"
+tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color] to all enemies.[/center]"
 sound = ExtResource("3_u2q6i")

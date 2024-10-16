@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://b86t384c0ch53"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://b86t384c0ch53"]
 
 [ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="1_t2vsc"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
+[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_2m0hb"]
 [ext_resource type="Texture2D" uid="uid://dql6hb22mtj01" path="res://art/1bit/orcoArt/Mago 2.png" id="2_vw3w0"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_v6hda"]
 
 [resource]
 script = ExtResource("1_uswfi")
-character_name = "Mage"
+character_name = "Spellbinder"
 description = "Darkness bends to him.
 Flames heed his call."
 portrait = ExtResource("1_t2vsc")
 starting_deck = ExtResource("3_v6hda")
+draftable_cards = ExtResource("2_2m0hb")
 cards_per_turn = 3
 max_mana = 4
 max_health = 27

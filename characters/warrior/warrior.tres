@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("1_rj4dh")
-character_name = "BattleKnight"
+character_name = "Vanguard"
 description = "Steel answers his command.
 Honor guides her strikes."
 portrait = ExtResource("1_g77s3")

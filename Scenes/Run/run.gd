@@ -22,6 +22,7 @@ const TREASURE_SCENE = preload("res://Scenes/treasure/treasure.tscn")
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var gold_ui: GoldUI = %GoldUI
+@onready var health_ui: HealthUI = %HealthUI
 
 var stats: RunStats
 var character: CharacterStats
@@ -39,8 +40,10 @@ func _ready() -> void:
 
 func _start_run() -> void:
 	stats = RunStats.new()
+	
 	_setup_event_connection()
 	_setup_top_bar()
+	
 	map.generate_new_map()
 	map.unlock_floor(0)
 
@@ -71,6 +74,8 @@ func _setup_event_connection() -> void:
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 
 func _setup_top_bar():
+	character.stats_changed.connect(health_ui.update_stats.bind(character))
+	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
@@ -79,8 +84,13 @@ func _setup_top_bar():
 func _on_battle_room_entered(room: Room) ->void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
-	battle_scene.battle_stats = preload("res://battles/tier_0_2fireheads.tres")
+	battle_scene.battle_stats = room.battle_stats
 	battle_scene.start_battle()
+
+func _on_campfire_room_entered() -> void:
+	var campfire:= _change_view(CAMPFIRE_SCENE) as CampFire
+	campfire.char_stats = character
+	campfire.player_sprite.texture = character.art
 
 func _on_map_exited(room: Room) -> void:
 	match room.type:
@@ -89,7 +99,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.TREASURE:
 			_change_view(TREASURE_SCENE)
 		Room.Type.CAMPFIRE:
-			_change_view(CAMPFIRE_SCENE)
+			_on_campfire_room_entered()
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS:
@@ -100,9 +110,7 @@ func _on_battle_won() -> void:
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 
-	#this is temporary code, it will come from real battle encounter data
-	# as a dependency
-	reward_scene.add_gold_reward(77)
+	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	reward_scene.add_card_reward()
 
 func _show_map()->void:

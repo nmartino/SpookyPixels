@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjpre2elyenf6"]
+[gd_scene load_steps=7 format=3 uid="uid://bjpre2elyenf6"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_807gn"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="2_4qii3"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="2_dsp15"]
+[ext_resource type="PackedScene" uid="uid://cuqex5rqjyym" path="res://Scenes/Status_handler/status_handeler.tscn" id="4_who66"]
+[ext_resource type="PackedScene" uid="uid://caj6eeau7nkcr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="5_r3k8i"]
+[ext_resource type="PackedScene" uid="uid://c5iuw4qotc0vy" path="res://Scenes/modifier_handler/modifier.tscn" id="6_ghh01"]
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_807gn")
@@ -16,3 +19,20 @@ offset_left = -43.0
 offset_top = 8.0
 offset_right = 47.0
 offset_bottom = 24.0
+
+[node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("4_who66")]
+offset_left = -33.0
+offset_top = -41.0
+offset_right = 31.0
+offset_bottom = -41.0
+status_owner = NodePath("../Sprite2D")
+
+[node name="ModifierHandler" parent="." instance=ExtResource("5_r3k8i")]
+
+[node name="DmgDealtModifier" parent="ModifierHandler" instance=ExtResource("6_ghh01")]
+
+[node name="DmgTakenModifier" parent="ModifierHandler" instance=ExtResource("6_ghh01")]
+type = 1
+
+[node name="CardCostModifier" parent="ModifierHandler" instance=ExtResource("6_ghh01")]
+type = 2

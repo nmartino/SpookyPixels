@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://byxdc4q70xjsr"]
+
+[ext_resource type="Script" path="res://Scenes/CardFxs/buff_fx.gd" id="1_ukuvr"]
+[ext_resource type="Texture2D" uid="uid://csltmpekap8lu" path="res://art/1bit/buff.png" id="2_7fie7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr8ml"]
+atlas = ExtResource("2_7fie7")
+region = Rect2(0, 0, 30, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp01f"]
+atlas = ExtResource("2_7fie7")
+region = Rect2(30, 0, 30, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge7f7"]
+atlas = ExtResource("2_7fie7")
+region = Rect2(60, 0, 30, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jld3d"]
+atlas = ExtResource("2_7fie7")
+region = Rect2(90, 0, 30, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uumpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr8ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp01f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge7f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jld3d")
+}],
+"loop": false,
+"name": &"Buff",
+"speed": 10.0
+}]
+
+[node name="BuffFx" type="Node2D"]
+script = ExtResource("1_ukuvr")
+
+[node name="Buff" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_uumpx")
+animation = &"Buff"

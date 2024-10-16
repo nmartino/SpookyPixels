@@ -2,10 +2,11 @@ class_name Map
 extends Node2D
 
 const SCROLL_SPEED:= 15
+const PAN_SPEED:= 1
 const MAP_ROOM= preload("res://Scenes/Map/map_room.tscn")
 const MAP_LINE= preload("res://Scenes/Map/map_line.tscn")
 
-@onready var visuals: Node2D = $Visuals
+@onready var visuals: Node2D = %Visuals
 @onready var lines: Node2D = %Lines
 @onready var rooms: Node2D = %Rooms
 @onready var camera_2d: Camera2D = $Camera2D
@@ -15,19 +16,36 @@ var map_data: Array[Array]
 var floors_climbed: int
 var last_room: Room
 var camera_edge_y: float
+var camera_edge_x:= 256
 
+var touchPoints: Dictionary = {}
 
 func _ready() -> void:
 	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1)
 
 
 func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+		
 	if event.is_action_pressed("scroll_up"):
 		camera_2d.position.y -= SCROLL_SPEED
 	elif event.is_action_pressed("scroll_down"):
 		camera_2d.position.y += SCROLL_SPEED
 	
+	if event is InputEventScreenDrag:
+		_handle_drag(event)
+		
 	camera_2d.position.y = clamp(camera_2d.position.y, -camera_edge_y, 0)
+	camera_2d.position.x = clamp(0, camera_edge_x, 0)
+
+func _handle_drag(event: InputEventScreenDrag):
+	touchPoints[event.index] = event.position
+	
+	if touchPoints.size() == 1:
+		camera_2d.position -= event.relative * PAN_SPEED
+		
+
 
 func generate_new_map() -> void:
 	floors_climbed = 0

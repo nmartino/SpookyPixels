@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="StrengthStatus" load_steps=3 format=3 uid="uid://gsndp6xjpx4a"]
+
+[ext_resource type="Texture2D" uid="uid://c4ncrm4vok6y1" path="res://art/1bit/strength_icon.png" id="1_px60v"]
+[ext_resource type="Script" path="res://statuses/strength.gd" id="2_e21y1"]
+
+[resource]
+script = ExtResource("2_e21y1")
+id = "Strength"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 2
+icon = ExtResource("1_px60v")
+tooltip = "[center]Strength: Attacks deal[color='ff55ff'] + %s damage[/color].[/center]"

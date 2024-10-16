@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://kcpqegmrn1e"]
+[gd_scene load_steps=16 format=3 uid="uid://kcpqegmrn1e"]
 
 [ext_resource type="Script" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
 [ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="2_7uh0c"]
@@ -9,26 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://ccieqrjev1gxt" path="res://art/1bit/bow1.png" id="5_k1gvy"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="6_n2uh2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se34b"]
-bg_color = Color(0.6, 0.6, 0.6, 0.407843)
-
 [sub_resource type="LabelSettings" id="LabelSettings_gbo2t"]
 line_spacing = 10.0
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.176471, 1, 1, 1)
 outline_size = 4
-outline_color = Color(0, 0.823529, 0.823529, 0.384314)
+outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
-shadow_color = Color(0.333333, 1, 1, 0.380392)
-shadow_offset = Vector2(2, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ay8wa"]
 line_spacing = 5.0
 font_size = 12
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.572549, 1, 1, 1)
 outline_size = 4
-outline_color = Color(0, 0.823529, 0.823529, 0.384314)
-shadow_size = 10
-shadow_color = Color(0.333333, 1, 1, 0.380392)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_betg8"]
@@ -130,22 +127,7 @@ grow_vertical = 2
 texture = ExtResource("2_7uh0c")
 expand_mode = 1
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -65.0
-offset_right = 105.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_se34b")
-
-[node name="CharacterText" type="VBoxContainer" parent="Panel"]
+[node name="CharacterText" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,14 +135,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = -32.5
+offset_top = -67.5
 offset_right = 104.0
-offset_bottom = 32.5
+offset_bottom = -2.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="Panel/CharacterText"]
+[node name="Title" type="Label" parent="CharacterText"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Battle Knight"
@@ -168,7 +150,7 @@ label_settings = SubResource("LabelSettings_gbo2t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="Label" parent="Panel/CharacterText"]
+[node name="Description" type="Label" parent="CharacterText"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Steel answers his command.

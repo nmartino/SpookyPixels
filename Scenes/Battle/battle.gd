@@ -53,4 +53,7 @@ func _on_player_died()-> void:
 func _on_enemy_turn_ended()-> void:
 	player_handeler.start_turn()
 	enemy_handeler.reset_enemy_actions()
+
+func _get_char_stats() -> CharacterStats:
+	return char_stats
 	

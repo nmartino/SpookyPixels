@@ -1,5 +1,5 @@
 class_name Effect
-extends RefCounted
+extends Resource
 
 var sound: AudioStream
 

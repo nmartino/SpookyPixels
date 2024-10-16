@@ -5,14 +5,15 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahphi"]
 bg_color = Color(1, 0.333333, 1, 0.2)
 
-[sub_resource type="LabelSettings" id="LabelSettings_a5bf8"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-outline_color = Color(0, 1, 1, 1)
-shadow_size = 2
-shadow_color = Color(0, 1, 1, 0.423529)
-shadow_offset = Vector2(2, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_x1onh"]
+line_spacing = 5.0
+font_size = 25
+font_color = Color(0.105882, 0.992157, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 1)
 
 [node name="BattleOverPanel" type="Panel"]
 process_mode = 3
@@ -42,7 +43,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Game over!!"
-label_settings = SubResource("LabelSettings_a5bf8")
+label_settings = SubResource("LabelSettings_x1onh")
 horizontal_alignment = 1
 vertical_alignment = 1
 

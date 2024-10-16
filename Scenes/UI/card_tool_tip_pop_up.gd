@@ -22,7 +22,7 @@ func show_tooltip(card: Card) -> void:
 	tooltip_card.add_child(new_card)
 	new_card.card = card
 	new_card.tooltip_requested.connect(hide_tooltip.unbind(1))
-	card_description.text = card.tooltip_text
+	card_description.text = card.get_default_tooptip()
 	show()
 
 func hide_tooltip() -> void:

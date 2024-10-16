@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8kl0n2023ls"]
+[gd_scene load_steps=6 format=3 uid="uid://b8kl0n2023ls"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_ski2f"]
 [ext_resource type="Script" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
+[ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
 
 [sub_resource type="Gradient" id="Gradient_6gqa1"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -14,6 +15,7 @@ width = 30
 script = ExtResource("1_ski2f")
 
 [node name="Visuals" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Rooms" type="Node2D" parent="Visuals"]
 unique_name_in_owner = true
@@ -27,6 +29,7 @@ offset = Vector2(128, 72)
 
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("2_bwd4j")
+battle_stats_pool = ExtResource("3_bdjgx")
 
 [node name="MapBackground" type="CanvasLayer" parent="."]
 layer = -1
@@ -38,3 +41,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_70edj")
+
+[connection signal="gui_input" from="MapBackground/Background" to="." method="_on_background_gui_input"]

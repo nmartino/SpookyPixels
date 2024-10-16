@@ -17,6 +17,7 @@ const RARITY_COLORS := {
 @export var target: Target
 @export var rarity: Rarity
 @export var cost: int
+@export var exhausts: bool = false
 
 @export_group("Card Visuals")
 @export var icon: Texture
@@ -46,15 +47,21 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 
 
-func play(targets: Array[Node], char_stats: CharacterStats) -> void:
+func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	char_stats.mana -= cost
 	
 	if is_single_targeted():
-		apply_effects(targets)
+		apply_effects(targets, modifiers)
 	else:
-		apply_effects(_get_targets(targets))
+		apply_effects(_get_targets(targets), modifiers)
 
 
-func apply_effects(_targets: Array[Node]) -> void:
+func apply_effects(_targets: Array[Node], modifier: ModifierHandler) -> void:
 	pass
+
+func get_default_tooptip() -> String:
+	return tooltip_text
+
+func get_updated_tooltip(_player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+	return tooltip_text

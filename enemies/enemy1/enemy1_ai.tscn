@@ -13,17 +13,17 @@
 
 [sub_resource type="Resource" id="Resource_e1pop"]
 script = ExtResource("4_0si7o")
-number = "7"
+base_text = "%s"
 icon = ExtResource("3_mfbxr")
 
 [sub_resource type="Resource" id="Resource_giykw"]
 script = ExtResource("4_0si7o")
-number = ""
+base_text = "6"
 icon = ExtResource("7_w4250")
 
 [sub_resource type="Resource" id="Resource_wvs0k"]
 script = ExtResource("4_0si7o")
-number = ""
+base_text = "15"
 icon = ExtResource("10_4yck2")
 
 [node name="Enemy1AI" type="Node"]
@@ -31,6 +31,7 @@ script = ExtResource("1_df8mf")
 
 [node name="AttackAction" type="Node" parent="."]
 script = ExtResource("2_yyhbg")
+damage = 8
 intent = SubResource("Resource_e1pop")
 type = 1
 sound = ExtResource("5_dr3hq")

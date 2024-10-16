@@ -1,18 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://comske0a0bn8y"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://comske0a0bn8y"]
 
 [ext_resource type="Texture2D" uid="uid://dcbgo4yh1nktj" path="res://art/1bit/orcoArt/Arquero 1.png" id="1_8sr0k"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_wqils"]
 [ext_resource type="Texture2D" uid="uid://bmk3y6k4ufp71" path="res://art/1bit/orcoArt/Arquero 2.png" id="2_rbui7"]
+[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_vbq2x"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_4o1ev"]
 
 [resource]
 script = ExtResource("1_wqils")
-character_name = "Assassin"
+character_name = "Sharpshadow"
 description = "Wind carries his aim.
 Distance is his strength."
 portrait = ExtResource("1_8sr0k")
 starting_deck = ExtResource("3_4o1ev")
-cards_per_turn = 5
+draftable_cards = ExtResource("2_vbq2x")
+cards_per_turn = 4
 max_mana = 3
 max_health = 27
 art = ExtResource("1_8sr0k")

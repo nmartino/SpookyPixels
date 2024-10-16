@@ -1,7 +1,146 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds4hjaky65w3y"]
+[gd_scene load_steps=15 format=3 uid="uid://ds4hjaky65w3y"]
 
 [ext_resource type="Script" path="res://Scenes/campfire/campfire.gd" id="1_n3jar"]
 [ext_resource type="AudioStream" uid="uid://bko3lvy4b04i" path="res://art/(Loop) Sanctuary.wav" id="2_75l24"]
+[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_8cjsj"]
+[ext_resource type="Resource" uid="uid://b86t384c0ch53" path="res://characters/Mage/mage.tres" id="3_om08r"]
+[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="5_1fsxl"]
+[ext_resource type="Texture2D" uid="uid://bd5jcpwug2ebh" path="res://art/1bit/fuego1.png" id="6_lcxmn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qirg7"]
+atlas = ExtResource("6_lcxmn")
+region = Rect2(0, 0, 16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5g2f"]
+atlas = ExtResource("6_lcxmn")
+region = Rect2(16, 0, 16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j37pp"]
+atlas = ExtResource("6_lcxmn")
+region = Rect2(32, 0, 16, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mnufc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qirg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5g2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j37pp")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 4.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61pu2"]
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 1)
+
+[sub_resource type="Animation" id="Animation_hui8s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesLayer/AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParticlesLayer/PlayerSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UILayer/UI:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3f8no"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesLayer/AnimatedSprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParticlesLayer/PlayerSprite:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UILayer/UI:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_fade_out_finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3v32"]
+_data = {
+"RESET": SubResource("Animation_hui8s"),
+"fade_out": SubResource("Animation_3f8no")
+}
 
 [node name="Campfire" type="Control"]
 layout_mode = 3
@@ -13,41 +152,73 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_n3jar")
 music = ExtResource("2_75l24")
+char_stats = ExtResource("3_om08r")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Background" type="Sprite2D" parent="BackgroundLayer"]
+unique_name_in_owner = true
+texture = ExtResource("3_8cjsj")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="ParticlesLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerSprite" type="Sprite2D" parent="ParticlesLayer"]
+unique_name_in_owner = true
+position = Vector2(76, 88)
+texture = ExtResource("5_1fsxl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParticlesLayer"]
+position = Vector2(94, 90)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_mnufc")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.0391629
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="VBoxContainer" parent="UILayer"]
 custom_minimum_size = Vector2(0, 14)
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 2.0
+offset_top = -22.0
+offset_right = 66.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="UILayer/UI"]
 layout_mode = 2
-text = "Campfire
+text = "If you require rest, 
+now is the time
 "
+label_settings = SubResource("LabelSettings_61pu2")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 14)
+[node name="Spacer" type="Control" parent="UILayer/UI"]
 layout_mode = 2
-text = "Go Back"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="RestButton" type="Button" parent="UILayer/UI"]
+custom_minimum_size = Vector2(40, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Rest"
+
+[node name="Description" type="Label" parent="UILayer/UI"]
+layout_mode = 2
+text = "+30% HP"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b3v32")
+}
+
+[connection signal="pressed" from="UILayer/UI/RestButton" to="." method="_on_rest_button_pressed"]
