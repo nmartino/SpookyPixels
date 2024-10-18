@@ -13,6 +13,7 @@ var backgrounds := [
 @export var battle_stats: BattleStats
 @export var char_stats: CharacterStats
 @export var music: AudioStream
+@export var relics: RelicHandler
 
 @onready var background: Sprite2D = %Background
 @onready var battle_ui: BattleUI = $BattleUI 
@@ -38,17 +39,18 @@ func start_battle()-> void:
 	MusicPlayer.play(music, true)
 	battle_ui.char_stats = char_stats
 	player.stats = char_stats
+	player_handeler.relics = relics
 	enemy_handeler.setup_enemies(battle_stats)
 	enemy_handeler.reset_enemy_actions()
-	player_handeler.start_battle(char_stats)
-	battle_ui.initialize_card_pile_ui()
+	relics.relics_activated.connect(_on_relics_activated)
+	relics.activate_relic_by_type(Relic.Type.START_OF_COMBAT)
 
 func _on_enemies_child_order_changed()->void:
-	if enemy_handeler.get_child_count() == 0:
-		Events.battle_over_screen_requested.emit("Perfection!!", BattleOverPanel.Type.WIN)
+	if enemy_handeler.get_child_count() == 0 and is_instance_valid(relics):
+		relics.activate_relic_by_type(Relic.Type.END_OF_COMBAT)
 
 func _on_player_died()-> void:
-	Events.battle_over_screen_requested.emit("Game Over!!", BattleOverPanel.Type.LOSE)
+	Events.battle_over_screen_requested.emit("You Lose!!", BattleOverPanel.Type.LOSE)
 
 func _on_enemy_turn_ended()-> void:
 	player_handeler.start_turn()
@@ -56,4 +58,12 @@ func _on_enemy_turn_ended()-> void:
 
 func _get_char_stats() -> CharacterStats:
 	return char_stats
+
+func _on_relics_activated(type: Relic.Type) -> void:
+	match type:
+		Relic.Type.START_OF_COMBAT:
+			player_handeler.start_battle(char_stats)
+			battle_ui.initialize_card_pile_ui()
+		Relic.Type.END_OF_COMBAT:
+			Events.battle_over_screen_requested.emit("Perfection!!", BattleOverPanel.Type.WIN)
 	

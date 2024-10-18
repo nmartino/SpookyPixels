@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=15 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://b3qf12ya5vqjv" path="res://art/deck.png" id="5_y0tcp"]
 [ext_resource type="Texture2D" uid="uid://dg28spu0yy8jh" path="res://art/deck_pressed.png" id="6_42h24"]
 [ext_resource type="PackedScene" uid="uid://cm4qn36ne6lgl" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
+[ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="8_cd2bd"]
+[ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q21tn"]
 shader = ExtResource("8_cd2bd")
@@ -86,7 +88,7 @@ text = "TreasureButton
 layer = 3
 
 [node name="Background" type="ColorRect" parent="TopBar"]
-custom_minimum_size = Vector2(0, 18)
+custom_minimum_size = Vector2(0, 20)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
@@ -100,16 +102,23 @@ grow_horizontal = 2
 
 [node name="HealthUI" parent="TopBar/BarItems" instance=ExtResource("5_d6yos")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
 show_max_hp = true
 
 [node name="GoldUI" parent="TopBar/BarItems" instance=ExtResource("4_176gq")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
-[node name="PlaceHolder" type="Control" parent="TopBar/BarItems"]
+[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="DeckButton" parent="TopBar/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_bxmm5")]
 unique_name_in_owner = true
@@ -130,6 +139,10 @@ text = "99"
 horizontal_alignment = 2
 
 [node name="DeckView" parent="TopBar" instance=ExtResource("7_724ho")]
+unique_name_in_owner = true
+visible = false
+
+[node name="RelicToolTip" parent="TopBar" instance=ExtResource("12_v2hpe")]
 unique_name_in_owner = true
 visible = false
 

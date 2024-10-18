@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c6r8mdjpsdpo7"]
+
+[ext_resource type="Texture2D" uid="uid://b6nh4ehchu7i7" path="res://art/1bit/potHP.png" id="1_xgfs0"]
+[ext_resource type="Script" path="res://relics/healing_potion.gd" id="2_qfjru"]
+
+[resource]
+script = ExtResource("2_qfjru")
+heal_amount = 6
+relic_name = "Healing Potion"
+id = "healing_potion"
+type = 3
+character_type = 2
+starter_relic = true
+icon = ExtResource("1_xgfs0")
+tooltip = "[color='ff55ff']HP Potion:[/color] At the end of the combat, heal [color='ff55ff']6 HP[/color]."

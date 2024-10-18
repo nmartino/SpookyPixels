@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="4_1t0mw"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="5_tf7e2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_2k8nr"]
+[sub_resource type="LabelSettings" id="LabelSettings_vrum6"]
 font_size = 12
+font_color = Color(0.333333, 1, 1, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpqe1"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -63,7 +69,7 @@ grow_vertical = 2
 layout_mode = 2
 text = "Battle Rewards
 "
-label_settings = SubResource("LabelSettings_2k8nr")
+label_settings = SubResource("LabelSettings_vrum6")
 horizontal_alignment = 1
 
 [node name="RewardContainer" type="PanelContainer" parent="VBoxContainer"]

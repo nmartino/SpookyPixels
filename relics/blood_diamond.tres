@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://q6aht1wbr44b"]
+
+[ext_resource type="Script" path="res://relics/blood_diamond.gd" id="1_48w2w"]
+[ext_resource type="Texture2D" uid="uid://d0vg85llag85w" path="res://art/1bit/blood_diamond.png" id="1_xbxc4"]
+[ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="2_vt42n"]
+
+[resource]
+script = ExtResource("1_48w2w")
+block_bonus = 3
+relic_name = "Blood Diamond"
+id = "blood_diamond"
+type = 2
+character_type = 2
+starter_relic = false
+icon = ExtResource("1_xbxc4")
+sound_fx = ExtResource("2_vt42n")
+tooltip = "[color='55ffff']Blood Diamond:[/color] At the end of your turn, gain [color='55ffff']3 Block[/color]."

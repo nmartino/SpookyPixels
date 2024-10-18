@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://bj4cudlc1sj74"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=7 format=3 uid="uid://bj4cudlc1sj74"]
 
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="1_g77s3"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_rj4dh"]
 [ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_7i7c4"]
 [ext_resource type="Texture2D" uid="uid://cvjylrer35uya" path="res://art/1bit/orcoArt/Testeo character1 002.png" id="2_cy3tl"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_xt1eb"]
+[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="6_lwdxq"]
 
 [resource]
 script = ExtResource("1_rj4dh")
@@ -16,6 +17,7 @@ starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")
 cards_per_turn = 4
 max_mana = 3
+starting_relic = ExtResource("6_lwdxq")
 max_health = 35
 art = ExtResource("1_g77s3")
 hurt = ExtResource("2_cy3tl")

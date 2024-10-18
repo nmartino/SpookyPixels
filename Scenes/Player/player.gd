@@ -13,9 +13,6 @@ const ATTACKFX := preload("res://Scenes/CardFxs/attack_fx.tscn")
 
 func _ready() -> void:
 	status_handler.status_owner = self
-	var exposed:= preload("res://statuses/exposed.tres").duplicate()
-	exposed.duration = 3
-	status_handler.add_status(exposed)
 
 func set_character_stats(value:CharacterStats) -> void:
 	stats = value
