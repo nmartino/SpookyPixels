@@ -231,6 +231,7 @@ stretch_mode = 5
 [node name="MageButton" type="Button" parent="CharacterButtons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+disabled = true
 toggle_mode = true
 button_group = SubResource("ButtonGroup_betg8")
 
@@ -254,6 +255,7 @@ stretch_mode = 5
 [node name="AssasinButton" type="Button" parent="CharacterButtons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+disabled = true
 toggle_mode = true
 button_group = SubResource("ButtonGroup_betg8")
 

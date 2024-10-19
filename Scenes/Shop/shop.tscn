@@ -193,33 +193,39 @@ metadata/_edit_lock_ = true
 
 [node name="ShopLabel" type="TextureRect" parent="DecorationLayer"]
 offset_left = 74.0
-offset_top = 17.0
+offset_top = 24.0
 offset_right = 122.0
-offset_bottom = 58.0
+offset_bottom = 65.0
 texture = ExtResource("7_kca75")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoC" type="TextureRect" parent="DecorationLayer"]
-offset_left = 62.0
-offset_top = 63.0
-offset_right = 126.0
-offset_bottom = 103.0
+offset_left = 56.0
+offset_top = 68.0
+offset_right = 120.0
+offset_bottom = 108.0
 texture = ExtResource("9_n21ru")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="FondoB" type="TextureRect" parent="DecorationLayer"]
-offset_left = -2.0
-offset_top = 63.0
-offset_right = 62.0
-offset_bottom = 103.0
+offset_left = -8.0
+offset_top = 68.0
+offset_right = 56.0
+offset_bottom = 108.0
 texture = ExtResource("10_ax832")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="FondoA" type="TextureRect" parent="DecorationLayer"]
-offset_left = -2.0
-offset_top = 103.0
-offset_right = 142.0
-offset_bottom = 143.0
+offset_left = -8.0
+offset_top = 100.0
+offset_right = 136.0
+offset_bottom = 140.0
 texture = ExtResource("11_3d1o5")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="FondoAnimation" type="AnimationPlayer" parent="DecorationLayer"]
 unique_name_in_owner = true
@@ -236,10 +242,10 @@ unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 42.0
-offset_top = -65.0
-offset_right = 74.0
-offset_bottom = -33.0
+offset_left = 36.0
+offset_top = -64.0
+offset_right = 68.0
+offset_bottom = -32.0
 grow_vertical = 0
 texture = ExtResource("9_m4x3p")
 expand_mode = 1
