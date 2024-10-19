@@ -1,36 +1,143 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmhsokr2rj750"]
+[gd_scene load_steps=38 format=3 uid="uid://dmhsokr2rj750"]
 
 [ext_resource type="Script" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
 [ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_0re27"]
 [ext_resource type="AudioStream" uid="uid://brurpddkw5j74" path="res://art/(Loop) Peaceful Village.wav" id="2_hrsch"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_x0c2s"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="4_itqgr"]
-[ext_resource type="Texture2D" uid="uid://dhcrauucipmsg" path="res://art/1bit/orcoArt/Undead enemy7 001.png" id="4_junay"]
-[ext_resource type="Texture2D" uid="uid://c1vka4dqmn0g2" path="res://art/1bit/orcoArt/Undead enemy7 001_3.png" id="5_i8efs"]
-[ext_resource type="Texture2D" uid="uid://bl5g5drvi2x1x" path="res://art/1bit/orcoArt/Undead enemy7 001_2.png" id="6_1pxnm"]
 [ext_resource type="Resource" uid="uid://bjbl6k4rw8lo" path="res://relics/coupons.tres" id="6_y0xxl"]
 [ext_resource type="Texture2D" uid="uid://uy26l5wvm8l6" path="res://art/1bit/shop_label.png" id="7_kca75"]
 [ext_resource type="PackedScene" uid="uid://cfj77qt303ooj" path="res://Scenes/Shop/shop_card.tscn" id="8_tm2gn"]
 [ext_resource type="PackedScene" uid="uid://bx48fv2thmpnp" path="res://Scenes/Shop/shop_relic.tscn" id="9_fruur"]
+[ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="9_m4x3p"]
+[ext_resource type="Texture2D" uid="uid://c1601ybxwaibt" path="res://art/1bit/orcoArt/Comerciante FondoC1.png" id="9_n21ru"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="9_ns37w"]
+[ext_resource type="Texture2D" uid="uid://dbxob13qdw1r4" path="res://art/1bit/orcoArt/Comerciante FondoB4.png" id="10_ax832"]
 [ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="10_y2vs0"]
+[ext_resource type="Texture2D" uid="uid://bbdif1yxeqagj" path="res://art/1bit/orcoArt/Comerciante FondoA1.png" id="11_3d1o5"]
+[ext_resource type="Texture2D" uid="uid://d2muvef41ph4i" path="res://art/1bit/orcoArt/Comerciante2.png" id="11_cb5j8"]
 [ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="11_x71sg"]
+[ext_resource type="Texture2D" uid="uid://c6nyl3v2j187" path="res://art/1bit/orcoArt/Comerciante FondoA2.png" id="12_kj5cl"]
+[ext_resource type="Texture2D" uid="uid://b2bdp55ntxfd1" path="res://art/1bit/orcoArt/Comerciante FondoA3.png" id="13_5y16c"]
+[ext_resource type="Texture2D" uid="uid://bx6phe8cttb3k" path="res://art/1bit/orcoArt/Comerciante FondoA4.png" id="14_xcb6t"]
+[ext_resource type="Texture2D" uid="uid://dbnbqjn445mui" path="res://art/1bit/orcoArt/Comerciante FondoB1.png" id="15_4tclv"]
 [ext_resource type="PackedScene" uid="uid://caj6eeau7nkcr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="15_qjj56"]
+[ext_resource type="Texture2D" uid="uid://dsedgukfqcj0f" path="res://art/1bit/orcoArt/Comerciante FondoB2.png" id="16_ac6qo"]
 [ext_resource type="PackedScene" uid="uid://c5iuw4qotc0vy" path="res://Scenes/modifier_handler/modifier.tscn" id="16_ddf80"]
+[ext_resource type="Texture2D" uid="uid://du5v355tr2yau" path="res://art/1bit/orcoArt/Comerciante FondoB3.png" id="17_a0452"]
+[ext_resource type="Texture2D" uid="uid://7ckph12aili" path="res://art/1bit/orcoArt/Comerciante FondoC2.png" id="18_oytls"]
+[ext_resource type="Texture2D" uid="uid://bpyyf88rxqfen" path="res://art/1bit/orcoArt/Comerciante FondoC3.png" id="19_n543s"]
+[ext_resource type="Texture2D" uid="uid://44empju5u6xu" path="res://art/1bit/orcoArt/Comerciante FondoC4.png" id="20_r7byq"]
 
-[sub_resource type="Animation" id="Animation_74qjp"]
+[sub_resource type="Animation" id="Animation_cxch1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ShopKeeper:texture")
+tracks/0/path = NodePath("FondoA:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_junay")]
+"values": [ExtResource("11_3d1o5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FondoB:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_ax832")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FondoC:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_n21ru")]
+}
+
+[sub_resource type="Animation" id="Animation_i0rm8"]
+resource_name = "fondo_a"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FondoA:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_3d1o5"), ExtResource("12_kj5cl"), ExtResource("13_5y16c"), ExtResource("14_xcb6t")]
+}
+
+[sub_resource type="Animation" id="Animation_43crv"]
+resource_name = "fondo_b"
+length = 2.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FondoB:texture")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_ax832"), ExtResource("15_4tclv"), ExtResource("16_ac6qo"), ExtResource("17_a0452"), ExtResource("16_ac6qo"), ExtResource("10_ax832")]
+}
+
+[sub_resource type="Animation" id="Animation_e0f3m"]
+resource_name = "fondo_c"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FondoC:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_n21ru"), ExtResource("18_oytls"), ExtResource("19_n543s"), ExtResource("20_r7byq"), ExtResource("9_n21ru")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llkgq"]
+_data = {
+"RESET": SubResource("Animation_cxch1"),
+"fondo_a": SubResource("Animation_i0rm8"),
+"fondo_b": SubResource("Animation_43crv"),
+"fondo_c": SubResource("Animation_e0f3m")
+}
+
+[sub_resource type="Animation" id="Animation_74qjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShopKeeper/ShopKeeper:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_m4x3p")]
 }
 
 [sub_resource type="Animation" id="Animation_nyktx"]
@@ -40,14 +147,14 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ShopKeeper:texture")
+tracks/0/path = NodePath("ShopKeeper/ShopKeeper:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("5_i8efs"), ExtResource("6_1pxnm"), ExtResource("4_junay")]
+"values": [ExtResource("11_cb5j8"), ExtResource("9_m4x3p")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eddim"]
@@ -84,41 +191,82 @@ metadata/_edit_lock_ = true
 
 [node name="DecorationLayer" type="CanvasLayer" parent="."]
 
-[node name="ShopKeeper" type="TextureRect" parent="DecorationLayer"]
+[node name="ShopLabel" type="TextureRect" parent="DecorationLayer"]
+offset_left = 74.0
+offset_top = 17.0
+offset_right = 122.0
+offset_bottom = 58.0
+texture = ExtResource("7_kca75")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FondoC" type="TextureRect" parent="DecorationLayer"]
+offset_left = 62.0
+offset_top = 63.0
+offset_right = 126.0
+offset_bottom = 103.0
+texture = ExtResource("9_n21ru")
+
+[node name="FondoB" type="TextureRect" parent="DecorationLayer"]
+offset_left = -2.0
+offset_top = 63.0
+offset_right = 62.0
+offset_bottom = 103.0
+texture = ExtResource("10_ax832")
+
+[node name="FondoA" type="TextureRect" parent="DecorationLayer"]
+offset_left = -2.0
+offset_top = 103.0
+offset_right = 142.0
+offset_bottom = 143.0
+texture = ExtResource("11_3d1o5")
+
+[node name="FondoAnimation" type="AnimationPlayer" parent="DecorationLayer"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_llkgq")
+}
+
+[node name="FondoAnimationTimer" type="Timer" parent="DecorationLayer"]
+unique_name_in_owner = true
+
+[node name="ShopKeeper" type="Node" parent="DecorationLayer"]
+
+[node name="ShopKeeper" type="TextureRect" parent="DecorationLayer/ShopKeeper"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -108.0
-offset_right = 55.0
-offset_bottom = -68.0
+offset_left = 42.0
+offset_top = -65.0
+offset_right = 74.0
+offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("4_junay")
+texture = ExtResource("9_m4x3p")
 expand_mode = 1
-stretch_mode = 5
-flip_h = true
+stretch_mode = 4
 
-[node name="ShopKeeperAnimation" type="AnimationPlayer" parent="DecorationLayer"]
+[node name="ShopKeeperAnimation" type="AnimationPlayer" parent="DecorationLayer/ShopKeeper"]
 unique_name_in_owner = true
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_eddim")
 }
 
-[node name="BlinkTimer" type="Timer" parent="DecorationLayer"]
+[node name="BlinkTimer" type="Timer" parent="DecorationLayer/ShopKeeper"]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="ShopKeeperDialogs" type="Label" parent="DecorationLayer"]
+[node name="ShopKeeperDialogs" type="Label" parent="DecorationLayer/ShopKeeper"]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -126.0
-offset_top = 5.0
-offset_right = -49.0
-offset_bottom = 20.0
+offset_left = -112.0
+offset_top = -26.0
+offset_right = -35.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Hi, Please take your 
@@ -128,20 +276,11 @@ label_settings = SubResource("LabelSettings_peme3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DialogTimer" type="Timer" parent="DecorationLayer"]
+[node name="DialogTimer" type="Timer" parent="DecorationLayer/ShopKeeper"]
 unique_name_in_owner = true
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 2
-
-[node name="ShopLabel" type="TextureRect" parent="UILayer"]
-offset_left = 207.0
-offset_top = 8.0
-offset_right = 255.0
-offset_bottom = 49.0
-texture = ExtResource("7_kca75")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="BackButton" type="Button" parent="UILayer"]
 anchors_preset = 8
@@ -149,10 +288,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -113.0
-offset_top = 38.0
-offset_right = -73.0
-offset_bottom = 52.0
+offset_left = -119.0
+offset_top = 52.0
+offset_right = -89.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Leave"
@@ -163,9 +302,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -49.0
+offset_left = -7.0
 offset_top = -44.0
-offset_right = 81.0
+offset_right = 123.0
 offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2

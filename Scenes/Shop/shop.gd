@@ -10,6 +10,8 @@ var  dialogs := ["Dying for\nsome business,\nliterally.",
 "Spooky deals,\nguaranteed or\ncursed.",
 "I'll ghost you\n10% off."]
 
+var fondo_animation_array := ["fondo_a","fondo_b","fondo_c"]
+
 @export var shop_relics: Array[Relic]
 @export var char_stats: CharacterStats
 @export var run_stats: RunStats
@@ -25,6 +27,8 @@ var  dialogs := ["Dying for\nsome business,\nliterally.",
 @onready var shop_keeper_dialogs: Label = %ShopKeeperDialogs
 @onready var dialog_timer: Timer = %DialogTimer
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
+@onready var fondo_animation: AnimationPlayer = %FondoAnimation
+@onready var fondo_animation_timer: Timer = %FondoAnimationTimer
 
 
 
@@ -42,6 +46,8 @@ func _ready() -> void:
 	blink_timer.timeout.connect(_on_blink_timer_timeout)
 	_dialog_timer_setup()
 	dialog_timer.timeout.connect(_on_dialog_timer_timeout)
+	_fondo_timer_setup()
+	fondo_animation_timer.timeout.connect(_on_fondo_animation_timer_timout)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and card_tool_tip_pop_up.visible:
@@ -59,8 +65,16 @@ func _on_blink_timer_timeout() -> void:
 	shop_keeper_animation.play("blink")
 	_blink_timer_setup()
 
+func _fondo_timer_setup()-> void:
+	fondo_animation_timer.wait_time = randf_range(10.0,15.0)
+	fondo_animation_timer.start()
+
+func _on_fondo_animation_timer_timout() ->void:
+	var fondo_animation_chosed = fondo_animation_array.pick_random()
+	fondo_animation.play(fondo_animation_chosed)
+
 func _dialog_timer_setup() -> void:
-	dialog_timer.wait_time = randf_range(6.0,10.0)
+	dialog_timer.wait_time = randf_range(4.0,8.0)
 	dialog_timer.start()
 
 func _on_dialog_timer_timeout() -> void:

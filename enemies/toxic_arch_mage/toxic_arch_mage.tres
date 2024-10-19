@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://efxtfownkvd4"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://efxtfownkvd4"]
 
+[ext_resource type="Texture2D" uid="uid://cvesomtqpihp0" path="res://art/1bit/orcoArt/Boss 01.png" id="1_lw1b0"]
+[ext_resource type="PackedScene" uid="uid://cl2k52sin0o2p" path="res://enemies/toxic_arch_mage/toxic_arch_mage_ai.tscn" id="1_tmgtf"]
 [ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_yk4dh"]
+[ext_resource type="Texture2D" uid="uid://dyjsg3sdsf4g0" path="res://art/1bit/orcoArt/Boss 03.png" id="2_cwa21"]
 
 [resource]
 script = ExtResource("1_yk4dh")
-max_health = 1
+ai = ExtResource("1_tmgtf")
+max_health = 60
+art = ExtResource("1_lw1b0")
+hurt = ExtResource("2_cwa21")

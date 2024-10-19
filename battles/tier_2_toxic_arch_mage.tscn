@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://di3wnvd4rbpad"]
+
+[ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="1_rvxfs"]
+[ext_resource type="Resource" uid="uid://efxtfownkvd4" path="res://enemies/toxic_arch_mage/toxic_arch_mage.tres" id="2_t5ijk"]
+
+[node name="Tier2ToxicArchMage" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_rvxfs")]
+position = Vector2(205, 68)
+stats = ExtResource("2_t5ijk")

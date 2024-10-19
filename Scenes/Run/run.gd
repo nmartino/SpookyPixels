@@ -7,6 +7,7 @@ const BATTLE_REWARD_SCENE := preload("res://Scenes/battle_reward/battle_reward.t
 const CAMPFIRE_SCENE := preload("res://Scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://Scenes/Shop/shop.tscn")
 const TREASURE_SCENE = preload("res://Scenes/treasure/treasure.tscn")
+const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 
 @export var music: AudioStream
 @export var run_startup: RunStartup
@@ -39,6 +40,7 @@ func _ready() -> void:
 			_start_run()
 		RunStartup.TYPE.CONTINUED_RUN:
 			print("TODO: cargar partida guardada")
+
 
 func _start_run() -> void:
 	stats = RunStats.new()
@@ -84,6 +86,14 @@ func _setup_top_bar():
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+
+func _show_regular_battle_rewards() -> void:
+	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	reward_scene.run_stats = stats
+	reward_scene.character_stats = character
+
+	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
+	reward_scene.add_card_reward()
 
 func _on_battle_room_entered(room: Room) ->void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
@@ -133,12 +143,12 @@ func _on_map_exited(room: Room) -> void:
 			_on_battle_room_entered(room)
 
 func _on_battle_won() -> void:
-	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
-	reward_scene.run_stats = stats
-	reward_scene.character_stats = character
+	if map.floors_climbed == MapGenerator.FLOORS:
+		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
+		win_screen.character = character
+	else:
+		_show_regular_battle_rewards()
 
-	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
-	reward_scene.add_card_reward()
 
 func _show_map()->void:
 	MusicPlayer.play(music, true)		

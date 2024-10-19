@@ -33,15 +33,15 @@ script = ExtResource("1_df8mf")
 script = ExtResource("2_yyhbg")
 damage = 8
 intent = SubResource("Resource_e1pop")
-type = 1
 sound = ExtResource("5_dr3hq")
+type = 1
 chance_weight = 1.0
 
 [node name="BlockAction" type="Node" parent="."]
 script = ExtResource("3_oxq2u")
 intent = SubResource("Resource_giykw")
-type = 1
 sound = ExtResource("8_6lnfy")
+type = 1
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="."]
