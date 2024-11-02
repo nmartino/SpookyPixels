@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8kl0n2023ls"]
+[gd_scene load_steps=7 format=3 uid="uid://b8kl0n2023ls"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_ski2f"]
 [ext_resource type="Script" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
 [ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
+[ext_resource type="Texture2D" uid="uid://sb5mjvcc4w85" path="res://art/1bit/pruebas mapa/Piezas mapa_ladrillos.png" id="4_o7i3w"]
 
 [sub_resource type="Gradient" id="Gradient_6gqa1"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -13,6 +14,44 @@ width = 30
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ski2f")
+
+[node name="Pared de entrada" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(16, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(46, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(75, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(105, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(134, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(164, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(194, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(224, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(253, 107)
+texture = ExtResource("4_o7i3w")
 
 [node name="Visuals" type="Node2D" parent="."]
 unique_name_in_owner = true

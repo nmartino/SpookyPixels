@@ -22,7 +22,7 @@ func _setup_weight_for_tier(tier:int) ->void:
 
 
 func get_random_battle_for_tier(tier: int) -> BattleStats:
-	var roll := randf_range(0.0,total_weights_by_tier[tier])
+	var roll := RNG.instance.randf_range(0.0,total_weights_by_tier[tier])
 	var battles:= _get_all_battles_for_tier(tier)
 	
 	for battle: BattleStats in battles:

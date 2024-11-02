@@ -25,7 +25,7 @@ var backgrounds := [
 
 func _ready() -> void:
 	
-	background.texture = backgrounds.pick_random()
+	background.texture = RNG.array_pick_random(backgrounds)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	enemy_handeler.child_order_changed.connect(_on_enemies_child_order_changed)	
 	Events.player_turn_ended.connect(player_handeler.end_turn)
@@ -51,6 +51,7 @@ func _on_enemies_child_order_changed()->void:
 
 func _on_player_died()-> void:
 	Events.battle_over_screen_requested.emit("You Lose!!", BattleOverPanel.Type.LOSE)
+	SaveGame.delete_data()
 
 func _on_enemy_turn_ended()-> void:
 	player_handeler.start_turn()

@@ -10,6 +10,9 @@ var  dialogs := ["Dying for\nsome business,\nliterally.",
 "Spooky deals,\nguaranteed or\ncursed.",
 "I'll ghost you\n10% off."]
 
+var bought_dialogs :=["Your doom is sealed!", "Pleasure doing\ndark business.",
+"Thanks for your soul!", "Your fate is set!"]
+
 var fondo_animation_array := ["fondo_a","fondo_b","fondo_c"]
 
 @export var shop_relics: Array[Relic]
@@ -73,8 +76,10 @@ func _on_fondo_animation_timer_timout() ->void:
 	var fondo_animation_chosed = fondo_animation_array.pick_random()
 	fondo_animation.play(fondo_animation_chosed)
 
-func _dialog_timer_setup() -> void:
-	dialog_timer.wait_time = randf_range(4.0,8.0)
+func _dialog_timer_setup(dialog_wait_time : float = randf_range(4.0,8.0)) -> void:
+	if dialog_timer:
+		dialog_timer.stop()
+	dialog_timer.wait_time = dialog_wait_time 
 	dialog_timer.start()
 
 func _on_dialog_timer_timeout() -> void:
@@ -83,8 +88,8 @@ func _on_dialog_timer_timeout() -> void:
 
 func _generate_shop_cards() -> void:
 	var shop_card_array: Array[Card] = []
-	var available_cards := char_stats.draftable_cards.cards.duplicate(true)
-	available_cards.shuffle()
+	var available_cards :Array[Card] = char_stats.draftable_cards.duplicate_cards()
+	RNG.array_shuffle(available_cards)
 	shop_card_array = available_cards.slice(0,3)
 	
 	for card: Card in shop_card_array:
@@ -103,7 +108,7 @@ func _generate_shop_relics() -> void:
 			var already_had_it := relic_handler.has_relic(relic.id)
 			return can_appear and not already_had_it
 	)
-	available_relics.shuffle()
+	RNG.array_shuffle(available_relics)
 	shop_relics_array = available_relics.slice(0,3)
 	
 	for relic: Relic in shop_relics_array:
@@ -138,11 +143,14 @@ func _on_back_button_pressed() -> void:
 func _on_shop_card_bought(card:Card, gold_cost: int) -> void:
 	char_stats.deck.add_card(card)
 	run_stats.gold -= gold_cost
+	shop_keeper_dialogs.text = bought_dialogs.pick_random()
 	_update_items()
+	_dialog_timer_setup(2.5)
 
 func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 	relic_handler.add_relic(relic)
 	run_stats.gold -= gold_cost
+	
 	
 	if relic is CouponsRelic:
 		var coupons_relic := relic as CouponsRelic
@@ -150,3 +158,6 @@ func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 		_update_item_cost()
 	else:
 		_update_items()
+		
+	shop_keeper_dialogs.text = bought_dialogs.pick_random()
+	_dialog_timer_setup(2.5)

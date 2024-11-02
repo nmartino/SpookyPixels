@@ -1,10 +1,10 @@
 class_name MapGenerator
 extends Node
 
-const X_DIST := 30
-const Y_DIST := 25
-const PLACEMENT_RANDOMNESS := 8
-const FLOORS := 20
+const X_DIST := 40
+const Y_DIST := 40
+const PLACEMENT_RANDOMNESS := 0
+const FLOORS := 15
 const MAP_WIDTH := 6
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 10.0
@@ -47,7 +47,7 @@ func _generate_initial_grid() -> Array[Array]:
 		
 		for j in MAP_WIDTH:
 			var current_room := Room.new()
-			var offset := Vector2(randf(), randf()) * PLACEMENT_RANDOMNESS
+			var offset := Vector2(RNG.instance.randf(), RNG.instance.randf()) * PLACEMENT_RANDOMNESS
 			current_room.position = Vector2(j * X_DIST, i * -Y_DIST) + offset
 			current_room.row = i
 			current_room.column = j

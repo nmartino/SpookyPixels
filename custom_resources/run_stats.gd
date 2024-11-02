@@ -3,7 +3,7 @@ extends Resource
 
 signal gold_change
 
-const STARTING_GOLD := 70
+const STARTING_GOLD := 0
 const BASE_CARD_REWARDS := 3
 const BASE_COMMON_WEIGHT := 6.0
 const BASE_UNCOMMON_WEIGHT := 3.7

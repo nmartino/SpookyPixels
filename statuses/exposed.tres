@@ -13,5 +13,5 @@ can_expire = true
 duration = 1
 stacks = 0
 icon = ExtResource("1_07mme")
-tooltip = "Exposed: Takes [color='ff55ff']50%% + damage[/color] for %s turns."
+tooltip = "Exposed: Takes [color='ff55ff']+50%%  damage[/color] for %s turns."
 sound = ExtResource("3_y3vty")

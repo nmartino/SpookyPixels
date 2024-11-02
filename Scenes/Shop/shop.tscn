@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dmhsokr2rj750"]
+[gd_scene load_steps=39 format=3 uid="uid://dmhsokr2rj750"]
 
 [ext_resource type="Script" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
 [ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_0re27"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://7ckph12aili" path="res://art/1bit/orcoArt/Comerciante FondoC2.png" id="18_oytls"]
 [ext_resource type="Texture2D" uid="uid://bpyyf88rxqfen" path="res://art/1bit/orcoArt/Comerciante FondoC3.png" id="19_n543s"]
 [ext_resource type="Texture2D" uid="uid://44empju5u6xu" path="res://art/1bit/orcoArt/Comerciante FondoC4.png" id="20_r7byq"]
+[ext_resource type="Texture2D" uid="uid://dvvb4x1njryd3" path="res://art/1bit/orcoArt/Comerciante1-2.png" id="23_2k04f"]
 
 [sub_resource type="Animation" id="Animation_cxch1"]
 length = 0.001
@@ -151,10 +152,10 @@ tracks/0/path = NodePath("ShopKeeper/ShopKeeper:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("11_cb5j8"), ExtResource("9_m4x3p")]
+"values": [ExtResource("23_2k04f"), ExtResource("11_cb5j8"), ExtResource("9_m4x3p")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eddim"]

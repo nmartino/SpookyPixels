@@ -1,25 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://t3ic5ankyihq"]
+[gd_scene load_steps=11 format=3 uid="uid://t3ic5ankyihq"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map_room.gd" id="1_68xlo"]
-[ext_resource type="Texture2D" uid="uid://de7jhsunotesx" path="res://art/1bit/espada_mapa.png" id="1_u7sib"]
+[ext_resource type="Texture2D" uid="uid://coqy8mfv72ply" path="res://art/1bit/pruebas mapa/Piezas mapa (2).png" id="2_eslyf"]
+[ext_resource type="Texture2D" uid="uid://bgitfv5ohpy2l" path="res://art/1bit/pruebas mapa/background_2_prueba.png" id="2_h844r"]
+[ext_resource type="Texture2D" uid="uid://cvjgmgvo2d8kb" path="res://art/1bit/pruebas mapa/doble_espada_mapa.png" id="4_tkybg"]
+[ext_resource type="Texture2D" uid="uid://bxn3uqk2u0jad" path="res://art/1bit/pruebas mapa/finished_map.png" id="5_5trap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehmdb"]
-
-[sub_resource type="Animation" id="Animation_025qm"]
-resource_name = "highlight"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
 
 [sub_resource type="Animation" id="Animation_3l2ps"]
 length = 0.001
@@ -38,44 +25,72 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/Line2D:modulate")
+tracks/1/path = NodePath("Visuals/Finished:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0.0196078)]
+}
+
+[sub_resource type="Animation" id="Animation_025qm"]
+resource_name = "highlight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
 }
 
 [sub_resource type="Animation" id="Animation_wj2f7"]
 resource_name = "selected"
 length = 0.5
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/Line2D:modulate")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_on_map_room_selected"
 }]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Finished:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cf47s"]
@@ -92,15 +107,30 @@ script = ExtResource("1_68xlo")
 
 [node name="Visuals" type="Node2D" parent="."]
 
+[node name="Entrance" type="Sprite2D" parent="Visuals"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, 29)
+texture = ExtResource("2_eslyf")
+
+[node name="background" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_h844r")
+
 [node name="Line2D" type="Line2D" parent="Visuals"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 points = PackedVector2Array(-12, 2, -8, 10, 8, 10, 12, 2, 12, -6, 6, -12, -6, -12, -12, -6)
 closed = true
 width = 2.0
-default_color = Color(1, 0.333333, 1, 1)
+default_color = Color(0.333333, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("1_u7sib")
+texture = ExtResource("4_tkybg")
+
+[node name="Finished" type="Sprite2D" parent="Visuals"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.0196078)
+texture = ExtResource("5_5trap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ehmdb")

@@ -15,6 +15,9 @@ stretch_mode = 5
 [node name="HealthLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
 text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -22,6 +25,8 @@ vertical_alignment = 1
 [node name="MaxHealthLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 text = "/14"
 horizontal_alignment = 1
 vertical_alignment = 1

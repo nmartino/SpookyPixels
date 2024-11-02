@@ -7,6 +7,7 @@ extends Control
 
 @onready var player_sprite: Sprite2D = %PlayerSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var rest_button: Button = %RestButton
 
 
 func _ready() -> void:
@@ -14,6 +15,7 @@ func _ready() -> void:
 
 
 func _on_rest_button_pressed() -> void:
+	rest_button.disabled = true
 	char_stats.heal(ceili(char_stats.max_health * 0.3))
 	animation_player.play("fade_out")
 	
