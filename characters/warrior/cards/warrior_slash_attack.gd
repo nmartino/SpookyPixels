@@ -16,4 +16,4 @@ func apply_effects(targets: Array[Node], _modifier: ModifierHandler)-> void:
 	var damage_effect := DamageEffect.new()
 	damage_effect.amount = _modifier.get_modified_value(base_damage, Modifier.Type.DMG_DEALT)
 	damage_effect.sound = sound
-	damage_effect.execute(targets)
+	damage_effect.execute(targets, dmg_type)

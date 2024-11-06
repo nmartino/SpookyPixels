@@ -24,7 +24,7 @@ func perform_action()-> void:
 	var strength := STRENGTH_STATUS.duplicate()
 	strength.stacks = stacks_per_action
 	stats_effect.status = strength
-	stats_effect.execute([enemy])
+	stats_effect.execute([enemy],Effect.Type.NONE_FX)
 	
 	
 	SFXPlayer.play(sound)

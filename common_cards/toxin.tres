@@ -12,6 +12,7 @@ target = 0
 rarity = 0
 cost = 1
 exhausts = true
+dmg_type = 0
 icon = ExtResource("1_rcjip")
 tooltip_text = "[center] Take this carrot as a souvenir, [color='ff55ff']MUAHAHAHA[/color].[/center]"
 sound = ExtResource("3_l7vo6")

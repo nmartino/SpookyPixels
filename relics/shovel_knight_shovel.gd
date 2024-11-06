@@ -8,6 +8,6 @@ func activate_relic(owner: RelicUI) -> void:
 	var damage_effect := DamageEffect.new()
 	damage_effect.amount = damage
 	damage_effect.receiver_modifier_type = Modifier.Type.NO_MODIFIER
-	damage_effect.execute(enemies)
+	damage_effect.execute(enemies, Effect.Type.PHYSICAL)
 	
 	owner.flash()

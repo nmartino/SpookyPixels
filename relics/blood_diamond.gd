@@ -7,6 +7,6 @@ func activate_relic(owner: RelicUI) -> void:
 	var player := owner.get_tree().get_nodes_in_group("player")
 	var block_effect := BlockEffect.new()
 	block_effect.amount = block_bonus
-	block_effect.execute(player)
+	block_effect.execute(player, Effect.Type.NONE_FX)
 	
 	owner.flash()

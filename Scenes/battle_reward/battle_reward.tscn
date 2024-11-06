@@ -101,9 +101,11 @@ reward_icon = ExtResource("5_tf7e2")
 reward_text = "Add new card"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 14)
 layout_mode = 2
 size_flags_horizontal = 4
+disabled = true
 text = "Continue"
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

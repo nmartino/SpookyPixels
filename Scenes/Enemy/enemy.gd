@@ -5,6 +5,8 @@ const ARROW_OFFSET := 5
 const INVERTED_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 const ATTACKFX := preload("res://Scenes/CardFxs/attack_fx.tscn")
 
+
+
 @export var stats: EnemyStats : set = set_enemy_stats
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -84,7 +86,7 @@ func do_turn() -> void:
 	current_action.perform_action()
 
 
-func take_damage(damage:int, which_modifier: Modifier.Type)->void:
+func take_damage(damage:int, which_modifier: Modifier.Type, type: DamageEffect.Type)->void:
 	if stats.health <=0:
 		return
 	
@@ -97,7 +99,19 @@ func take_damage(damage:int, which_modifier: Modifier.Type)->void:
 	sprite_2d.texture = stats.hurt
 	var attackFx = ATTACKFX.instantiate()
 	add_child(attackFx)
-	attackFx.explosion.play("enemy_fx")
+	match type:
+		DamageEffect.Type.FIRE:
+			attackFx.explosion.play("explosion_fire")
+		DamageEffect.Type.ICE:
+			attackFx.explosion.play("Ice_attack")
+		DamageEffect.Type.PHYSICAL:
+			attackFx.explosion.play("enemy_fx")
+		DamageEffect.Type.ARROW:
+			attackFx.explosion.play("enemy_fx")
+		DamageEffect.Type.LIGHTING:
+			attackFx.explosion.play("lighting_strike")
+		DamageEffect.Type.NONE_FX:
+			attackFx.explosion.play("enemy_fx")
 	attackFx.explosion.animation_finished.connect(
 		func():
 			attackFx.queue_free()

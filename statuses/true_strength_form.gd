@@ -13,6 +13,6 @@ func apply_status(target: Node) -> void:
 	strength.stacks = stacks_per_turn
 	status_effect.sound = sound
 	status_effect.status = strength
-	status_effect.execute([target])
+	status_effect.execute([target], Effect.Type.NONE_FX)
 	
 	status_applied.emit(self)

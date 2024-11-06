@@ -13,6 +13,7 @@ const CARD_TEXT := "Add New Card"
 @export var relic_handler: RelicHandler
 
 @onready var rewards: VBoxContainer = %Rewards
+@onready var back_button: Button = %BackButton
 
 var card_reward_total_weight := 0.0
 var card_rarity_weights :={
@@ -51,6 +52,9 @@ func _on_gold_reward_taken(amount: int) -> void:
 		return
 	
 	run_stats.gold += amount
+	
+	if back_button.disabled:
+		back_button.disabled = false
 
 func _on_back_button_pressed() -> void:
 	Events.battle_reward_exited.emit()

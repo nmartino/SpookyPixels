@@ -12,6 +12,7 @@ target = 2
 rarity = 0
 cost = 2
 exhausts = false
+dmg_type = 1
 icon = ExtResource("1_xuai6")
 tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color] to all enemies.[/center]"
 sound = ExtResource("3_u2q6i")

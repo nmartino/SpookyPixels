@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ydy7ki4xskrm"
+path="res://.godot/imported/Retro Magic 06.wav-dccb8d1c45ff2d68a82e1de0885f14f4.sample"
+
+[deps]
+
+source_file="res://art/sounds/Retro Magic 06.wav"
+dest_files=["res://.godot/imported/Retro Magic 06.wav-dccb8d1c45ff2d68a82e1de0885f14f4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -31,7 +31,7 @@ func update_player() -> void:
 func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
-func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
+func take_damage(damage: int, which_modifier: Modifier.Type, type: DamageEffect.Type) -> void:
 	if stats.health <= 0:
 		return
 	
@@ -44,7 +44,20 @@ func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	sprite_2d.texture = stats.hurt
 	var attackFx = ATTACKFX.instantiate()
 	add_child(attackFx)
-	attackFx.explosion.play("player_fx")
+	match type:
+		DamageEffect.Type.FIRE:
+			attackFx.explosion.play("explosion_fire")
+		DamageEffect.Type.ICE:
+			attackFx.explosion.play("Ice_attack")
+		DamageEffect.Type.PHYSICAL:
+			attackFx.explosion.play("player_fx")
+		DamageEffect.Type.ARROW:
+			attackFx.explosion.play("player_fx")
+		DamageEffect.Type.LIGHTING:
+			attackFx.explosion.play("lighting_strike")
+		DamageEffect.Type.NONE_FX:
+			attackFx.explosion.play("player_fx")
+	
 	attackFx.explosion.animation_finished.connect(
 		func():
 			attackFx.queue_free()

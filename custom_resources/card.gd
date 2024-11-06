@@ -18,6 +18,7 @@ const RARITY_COLORS := {
 @export var rarity: Rarity
 @export var cost: int
 @export var exhausts: bool = false
+@export var dmg_type: Effect.Type
 
 @export_group("Card Visuals")
 @export var icon: Texture

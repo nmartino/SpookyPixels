@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bbn8i0uecn3lp"]
+
+[ext_resource type="Texture2D" uid="uid://d124r7hlsvfsv" path="res://art/1bit/orcoArt/ice_attack.png" id="1_f0bk4"]
+[ext_resource type="Script" path="res://characters/Mage/cards/mage_ice_spike_attack.gd" id="2_2ka3e"]
+[ext_resource type="AudioStream" uid="uid://db7xmrpoemmna" path="res://art/sounds/Retro Swooosh 02.wav" id="3_o45yi"]
+
+[resource]
+script = ExtResource("2_2ka3e")
+id = "mage_ice_spike_attack"
+type = 0
+target = 2
+rarity = 0
+cost = 2
+exhausts = false
+dmg_type = 2
+icon = ExtResource("1_f0bk4")
+tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color] to all enemies and apply [color='55ffff'] 3 Exposed[/color].[/center]"
+sound = ExtResource("3_o45yi")

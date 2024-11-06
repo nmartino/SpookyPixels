@@ -12,6 +12,7 @@ target = 0
 rarity = 2
 cost = 3
 exhausts = false
+dmg_type = 4
 icon = ExtResource("1_4q7ef")
 tooltip_text = "[center]At the start of your turn, gain[color='55ffff'] 2 Strength[/color].[/center]"
 sound = ExtResource("3_jtvor")

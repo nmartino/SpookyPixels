@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://8ld4noecrxf8"]
+
+[ext_resource type="Texture2D" uid="uid://b6eaojcwff4hx" path="res://art/1bit/orcoArt/mago_block.png" id="1_s3u6b"]
+[ext_resource type="Script" path="res://characters/Mage/cards/mage_block.gd" id="2_bifr2"]
+[ext_resource type="AudioStream" uid="uid://p8mqk1vy5v8q" path="res://art/sounds/Retro Magic Protection 01.wav" id="3_0ncb0"]
+
+[resource]
+script = ExtResource("2_bifr2")
+id = "mage_block"
+type = 1
+target = 0
+rarity = 0
+cost = 1
+exhausts = false
+dmg_type = 4
+icon = ExtResource("1_s3u6b")
+tooltip_text = "[center]Gain [color='55ffff']%s Block[/color].[/center]"
+sound = ExtResource("3_0ncb0")

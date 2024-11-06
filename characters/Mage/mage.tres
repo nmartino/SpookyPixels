@@ -1,21 +1,23 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://b86t384c0ch53"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=7 format=3 uid="uid://b86t384c0ch53"]
 
 [ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="1_t2vsc"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
-[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_2m0hb"]
+[ext_resource type="Resource" uid="uid://q1pjq8kfa1mq" path="res://characters/Mage/mage_draftable_cards.tres" id="2_rhcce"]
 [ext_resource type="Texture2D" uid="uid://dql6hb22mtj01" path="res://art/1bit/orcoArt/Mago 2.png" id="2_vw3w0"]
-[ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_v6hda"]
+[ext_resource type="Resource" uid="uid://cfmtwhuxrdy1n" path="res://characters/Mage/mage_starting_deck.tres" id="5_h1e8s"]
+[ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="6_3e5i0"]
 
 [resource]
 script = ExtResource("1_uswfi")
 character_name = "Spellbinder"
-description = "Darkness bends to him.
-Flames heed his call."
+description = "Magic bends to him.
+Elements heed his call."
 portrait = ExtResource("1_t2vsc")
-starting_deck = ExtResource("3_v6hda")
-draftable_cards = ExtResource("2_2m0hb")
+starting_deck = ExtResource("5_h1e8s")
+draftable_cards = ExtResource("2_rhcce")
 cards_per_turn = 3
 max_mana = 4
-max_health = 27
+starting_relic = ExtResource("6_3e5i0")
+max_health = 28
 art = ExtResource("1_t2vsc")
 hurt = ExtResource("2_vw3w0")

@@ -5,7 +5,7 @@ const BUFF_FX = preload("res://Scenes/CardFxs/buff_fx.tscn")
 
 var status: Status
 
-func execute(targets: Array[Node]) -> void:
+func execute(targets: Array[Node], type: Type) -> void:
 	for target in targets:
 		if not target:
 			continue
