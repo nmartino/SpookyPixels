@@ -93,15 +93,29 @@ func _setup_card_chances() -> void:
 
 func _modify_weights(rarity_rolled: Card.Rarity) -> void:
 	if rarity_rolled == Card.Rarity.RARE:
+		print("volvio a base rare weight")
 		run_stats.rare_weight = RunStats.BASE_RARE_WEIGHT
 	else:
 		run_stats.rare_weight = clampf(run_stats.rare_weight +0.3, run_stats.BASE_RARE_WEIGHT, 5.0)
+		print(str(run_stats.rare_weight))
 
 func _get_random_available_card(available_cards: Array[Card], with_rarity: Card.Rarity) -> Card:
 	var all_posible_cards := available_cards.filter(
 		func(card: Card):
 			return card.rarity == with_rarity
 	)
+	print("----- rarity que salio:"+str(with_rarity)+"------")
+	print("available cards:")
+	for card: Card in available_cards:
+		print("<---- card_rarity y id")
+		print(card.rarity)
+		print(card.id+" ---->")
+	print("posible cards:")
+	for card: Card in all_posible_cards:
+		print("<---- card_rarity y id")
+		print(card.rarity)
+		print(card.id+" ----->")
+	
 	return RNG.array_pick_random(all_posible_cards)
 
 func _on_card_reward_taken(card: Card) -> void:
@@ -113,3 +127,5 @@ func _on_relic_reward_taken(relic: Relic) -> void:
 	if not relic or not relic_handler:
 		return
 	relic_handler.add_relic(relic)
+	if back_button.disabled:
+		back_button.disabled = false
