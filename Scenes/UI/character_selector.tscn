@@ -19,12 +19,12 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ay8wa"]
-line_spacing = 5.0
-font_size = 12
+line_spacing = 4.0
+font_size = 11
 font_color = Color(0.572549, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 5
+shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 1)
 

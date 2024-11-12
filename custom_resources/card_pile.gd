@@ -30,9 +30,9 @@ func clear() -> void:
 	card_pile_size_changed.emit(cards.size())
 	
 	
-#se necesita este metodo por un error de godot duplicando
-#es este bug:
-#https://github.com/godotengine/godot/issues/74918
+# We need this method because of a Godot issue
+# reported here: 
+# https://github.com/godotengine/godot/issues/74918
 func duplicate_cards() -> Array[Card]:
 	var new_array: Array[Card] = []
 	
@@ -41,9 +41,10 @@ func duplicate_cards() -> Array[Card]:
 	
 	return new_array
 
-#se necesita este metodo por un error de godot duplicando
-#es este bug:
-#https://github.com/godotengine/godot/issues/74918
+
+# We need this method because of a Godot issue
+# reported here: 
+# https://github.com/godotengine/godot/issues/74918
 func custom_duplicate() -> CardPile:
 	var new_card_pile := CardPile.new()
 	new_card_pile.cards = duplicate_cards()

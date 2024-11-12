@@ -1,7 +1,7 @@
 class_name BattleReward
 extends Control
 
-const CARD_REWARD = preload("res://Scenes/UI/card_rewards.tscn")
+const CARD_REWARDS = preload("res://Scenes/UI/card_rewards.tscn")
 const REWARD_BUTTON = preload("res://Scenes/UI/reward_button.tscn")
 const GOLD_ICON := preload("res://art/1bit/gold_icon.png")
 const GOLD_TEXT := "%s Gold"
@@ -25,6 +25,7 @@ var card_rarity_weights :={
 func _ready() -> void:
 	for node: Node in rewards.get_children():
 		node.queue_free()
+	
 
 func add_gold_reward(amount: int) -> void:
 	var gold_reward := REWARD_BUTTON.instantiate() as RewardButton
@@ -41,6 +42,8 @@ func add_card_reward() -> void:
 	rewards.add_child.call_deferred(card_reward)
 
 func add_relic_reward(relic: Relic) -> void:
+	if not relic:
+		return
 	var relic_reward := REWARD_BUTTON.instantiate() as RewardButton
 	relic_reward.reward_icon = relic.icon
 	relic_reward.reward_text = relic.relic_name
@@ -63,7 +66,7 @@ func _show_card_rewards() -> void:
 	if not run_stats or not character_stats:
 		return
 	
-	var card_rewards := CARD_REWARD.instantiate() as CardRewards
+	var card_rewards := CARD_REWARDS.instantiate() as CardRewards
 	add_child(card_rewards)
 	card_rewards.card_reward_selected.connect(_on_card_reward_taken)
 	
@@ -74,14 +77,14 @@ func _show_card_rewards() -> void:
 		_setup_card_chances()
 		var roll := RNG.instance.randf_range(0.0, card_reward_total_weight)
 		
-		for rarity: Card.Rarity in  card_rarity_weights:
+		for rarity: Card.Rarity in card_rarity_weights:
 			if card_rarity_weights[rarity] > roll:
 				_modify_weights(rarity)
 				var picked_card := _get_random_available_card(available_cards, rarity)
 				card_reward_array.append(picked_card)
-				available_cards.erase(picked_card)
+				#available_cards.erase(picked_card)
 				break
-	
+
 	card_rewards.rewards = card_reward_array
 	card_rewards.show()
 
@@ -93,29 +96,16 @@ func _setup_card_chances() -> void:
 
 func _modify_weights(rarity_rolled: Card.Rarity) -> void:
 	if rarity_rolled == Card.Rarity.RARE:
-		print("volvio a base rare weight")
+		
 		run_stats.rare_weight = RunStats.BASE_RARE_WEIGHT
 	else:
-		run_stats.rare_weight = clampf(run_stats.rare_weight +0.3, run_stats.BASE_RARE_WEIGHT, 5.0)
-		print(str(run_stats.rare_weight))
+		run_stats.rare_weight = clampf(run_stats.rare_weight + 0.3, run_stats.BASE_RARE_WEIGHT, 5.0)
 
 func _get_random_available_card(available_cards: Array[Card], with_rarity: Card.Rarity) -> Card:
 	var all_posible_cards := available_cards.filter(
 		func(card: Card):
 			return card.rarity == with_rarity
-	)
-	print("----- rarity que salio:"+str(with_rarity)+"------")
-	print("available cards:")
-	for card: Card in available_cards:
-		print("<---- card_rarity y id")
-		print(card.rarity)
-		print(card.id+" ---->")
-	print("posible cards:")
-	for card: Card in all_posible_cards:
-		print("<---- card_rarity y id")
-		print(card.rarity)
-		print(card.id+" ----->")
-	
+	)	
 	return RNG.array_pick_random(all_posible_cards)
 
 func _on_card_reward_taken(card: Card) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dmhsokr2rj750"]
+[gd_scene load_steps=41 format=3 uid="uid://dmhsokr2rj750"]
 
 [ext_resource type="Script" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
 [ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_0re27"]
@@ -7,6 +7,8 @@
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="4_itqgr"]
 [ext_resource type="Resource" uid="uid://bjbl6k4rw8lo" path="res://relics/coupons.tres" id="6_y0xxl"]
 [ext_resource type="Texture2D" uid="uid://uy26l5wvm8l6" path="res://art/1bit/shop_label.png" id="7_kca75"]
+[ext_resource type="Resource" uid="uid://bupu28ochu3f4" path="res://relics/necronomicon.tres" id="7_swc2t"]
+[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="8_sodox"]
 [ext_resource type="PackedScene" uid="uid://cfj77qt303ooj" path="res://Scenes/Shop/shop_card.tscn" id="8_tm2gn"]
 [ext_resource type="PackedScene" uid="uid://bx48fv2thmpnp" path="res://Scenes/Shop/shop_relic.tscn" id="9_fruur"]
 [ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="9_m4x3p"]
@@ -178,7 +180,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_mawfq")
-shop_relics = Array[ExtResource("2_0re27")]([ExtResource("11_x71sg"), ExtResource("10_y2vs0"), ExtResource("4_itqgr"), ExtResource("6_y0xxl")])
+shop_relics = Array[ExtResource("2_0re27")]([ExtResource("11_x71sg"), ExtResource("10_y2vs0"), ExtResource("4_itqgr"), ExtResource("6_y0xxl"), ExtResource("7_swc2t"), ExtResource("8_sodox")])
 music = ExtResource("2_hrsch")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
@@ -193,10 +195,10 @@ metadata/_edit_lock_ = true
 [node name="DecorationLayer" type="CanvasLayer" parent="."]
 
 [node name="ShopLabel" type="TextureRect" parent="DecorationLayer"]
-offset_left = 74.0
-offset_top = 24.0
-offset_right = 122.0
-offset_bottom = 65.0
+offset_left = 71.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 52.0
 texture = ExtResource("7_kca75")
 expand_mode = 1
 stretch_mode = 5

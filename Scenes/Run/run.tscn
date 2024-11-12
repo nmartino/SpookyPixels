@@ -36,7 +36,7 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -6.519
 shader_parameter/pixel_strength = -1.5
 
-[node name="Run" type="Node"]
+[node name="Run" type="Node" groups=["run"]]
 script = ExtResource("1_677sc")
 music = ExtResource("2_cs2oa")
 run_startup = ExtResource("2_frqca")

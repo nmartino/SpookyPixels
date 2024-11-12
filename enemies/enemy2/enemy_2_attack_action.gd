@@ -31,5 +31,5 @@ func update_intent_text() -> void:
 	if not player:
 		return 
 	
-	var modified_dmg := player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)
+	var modified_dmg := player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	intent.current_text = intent.base_text % modified_dmg

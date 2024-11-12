@@ -20,9 +20,10 @@ func apply_statuses_by_type(type: Status.Type) -> void:
 	if status_queue.is_empty():
 		statuses_applied.emit(type)
 		return
-	
 	var tween := create_tween()
+	
 	for status:Status in status_queue:
+		
 		tween.tween_callback(status.apply_status.bind(status_owner))
 		tween.tween_interval(STATUS_APPLY_INTERVAL)
 	
@@ -74,9 +75,9 @@ func _get_all_statuses() -> Array[Status]:
 	return statuses
 
 func _on_status_applied(status: Status) -> void:
-	if status.can_expire:
-		status.duration -= 1
-
+		if status.can_expire:
+			status.duration -= 1
+		
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):

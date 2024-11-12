@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dc88iqpm1m1o1"]
+
+[ext_resource type="Shader" path="res://Scenes/Player/testshader.gdshader" id="1_i22js"]
+
+[resource]
+shader = ExtResource("1_i22js")
+shader_parameter/maxLineWidth = 1.0
+shader_parameter/minLineWidth = 2.0
+shader_parameter/speed = 5.0
+shader_parameter/blockSize = 3.0
+shader_parameter/color = Color(0.333333, 1, 1, 1)
+shader_parameter/tolerance = 0.0

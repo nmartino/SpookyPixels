@@ -5,19 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://bmk3y6k4ufp71" path="res://art/1bit/orcoArt/Arquero 2.png" id="2_rbui7"]
 [ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_vbq2x"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_4o1ev"]
-[ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="6_d14tq"]
+[ext_resource type="Resource" uid="uid://c6m6xaiqd0isn" path="res://relics/short_bow.tres" id="6_uqob2"]
 
 [resource]
 script = ExtResource("1_wqils")
 character_name = "Sharpshadow"
 description = "Wind carries his aim.
-Distance is his strength."
+Distance is his strength.
+Uses the short bow."
 portrait = ExtResource("1_8sr0k")
 starting_deck = ExtResource("3_4o1ev")
 draftable_cards = ExtResource("2_vbq2x")
 cards_per_turn = 5
 max_mana = 3
-starting_relic = ExtResource("6_d14tq")
+starting_relic = ExtResource("6_uqob2")
 max_health = 30
 art = ExtResource("1_8sr0k")
 hurt = ExtResource("2_rbui7")

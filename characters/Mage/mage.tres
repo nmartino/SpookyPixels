@@ -5,19 +5,20 @@
 [ext_resource type="Resource" uid="uid://q1pjq8kfa1mq" path="res://characters/Mage/mage_draftable_cards.tres" id="2_rhcce"]
 [ext_resource type="Texture2D" uid="uid://dql6hb22mtj01" path="res://art/1bit/orcoArt/Mago 2.png" id="2_vw3w0"]
 [ext_resource type="Resource" uid="uid://cfmtwhuxrdy1n" path="res://characters/Mage/mage_starting_deck.tres" id="5_h1e8s"]
-[ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="6_3e5i0"]
+[ext_resource type="Resource" uid="uid://3m1te8fvfg00" path="res://relics/confusin_staff.tres" id="6_hayqi"]
 
 [resource]
 script = ExtResource("1_uswfi")
 character_name = "Spellbinder"
 description = "Magic bends to him.
-Elements heed his call."
+Elements heed his call.
+Uses the Confusing Staff"
 portrait = ExtResource("1_t2vsc")
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
-cards_per_turn = 3
+cards_per_turn = 4
 max_mana = 4
-starting_relic = ExtResource("6_3e5i0")
-max_health = 28
+starting_relic = ExtResource("6_hayqi")
+max_health = 30
 art = ExtResource("1_t2vsc")
 hurt = ExtResource("2_vw3w0")

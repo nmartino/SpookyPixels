@@ -25,8 +25,8 @@ func set_current_character(new_character: CharacterStats) -> void:
 	description.text = current_character.description
 	character_portrait.texture = current_character.portrait
 
+
 func _on_start_button_pressed() -> void:
-	print("start new run with %s" % current_character.character_name)
 	run_startup.type = RunStartup.TYPE.NEW_RUN
 	run_startup.picked_character = current_character
 	get_tree().change_scene_to_packed(RUN_SCENE)

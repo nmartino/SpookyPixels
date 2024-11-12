@@ -14,6 +14,6 @@ cost = 1
 exhausts = false
 dmg_type = 0
 icon = ExtResource("1_lxaj4")
-tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color].[/center]
+tooltip_text = "[center]Deal [color='ff55ff']%s Damage to a single Enemy[/color].[/center]
 "
 sound = ExtResource("3_fmid3")

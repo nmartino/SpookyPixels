@@ -5,19 +5,20 @@
 [ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_7i7c4"]
 [ext_resource type="Texture2D" uid="uid://cvjylrer35uya" path="res://art/1bit/orcoArt/Testeo character1 002.png" id="2_cy3tl"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_xt1eb"]
-[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="6_lwdxq"]
+[ext_resource type="Resource" uid="uid://rypemqa7vwy7" path="res://relics/battle_axe.tres" id="6_4yk1n"]
 
 [resource]
 script = ExtResource("1_rj4dh")
 character_name = "Vanguard"
 description = "Steel answers his command.
-Honor guides her strikes."
+Honor guides her strikes.
+Uses the Battle Axe"
 portrait = ExtResource("1_g77s3")
 starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")
 cards_per_turn = 4
 max_mana = 3
-starting_relic = ExtResource("6_lwdxq")
+starting_relic = ExtResource("6_4yk1n")
 max_health = 35
 art = ExtResource("1_g77s3")
 hurt = ExtResource("2_cy3tl")

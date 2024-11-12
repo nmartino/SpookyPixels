@@ -14,11 +14,13 @@ const ATTACKFX := preload("res://Scenes/CardFxs/attack_fx.tscn")
 func _ready() -> void:
 	status_handler.status_owner = self
 
+
 func set_character_stats(value:CharacterStats) -> void:
 	stats = value
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
 	update_player()
+
 	
 func update_player() -> void:
 	if not stats is CharacterStats:
@@ -65,7 +67,7 @@ func take_damage(damage: int, which_modifier: Modifier.Type, type: DamageEffect.
 	
 	tween.finished.connect(
 		func():
-			sprite_2d.material = null
+			#sprite_2d.material = null
 			sprite_2d.texture = stats.art
 			if stats.health <= 0:
 				Events.player_died.emit()

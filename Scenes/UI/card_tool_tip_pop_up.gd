@@ -10,14 +10,17 @@ const CARD_MENU_UI_SCENE := preload("res://Scenes/UI/card_menu_ui.tscn")
 @onready var card_description: RichTextLabel = %CardDescription
 
 func _ready() -> void:
-	for card: CardMenuUI in tooltip_card.get_children():
-		card.queue_free()
+	for card_menu_ui: CardMenuUI in tooltip_card.get_children():
+		card_menu_ui.queue_free()
 	
 	background.color = background_color
 
+	
 
 
 func show_tooltip(card: Card) -> void:
+	if not card:
+		return
 	var new_card := CARD_MENU_UI_SCENE.instantiate() as CardMenuUI
 	tooltip_card.add_child(new_card)
 	new_card.card = card

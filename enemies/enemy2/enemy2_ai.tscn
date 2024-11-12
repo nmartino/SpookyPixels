@@ -24,15 +24,14 @@ script = ExtResource("1_5nq6b")
 
 [node name="Enemy2AttackAction" type="Node" parent="."]
 script = ExtResource("2_uw57q")
-damage = 4
 intent = SubResource("Resource_43xon")
-type = 1
 sound = ExtResource("5_p0j2a")
+type = 1
 chance_weight = 3.0
 
 [node name="Enemy2BlockAction" type="Node" parent="."]
 script = ExtResource("3_im7k1")
 intent = SubResource("Resource_30fu1")
-type = 1
 sound = ExtResource("8_tca6y")
+type = 1
 chance_weight = 1.0

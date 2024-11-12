@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0511bjl6j8f3"]
+[gd_scene load_steps=12 format=3 uid="uid://c0511bjl6j8f3"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_utljw"]
+[ext_resource type="Shader" path="res://Scenes/Player/testshader.gdshader" id="2_ao8bp"]
 [ext_resource type="Texture2D" uid="uid://cvesomtqpihp0" path="res://art/1bit/orcoArt/Boss 01.png" id="2_r6ddg"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_wbtpx"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="3_qxoj6"]
@@ -8,6 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://cuqex5rqjyym" path="res://Scenes/Status_handler/status_handeler.tscn" id="6_x0tw5"]
 [ext_resource type="PackedScene" uid="uid://caj6eeau7nkcr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="7_kn7cp"]
 [ext_resource type="PackedScene" uid="uid://c5iuw4qotc0vy" path="res://Scenes/modifier_handler/modifier.tscn" id="8_h3nno"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q78at"]
+shader = ExtResource("2_ao8bp")
+shader_parameter/maxLineWidth = 1.0
+shader_parameter/minLineWidth = 2.0
+shader_parameter/speed = 5.0
+shader_parameter/blockSize = 2.0
+shader_parameter/color = Color(1, 0.333333, 1, 1)
+shader_parameter/tolerance = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyi54"]
 size = Vector2(30, 31)
@@ -17,6 +27,7 @@ collision_layer = 4
 script = ExtResource("1_utljw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_q78at")
 texture = ExtResource("2_r6ddg")
 
 [node name="Arrow" type="Sprite2D" parent="."]
@@ -35,7 +46,7 @@ offset_top = 14.0
 offset_right = 47.0
 offset_bottom = 30.0
 
-[node name="IntentUI" parent="." instance=ExtResource("5_xhtot")]
+[node name="IntentUI" parent="." groups=["intent"] instance=ExtResource("5_xhtot")]
 offset_left = -22.0
 offset_top = -32.0
 offset_right = 18.0

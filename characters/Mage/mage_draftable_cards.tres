@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://q1pjq8kfa1mq"]
 
 [ext_resource type="Script" path="res://custom_resources/card.gd" id="1_x3ydj"]
-[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_r3xbo"]
 [ext_resource type="Resource" uid="uid://xpf2ucmmnhcq" path="res://characters/Mage/cards/mage_lighting_strike.tres" id="3_0blp4"]
 [ext_resource type="Resource" uid="uid://8ld4noecrxf8" path="res://characters/Mage/cards/mage_block.tres" id="4_2wohk"]
+[ext_resource type="Resource" uid="uid://vsoj6huc0udw" path="res://characters/Mage/cards/mage_fire_ball_attack.tres" id="5_8wnt1"]
 [ext_resource type="Resource" uid="uid://bbn8i0uecn3lp" path="res://characters/Mage/cards/mage_ice_spike_attack.tres" id="5_p7rsu"]
-[ext_resource type="Resource" uid="uid://vsoj6huc0udw" path="res://characters/Mage/cards/mage_fire_ball.tres" id="6_iyfnd"]
+[ext_resource type="Resource" uid="uid://b5qfpj2e5sqeb" path="res://characters/Mage/cards/mage_wind_form.tres" id="6_ue8gw"]
 [ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="7_wtopg"]
 
 [resource]
 script = ExtResource("7_wtopg")
-cards = Array[ExtResource("1_x3ydj")]([ExtResource("2_r3xbo"), ExtResource("3_0blp4"), ExtResource("4_2wohk"), ExtResource("4_2wohk"), ExtResource("3_0blp4"), ExtResource("5_p7rsu"), ExtResource("5_p7rsu"), ExtResource("6_iyfnd"), ExtResource("6_iyfnd"), ExtResource("6_iyfnd")])
+cards = Array[ExtResource("1_x3ydj")]([ExtResource("3_0blp4"), ExtResource("4_2wohk"), ExtResource("4_2wohk"), ExtResource("3_0blp4"), ExtResource("5_p7rsu"), ExtResource("5_p7rsu"), ExtResource("5_8wnt1"), ExtResource("5_8wnt1"), ExtResource("5_8wnt1"), ExtResource("6_ue8gw")])

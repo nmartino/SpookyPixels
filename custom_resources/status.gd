@@ -20,6 +20,7 @@ enum StackType {NONE, INTENSITY, DURATION, BOTH}
 @export_multiline var tooltip: String
 @export var sound: AudioStream
 
+
 func initialize_status(_target: Node) -> void:
 	pass
 	

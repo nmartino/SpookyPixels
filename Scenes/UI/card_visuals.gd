@@ -12,6 +12,10 @@ func set_card(value: Card) -> void:
 	if not is_node_ready():
 		await ready
 	
+	if value == null:
+		return
+		
+	
 	card = value
 	cost.text = str(card.cost)
 	icon.texture = card.icon

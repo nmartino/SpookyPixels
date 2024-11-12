@@ -13,6 +13,7 @@ var backgrounds := [
 @export var battle_stats: BattleStats
 @export var char_stats: CharacterStats
 @export var music: AudioStream
+@export var battle_won: AudioStream
 @export var relics: RelicHandler
 
 @onready var background: Sprite2D = %Background
@@ -24,7 +25,7 @@ var backgrounds := [
 
 
 func _ready() -> void:
-	
+
 	background.texture = RNG.array_pick_random(backgrounds)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	enemy_handeler.child_order_changed.connect(_on_enemies_child_order_changed)	
@@ -47,6 +48,7 @@ func start_battle()-> void:
 
 func _on_enemies_child_order_changed()->void:
 	if enemy_handeler.get_child_count() == 0 and is_instance_valid(relics):
+		SFXPlayer.play(battle_won,true)
 		relics.activate_relic_by_type(Relic.Type.END_OF_COMBAT)
 
 func _on_player_died()-> void:

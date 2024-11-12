@@ -4,7 +4,7 @@ const STRENGTH_STATUS = preload("res://statuses/strength.tres")
 
 @export var stacks_per_action := 2
 
-var hp_threshold := 25
+var hp_threshold := 30
 var usages := 0
 
 func is_perfomable() -> bool:

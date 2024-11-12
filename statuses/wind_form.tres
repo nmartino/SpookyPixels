@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WindFormStatus" load_steps=3 format=3 uid="uid://c7806uxjs6gvh"]
+
+[ext_resource type="Texture2D" uid="uid://bi15vou701s3b" path="res://art/1bit/orcoArt/wind_attack.png" id="1_vkh31"]
+[ext_resource type="Script" path="res://statuses/wind_form.gd" id="2_egqas"]
+
+[resource]
+script = ExtResource("2_egqas")
+id = "wind_form"
+type = 0
+stack_type = 0
+can_expire = false
+duration = 0
+stacks = 0
+icon = ExtResource("1_vkh31")
+tooltip = "[center]Wind Form: At the start of its turn, gains  [color='ff55ff']2 Mana[/color].[/center]"

@@ -1,6 +1,6 @@
 extends Card
 
-var base_block := 5
+var base_block := 6
 
 func get_default_tooptip() -> String:
 	return tooltip_text % base_block

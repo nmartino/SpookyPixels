@@ -11,6 +11,7 @@ const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
 @export var music: AudioStream
+
 @export var run_startup: RunStartup
 
 @onready var map: Map = $Map

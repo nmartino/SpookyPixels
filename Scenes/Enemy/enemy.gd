@@ -119,7 +119,7 @@ func take_damage(damage:int, which_modifier: Modifier.Type, type: DamageEffect.T
 	
 	tween.finished.connect(
 		func():
-			sprite_2d.material = null
+			#sprite_2d.material = null
 			sprite_2d.texture = stats.art
 			
 			if stats.health <= 0:
@@ -130,6 +130,7 @@ func take_damage(damage:int, which_modifier: Modifier.Type, type: DamageEffect.T
 
 func _on_area_entered(_area: Area2D) -> void:
 	arrow.show()
+
 
 
 func _on_area_exited(_area: Area2D) -> void:

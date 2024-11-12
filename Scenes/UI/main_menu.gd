@@ -28,5 +28,5 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_transition_animation_finished(anim_name: StringName) -> void:
+func _on_transition_animation_finished(_anim_name: StringName) -> void:
 	get_tree().change_scene_to_packed(CHAR_SELECTOR_SCENE)

@@ -3,7 +3,7 @@ extends Card
 const EXPOSED_STATUS = preload("res://statuses/exposed.tres")
 
 var base_damage := 4
-var exposed_duration := 2
+var exposed_duration := 4
 
 func get_default_tooptip() -> String:
 	return tooltip_text % base_damage
@@ -21,9 +21,13 @@ func apply_effects(targets: Array[Node], _modifier: ModifierHandler)-> void:
 	damage_effect.amount = _modifier.get_modified_value(base_damage, Modifier.Type.DMG_DEALT)
 	damage_effect.sound = sound
 	damage_effect.execute(targets, dmg_type)
-	
-	var status_effect := StatusEffect.new()
-	var exposed = EXPOSED_STATUS.duplicate() as Status
-	exposed.duration = exposed_duration
-	status_effect.status = exposed
-	status_effect.execute(targets, dmg_type)
+
+	if targets.is_empty():
+		return
+		
+	for target: Node in targets:
+		var status_effect := StatusEffect.new()
+		var exposed = EXPOSED_STATUS.duplicate() as Status
+		exposed.duration = exposed_duration
+		status_effect.status = exposed
+		status_effect.execute(targets, dmg_type)

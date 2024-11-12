@@ -14,5 +14,5 @@ cost = 2
 exhausts = false
 dmg_type = 2
 icon = ExtResource("1_f0bk4")
-tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color] to all enemies and apply [color='55ffff'] 3 Exposed[/color].[/center]"
+tooltip_text = "[center]Deal fixed [color='ff55ff']%s Damage[/color] to all enemies and apply [color='55ffff'] 3 Exposed[/color].[/center]"
 sound = ExtResource("3_o45yi")
