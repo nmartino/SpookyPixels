@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b700f06xtqt3l"]
+[gd_scene load_steps=23 format=3 uid="uid://b700f06xtqt3l"]
 
 [ext_resource type="Script" path="res://Scenes/treasure/treasure.gd" id="1_pxeoq"]
 [ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_8tegm"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="5_4pmp6"]
 [ext_resource type="Texture2D" uid="uid://prijuawhy44n" path="res://art/1bit/treasure_icon_map.png" id="5_e0t15"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="5_q5cxl"]
+[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="6_kb3ey"]
+[ext_resource type="Resource" uid="uid://bupu28ochu3f4" path="res://relics/necronomicon.tres" id="7_atwrd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jvem4"]
 font_size = 12
@@ -159,7 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_pxeoq")
-treasure_relic_pool = Array[ExtResource("2_8tegm")]([ExtResource("3_mq4tk"), ExtResource("4_ovqvi"), ExtResource("5_q5cxl")])
+treasure_relic_pool = Array[ExtResource("2_8tegm")]([ExtResource("3_mq4tk"), ExtResource("4_ovqvi"), ExtResource("5_q5cxl"), ExtResource("6_kb3ey"), ExtResource("7_atwrd")])
 music = ExtResource("2_dbys1")
 
 [node name="Background" type="Sprite2D" parent="."]
