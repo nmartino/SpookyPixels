@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8kl0n2023ls"]
+[gd_scene load_steps=8 format=3 uid="uid://b8kl0n2023ls"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_ski2f"]
 [ext_resource type="Script" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
 [ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
 [ext_resource type="Texture2D" uid="uid://sb5mjvcc4w85" path="res://art/1bit/pruebas mapa/Piezas mapa_ladrillos.png" id="4_o7i3w"]
+[ext_resource type="Resource" uid="uid://c8acdg4631a23" path="res://Scenes/EventsRoom/event_room_pool.tres" id="5_ytk4a"]
 
 [sub_resource type="Gradient" id="Gradient_6gqa1"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -69,6 +70,7 @@ offset = Vector2(128, 72)
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("2_bwd4j")
 battle_stats_pool = ExtResource("3_bdjgx")
+event_room_pool = ExtResource("5_ytk4a")
 
 [node name="MapBackground" type="CanvasLayer" parent="."]
 layer = -1

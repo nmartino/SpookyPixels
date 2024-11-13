@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cebs24ymycnxn"]
+
+[ext_resource type="Texture2D" uid="uid://dwykbosnetmmx" path="res://art/1bit/orcoArt/exposed.png" id="1_vt6wp"]
+[ext_resource type="Script" path="res://characters/multi_user_cards/phantom_trick.gd" id="2_5fhvv"]
+[ext_resource type="AudioStream" uid="uid://2po4mntvprdm" path="res://art/sounds/Retro Magic 11.wav" id="3_4dxhs"]
+
+[resource]
+script = ExtResource("2_5fhvv")
+id = "phantom_trick"
+type = 1
+target = null
+rarity = 1
+cost = null
+exhausts = null
+dmg_type = 4
+icon = ExtResource("1_vt6wp")
+tooltip_text = "[center]Gain [color='55ffff']%s Block[/color] and draw [color='55ffff']1 card[/color].[/center]"
+sound = ExtResource("3_4dxhs")

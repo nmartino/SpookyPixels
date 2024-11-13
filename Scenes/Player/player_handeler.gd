@@ -88,7 +88,7 @@ func _on_card_played(card: Card)-> void:
 func _on_statuses_applied(type: Status.Type) -> void:
 	match type:
 		Status.Type.START_OF_TURN:
-			draw_cards(character.cards_per_turn)
+			draw_cards(mini(character.cards_per_turn, character.draw_pile.cards.size() + character.discard.cards.size()))
 		Status.Type.END_OF_TURN:
 			discard_cards()
 

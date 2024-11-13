@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bxn3uqk2u0jad" path="res://art/1bit/pruebas mapa/finished_map.png" id="5_5trap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehmdb"]
+radius = 15.0
 
 [sub_resource type="Animation" id="Animation_3l2ps"]
 length = 0.001

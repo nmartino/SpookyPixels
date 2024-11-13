@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b1jkgr5i0kbq2"]
+
+[ext_resource type="Texture2D" uid="uid://cxjkbsbeo00mv" path="res://art/1bit/arch_mage_sword.png" id="1_w3l0b"]
+[ext_resource type="Script" path="res://characters/multi_user_cards/piercing_blade.gd" id="2_4rqqq"]
+[ext_resource type="AudioStream" uid="uid://dh84op5ifixg2" path="res://art/sounds/Retro Impact Metal 05.wav" id="3_n1qfd"]
+
+[resource]
+script = ExtResource("2_4rqqq")
+id = "piercing_blade"
+type = 0
+target = 1
+rarity = 2
+cost = 1
+exhausts = false
+dmg_type = 1
+icon = ExtResource("1_w3l0b")
+tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color]. [color='ff55ff']+%s damage[/color] this combat.[/center]"
+sound = ExtResource("3_n1qfd")

@@ -46,3 +46,6 @@ signal treasure_room_exited(found_relic: Relic)
 
 #relic-related events
 signal relic_tooltip_requested(relic: Relic)
+
+#random-event-room-related events
+signal event_room_exited

@@ -116,7 +116,7 @@ grow_vertical = 0
 theme = ExtResource("13_3eywo")
 text = "End Turn"
 
-[node name="DrawPileButton" parent="BattleUI" node_paths=PackedStringArray("counter") instance=ExtResource("17_3lvuc")]
+[node name="DrawPileButton" parent="BattleUI" node_paths=PackedStringArray("counter") groups=["draw_pile"] instance=ExtResource("17_3lvuc")]
 unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0

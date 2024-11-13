@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://bon4mgkl3m0f1"]
+
+[ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_b31ms"]
+[ext_resource type="Script" path="res://Scenes/EventsRoom/the_eternal_feast.gd" id="1_cxwdx"]
+[ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="2_ccujr"]
+[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_lpsfq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn55c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ccujr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TheEternalFeastEvent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxwdx")
+
+[node name="Background" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_lpsfq")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -34.0
+offset_right = 75.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 10
+text = "The Eternal Feast Event"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.0
+offset_right = 50.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="DuplicateLastCard" parent="VBoxContainer" instance=ExtResource("1_b31ms")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+text = "Duplicate last card
+in your deck"
+
+[node name="PlusMaxHPButton" parent="VBoxContainer" instance=ExtResource("1_b31ms")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+text = "Gain +5 cursed vitality"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(50, 77)
+sprite_frames = SubResource("SpriteFrames_mn55c")
+frame_progress = 1.0

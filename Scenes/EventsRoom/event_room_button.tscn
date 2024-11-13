@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://citmqnnx5h0l6"]
+
+[ext_resource type="Script" path="res://Scenes/EventsRoom/event_room_button.gd" id="1_aqa3b"]
+
+[node name="EventRoomButton" type="Button"]
+offset_right = 10.0
+offset_bottom = 8.0
+text = "ok"
+script = ExtResource("1_aqa3b")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
