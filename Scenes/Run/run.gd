@@ -164,7 +164,7 @@ func _on_treasue_room_exited(relic: Relic) -> void:
 func _on_campfire_room_entered() -> void:
 	var campfire:= _change_view(CAMPFIRE_SCENE) as CampFire
 	campfire.char_stats = character
-	campfire.player_sprite.texture = character.art
+	campfire.player_sprite.texture = character.campfire_art
 
 func _on_shop_entered() -> void:
 	var shop := _change_view(SHOP_SCENE) as Shop

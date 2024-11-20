@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=7 format=3 uid="uid://b86t384c0ch53"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://b86t384c0ch53"]
 
 [ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="1_t2vsc"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
+[ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="2_lb4qn"]
 [ext_resource type="Resource" uid="uid://q1pjq8kfa1mq" path="res://characters/Mage/mage_draftable_cards.tres" id="2_rhcce"]
 [ext_resource type="Texture2D" uid="uid://dql6hb22mtj01" path="res://art/1bit/orcoArt/Mago 2.png" id="2_vw3w0"]
 [ext_resource type="Resource" uid="uid://cfmtwhuxrdy1n" path="res://characters/Mage/mage_starting_deck.tres" id="5_h1e8s"]
@@ -22,3 +23,4 @@ starting_relic = ExtResource("6_hayqi")
 max_health = 30
 art = ExtResource("1_t2vsc")
 hurt = ExtResource("2_vw3w0")
+campfire_art = ExtResource("2_lb4qn")

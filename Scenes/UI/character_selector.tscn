@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://kcpqegmrn1e"]
 
 [ext_resource type="Script" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
-[ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="2_7uh0c"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_yqcao"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_2qdrl"]
 [ext_resource type="Texture2D" uid="uid://d3sit4wcpy21m" path="res://art/1bit/dobleaxe1.png" id="3_b6fwd"]
+[ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="3_emkbn"]
 [ext_resource type="Texture2D" uid="uid://dyv7l76444dm1" path="res://art/1bit/staff1.png" id="4_m7amx"]
 [ext_resource type="Texture2D" uid="uid://ccieqrjev1gxt" path="res://art/1bit/bow1.png" id="5_k1gvy"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="6_n2uh2"]
@@ -124,7 +124,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7uh0c")
+texture = ExtResource("3_emkbn")
 expand_mode = 1
 
 [node name="CharacterText" type="VBoxContainer" parent="."]
@@ -254,6 +254,7 @@ stretch_mode = 5
 [node name="AssasinButton" type="Button" parent="CharacterButtons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+disabled = true
 toggle_mode = true
 button_group = SubResource("ButtonGroup_betg8")
 

@@ -1,39 +1,45 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds4hjaky65w3y"]
+[gd_scene load_steps=18 format=3 uid="uid://ds4hjaky65w3y"]
 
 [ext_resource type="Script" path="res://Scenes/campfire/campfire.gd" id="1_n3jar"]
 [ext_resource type="AudioStream" uid="uid://bko3lvy4b04i" path="res://art/(Loop) Sanctuary.wav" id="2_75l24"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_8cjsj"]
 [ext_resource type="Resource" uid="uid://b86t384c0ch53" path="res://characters/Mage/mage.tres" id="3_om08r"]
-[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="5_1fsxl"]
-[ext_resource type="Texture2D" uid="uid://bd5jcpwug2ebh" path="res://art/1bit/fuego1.png" id="6_lcxmn"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qirg7"]
-atlas = ExtResource("6_lcxmn")
-region = Rect2(0, 0, 16, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5g2f"]
-atlas = ExtResource("6_lcxmn")
-region = Rect2(16, 0, 16, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j37pp"]
-atlas = ExtResource("6_lcxmn")
-region = Rect2(32, 0, 16, 31)
+[ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="5_1g7tv"]
+[ext_resource type="Texture2D" uid="uid://b8yx4v3luesc1" path="res://art/1bit/orcoArt/Fogata/fogata1.png" id="6_i2ctl"]
+[ext_resource type="Texture2D" uid="uid://dsg66oidmrqv4" path="res://art/1bit/orcoArt/Fogata/fogata2.png" id="7_wlvdn"]
+[ext_resource type="Texture2D" uid="uid://c788l1jx32dvr" path="res://art/1bit/orcoArt/Fogata/fogata3.png" id="8_eubth"]
+[ext_resource type="Texture2D" uid="uid://dwnq082pf3kym" path="res://art/1bit/orcoArt/Fogata/fogata4.png" id="9_hkls0"]
+[ext_resource type="Texture2D" uid="uid://dueb7vh2ymwe2" path="res://art/1bit/orcoArt/Fogata/fogata5.png" id="10_ssist"]
+[ext_resource type="Texture2D" uid="uid://cyw3p6c0uofrn" path="res://art/1bit/orcoArt/Fogata/fogata6.png" id="11_xl68m"]
+[ext_resource type="Texture2D" uid="uid://crrqmp10jw7g5" path="res://art/1bit/orcoArt/Fogata/fogata7.png" id="12_oijvl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mnufc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qirg7")
+"texture": ExtResource("6_i2ctl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i5g2f")
+"texture": ExtResource("7_wlvdn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j37pp")
+"texture": ExtResource("8_eubth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hkls0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ssist")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xl68m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oijvl")
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61pu2"]
@@ -167,16 +173,15 @@ metadata/_edit_lock_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="ParticlesLayer"]
 unique_name_in_owner = true
-position = Vector2(76, 88)
-texture = ExtResource("5_1fsxl")
+position = Vector2(66, 91)
+texture = ExtResource("5_1g7tv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParticlesLayer"]
 position = Vector2(94, 90)
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_mnufc")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.0391629
+frame_progress = 0.0573926
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

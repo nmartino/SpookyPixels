@@ -1,7 +1,7 @@
 class_name SaveGame
 extends Resource
 
-const SAVE_PATH := "user://savegame.tres"
+const SAVE_PATH := "user://savegame.res"
 
 @export var rng_seed: int
 @export var rng_state: int
