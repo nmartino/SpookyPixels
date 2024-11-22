@@ -11,7 +11,7 @@ type = 1
 target = 0
 rarity = 1
 cost = 1
-exhausts = false
+exhausts = true
 dmg_type = 4
 icon = ExtResource("1_yset0")
 tooltip_text = "[center]Gain [color='55ffff']%s Block[/color] and exhaust [color='55ffff']2 random[/color] cards.[/center]"

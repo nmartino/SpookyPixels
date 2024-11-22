@@ -11,7 +11,7 @@ type = 1
 target = null
 rarity = 1
 cost = null
-exhausts = null
+exhausts = true
 dmg_type = 4
 icon = ExtResource("1_vt6wp")
 tooltip_text = "[center]Gain [color='55ffff']%s Block[/color] and draw [color='55ffff']1 card[/color].[/center]"

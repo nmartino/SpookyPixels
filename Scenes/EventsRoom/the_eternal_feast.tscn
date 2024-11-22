@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bon4mgkl3m0f1"]
+[gd_scene load_steps=7 format=3 uid="uid://bon4mgkl3m0f1"]
 
 [ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_b31ms"]
 [ext_resource type="Script" path="res://Scenes/EventsRoom/the_eternal_feast.gd" id="1_cxwdx"]
 [ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="2_ccujr"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_lpsfq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw05h"]
+font_color = Color(0.333333, 1, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mn55c"]
 animations = [{
@@ -38,10 +46,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -34.0
-offset_right = 75.0
-offset_bottom = -23.0
+offset_left = -140.0
+offset_top = -41.0
+offset_right = 140.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
@@ -49,6 +57,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 10
 text = "The Eternal Feast Event"
+label_settings = SubResource("LabelSettings_aw05h")
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
