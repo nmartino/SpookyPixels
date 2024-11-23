@@ -5,11 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_cs2oa"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_frqca"]
 [ext_resource type="PackedScene" uid="uid://h8raeqewus5h" path="res://Scenes/UI/gold_ui.tscn" id="4_176gq"]
-[ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
 [ext_resource type="PackedScene" uid="uid://c5lfr6iekpgsw" path="res://Scenes/UI/health_ui.tscn" id="5_d6yos"]
 [ext_resource type="Texture2D" uid="uid://b3qf12ya5vqjv" path="res://art/deck.png" id="5_y0tcp"]
 [ext_resource type="Texture2D" uid="uid://dg28spu0yy8jh" path="res://art/deck_pressed.png" id="6_42h24"]
-[ext_resource type="PackedScene" uid="uid://cm4qn36ne6lgl" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
+[ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
 [ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="8_cd2bd"]
 [ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
@@ -104,6 +104,7 @@ custom_minimum_size = Vector2(0, 18)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+theme_override_constants/separation = 2
 
 [node name="HealthUI" parent="TopBar/BarItems" instance=ExtResource("5_d6yos")]
 unique_name_in_owner = true
@@ -118,7 +119,8 @@ layout_mode = 2
 
 [node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 
 [node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
 unique_name_in_owner = true
