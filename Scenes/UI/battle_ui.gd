@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var discard_pile_button: CardPileOpener = %DiscardPileButton
 @onready var draw_pile_view: CardPileView = %DrawPileView
 @onready var discard_pile_view: CardPileView = %DiscardPileView
+@onready var button_animation: AnimationPlayer = %ButtonAnimation
 
 
 
@@ -36,4 +37,5 @@ func _on_player_hand_drawn()-> void:
 
 func _on_end_turn_button_pressed()-> void:
 	end_turn_button.disabled = true
+	button_animation.play("reloj")
 	Events.player_turn_ended.emit()

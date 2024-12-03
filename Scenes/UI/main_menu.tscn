@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=22 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_048iv"]
 [ext_resource type="Texture2D" uid="uid://dcbgo4yh1nktj" path="res://art/1bit/orcoArt/Arquero 1.png" id="4_3u3ch"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="4_mrygs"]
+[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_5owke"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
 [ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="5_tyfnm"]
 [ext_resource type="Texture2D" uid="uid://do6i51u216eop" path="res://art/1bit/orcoArt/Undead enemy4 001.png" id="7_hhdwu"]
 [ext_resource type="Texture2D" uid="uid://bfqxe488vy0" path="res://art/1bit/orcoArt/Undead enemy5 001.png" id="7_i47pg"]
@@ -16,7 +18,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_reaam"]
 line_spacing = 5.0
-font_size = 25
+font = ExtResource("5_ridyb")
+font_size = 32
 font_color = Color(0.105882, 0.992157, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
@@ -129,6 +132,13 @@ grow_vertical = 2
 texture = ExtResource("2_c0bsd")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="torch" parent="." instance=ExtResource("5_5owke")]
+position = Vector2(15, 53)
+
+[node name="torch2" parent="." instance=ExtResource("5_5owke")]
+position = Vector2(184, 55)
+frame_progress = 0.3646
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1

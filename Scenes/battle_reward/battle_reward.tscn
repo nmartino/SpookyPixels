@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://blqao8wibecx2"]
 
 [ext_resource type="Script" path="res://Scenes/battle_reward/battle_reward.gd" id="1_bkddk"]
-[ext_resource type="Texture2D" uid="uid://talqes4x000t" path="res://art/1bit/orcoArt/Sprite Fondos testeo2.png" id="2_n6odo"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="2_woval"]
 [ext_resource type="PackedScene" uid="uid://bwm806agkeipd" path="res://Scenes/UI/reward_button.tscn" id="3_2xt0f"]
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="4_1t0mw"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="5_tf7e2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vrum6"]
-font_size = 12
+font = ExtResource("2_woval")
 font_color = Color(0.333333, 1, 1, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
@@ -27,18 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_bkddk")
-
-[node name="Background" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_n6odo")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

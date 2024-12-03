@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqeh5nty43nu7"]
+
+[ext_resource type="Texture2D" uid="uid://2pcixokxqe8c" path="res://art/1bit/torch3.png" id="1_jaa58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bio6c"]
+atlas = ExtResource("1_jaa58")
+region = Rect2(0, 0, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj0tq"]
+atlas = ExtResource("1_jaa58")
+region = Rect2(8, 0, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5wym"]
+atlas = ExtResource("1_jaa58")
+region = Rect2(16, 0, 8, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1fpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bio6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj0tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5wym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="torch" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_e1fpd")
+autoplay = "default"
+frame_progress = 0.666403

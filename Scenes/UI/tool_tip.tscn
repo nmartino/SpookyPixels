@@ -51,6 +51,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_constants/line_separation = 2
 bbcode_enabled = true
 text = "[center]At the start of your turn, gain[color='55ffff'] 2 Strength[/color].[/center]"

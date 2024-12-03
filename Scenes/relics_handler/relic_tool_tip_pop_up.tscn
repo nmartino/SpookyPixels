@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://q42tn6ne8vk"]
+[gd_scene load_steps=4 format=3 uid="uid://q42tn6ne8vk"]
 
 [ext_resource type="Script" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.gd" id="1_dlfqo"]
 [ext_resource type="Texture2D" uid="uid://cf6j4g1bkxnn5" path="res://art/1bit/shovel knight shovel.png" id="2_fujly"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="3_8mes0"]
 
 [node name="RelicToolTip" type="Control"]
 layout_mode = 3
@@ -49,7 +50,9 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_8mes0")
+theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 text = "Relic Description Relic Description Relic Description Relic Description Relic Description Relic Description Relic Description "
 fit_content = true

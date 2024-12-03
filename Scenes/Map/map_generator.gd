@@ -4,13 +4,13 @@ extends Node
 const X_DIST := 40
 const Y_DIST := 40
 const PLACEMENT_RANDOMNESS := 0
-const FLOORS := 15
+const FLOORS := 30
 const MAP_WIDTH := 6
 const PATHS := 6
-const MONSTER_ROOM_WEIGHT := 12.0
+const MONSTER_ROOM_WEIGHT := 17.0
 const EVENT_ROOM_WEIGHT := 2.0
-const SHOP_ROOM_WEIGHT := 2.5
-const CAMPFIRE_ROOM_WEIGHT := 4.0
+const SHOP_ROOM_WEIGHT := 5.0
+const CAMPFIRE_ROOM_WEIGHT := 6.0
 
 @export var battle_stats_pool: BattleStatsPool
 @export var event_room_pool: EventRoomPool

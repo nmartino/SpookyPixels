@@ -2,12 +2,12 @@ class_name Battle
 extends Node2D
 
 var backgrounds := [
-	preload("res://art/1bit/orcoArt/Sprite Fondos testeo1.png"),
-	preload("res://art/1bit/orcoArt/Sprite Fondos testeo2.png"),
-	preload("res://art/1bit/orcoArt/Sprite Fondos testeo3.png"),
-	preload("res://art/1bit/orcoArt/Sprite Fondos testeo4.png"),
-	preload("res://art/1bit/orcoArt/Sprite Fondos testeo5.png"),
-	preload("res://art/1bit/orcoArt/Sprite Fondos testeo6.png")
+	"background1",
+	"background2",
+	"background3",
+	"background4",
+	"background5",
+	"background6"
 ]
 
 @export var battle_stats: BattleStats
@@ -16,17 +16,47 @@ var backgrounds := [
 @export var battle_won: AudioStream
 @export var relics: RelicHandler
 
-@onready var background: Sprite2D = %Background
+
+@onready var background: AnimatedSprite2D = %Background
 @onready var battle_ui: BattleUI = $BattleUI 
 @onready var player_handeler: PlayerHandeler = $PlayerHandeler 
 @onready var enemy_handeler: EnemyHandeler = $EnemyHandeler 
-@onready var player: Player = $Player 
+@onready var player: Player = $Player
+@onready var torch_left: AnimatedSprite2D = $torchLeft
+@onready var torch_middle: AnimatedSprite2D = $torchMiddle
+@onready var torch_right: AnimatedSprite2D = $torchRight
+
 
 
 
 func _ready() -> void:
 
-	background.texture = RNG.array_pick_random(backgrounds)
+	background.animation = RNG.array_pick_random(backgrounds)
+	match background.animation:
+		"background1":
+			torch_left.global_position.x = 64
+			torch_middle.global_position.x = 184
+			torch_right.hide()
+		"background2":
+			torch_left.global_position.x = 64
+			torch_middle.global_position.x = 184
+			torch_right.hide()
+		"background3":
+			torch_left.global_position.x = 14
+			torch_middle.global_position.x = 184
+			torch_right.hide()
+		"background4":
+			torch_left.global_position.x = 14
+			torch_middle.global_position.x = 184
+			torch_right.hide()
+		"background5":
+			torch_left.global_position.x = 47
+			torch_middle.global_position.x = 129
+			torch_right.global_position.x = 211
+		"background6":
+			torch_left.global_position.x = 47
+			torch_middle.global_position.x = 129
+			torch_right.global_position.x = 211
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	enemy_handeler.child_order_changed.connect(_on_enemies_child_order_changed)	
 	Events.player_turn_ended.connect(player_handeler.end_turn)

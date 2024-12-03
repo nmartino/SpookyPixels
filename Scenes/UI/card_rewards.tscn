@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpnlripwd44bo"]
+[gd_scene load_steps=13 format=3 uid="uid://bpnlripwd44bo"]
 
+[ext_resource type="Texture2D" uid="uid://cwq3ah0g822hv" path="res://art/1bit/background/bg-rewards.png" id="1_0o6lu"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_j787s"]
 [ext_resource type="Script" path="res://Scenes/UI/card_rewards.gd" id="1_keahq"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="2_4nuhm"]
@@ -9,6 +10,16 @@
 [ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_ryg4x"]
 [ext_resource type="Resource" uid="uid://4brkbifpqwrp" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="6_1i1t0"]
 [ext_resource type="Resource" uid="uid://db62ldp41o22" path="res://characters/warrior/cards/warrior_block.tres" id="7_vsy1b"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="9_lpxbb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pbba"]
+font = ExtResource("9_lpxbb")
+font_color = Color(0.333333, 1, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 1)
 
 [node name="CardRewards" type="ColorRect"]
 anchors_preset = 15
@@ -16,9 +27,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.333333, 1, 0.458824)
+color = Color(0, 0, 0, 0.752941)
 script = ExtResource("1_keahq")
 rewards = Array[ExtResource("2_5x5ra")]([ExtResource("6_1i1t0"), ExtResource("4_x8i7v"), ExtResource("7_vsy1b"), ExtResource("3_veqo2"), ExtResource("5_ryg4x")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0o6lu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -33,7 +53,14 @@ offset_right = 41.5
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Choose a card
+"
+label_settings = SubResource("LabelSettings_7pbba")
+horizontal_alignment = 1
 
 [node name="Cards" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -54,7 +81,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 14)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Skipt"
+text = "Skip"
 
 [node name="CardToolTipPopUp" parent="." instance=ExtResource("2_4nuhm")]
 visible = false

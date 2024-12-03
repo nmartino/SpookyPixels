@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbqxrujgnl8x6"]
 
-[ext_resource type="Texture2D" uid="uid://dn7c8d6mf1cs5" path="res://art/1bit/arrow_small.png" id="1_5uw5u"]
 [ext_resource type="Script" path="res://Scenes/relics_handler/relic_handler.gd" id="1_448oj"]
 [ext_resource type="PackedScene" uid="uid://b4w60288l0pwt" path="res://Scenes/relics_handler/relic_ui.tscn" id="1_sojnw"]
-[ext_resource type="Texture2D" uid="uid://cahk7atmkf3rw" path="res://art/1bit/arrow_small_pressed.png" id="2_jld8x"]
+[ext_resource type="Texture2D" uid="uid://x4ijcdqm3r4o" path="res://art/1bit/arrow-right.png" id="2_iygm0"]
 [ext_resource type="Script" path="res://Scenes/relics_handler/relics_control.gd" id="3_f3pcq"]
+[ext_resource type="Texture2D" uid="uid://eatio5jgv1er" path="res://art/1bit/arrow-right-disable.png" id="3_m8jp1"]
 [ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="5_8qn4g"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="6_iw5cu"]
 [ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="7_bg3sr"]
@@ -18,10 +18,10 @@ script = ExtResource("1_448oj")
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("1_5uw5u")
-texture_pressed = ExtResource("1_5uw5u")
-texture_hover = ExtResource("1_5uw5u")
-texture_disabled = ExtResource("2_jld8x")
+texture_normal = ExtResource("2_iygm0")
+texture_pressed = ExtResource("2_iygm0")
+texture_hover = ExtResource("2_iygm0")
+texture_disabled = ExtResource("3_m8jp1")
 stretch_mode = 5
 flip_h = true
 
@@ -77,8 +77,8 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("1_5uw5u")
-texture_pressed = ExtResource("1_5uw5u")
-texture_hover = ExtResource("1_5uw5u")
-texture_disabled = ExtResource("2_jld8x")
+texture_normal = ExtResource("2_iygm0")
+texture_pressed = ExtResource("2_iygm0")
+texture_hover = ExtResource("2_iygm0")
+texture_disabled = ExtResource("3_m8jp1")
 stretch_mode = 5
