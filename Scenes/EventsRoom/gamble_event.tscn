@@ -1,10 +1,66 @@
-[gd_scene load_steps=6 format=3 uid="uid://7dw8xyhwd53o"]
+[gd_scene load_steps=12 format=3 uid="uid://7dw8xyhwd53o"]
 
 [ext_resource type="Script" path="res://Scenes/EventsRoom/gamble_event.gd" id="1_das3k"]
 [ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_l1hpl"]
+[ext_resource type="Texture2D" uid="uid://bfb7ydgrgei22" path="res://art/1bit/orcoArt/Sprite Fondos testeo1.png" id="2_frf8f"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_sjgc0"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="3_a1g57"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="3_cieio"]
+[ext_resource type="Texture2D" uid="uid://talqes4x000t" path="res://art/1bit/orcoArt/Sprite Fondos testeo2.png" id="3_wbjqb"]
+[ext_resource type="Texture2D" uid="uid://bf1cx3ocwat64" path="res://art/1bit/orcoArt/Sprite Fondos testeo3.png" id="4_7047g"]
+[ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="5_1af6j"]
+[ext_resource type="Texture2D" uid="uid://ya4u5dsov6xe" path="res://art/1bit/orcoArt/Sprite Fondos testeo5.png" id="6_pqn5i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vejb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frf8f")
+}],
+"loop": true,
+"name": &"background1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wbjqb")
+}],
+"loop": true,
+"name": &"background2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7047g")
+}],
+"loop": true,
+"name": &"background3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1af6j")
+}],
+"loop": true,
+"name": &"background4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pqn5i")
+}],
+"loop": true,
+"name": &"background5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sjgc0")
+}],
+"loop": true,
+"name": &"background6",
+"speed": 5.0
+}]
 
 [node name="GambleEvent" type="Control"]
 layout_mode = 3
@@ -15,17 +71,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_das3k")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_sjgc0")
+sprite_frames = SubResource("SpriteFrames_3vejb")
+animation = &"background1"
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="torch" parent="." instance=ExtResource("3_a1g57")]
-position = Vector2(45, 58)
+[node name="torchLeft" parent="." instance=ExtResource("3_a1g57")]
+position = Vector2(47, 44)
 
-[node name="torch2" parent="." instance=ExtResource("3_a1g57")]
-position = Vector2(212, 58)
+[node name="torchMiddle" parent="." instance=ExtResource("3_a1g57")]
+position = Vector2(129, 44)
+
+[node name="torchRight" parent="." instance=ExtResource("3_a1g57")]
+position = Vector2(211, 44)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

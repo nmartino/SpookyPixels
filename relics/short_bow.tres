@@ -1,20 +1,20 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://c6m6xaiqd0isn"]
 
-[ext_resource type="Texture2D" uid="uid://kxxnaehkgeeq" path="res://art/1bit/orcoArt/short_bow.png" id="1_syffd"]
+[ext_resource type="Texture2D" uid="uid://c637p4bdyegyn" path="res://art/1bit/Relics Sources/Relics Sources/bow1.png" id="1_r65xi"]
 [ext_resource type="Script" path="res://relics/short_bow.gd" id="2_p5405"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="2_pt8d6"]
 [ext_resource type="AudioStream" uid="uid://bl8plqfmjp3di" path="res://art/sounds/Retro Weapon Gun LoFi 03.wav" id="3_82ra2"]
 
 [resource]
 script = ExtResource("2_p5405")
-skills_required = 3
-damage = 5
+skills_required = 2
+damage = 4
 sound = ExtResource("3_82ra2")
 relic_name = "Short Bow"
 id = "short_bow"
 type = 4
 character_type = 0
 starter_relic = true
-icon = ExtResource("1_syffd")
+icon = ExtResource("1_r65xi")
 sound_fx = ExtResource("2_pt8d6")
-tooltip = "[center]Whenever you play 3 evade cards during your turn,  deal[color='ff55ff'] 5 damage [/color] to all enemies.[/center]"
+tooltip = "[center][color='55ffff']Short Bow[/color]: Whenever you play [color='55ffff']2 evade[/color] cards during your turn,  deal[color='ff55ff'] 4 damage [/color] to all enemies.[/center]"

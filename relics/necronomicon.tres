@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://bupu28ochu3f4"]
 
-[ext_resource type="Texture2D" uid="uid://dlwheyu4jr116" path="res://art/1bit/toxic_buff_icon.png" id="1_4g7sr"]
+[ext_resource type="Texture2D" uid="uid://c47twgkv3nqr4" path="res://art/1bit/Relics Sources/Relics Sources/toxic_buff_icon.png" id="1_aboef"]
 [ext_resource type="Script" path="res://relics/necronomicon.gd" id="2_l2wov"]
 [ext_resource type="AudioStream" uid="uid://dgfp7m2x53t1n" path="res://art/sounds/Retro Instrument - choir bass - C12.wav" id="3_jt0l3"]
 
@@ -11,6 +11,6 @@ id = "necronomicon"
 type = 1
 character_type = 0
 starter_relic = false
-icon = ExtResource("1_4g7sr")
+icon = ExtResource("1_aboef")
 sound_fx = ExtResource("3_jt0l3")
-tooltip = "[center]Gain [color='55ffff']1 extra Mana[/color] at the start of each turn. but you [color='55ffff'] no longer see enemy intents[/color].[/center]"
+tooltip = "[center][color='55ffff']Necronomicon[/color]: Gain [color='55ffff']1 extra Mana[/color] at the start of each turn. but you [color='55ffff'] no longer see enemy intents[/color].[/center]"

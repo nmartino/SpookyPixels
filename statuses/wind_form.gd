@@ -13,5 +13,5 @@ func apply_status(owner: Node) -> void:
 
 func _add_mana(owner: Player) ->void:
 	var player:= owner
-	if player:
+	if not player.stats.mana == player.stats.max_mana+2:
 		player.stats.mana += 2

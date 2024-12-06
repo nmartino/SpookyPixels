@@ -1,7 +1,7 @@
 extends Relic
 
-@export var skills_required := 3
-@export var damage := 5
+@export var skills_required := 2
+@export var damage := 4
 var damageType := DamageEffect.Type.ARROW
 @export var sound: AudioStream
 
@@ -39,6 +39,6 @@ func _on_card_played(card: Card) -> void:
 		damage_effect.execute(enemies, damageType)
 		
 		relic_ui.flash()
-		skills_this_turn = 0
+		_reset()
 	
 	

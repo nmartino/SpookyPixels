@@ -1,11 +1,67 @@
-[gd_scene load_steps=9 format=3 uid="uid://bon4mgkl3m0f1"]
+[gd_scene load_steps=15 format=3 uid="uid://bon4mgkl3m0f1"]
 
 [ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_b31ms"]
 [ext_resource type="Script" path="res://Scenes/EventsRoom/the_eternal_feast.gd" id="1_cxwdx"]
 [ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="2_ccujr"]
+[ext_resource type="Texture2D" uid="uid://bfb7ydgrgei22" path="res://art/1bit/orcoArt/Sprite Fondos testeo1.png" id="2_kuq67"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_lpsfq"]
+[ext_resource type="Texture2D" uid="uid://talqes4x000t" path="res://art/1bit/orcoArt/Sprite Fondos testeo2.png" id="3_nxxnn"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="3_ra3gj"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="3_xtdj4"]
+[ext_resource type="Texture2D" uid="uid://bf1cx3ocwat64" path="res://art/1bit/orcoArt/Sprite Fondos testeo3.png" id="4_wyrdo"]
+[ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="5_wa1rt"]
+[ext_resource type="Texture2D" uid="uid://ya4u5dsov6xe" path="res://art/1bit/orcoArt/Sprite Fondos testeo5.png" id="6_rv0te"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sid72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kuq67")
+}],
+"loop": true,
+"name": &"background1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nxxnn")
+}],
+"loop": true,
+"name": &"background2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wyrdo")
+}],
+"loop": true,
+"name": &"background3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wa1rt")
+}],
+"loop": true,
+"name": &"background4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rv0te")
+}],
+"loop": true,
+"name": &"background5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lpsfq")
+}],
+"loop": true,
+"name": &"background6",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aw05h"]
 font = ExtResource("3_xtdj4")
@@ -36,17 +92,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cxwdx")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_lpsfq")
+sprite_frames = SubResource("SpriteFrames_sid72")
+animation = &"background6"
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="torch" parent="." instance=ExtResource("3_ra3gj")]
-position = Vector2(210, 58)
+[node name="torchLeft" parent="." instance=ExtResource("3_ra3gj")]
+position = Vector2(47, 44)
 
-[node name="torch2" parent="." instance=ExtResource("3_ra3gj")]
-position = Vector2(47, 57)
+[node name="torchMiddle" parent="." instance=ExtResource("3_ra3gj")]
+position = Vector2(129, 44)
+
+[node name="torchRight" parent="." instance=ExtResource("3_ra3gj")]
+position = Vector2(211, 44)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

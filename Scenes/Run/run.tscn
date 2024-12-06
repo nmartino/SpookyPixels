@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
 [ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="8_cd2bd"]
-[ext_resource type="Texture2D" uid="uid://dyifbvh7gnvx8" path="res://art/1bit/deck-icon01.png" id="9_sumrd"]
+[ext_resource type="Texture2D" uid="uid://cxqqa66631vx" path="res://art/1bit/deck-icon02.png" id="9_3xvi7"]
 [ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
 [ext_resource type="Script" path="res://Scenes/Run/pause_menu.gd" id="13_c70su"]
 [ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="13_hyx0u"]
@@ -92,14 +92,14 @@ text = "TreasureButton
 "
 
 [node name="TopBar" type="CanvasLayer" parent="."]
-layer = 3
+layer = 5
 
 [node name="Background" type="ColorRect" parent="TopBar"]
 custom_minimum_size = Vector2(0, 20)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
-color = Color(1, 0.333333, 1, 0.501961)
+color = Color(1, 0.333333, 1, 0.592157)
 
 [node name="MarginsTopBar" type="MarginContainer" parent="TopBar"]
 anchors_preset = 10
@@ -140,9 +140,9 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture_normal = ExtResource("9_sumrd")
-texture_pressed = ExtResource("9_sumrd")
-texture_hover = ExtResource("9_sumrd")
+texture_normal = ExtResource("9_3xvi7")
+texture_pressed = ExtResource("9_3xvi7")
+texture_hover = ExtResource("9_3xvi7")
 counter = NodePath("Label")
 
 [node name="Label" type="Label" parent="TopBar/MarginsTopBar/BarItems/DeckButton"]
@@ -166,7 +166,7 @@ visible = false
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 process_mode = 3
-layer = 5
+layer = 97
 visible = false
 script = ExtResource("13_c70su")
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://blqao8wibecx2"]
+[gd_scene load_steps=9 format=3 uid="uid://blqao8wibecx2"]
 
 [ext_resource type="Script" path="res://Scenes/battle_reward/battle_reward.gd" id="1_bkddk"]
+[ext_resource type="Texture2D" uid="uid://bux5cyl52642c" path="res://art/1bit/Relics Sources/bg-rewards-1.png" id="2_kt53k"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="2_woval"]
 [ext_resource type="PackedScene" uid="uid://bwm806agkeipd" path="res://Scenes/UI/reward_button.tscn" id="3_2xt0f"]
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="4_1t0mw"]
@@ -16,7 +17,7 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpqe1"]
-bg_color = Color(0, 0, 0, 0.501961)
+bg_color = Color(0.317647, 0.317647, 0.317647, 0)
 
 [node name="BattleReward" type="Control"]
 layout_mode = 3
@@ -28,7 +29,17 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_bkddk")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kt53k")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

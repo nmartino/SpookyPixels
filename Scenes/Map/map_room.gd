@@ -14,11 +14,13 @@ const ICONS := {
 	Room.Type.EVENT: [preload("res://art/1bit/pruebas mapa/event2.png"),Vector2.ONE]
 }
 
+@export var sound: AudioStream
+
 @onready var line_2d: Line2D = $Visuals/Line2D
 @onready var sprite_2d: Sprite2D = $Visuals/Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var entrance: Sprite2D = %Entrance
 @onready var finished: Sprite2D = %Finished
+@onready var entrance: AnimatedSprite2D = %Entrance
 
 var available := false : set = set_available
 var room: Room : set = set_room
@@ -34,7 +36,6 @@ func set_available(new_value: bool) -> void:
 func set_room(new_data: Room) -> void:
 	room = new_data
 	position = room.position
-	#line_2d.rotation_degrees = randi_range(0,360)
 	sprite_2d.texture = ICONS[room.type][0]
 	sprite_2d.scale = ICONS[room.type][1]
 	if room.position.y == 0:
@@ -51,6 +52,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	
 	room.selected = true
 	clicked.emit(room)
+	if entrance.is_visible_in_tree():
+		entrance.play("open")
+		SFXPlayer.play(sound)
+		await entrance.animation_finished
 	animation_player.play("selected")
 	
 #llama cuando la animacion selected termina

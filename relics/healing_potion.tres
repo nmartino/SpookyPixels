@@ -14,4 +14,4 @@ character_type = 0
 starter_relic = false
 icon = ExtResource("1_xgfs0")
 sound_fx = ExtResource("3_nnwkf")
-tooltip = "[color='ff55ff']HP Potion:[/color] At the end of the combat, heal [color='ff55ff']6 HP[/color]."
+tooltip = "[color='ff55ff']HP Potion[/color]: At the end of the combat, heal [color='ff55ff']6 HP[/color]."

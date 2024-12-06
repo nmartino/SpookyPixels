@@ -1,0 +1,225 @@
+[gd_scene load_steps=31 format=3 uid="uid://6onqv2vn673u"]
+
+[ext_resource type="Script" path="res://Scenes/splash/splash_screen.gd" id="1_b277h"]
+[ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="2_37sf6"]
+[ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_ms12r"]
+[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="3_3qp6d"]
+[ext_resource type="Texture2D" uid="uid://bb2763pkv43su" path="res://art/splash/godot-Logo.png" id="3_wcs12"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_c4ymf"]
+[ext_resource type="Texture2D" uid="uid://c2hc42bhuexvr" path="res://art/splash/animate01.png" id="5_rtbld"]
+[ext_resource type="Texture2D" uid="uid://dvmesjlcx3h60" path="res://art/splash/animate02.png" id="8_y3oif"]
+[ext_resource type="Texture2D" uid="uid://bavhf5e661xdl" path="res://art/splash/animate03.png" id="9_ropms"]
+[ext_resource type="Texture2D" uid="uid://cyp8vf2u5lrd6" path="res://art/splash/animate04.png" id="10_10rpm"]
+[ext_resource type="Texture2D" uid="uid://c0pesb3n80vry" path="res://art/splash/animate05.png" id="11_246ki"]
+[ext_resource type="Texture2D" uid="uid://bgjiseimaqgg" path="res://art/splash/animate06.png" id="12_yuxsg"]
+[ext_resource type="Texture2D" uid="uid://3x6vacdnxngi" path="res://art/splash/animate07.png" id="13_6co4s"]
+[ext_resource type="Texture2D" uid="uid://bqr1q7cfb5m38" path="res://art/splash/animate08.png" id="14_325if"]
+[ext_resource type="Texture2D" uid="uid://b1p4lm6y0ddh5" path="res://art/splash/animate09.png" id="15_t7wcl"]
+[ext_resource type="Texture2D" uid="uid://curn2pvsjsnp8" path="res://art/splash/animate10.png" id="16_lm27h"]
+[ext_resource type="Texture2D" uid="uid://djak4jbam85na" path="res://art/splash/animate11.png" id="17_p6h3v"]
+[ext_resource type="Texture2D" uid="uid://bjs516effvy7c" path="res://art/splash/animate12.png" id="18_pgj3l"]
+[ext_resource type="Texture2D" uid="uid://p41hjhor74b4" path="res://art/splash/animate13.png" id="19_wxl8e"]
+[ext_resource type="Texture2D" uid="uid://dwrl4c3gc6ltq" path="res://art/splash/animate14.png" id="20_ea4c6"]
+[ext_resource type="Texture2D" uid="uid://d1txt0f2smklu" path="res://art/splash/animate15.png" id="21_hyyvc"]
+[ext_resource type="Texture2D" uid="uid://ded7m2i66cp14" path="res://art/splash/animate16.png" id="22_8o2f3"]
+[ext_resource type="Texture2D" uid="uid://76ubt4vaa5uj" path="res://art/splash/animate17.png" id="23_1wm4b"]
+[ext_resource type="Texture2D" uid="uid://cu6edx6eh107n" path="res://art/splash/animate18.png" id="24_0muhd"]
+[ext_resource type="Texture2D" uid="uid://q0y1llgfim46" path="res://art/splash/animate19.png" id="25_5jy5o"]
+[ext_resource type="Texture2D" uid="uid://dv7ylhqy7btos" path="res://art/splash/animate20.png" id="26_f8ife"]
+
+[sub_resource type="Animation" id="Animation_0wcks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MadeWith:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GodotLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GhostPixel:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_rtbld")]
+}
+
+[sub_resource type="Animation" id="Animation_4ch2d"]
+resource_name = "logoPixel"
+length = 5.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GhostPixel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_rtbld"), ExtResource("8_y3oif"), ExtResource("9_ropms"), ExtResource("10_10rpm"), ExtResource("11_246ki"), ExtResource("12_yuxsg"), ExtResource("13_6co4s"), ExtResource("14_325if"), ExtResource("15_t7wcl"), ExtResource("16_lm27h"), ExtResource("17_p6h3v"), ExtResource("18_pgj3l"), ExtResource("19_wxl8e"), ExtResource("20_ea4c6"), ExtResource("21_hyyvc"), ExtResource("22_8o2f3"), ExtResource("23_1wm4b"), ExtResource("24_0muhd"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("26_f8ife"), ExtResource("25_5jy5o"), ExtResource("24_0muhd"), ExtResource("23_1wm4b"), ExtResource("22_8o2f3"), ExtResource("18_pgj3l"), ExtResource("17_p6h3v"), ExtResource("16_lm27h"), ExtResource("15_t7wcl"), ExtResource("14_325if"), ExtResource("13_6co4s"), ExtResource("12_yuxsg"), ExtResource("11_246ki"), ExtResource("10_10rpm"), ExtResource("8_y3oif"), ExtResource("5_rtbld")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_play_appear"
+}, {
+"args": [],
+"method": &"_play_swoosh"
+}, {
+"args": [],
+"method": &"_play_swoosh"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gsg80"]
+resource_name = "logos"
+length = 4.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Godot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MadeWith:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GodotLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32gla"]
+_data = {
+"RESET": SubResource("Animation_0wcks"),
+"logoPixel": SubResource("Animation_4ch2d"),
+"logos": SubResource("Animation_gsg80")
+}
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b277h")
+music = ExtResource("2_ms12r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_37sf6")
+
+[node name="torch" parent="." instance=ExtResource("3_3qp6d")]
+position = Vector2(15, 53)
+
+[node name="torch2" parent="." instance=ExtResource("3_3qp6d")]
+position = Vector2(184, 55)
+
+[node name="GhostPixel" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(131, 66)
+texture = ExtResource("5_rtbld")
+
+[node name="Godot" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(127, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wcs12")
+
+[node name="MadeWith" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 67.0
+offset_right = 166.0
+offset_bottom = 82.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_c4ymf")
+theme_override_font_sizes/font_size = 16
+text = "Made With"
+
+[node name="GodotLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 83.0
+offset_right = 176.0
+offset_bottom = 113.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_c4ymf")
+theme_override_font_sizes/font_size = 32
+text = "GODOT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_32gla")
+}
+autoplay = "logos"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

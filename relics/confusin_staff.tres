@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://3m1te8fvfg00"]
 
-[ext_resource type="Texture2D" uid="uid://dyv7l76444dm1" path="res://art/1bit/staff1.png" id="1_xvqie"]
+[ext_resource type="Texture2D" uid="uid://djn14kn16qo0e" path="res://art/1bit/Relics Sources/Relics Sources/staff1.png" id="1_0w0sq"]
 [ext_resource type="Script" path="res://relics/confusing_staff.gd" id="2_tpv41"]
 [ext_resource type="AudioStream" uid="uid://bggtts1xw3bve" path="res://art/sounds/Retro Magic Protection 25.wav" id="3_72qvu"]
 
@@ -11,6 +11,6 @@ id = "consusing_staff"
 type = 4
 character_type = 0
 starter_relic = true
-icon = ExtResource("1_xvqie")
+icon = ExtResource("1_0w0sq")
 sound_fx = ExtResource("3_72qvu")
-tooltip = "[center]At the start of your turn, [color='55ffff']randomize[/color] the cost of your [color='55ffff']\"attack and buffs\" cards[/color] between [color='55ffff']0 and 3[/color].[/center]"
+tooltip = "[center][color='55ffff']Confusing Staff[/color]: At the start of your turn, [color='55ffff']randomize[/color] the cost of your [color='55ffff']attack and buffs[/color] cards between [color='55ffff']0 and 3[/color].[/center]"

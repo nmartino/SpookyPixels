@@ -11,11 +11,10 @@ config_version=5
 [application]
 
 config/name="Spooky Pixels"
-run/main_scene="res://Scenes/UI/main_menu.tscn"
+run/main_scene="res://Scenes/splash/splash_screen.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-boot_splash/image="res://art/splash/godot splash2.png"
+boot_splash/show_image=false
 config/icon="res://Icon3.png"
-boot_splash/minimum_display_time=3000
 
 [autoload]
 

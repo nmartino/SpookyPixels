@@ -25,6 +25,7 @@ var backgrounds := [
 @onready var torch_left: AnimatedSprite2D = $torchLeft
 @onready var torch_middle: AnimatedSprite2D = $torchMiddle
 @onready var torch_right: AnimatedSprite2D = $torchRight
+@onready var tool_tip: ToolTip = $BattleUI/ToolTipLayer/ToolTip
 
 
 
@@ -98,5 +99,6 @@ func _on_relics_activated(type: Relic.Type) -> void:
 			player_handeler.start_battle(char_stats)
 			battle_ui.initialize_card_pile_ui()
 		Relic.Type.END_OF_COMBAT:
+			Events.tooltip_hide_requested.emit()
 			Events.battle_over_screen_requested.emit("Perfection!!", BattleOverPanel.Type.WIN)
 	

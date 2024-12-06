@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_yqcao"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_2qdrl"]
-[ext_resource type="Texture2D" uid="uid://d3sit4wcpy21m" path="res://art/1bit/dobleaxe1.png" id="3_b6fwd"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="3_emkbn"]
 [ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="4_l1w3e"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="4_l4q53"]
-[ext_resource type="Texture2D" uid="uid://dyv7l76444dm1" path="res://art/1bit/staff1.png" id="4_m7amx"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="4_x7k5i"]
-[ext_resource type="Texture2D" uid="uid://ccieqrjev1gxt" path="res://art/1bit/bow1.png" id="5_k1gvy"]
 [ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="6_n2uh2"]
+[ext_resource type="Texture2D" uid="uid://bw8hs17ewgsml" path="res://art/1bit/Relics Sources/Relics Sources/dobleaxe1.png" id="8_pyjfa"]
+[ext_resource type="Texture2D" uid="uid://djn14kn16qo0e" path="res://art/1bit/Relics Sources/Relics Sources/staff1.png" id="9_2mas7"]
+[ext_resource type="Texture2D" uid="uid://c637p4bdyegyn" path="res://art/1bit/Relics Sources/Relics Sources/bow1.png" id="10_h3dxt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6vw0q"]
 font = ExtResource("4_l4q53")
@@ -234,7 +234,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_b6fwd")
+texture = ExtResource("8_pyjfa")
 expand_mode = 1
 stretch_mode = 5
 
@@ -257,7 +257,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_m7amx")
+texture = ExtResource("9_2mas7")
 expand_mode = 1
 stretch_mode = 5
 
@@ -281,7 +281,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_k1gvy")
+texture = ExtResource("10_h3dxt")
 expand_mode = 1
 stretch_mode = 5
 

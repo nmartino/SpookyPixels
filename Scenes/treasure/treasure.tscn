@@ -1,26 +1,26 @@
-[gd_scene load_steps=23 format=3 uid="uid://b700f06xtqt3l"]
+[gd_scene load_steps=24 format=3 uid="uid://b700f06xtqt3l"]
 
 [ext_resource type="Script" path="res://Scenes/treasure/treasure.gd" id="1_pxeoq"]
 [ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_8tegm"]
 [ext_resource type="AudioStream" uid="uid://dqhy4ko0r1q1" path="res://art/(Loop) Dungeon.wav" id="2_dbys1"]
 [ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="3_mq4tk"]
-[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_t468t"]
-[ext_resource type="Texture2D" uid="uid://djq2u78eun71e" path="res://art/1bit/treasure_icon_map_closed.png" id="4_eggjt"]
 [ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="4_ovqvi"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="5_4pmp6"]
-[ext_resource type="Texture2D" uid="uid://prijuawhy44n" path="res://art/1bit/treasure_icon_map.png" id="5_e0t15"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="5_q5cxl"]
 [ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="6_kb3ey"]
 [ext_resource type="Resource" uid="uid://bupu28ochu3f4" path="res://relics/necronomicon.tres" id="7_atwrd"]
+[ext_resource type="Texture2D" uid="uid://bux5cyl52642c" path="res://art/1bit/Relics Sources/bg-rewards-1.png" id="9_28usl"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="10_pdnmm"]
+[ext_resource type="Texture2D" uid="uid://b13r4xqisln7m" path="res://art/1bit/Relics Sources/bg-rewards-treasure-open-01.png" id="11_na2m4"]
+[ext_resource type="Texture2D" uid="uid://bctyrdqb8ua2e" path="res://art/1bit/Relics Sources/bg-rewards-treasure-open-03.png" id="12_bv0u5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jvem4"]
-font_size = 12
+font = ExtResource("10_pdnmm")
 font_color = Color(0.333333, 1, 1, 1)
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(3, 1)
+outline_size = 4
+outline_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+shadow_size = 4
+shadow_color = Color(0.29219, 0.29219, 0.29219, 1)
 
 [sub_resource type="Animation" id="Animation_nwvdk"]
 length = 0.001
@@ -46,7 +46,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_eggjt")]
+"values": [ExtResource("11_na2m4")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -93,7 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("4_eggjt"), ExtResource("5_e0t15")]
+"values": [ExtResource("11_na2m4"), ExtResource("12_bv0u5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -166,7 +166,7 @@ music = ExtResource("2_dbys1")
 
 [node name="Background" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("3_t468t")
+texture = ExtResource("9_28usl")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -190,20 +190,20 @@ horizontal_alignment = 1
 
 [node name="TreasureChest" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.564
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.564
 offset_left = -20.0
-offset_top = -5.0
+offset_top = -14.216
 offset_right = 20.0
-offset_bottom = 35.0
+offset_bottom = 25.784
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)
 mouse_filter = 0
-texture = ExtResource("4_eggjt")
+texture = ExtResource("11_na2m4")
 stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TreasureChest"]
@@ -214,7 +214,7 @@ libraries = {
 autoplay = "highlight"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="TreasureChest"]
-position = Vector2(20, 19)
+position = Vector2(35, 39)
 emitting = false
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_eo2ah")

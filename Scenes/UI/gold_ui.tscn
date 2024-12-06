@@ -14,7 +14,6 @@ script = ExtResource("1_c8sip")
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
 texture = ExtResource("1_ovtk5")
-expand_mode = 1
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]

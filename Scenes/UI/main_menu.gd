@@ -3,7 +3,6 @@ extends Control
 const CHAR_SELECTOR_SCENE := preload("res://Scenes/UI/character_selector.tscn")
 const RUN_SCENE = preload("res://Scenes/Run/run.tscn")
 
-@export var music: AudioStream
 @export var run_startup: RunStartup
 
 @onready var transition: AnimationPlayer = $transition
@@ -12,7 +11,7 @@ const RUN_SCENE = preload("res://Scenes/Run/run.tscn")
 
 func _ready() -> void:
 	get_tree().paused = false
-	MusicPlayer.play(music, true)
+	
 	continue_button.disabled = SaveGame.load_data() == null
 
 func _on_continue_pressed() -> void:

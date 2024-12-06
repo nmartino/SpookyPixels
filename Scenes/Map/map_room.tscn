@@ -1,10 +1,39 @@
-[gd_scene load_steps=11 format=3 uid="uid://t3ic5ankyihq"]
+[gd_scene load_steps=16 format=3 uid="uid://t3ic5ankyihq"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map_room.gd" id="1_68xlo"]
+[ext_resource type="AudioStream" uid="uid://ctlogjpti8efc" path="res://art/sounds/dungeon door opens.mp3" id="2_bokjj"]
 [ext_resource type="Texture2D" uid="uid://coqy8mfv72ply" path="res://art/1bit/pruebas mapa/Piezas mapa (2).png" id="2_eslyf"]
 [ext_resource type="Texture2D" uid="uid://bgitfv5ohpy2l" path="res://art/1bit/pruebas mapa/background_2_prueba.png" id="2_h844r"]
+[ext_resource type="Texture2D" uid="uid://txoxiy4yygyv" path="res://art/1bit/pruebas mapa/puerta animacion/door-003.png" id="3_7m4r4"]
+[ext_resource type="Texture2D" uid="uid://dlk5b4mpvawsk" path="res://art/1bit/pruebas mapa/puerta animacion/door-002.png" id="4_808yb"]
 [ext_resource type="Texture2D" uid="uid://cvjgmgvo2d8kb" path="res://art/1bit/pruebas mapa/doble_espada_mapa.png" id="4_tkybg"]
+[ext_resource type="Texture2D" uid="uid://lq0cmoefby52" path="res://art/1bit/pruebas mapa/puerta animacion/door-001.png" id="5_5sme6"]
 [ext_resource type="Texture2D" uid="uid://bxn3uqk2u0jad" path="res://art/1bit/pruebas mapa/finished_map.png" id="5_5trap"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_clw2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eslyf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7m4r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_808yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5sme6")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehmdb"]
 radius = 15.0
@@ -105,14 +134,15 @@ _data = {
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_68xlo")
+sound = ExtResource("2_bokjj")
 
 [node name="Visuals" type="Node2D" parent="."]
 
-[node name="Entrance" type="Sprite2D" parent="Visuals"]
+[node name="Entrance" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 visible = false
 position = Vector2(0, 29)
-texture = ExtResource("2_eslyf")
+sprite_frames = SubResource("SpriteFrames_clw2c")
 
 [node name="background" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("2_h844r")

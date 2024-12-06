@@ -41,7 +41,6 @@ label_settings = SubResource("LabelSettings_cnk3o")
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 texture = ExtResource("2_twn1e")
-expand_mode = 1
 stretch_mode = 5
 
 [node name="BuyButton" type="Button" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/health_ui.gd" id="1_fcecc"]
 
 [node name="HealthUI" type="HBoxContainer"]
-theme_override_constants/separation = 0
+theme_override_constants/separation = 1
 script = ExtResource("1_fcecc")
 
 [node name="HealthImage" type="TextureRect" parent="."]

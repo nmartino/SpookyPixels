@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="17_3lvuc"]
 [ext_resource type="PackedScene" uid="uid://bjijnp3e7egu2" path="res://Scenes/UI/battle_over_panel.tscn" id="17_4r3ak"]
 [ext_resource type="Texture2D" uid="uid://bshnd2xf8nna4" path="res://art/1bit/deck-icon05.png" id="17_xesn7"]
-[ext_resource type="Texture2D" uid="uid://cxqqa66631vx" path="res://art/1bit/deck-icon02.png" id="18_6jqig"]
 [ext_resource type="Texture2D" uid="uid://djquuf0g2308j" path="res://art/1bit/deck-icon04.png" id="18_48cb5"]
 [ext_resource type="Texture2D" uid="uid://6q0wq21igdus" path="res://art/1bit/deck-icon02-hover.png" id="20_0rjlj"]
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="21_dekfb"]
@@ -36,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cu2pwwfthlhay" path="res://art/1bit/reloj/5.png" id="22_jodwu"]
 [ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
 [ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
+[ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
 animations = [{
@@ -197,11 +197,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -90.0
-offset_top = -35.0
+offset_top = -37.0
 offset_right = 60.0
-offset_bottom = -5.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 7
 alignment = 1
 script = ExtResource("2_x8kit")
 player = NodePath("../../Player")
@@ -236,8 +237,8 @@ offset_top = -23.0
 offset_right = 24.0
 offset_bottom = -7.0
 grow_vertical = 0
-texture_normal = ExtResource("18_6jqig")
-texture_pressed = ExtResource("18_6jqig")
+texture_normal = ExtResource("25_dk700")
+texture_pressed = ExtResource("25_dk700")
 texture_hover = ExtResource("20_0rjlj")
 counter = NodePath("Counter")
 
@@ -281,9 +282,12 @@ text = "99"
 horizontal_alignment = 2
 
 [node name="ToolTipLayer" type="CanvasLayer" parent="BattleUI"]
-layer = 4
+process_mode = 3
+layer = 6
 
 [node name="ToolTip" parent="BattleUI/ToolTipLayer" instance=ExtResource("12_rw2qe")]
+unique_name_in_owner = true
+process_mode = 0
 offset_top = 3.0
 offset_bottom = 46.0
 metadata/_edit_use_anchors_ = true
@@ -312,13 +316,13 @@ wait_time = 0.1
 one_shot = true
 
 [node name="BattleOverLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 7
 
 [node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("17_4r3ak")]
 visible = false
 
 [node name="CardPileViews" type="CanvasLayer" parent="."]
-layer = 4
+layer = 95
 
 [node name="DrawPileView" parent="CardPileViews" instance=ExtResource("21_dekfb")]
 unique_name_in_owner = true
