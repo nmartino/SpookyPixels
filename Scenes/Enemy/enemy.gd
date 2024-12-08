@@ -97,6 +97,7 @@ func take_damage(damage:int, which_modifier: Modifier.Type, type: DamageEffect.T
 	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.17)
 	sprite_2d.texture = stats.hurt
+	
 	var attackFx = ATTACKFX.instantiate()
 	add_child(attackFx)
 	match type:
@@ -107,13 +108,16 @@ func take_damage(damage:int, which_modifier: Modifier.Type, type: DamageEffect.T
 		DamageEffect.Type.PHYSICAL:
 			attackFx.explosion.play("enemy_fx")
 		DamageEffect.Type.ARROW:
-			attackFx.explosion.play("enemy_fx")
+			attackFx.global_position.y = attackFx.global_position.y - 25
+			attackFx.explosion.play("arrow_strike")
 		DamageEffect.Type.LIGHTING:
+			attackFx.global_position.y = attackFx.global_position.y - 30
 			attackFx.explosion.play("lighting_strike")
 		DamageEffect.Type.NONE_FX:
 			attackFx.explosion.play("enemy_fx")
 	attackFx.explosion.animation_finished.connect(
 		func():
+			
 			attackFx.queue_free()
 	)
 	
