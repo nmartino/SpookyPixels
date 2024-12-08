@@ -1,13 +1,15 @@
-[gd_scene load_steps=50 format=3 uid="uid://c3kvhrba56b8c"]
+[gd_scene load_steps=52 format=3 uid="uid://c3kvhrba56b8c"]
 
 [ext_resource type="Script" path="res://Scenes/CardFxs/attack_fx.gd" id="1_6l4vf"]
-[ext_resource type="Texture2D" uid="uid://b4huiv1cclyxc" path="res://art/1bit/magic test/magic-ice_0000_Layer-4.png" id="2_dftuq"]
-[ext_resource type="Texture2D" uid="uid://mrvii8njve3" path="res://art/1bit/magic test/magic-ice_0001_Layer-3.png" id="3_8bwv8"]
+[ext_resource type="Texture2D" uid="uid://du24smld0skrv" path="res://art/1bit/ice/animation-battle-icespike-002.png" id="2_gwmrt"]
+[ext_resource type="Texture2D" uid="uid://c5me5yyvtuswy" path="res://art/1bit/ice/animation-battle-icespike-003.png" id="3_lki41"]
 [ext_resource type="Texture2D" uid="uid://7xxrvdrwofkm" path="res://art/1bit/fast_100x100px.png" id="3_nisfj"]
-[ext_resource type="Texture2D" uid="uid://b57hoh6qv6e8s" path="res://art/1bit/magic test/magic-ice_0002_Layer-6.png" id="4_4tdpn"]
-[ext_resource type="Texture2D" uid="uid://cmfhrx4p78o7b" path="res://art/1bit/magic test/magic-ice_0003_Layer-2.png" id="5_m2mqw"]
-[ext_resource type="Texture2D" uid="uid://drl841u6iseu0" path="res://art/1bit/magic test/magic-ice_0004_Layer-1.png" id="6_romli"]
+[ext_resource type="Texture2D" uid="uid://bmhcsxgpnv0b6" path="res://art/1bit/ice/animation-battle-icespike-004.png" id="4_fhvtr"]
+[ext_resource type="Texture2D" uid="uid://bwbpgac81pprm" path="res://art/1bit/ice/animation-battle-icespike-005.png" id="5_5lxlf"]
+[ext_resource type="Texture2D" uid="uid://dxiwboj1juw5v" path="res://art/1bit/ice/animation-battle-icespike-006.png" id="6_ejqaw"]
 [ext_resource type="Texture2D" uid="uid://bcalsacyc8xym" path="res://art/1bit/arrow/animation-battle-arrow-001.png" id="7_liiq3"]
+[ext_resource type="Texture2D" uid="uid://c7ayhs74gm7ek" path="res://art/1bit/ice/animation-battle-icespike-007.png" id="7_saqtp"]
+[ext_resource type="Texture2D" uid="uid://d0vj5acm55nk5" path="res://art/1bit/ice/animation-battle-icespike-008.png" id="8_s07g3"]
 [ext_resource type="Texture2D" uid="uid://6w2dxj0fsiwm" path="res://art/1bit/arrow/animation-battle-arrow-002.png" id="8_vlffd"]
 [ext_resource type="Texture2D" uid="uid://c6pdc0o7cqm1b" path="res://art/1bit/arrow/animation-battle-arrow-003.png" id="9_5l3tu"]
 [ext_resource type="Texture2D" uid="uid://do4cv7i4cq6ng" path="res://art/1bit/arrow/animation-battle-arrow-004.png" id="10_rmyp8"]
@@ -101,23 +103,29 @@ region = Rect2(700, 100, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dftuq")
+"texture": ExtResource("2_gwmrt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8bwv8")
+"texture": ExtResource("3_lki41")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_4tdpn")
+"texture": ExtResource("4_fhvtr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_m2mqw")
+"texture": ExtResource("5_5lxlf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_romli")
+"texture": ExtResource("6_ejqaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_saqtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s07g3")
 }],
 "loop": false,
 "name": &"Ice_attack",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -276,8 +284,8 @@ script = ExtResource("1_6l4vf")
 
 [node name="explosion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yx4m4")
-animation = &"explosion_fire"
-frame = 5
+animation = &"Ice_attack"
+frame = 6
 frame_progress = 1.0
 
 [connection signal="animation_finished" from="explosion" to="." method="_on_explosion_animation_finished"]
