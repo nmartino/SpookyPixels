@@ -89,7 +89,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skmmx"]
-size = Vector2(256, 100)
+size = Vector2(511, 205)
 
 [sub_resource type="Animation" id="Animation_nun6g"]
 length = 0.001
@@ -138,6 +138,7 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gu1tp")
 animation = &"background6"
 centered = false
@@ -156,9 +157,10 @@ position = Vector2(211, 44)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(128, 50)
+position = Vector2(255.5, 102.5)
 shape = SubResource("RectangleShape2D_skmmx")
 debug_color = Color(0, 0.6, 0.701961, 0.156863)
+metadata/_edit_lock_ = true
 
 [node name="EnemyHandeler" type="Node2D" parent="."]
 position = Vector2(-9, 9)
