@@ -12,13 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://djn14kn16qo0e" path="res://art/1bit/Relics Sources/Relics Sources/staff1.png" id="9_2mas7"]
 [ext_resource type="Texture2D" uid="uid://c637p4bdyegyn" path="res://art/1bit/Relics Sources/Relics Sources/bow1.png" id="10_h3dxt"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6vw0q"]
+[sub_resource type="LabelSettings" id="LabelSettings_8oyos"]
+line_spacing = 5.0
 font = ExtResource("4_l4q53")
 font_size = 32
-font_color = Color(0.333333, 1, 1, 1)
-outline_size = 2
+font_color = Color(0.105882, 0.992157, 1, 1)
+outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 3
+shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
 
@@ -28,7 +29,7 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(3, 1)
+shadow_offset = Vector2(4, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_betg8"]
 
@@ -130,10 +131,12 @@ texture = ExtResource("3_emkbn")
 expand_mode = 1
 
 [node name="torch" parent="." instance=ExtResource("4_x7k5i")]
-position = Vector2(15, 45)
+position = Vector2(28, 90)
+scale = Vector2(2, 2)
 
 [node name="torch2" parent="." instance=ExtResource("4_x7k5i")]
-position = Vector2(184, 45)
+position = Vector2(368, 90)
+scale = Vector2(2, 2)
 
 [node name="CharacterText" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -142,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -66.0
-offset_right = 103.0
-offset_bottom = -1.0
+offset_left = -144.0
+offset_top = -97.0
+offset_right = 144.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
@@ -154,8 +157,9 @@ alignment = 1
 [node name="Title" type="Label" parent="CharacterText"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Vanguard"
-label_settings = SubResource("LabelSettings_6vw0q")
+label_settings = SubResource("LabelSettings_8oyos")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -175,10 +179,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = -69.0
-offset_right = 69.0
-offset_bottom = -9.0
+offset_left = 72.0
+offset_top = -105.0
+offset_right = 132.0
+offset_bottom = -45.0
 grow_vertical = 0
 texture = ExtResource("3_2qdrl")
 expand_mode = 1
@@ -206,10 +210,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.0
-offset_top = 7.0
-offset_right = 82.0
-offset_bottom = 37.0
+offset_left = -60.0
+offset_top = 14.0
+offset_right = 60.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15

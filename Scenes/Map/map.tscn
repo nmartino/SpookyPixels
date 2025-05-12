@@ -17,6 +17,7 @@ width = 30
 script = ExtResource("1_ski2f")
 
 [node name="Pared de entrada" type="Node2D" parent="."]
+position = Vector2(109, 72)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pared de entrada"]
 position = Vector2(16, 107)
@@ -54,6 +55,42 @@ texture = ExtResource("4_o7i3w")
 position = Vector2(253, 107)
 texture = ExtResource("4_o7i3w")
 
+[node name="Sprite2D10" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(281, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(310, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(338, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(367, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(396, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-12, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-42, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-72, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-101, 107)
+texture = ExtResource("4_o7i3w")
+
 [node name="Visuals" type="Node2D" parent="."]
 unique_name_in_owner = true
 
@@ -65,7 +102,8 @@ unique_name_in_owner = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(128, 72)
+position = Vector2(0, -1)
+offset = Vector2(256, 60)
 
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("2_bwd4j")

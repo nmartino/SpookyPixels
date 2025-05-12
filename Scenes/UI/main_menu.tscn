@@ -18,7 +18,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_reaam"]
 line_spacing = 5.0
 font = ExtResource("5_ridyb")
-font_size = 32
+font_size = 48
 font_color = Color(0.105882, 0.992157, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
@@ -116,27 +116,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_2cy6r")
 run_startup = ExtResource("3_6nrva")
-metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 256.0
-offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_c0bsd")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="torch" parent="." instance=ExtResource("5_5owke")]
-position = Vector2(15, 53)
+position = Vector2(29, 26)
+scale = Vector2(2, 2)
 
 [node name="torch2" parent="." instance=ExtResource("5_5owke")]
-position = Vector2(184, 55)
+position = Vector2(368, 25)
+scale = Vector2(2, 2)
 frame_progress = 0.3646
 
 [node name="Title" type="Label" parent="."]
@@ -146,17 +147,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.0
-offset_top = -64.0
-offset_right = 124.0
-offset_bottom = -12.0
+offset_left = -204.0
+offset_top = -74.0
+offset_right = 204.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Spooky Pixels"
 label_settings = SubResource("LabelSettings_reaam")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -166,18 +166,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -30.0
-offset_top = -4.0
-offset_right = 30.0
-offset_bottom = 44.0
+offset_top = 16.5
+offset_right = 50.0
+offset_bottom = 76.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
-metadata/_edit_lock_ = true
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
+theme_override_font_sizes/font_size = 0
 text = "Continue"
 
 [node name="New Run" type="Button" parent="VBoxContainer"]
@@ -192,35 +192,43 @@ text = "Exit
 "
 
 [node name="Player2" type="Sprite2D" parent="."]
-position = Vector2(56, 83)
+position = Vector2(108, 169)
+scale = Vector2(2, 2)
 texture = ExtResource("4_3u3ch")
 
 [node name="Player3" type="Sprite2D" parent="."]
-position = Vector2(35, 104)
+position = Vector2(59, 211)
+scale = Vector2(2, 2)
 texture = ExtResource("5_tyfnm")
 
 [node name="Player4" type="Sprite2D" parent="."]
-position = Vector2(67, 113)
+position = Vector2(122, 223)
+scale = Vector2(2, 2)
 texture = ExtResource("3_048iv")
 
 [node name="Enemy5" type="Sprite2D" parent="."]
-position = Vector2(233, 79)
+position = Vector2(450, 178)
+scale = Vector2(2, 2)
 texture = ExtResource("7_hhdwu")
 
 [node name="Enemy2" type="Sprite2D" parent="."]
-position = Vector2(198, 82)
+position = Vector2(365, 180)
+scale = Vector2(2, 2)
 texture = ExtResource("7_i47pg")
 
 [node name="Enemy3" type="Sprite2D" parent="."]
-position = Vector2(217, 93)
+position = Vector2(405, 195)
+scale = Vector2(2, 2)
 texture = ExtResource("8_boktj")
 
 [node name="Enemy4" type="Sprite2D" parent="."]
-position = Vector2(204, 105)
+position = Vector2(381, 233)
+scale = Vector2(2, 2)
 texture = ExtResource("9_87r54")
 
 [node name="Enemy6" type="Sprite2D" parent="."]
-position = Vector2(235, 113)
+position = Vector2(452, 221)
+scale = Vector2(2, 2)
 texture = ExtResource("11_118ha")
 
 [node name="transition" type="AnimationPlayer" parent="."]
@@ -239,6 +247,7 @@ color = Color(1, 0.333333, 1, 1)
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4

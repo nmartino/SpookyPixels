@@ -5,12 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dwykbosnetmmx" path="res://art/1bit/orcoArt/exposed.png" id="3_6yuy8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pdiag"]
-font_size = 6
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d1cv1"]
-font_size = 6
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 

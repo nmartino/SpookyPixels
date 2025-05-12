@@ -44,10 +44,12 @@ music = ExtResource("2_cs2oa")
 run_startup = ExtResource("2_frqca")
 
 [node name="Map" parent="." instance=ExtResource("1_lttax")]
+position = Vector2(0, 3)
 
 [node name="CurrentView" type="Node" parent="."]
 
 [node name="DebugButtons" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
@@ -95,7 +97,7 @@ text = "TreasureButton
 layer = 5
 
 [node name="Background" type="ColorRect" parent="TopBar"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 25)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
@@ -211,7 +213,7 @@ text = "Back"
 
 [node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 14)
+custom_minimum_size = Vector2(70, 14)
 layout_mode = 2
 text = "Main Menu"
 

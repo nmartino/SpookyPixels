@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="2_23uqh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_imlgc"]
-font_size = 8
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
@@ -21,7 +20,7 @@ alignment = 1
 script = ExtResource("1_rkkk4")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("2_23uqh")
 expand_mode = 1

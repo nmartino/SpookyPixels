@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgddljgw4l16e"]
+[gd_scene load_steps=4 format=3 uid="uid://bgddljgw4l16e"]
 
 [ext_resource type="Script" path="res://Scenes/UI/status_tool_tip.gd" id="1_064x1"]
 [ext_resource type="Texture2D" uid="uid://dntlrdsuieply" path="res://art/1bit/exposed_icon.png" id="1_usekj"]
+[ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="3_wksjr"]
 
 [node name="StatusToolTip" type="HBoxContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_direction = 2
-offset_right = 150.0
-offset_bottom = 24.0
+offset_right = 345.0
+offset_bottom = 55.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 5
 script = ExtResource("1_064x1")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("1_usekj")
 expand_mode = 1
@@ -19,12 +23,17 @@ stretch_mode = 5
 
 [node name="Label" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 24)
+custom_minimum_size = Vector2(300, 15)
 layout_direction = 2
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/outline_size = 3
-theme_override_constants/line_separation = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/outline_size = 5
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("3_wksjr")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[center]Exposed: Takes [color='ff55ff']50% + damage[/color] for 2 turns.[/center]"
+fit_content = true
+scroll_active = false
 autowrap_mode = 2

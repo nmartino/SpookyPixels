@@ -18,15 +18,15 @@ texture = ExtResource("2_4qii3")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_dsp15")]
 offset_left = -43.0
-offset_top = 8.0
+offset_top = 14.0
 offset_right = 47.0
-offset_bottom = 24.0
+offset_bottom = 30.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("4_who66")]
 offset_left = -33.0
-offset_top = -41.0
+offset_top = -49.0
 offset_right = 31.0
-offset_bottom = -41.0
+offset_bottom = -49.0
 status_owner = NodePath("../Sprite2D")
 
 [node name="ModifierHandler" parent="." instance=ExtResource("5_r3k8i")]
