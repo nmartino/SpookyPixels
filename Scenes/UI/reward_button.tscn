@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/reward_button.gd" id="1_l2wak"]
 
 [node name="RewardButton" type="Button"]
-custom_minimum_size = Vector2(0, 14)
+custom_minimum_size = Vector2(0, 20)
 offset_right = 75.0
 offset_bottom = 14.0
 script = ExtResource("1_l2wak")
@@ -27,7 +27,7 @@ theme_override_constants/separation = 2
 
 [node name="CustomIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 texture = ExtResource("1_6i70p")
 expand_mode = 1

@@ -101,7 +101,7 @@ reward_text = "Add new card"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 14)
+custom_minimum_size = Vector2(70, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true

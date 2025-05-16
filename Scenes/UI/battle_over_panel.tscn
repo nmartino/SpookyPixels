@@ -51,14 +51,14 @@ vertical_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 16)
+custom_minimum_size = Vector2(60, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Continue"
 
 [node name="MainMenuButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 16)
+custom_minimum_size = Vector2(70, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Main Menu"

@@ -21,22 +21,22 @@ font_size = 32
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q21tn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
 shader = ExtResource("8_cd2bd")
 shader_parameter/resolution = Vector2(1280, 720)
-shader_parameter/scan_line_amount = 0.144
-shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.09
-shader_parameter/interference_amount = 0.2
-shader_parameter/grille_amount = 0.1
+shader_parameter/scan_line_amount = 0.402
+shader_parameter/warp_amount = 0.08
+shader_parameter/noise_amount = 0.05
+shader_parameter/interference_amount = 0.09
+shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
-shader_parameter/vignette_amount = 0.6
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/aberation_amount = 0.5
-shader_parameter/roll_line_amount = 0.3
+shader_parameter/vignette_amount = 0.0
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/aberation_amount = 0.0
+shader_parameter/roll_line_amount = 0.289
 shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -6.519
-shader_parameter/pixel_strength = -1.5
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.713
 
 [node name="Run" type="Node" groups=["run"]]
 script = ExtResource("1_677sc")
@@ -97,7 +97,7 @@ text = "TreasureButton
 layer = 5
 
 [node name="Background" type="ColorRect" parent="TopBar"]
-custom_minimum_size = Vector2(0, 25)
+custom_minimum_size = Vector2(0, 30)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
@@ -106,7 +106,7 @@ color = Color(1, 0.333333, 1, 0.592157)
 [node name="MarginsTopBar" type="MarginContainer" parent="TopBar"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 20.0
+offset_bottom = 30.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_right = 2
@@ -140,7 +140,7 @@ layout_mode = 2
 
 [node name="DeckButton" parent="TopBar/MarginsTopBar/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_bxmm5")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture_normal = ExtResource("9_3xvi7")
 texture_pressed = ExtResource("9_3xvi7")
@@ -222,7 +222,7 @@ layer = 99
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4
-material = SubResource("ShaderMaterial_q21tn")
+material = SubResource("ShaderMaterial_s3ded")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

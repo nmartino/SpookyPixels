@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://6onqv2vn673u"]
+[gd_scene load_steps=33 format=3 uid="uid://6onqv2vn673u"]
 
 [ext_resource type="Script" path="res://Scenes/splash/splash_screen.gd" id="1_b277h"]
 [ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="2_37sf6"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cu6edx6eh107n" path="res://art/splash/animate18.png" id="24_0muhd"]
 [ext_resource type="Texture2D" uid="uid://q0y1llgfim46" path="res://art/splash/animate19.png" id="25_5jy5o"]
 [ext_resource type="Texture2D" uid="uid://dv7ylhqy7btos" path="res://art/splash/animate20.png" id="26_f8ife"]
+[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="27_nwi1l"]
 
 [sub_resource type="Animation" id="Animation_0wcks"]
 length = 0.001
@@ -151,6 +152,23 @@ _data = {
 "logos": SubResource("Animation_gsg80")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ludkq"]
+shader = ExtResource("27_nwi1l")
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/scan_line_amount = 0.402
+shader_parameter/warp_amount = 0.08
+shader_parameter/noise_amount = 0.05
+shader_parameter/interference_amount = 0.09
+shader_parameter/grille_amount = 0.005
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.0
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/aberation_amount = 0.0
+shader_parameter/roll_line_amount = 0.289
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.713
+
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -185,7 +203,6 @@ texture = ExtResource("5_rtbld")
 
 [node name="Godot" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 position = Vector2(256, 110)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_wcs12")
@@ -237,5 +254,19 @@ libraries = {
 "": SubResource("AnimationLibrary_32gla")
 }
 autoplay = "logos"
+
+[node name="CRTShader" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CRTShader"]
+process_priority = 4
+material = SubResource("ShaderMaterial_ludkq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

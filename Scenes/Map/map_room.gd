@@ -4,6 +4,7 @@ extends Area2D
 signal selected(room:Room)
 signal clicked (room: Room)
 
+
 const ICONS := {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
 	Room.Type.MONSTER: [preload("res://art/1bit/pruebas mapa/doble_espada_mapa.png"), Vector2.ONE],
@@ -21,6 +22,7 @@ const ICONS := {
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var finished: Sprite2D = %Finished
 @onready var entrance: AnimatedSprite2D = %Entrance
+@onready var visuals: Node2D = $Visuals
 
 var available := false : set = set_available
 var room: Room : set = set_room
@@ -29,6 +31,7 @@ func set_available(new_value: bool) -> void:
 	available = new_value
 	
 	if available:
+		visuals.show()
 		animation_player.play("highlight")
 	elif not room.selected:
 		animation_player.play("RESET")
@@ -38,6 +41,7 @@ func set_room(new_data: Room) -> void:
 	position = room.position
 	sprite_2d.texture = ICONS[room.type][0]
 	sprite_2d.scale = ICONS[room.type][1]
+	visuals.hide()
 	if room.position.y == 0:
 		entrance.show()
 	else:
