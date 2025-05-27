@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://b86t384c0ch53"]
 
 [ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="1_t2vsc"]
-[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
+[ext_resource type="Script" uid="uid://coy3g6ng6i1gl" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
 [ext_resource type="Resource" uid="uid://q1pjq8kfa1mq" path="res://characters/Mage/mage_draftable_cards.tres" id="2_rhcce"]
 [ext_resource type="Texture2D" uid="uid://dql6hb22mtj01" path="res://art/1bit/orcoArt/Mago 2.png" id="2_vw3w0"]
 [ext_resource type="Texture2D" uid="uid://b02sfaobss4f2" path="res://art/1bit/orcoArt/Fogata/fogata mago.png" id="2_wllxb"]

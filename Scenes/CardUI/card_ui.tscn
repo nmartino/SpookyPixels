@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1gnqxutl2eog"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_2py4n"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_ui.gd" id="2_ajvja"]
+[ext_resource type="Script" uid="uid://d11dr04hvpji" path="res://Scenes/CardUI/card_ui.gd" id="2_ajvja"]
 [ext_resource type="PackedScene" uid="uid://bmvfg5yegqglk" path="res://Scenes/UI/card_visuals.tscn" id="3_2l165"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_state_machine.gd" id="3_cfb8f"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_base_state.gd" id="4_8xx32"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_clicked_state.gd" id="5_sqg5f"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_dragged_state.gd" id="6_cqs34"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_released_state.gd" id="7_igcgs"]
-[ext_resource type="Script" path="res://Scenes/CardUI/card_States/card_aiming_state.gd" id="8_w0wk6"]
+[ext_resource type="Script" uid="uid://87pmpsvg5e1j" path="res://Scenes/CardUI/card_state_machine.gd" id="3_cfb8f"]
+[ext_resource type="Script" uid="uid://c7b0hrux4cht1" path="res://Scenes/CardUI/card_States/card_base_state.gd" id="4_8xx32"]
+[ext_resource type="Script" uid="uid://clp1d1ahqrusf" path="res://Scenes/CardUI/card_States/card_clicked_state.gd" id="5_sqg5f"]
+[ext_resource type="Script" uid="uid://b6f2gqkrjm5yf" path="res://Scenes/CardUI/card_States/card_dragged_state.gd" id="6_cqs34"]
+[ext_resource type="Script" uid="uid://0um1qu63rbr" path="res://Scenes/CardUI/card_States/card_released_state.gd" id="7_igcgs"]
+[ext_resource type="Script" uid="uid://m024g0v665al" path="res://Scenes/CardUI/card_States/card_aiming_state.gd" id="8_w0wk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5wvl"]
 size = Vector2(50, 60)

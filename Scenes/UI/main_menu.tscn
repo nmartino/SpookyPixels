@@ -1,11 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://bnk4qwr531lrr"]
 
-[ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
+[ext_resource type="Script" uid="uid://0lt7wxtub7jg" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_048iv"]
 [ext_resource type="Texture2D" uid="uid://dcbgo4yh1nktj" path="res://art/1bit/orcoArt/Arquero 1.png" id="4_3u3ch"]
-[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="4_mrygs"]
+[ext_resource type="Shader" uid="uid://b4r0ubodsiyce" path="res://Scenes/Battle/CrtShader.gdshader" id="4_mrygs"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_5owke"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
 [ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="5_tyfnm"]
@@ -87,9 +87,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ie85"]
 _data = {
-"RESET": SubResource("Animation_wgfis"),
-"fade_in": SubResource("Animation_sd6vq"),
-"fade_out": SubResource("Animation_mhcjx")
+&"RESET": SubResource("Animation_wgfis"),
+&"fade_in": SubResource("Animation_sd6vq"),
+&"fade_out": SubResource("Animation_mhcjx")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]
