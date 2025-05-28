@@ -1,5 +1,5 @@
 extends Node
-
+@warning_ignore_start("unused_signal")
 # Card-related events
 signal card_drag_started(card_ui: CardUI)
 signal card_drag_ended(card_ui: CardUI)
@@ -49,3 +49,4 @@ signal relic_tooltip_requested(relic: Relic)
 
 #random-event-room-related events
 signal event_room_exited
+@warning_ignore_restore("unused_signal")
