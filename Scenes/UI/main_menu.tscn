@@ -1,19 +1,21 @@
-[gd_scene load_steps=21 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=23 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
-[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="3_048iv"]
-[ext_resource type="Texture2D" uid="uid://dcbgo4yh1nktj" path="res://art/1bit/orcoArt/Arquero 1.png" id="4_3u3ch"]
-[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="4_mrygs"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_5owke"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
-[ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="5_tyfnm"]
-[ext_resource type="Texture2D" uid="uid://do6i51u216eop" path="res://art/1bit/orcoArt/Undead enemy4 001.png" id="7_hhdwu"]
-[ext_resource type="Texture2D" uid="uid://bfqxe488vy0" path="res://art/1bit/orcoArt/Undead enemy5 001.png" id="7_i47pg"]
-[ext_resource type="Texture2D" uid="uid://djona7wqs1efl" path="res://art/1bit/orcoArt/Undead enemy3 001.png" id="8_boktj"]
-[ext_resource type="Texture2D" uid="uid://bnvt1kcxt5cgk" path="res://art/1bit/orcoArt/Undead enemy6 001.png" id="9_87r54"]
-[ext_resource type="Texture2D" uid="uid://tqyib1drb0u7" path="res://art/1bit/orcoArt/Testeo enemy2 001.png" id="11_118ha"]
+[ext_resource type="Texture2D" uid="uid://bgdx73h81jcek" path="res://art/1bit/orcoArt/32x32/Mage.png" id="6_hn4ct"]
+[ext_resource type="Texture2D" uid="uid://dutr0q0643yu1" path="res://art/1bit/orcoArt/32x32/Arquero.png" id="7_263bx"]
+[ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="8_yt480"]
+[ext_resource type="Texture2D" uid="uid://br4wexixsxnkc" path="res://art/1bit/orcoArt/32x32/Esqueleto_fuego.png" id="9_ebv7x"]
+[ext_resource type="Texture2D" uid="uid://e18s025lyfub" path="res://art/1bit/orcoArt/32x32/Esqueleto_lanza.png" id="10_m6d2t"]
+[ext_resource type="Texture2D" uid="uid://brkbann6cndd" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo.png" id="11_2cot0"]
+[ext_resource type="Texture2D" uid="uid://lu61xmastwqs" path="res://art/1bit/orcoArt/32x32/Esqueleto_hachota.png" id="12_wh6ri"]
+[ext_resource type="Texture2D" uid="uid://clw3s1ru82l6b" path="res://art/1bit/orcoArt/32x32/Esqueleto_overlord.png" id="13_in5jf"]
+[ext_resource type="Texture2D" uid="uid://dtw1xfrtdjn35" path="res://art/1bit/orcoArt/32x32/esqueleto_espectro.png" id="14_gkvna"]
+[ext_resource type="Shader" path="res://CrtShader.gdshader" id="14_vi80r"]
+[ext_resource type="Texture2D" uid="uid://bg62rqpel73w6" path="res://art/1bit/orcoArt/32x32/esqueleto_escudo_espada.png" id="15_845dv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_reaam"]
 line_spacing = 5.0
@@ -93,11 +95,11 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]
-shader = ExtResource("4_mrygs")
+shader = ExtResource("14_vi80r")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.402
-shader_parameter/warp_amount = 0.08
-shader_parameter/noise_amount = 0.05
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.1
 shader_parameter/interference_amount = 0.09
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
@@ -148,9 +150,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -204.0
-offset_top = -74.0
+offset_top = -82.0
 offset_right = 204.0
-offset_bottom = -14.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Spooky Pixels"
@@ -165,71 +167,72 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = 16.5
-offset_right = 50.0
-offset_bottom = 76.5
+offset_left = -40.0
+offset_top = 33.0
+offset_right = 40.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 14)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 theme_override_font_sizes/font_size = 0
 text = "Continue"
 
 [node name="New Run" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "New Run"
+size_flags_vertical = 3
+text = "New Game"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Exit
 "
 
-[node name="Player2" type="Sprite2D" parent="."]
-position = Vector2(108, 169)
-scale = Vector2(2, 2)
-texture = ExtResource("4_3u3ch")
-
 [node name="Player3" type="Sprite2D" parent="."]
-position = Vector2(59, 211)
-scale = Vector2(2, 2)
-texture = ExtResource("5_tyfnm")
+position = Vector2(100, 178)
+texture = ExtResource("6_hn4ct")
+
+[node name="Player2" type="Sprite2D" parent="."]
+position = Vector2(73, 208)
+texture = ExtResource("7_263bx")
 
 [node name="Player4" type="Sprite2D" parent="."]
-position = Vector2(122, 223)
-scale = Vector2(2, 2)
-texture = ExtResource("3_048iv")
+position = Vector2(129, 208)
+texture = ExtResource("8_yt480")
 
 [node name="Enemy5" type="Sprite2D" parent="."]
-position = Vector2(450, 178)
-scale = Vector2(2, 2)
-texture = ExtResource("7_hhdwu")
+position = Vector2(454, 178)
+texture = ExtResource("9_ebv7x")
 
 [node name="Enemy2" type="Sprite2D" parent="."]
-position = Vector2(365, 180)
-scale = Vector2(2, 2)
-texture = ExtResource("7_i47pg")
+position = Vector2(386, 184)
+texture = ExtResource("10_m6d2t")
 
 [node name="Enemy3" type="Sprite2D" parent="."]
-position = Vector2(405, 195)
-scale = Vector2(2, 2)
-texture = ExtResource("8_boktj")
+position = Vector2(420, 200)
+texture = ExtResource("11_2cot0")
 
 [node name="Enemy4" type="Sprite2D" parent="."]
-position = Vector2(381, 233)
-scale = Vector2(2, 2)
-texture = ExtResource("9_87r54")
+position = Vector2(390, 224)
+texture = ExtResource("12_wh6ri")
 
 [node name="Enemy6" type="Sprite2D" parent="."]
-position = Vector2(452, 221)
-scale = Vector2(2, 2)
-texture = ExtResource("11_118ha")
+position = Vector2(462, 218)
+texture = ExtResource("13_in5jf")
+
+[node name="Enemy7" type="Sprite2D" parent="."]
+position = Vector2(427, 235)
+texture = ExtResource("14_gkvna")
+
+[node name="Enemy8" type="Sprite2D" parent="."]
+position = Vector2(353, 209)
+texture = ExtResource("15_845dv")
 
 [node name="transition" type="AnimationPlayer" parent="."]
 libraries = {

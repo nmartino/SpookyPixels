@@ -6,12 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="4_o0n2n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnk3o"]
-font_size = 6
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="ShopRelic" type="VBoxContainer"]
-custom_minimum_size = Vector2(40, 47)
+custom_minimum_size = Vector2(50, 90)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 2
@@ -23,6 +22,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="RelicUI" parent="RelicContainer" instance=ExtResource("1_u22ps")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Control" type="Control" parent="."]
@@ -32,6 +32,7 @@ layout_mode = 2
 [node name="Price" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 2
 alignment = 1
 
@@ -51,6 +52,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
+size_flags_vertical = 4
 text = "Buy"
 
 [connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

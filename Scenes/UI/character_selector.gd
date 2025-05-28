@@ -10,7 +10,13 @@ const MAGE_STATS := preload("res://characters/Mage/mage.tres")
 
 @onready var title: Label = %Title
 @onready var description: Label = %Description
-@onready var character_portrait: TextureRect = $CharacterPortrait
+@onready var mage_portrait: TextureRect = $MagePortrait
+@onready var archer_portrait: TextureRect = $ArcherPortrait
+@onready var vanguard_portrait: TextureRect = $VanguardPortrait
+@onready var mage_portrait_sin_shader: TextureRect = $MagePortrait_SinShader
+@onready var archer_portrait_2_sin_shader: TextureRect = $ArcherPortrait2_SinShader
+@onready var vanguard_portrait_2_sin_shader: TextureRect = $VanguardPortrait2_SinShader
+
 @onready var transition: AnimationPlayer = $transition
 
 var current_character: CharacterStats : set = set_current_character
@@ -23,7 +29,6 @@ func set_current_character(new_character: CharacterStats) -> void:
 	current_character = new_character
 	title.text = current_character.character_name
 	description.text = current_character.description
-	character_portrait.texture = current_character.portrait
 
 
 func _on_start_button_pressed() -> void:
@@ -33,12 +38,31 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_warrior_button_pressed() -> void:
+	vanguard_portrait.show()
+	mage_portrait.hide()
+	archer_portrait.hide()
+	vanguard_portrait_2_sin_shader.hide()
+	mage_portrait_sin_shader.show()
+	archer_portrait_2_sin_shader.show()
 	current_character = WARRIOR_STATS
+	
 
 
 func _on_mage_button_pressed() -> void:
+	vanguard_portrait.hide()
+	mage_portrait.show()
+	mage_portrait_sin_shader.hide()
+	archer_portrait.hide()
+	vanguard_portrait_2_sin_shader.show()
+	archer_portrait_2_sin_shader.show()
 	current_character = MAGE_STATS
 
 
 func _on_assasin_button_pressed() -> void:
+	vanguard_portrait.hide()
+	mage_portrait.hide()
+	archer_portrait.show()
+	archer_portrait_2_sin_shader.hide()
+	vanguard_portrait_2_sin_shader.show()
+	mage_portrait_sin_shader.show()
 	current_character = ASSASSIN_STATS

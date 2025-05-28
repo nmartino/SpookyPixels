@@ -9,11 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c5lfr6iekpgsw" path="res://Scenes/UI/health_ui.tscn" id="5_d6yos"]
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
 [ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
-[ext_resource type="Shader" path="res://Scenes/Battle/CrtShader.gdshader" id="8_cd2bd"]
 [ext_resource type="Texture2D" uid="uid://cxqqa66631vx" path="res://art/1bit/deck-icon02.png" id="9_3xvi7"]
 [ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
 [ext_resource type="Script" path="res://Scenes/Run/pause_menu.gd" id="13_c70su"]
 [ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="13_hyx0u"]
+[ext_resource type="Shader" path="res://CrtShader.gdshader" id="14_ehit0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1dda"]
 font = ExtResource("13_hyx0u")
@@ -22,11 +22,11 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
-shader = ExtResource("8_cd2bd")
+shader = ExtResource("14_ehit0")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.402
-shader_parameter/warp_amount = 0.08
-shader_parameter/noise_amount = 0.05
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.1
 shader_parameter/interference_amount = 0.09
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
@@ -97,7 +97,7 @@ text = "TreasureButton
 layer = 5
 
 [node name="Background" type="ColorRect" parent="TopBar"]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 40)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
@@ -106,10 +106,19 @@ color = Color(1, 0.333333, 1, 0.592157)
 [node name="MarginsTopBar" type="MarginContainer" parent="TopBar"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 30.0
+offset_bottom = 40.0
 grow_horizontal = 2
-theme_override_constants/margin_left = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 7
 theme_override_constants/margin_right = 2
+
+[node name="GoldUI" parent="TopBar/MarginsTopBar" instance=ExtResource("4_176gq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="BarItems" type="HBoxContainer" parent="TopBar/MarginsTopBar"]
 custom_minimum_size = Vector2(0, 18)
@@ -119,14 +128,11 @@ size_flags_vertical = 6
 
 [node name="HealthUI" parent="TopBar/MarginsTopBar/BarItems" instance=ExtResource("5_d6yos")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 0)
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 show_max_hp = true
-
-[node name="GoldUI" parent="TopBar/MarginsTopBar/BarItems" instance=ExtResource("4_176gq")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
 
 [node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/MarginsTopBar/BarItems"]
 layout_mode = 2

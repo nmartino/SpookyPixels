@@ -77,7 +77,7 @@ script = ExtResource("1_a4rr3")
 relic = ExtResource("2_go5q4")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 18.0

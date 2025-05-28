@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://b86t384c0ch53"]
 
-[ext_resource type="Texture2D" uid="uid://bjrxwc4q0jehb" path="res://art/1bit/orcoArt/Mago 1.png" id="1_t2vsc"]
+[ext_resource type="Texture2D" uid="uid://bgdx73h81jcek" path="res://art/1bit/orcoArt/32x32/Mage.png" id="1_qk567"]
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
 [ext_resource type="Resource" uid="uid://q1pjq8kfa1mq" path="res://characters/Mage/mage_draftable_cards.tres" id="2_rhcce"]
-[ext_resource type="Texture2D" uid="uid://dql6hb22mtj01" path="res://art/1bit/orcoArt/Mago 2.png" id="2_vw3w0"]
 [ext_resource type="Texture2D" uid="uid://b02sfaobss4f2" path="res://art/1bit/orcoArt/Fogata/fogata mago.png" id="2_wllxb"]
+[ext_resource type="Texture2D" uid="uid://i3xdqsv0rrox" path="res://art/1bit/orcoArt/32x32/Mage_lastimado.png" id="4_s31yb"]
 [ext_resource type="Resource" uid="uid://cfmtwhuxrdy1n" path="res://characters/Mage/mage_starting_deck.tres" id="5_h1e8s"]
 [ext_resource type="Resource" uid="uid://3m1te8fvfg00" path="res://relics/confusin_staff.tres" id="6_hayqi"]
 
@@ -14,13 +14,13 @@ character_name = "Spellbinder"
 description = "Magic bends to him.
 Elements heed his call.
 Uses the Confusing Staff"
-portrait = ExtResource("1_t2vsc")
+portrait = ExtResource("1_qk567")
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
 cards_per_turn = 3
 max_mana = 4
 starting_relic = ExtResource("6_hayqi")
 max_health = 30
-art = ExtResource("1_t2vsc")
-hurt = ExtResource("2_vw3w0")
+art = ExtResource("1_qk567")
+hurt = ExtResource("4_s31yb")
 campfire_art = ExtResource("2_wllxb")

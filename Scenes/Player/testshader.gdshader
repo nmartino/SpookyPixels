@@ -1,5 +1,6 @@
 shader_type canvas_item;
 
+
 // Max distance from texture.
 uniform float maxLineWidth: hint_range(0.0, 100.0) = 10.0;
 // Min distance from texture.
@@ -12,7 +13,6 @@ uniform float blockSize: hint_range(0.001, 100.0) = 20.0;
 uniform vec4 color: source_color;
 // Used to compensate for alpha values.
 uniform float tolerance: hint_range(0.0, 0.999) = 0.0;
-
 
 // Compensate UV for outline.
 void vertex() {

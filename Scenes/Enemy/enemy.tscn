@@ -42,15 +42,15 @@ shape = SubResource("RectangleShape2D_vyi54")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_qxoj6")]
 offset_left = -43.0
-offset_top = 27.0
+offset_top = 29.0
 offset_right = 47.0
-offset_bottom = 43.0
+offset_bottom = 45.0
 
 [node name="IntentUI" parent="." groups=["intent"] instance=ExtResource("5_xhtot")]
 offset_left = -22.0
-offset_top = -54.0
+offset_top = -53.0
 offset_right = 18.0
-offset_bottom = -29.0
+offset_bottom = -28.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_x0tw5")]
 offset_left = -40.0

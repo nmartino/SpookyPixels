@@ -41,7 +41,7 @@ func set_room(new_data: Room) -> void:
 	position = room.position
 	sprite_2d.texture = ICONS[room.type][0]
 	sprite_2d.scale = ICONS[room.type][1]
-	visuals.hide()
+	#visuals.hide()
 	if room.position.y == 0:
 		entrance.show()
 	else:

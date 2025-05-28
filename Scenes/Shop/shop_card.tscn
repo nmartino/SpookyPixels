@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="3_we4h3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnk3o"]
-font_size = 6
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="ShopCard" type="VBoxContainer"]
-custom_minimum_size = Vector2(40, 56)
+custom_minimum_size = Vector2(50, 90)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 2

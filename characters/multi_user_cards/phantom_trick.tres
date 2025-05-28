@@ -8,7 +8,7 @@
 script = ExtResource("2_5fhvv")
 id = "phantom_trick"
 type = 1
-target = null
+target = 0
 rarity = 1
 cost = null
 exhausts = true
