@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://vyfgwimrjqh0"]
 
-[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_507gj"]
+[ext_resource type="Script" uid="uid://b54vkl5pj64pi" path="res://custom_resources/enemy_stats.gd" id="1_507gj"]
 [ext_resource type="PackedScene" uid="uid://dcglj16xnklfw" path="res://enemies/enemy2/enemy2_ai.tscn" id="1_y6s01"]
 [ext_resource type="Texture2D" uid="uid://br4wexixsxnkc" path="res://art/1bit/orcoArt/32x32/Esqueleto_fuego.png" id="2_qkhkq"]
 [ext_resource type="Texture2D" uid="uid://bteqj5e2aklj8" path="res://art/1bit/orcoArt/32x32/Esqueleto_fuego_lastimado.png" id="3_02x1y"]

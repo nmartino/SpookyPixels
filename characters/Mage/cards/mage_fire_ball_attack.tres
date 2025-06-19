@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://vsoj6huc0udw"]
 
 [ext_resource type="Texture2D" uid="uid://bsa510x12o1qe" path="res://art/1bit/orcoArt/fire_attack.png" id="1_lxaj4"]
-[ext_resource type="Script" path="res://characters/Mage/cards/mage_fire_ball_attack.gd" id="2_012fa"]
+[ext_resource type="Script" uid="uid://ba2mjjsixbjbg" path="res://characters/Mage/cards/mage_fire_ball_attack.gd" id="2_012fa"]
 [ext_resource type="AudioStream" uid="uid://tdj1ldq7lvi2" path="res://art/sounds/Retro Impact LoFi 09.wav" id="3_fmid3"]
 
 [resource]

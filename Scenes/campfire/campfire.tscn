@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ds4hjaky65w3y"]
 
-[ext_resource type="Script" path="res://Scenes/campfire/campfire.gd" id="1_n3jar"]
+[ext_resource type="Script" uid="uid://bxwl1r3eo2duk" path="res://Scenes/campfire/campfire.gd" id="1_n3jar"]
 [ext_resource type="AudioStream" uid="uid://bko3lvy4b04i" path="res://art/(Loop) Sanctuary.wav" id="2_75l24"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_8cjsj"]
 [ext_resource type="Resource" uid="uid://b86t384c0ch53" path="res://characters/Mage/mage.tres" id="3_om08r"]
@@ -156,8 +156,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b3v32"]
 _data = {
-"RESET": SubResource("Animation_hui8s"),
-"fade_out": SubResource("Animation_3f8no")
+&"RESET": SubResource("Animation_hui8s"),
+&"fade_out": SubResource("Animation_3f8no")
 }
 
 [node name="Campfire" type="Control"]

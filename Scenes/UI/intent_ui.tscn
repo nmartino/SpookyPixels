@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1ljp0670bmc6"]
 
-[ext_resource type="Script" path="res://Scenes/UI/intent_ui.gd" id="1_rkkk4"]
+[ext_resource type="Script" uid="uid://iriyodxgkanj" path="res://Scenes/UI/intent_ui.gd" id="1_rkkk4"]
 [ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="2_23uqh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_imlgc"]

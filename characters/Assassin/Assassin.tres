@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://comske0a0bn8y"]
 
 [ext_resource type="Texture2D" uid="uid://dcbgo4yh1nktj" path="res://art/1bit/orcoArt/Arquero 1.png" id="1_8sr0k"]
-[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_wqils"]
+[ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_wqils"]
 [ext_resource type="Texture2D" uid="uid://bmk3y6k4ufp71" path="res://art/1bit/orcoArt/Arquero 2.png" id="2_rbui7"]
 [ext_resource type="Texture2D" uid="uid://b3j64c7ri64qc" path="res://art/1bit/orcoArt/Fogata/fogata arquero.png" id="2_v78kd"]
 [ext_resource type="Resource" uid="uid://cfnho6ra1x56x" path="res://characters/Assassin/assassin_draftable_cards.tres" id="3_3sxae"]

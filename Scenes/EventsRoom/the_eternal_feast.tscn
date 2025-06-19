@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bon4mgkl3m0f1"]
 
 [ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_b31ms"]
-[ext_resource type="Script" path="res://Scenes/EventsRoom/the_eternal_feast.gd" id="1_cxwdx"]
+[ext_resource type="Script" uid="uid://bstqjp0u5t5id" path="res://Scenes/EventsRoom/the_eternal_feast.gd" id="1_cxwdx"]
 [ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="2_ccujr"]
 [ext_resource type="Texture2D" uid="uid://bfb7ydgrgei22" path="res://art/1bit/orcoArt/Sprite Fondos testeo1.png" id="2_kuq67"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_lpsfq"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://cpjuqdlmkcaya"]
 
 [ext_resource type="Texture2D" uid="uid://cfxcwtedorbcu" path="res://art/1bit/Relics Sources/Relics Sources/hammer1.png" id="1_3d10t"]
-[ext_resource type="Script" path="res://characters/warrior/cards/warrior_big_slam.gd" id="2_5y1wy"]
+[ext_resource type="Script" uid="uid://dud4utu50lti8" path="res://characters/warrior/cards/warrior_big_slam.gd" id="2_5y1wy"]
 [ext_resource type="AudioStream" uid="uid://bkteguqpl8g6j" path="res://art/sounds/Attack - Bite 01.wav" id="3_bbl4a"]
 
 [resource]

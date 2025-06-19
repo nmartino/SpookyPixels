@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8kl0n2023ls"]
 
-[ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_ski2f"]
-[ext_resource type="Script" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
+[ext_resource type="Script" uid="uid://dpf1tlgfkrn8y" path="res://Scenes/Map/map.gd" id="1_ski2f"]
+[ext_resource type="Script" uid="uid://ms4e0nmte2ay" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
 [ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
 [ext_resource type="Texture2D" uid="uid://sb5mjvcc4w85" path="res://art/1bit/pruebas mapa/Piezas mapa_ladrillos.png" id="4_o7i3w"]
 [ext_resource type="Resource" uid="uid://c8acdg4631a23" path="res://Scenes/EventsRoom/event_room_pool.tres" id="5_ytk4a"]

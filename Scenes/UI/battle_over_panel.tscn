@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjijnp3e7egu2"]
 
-[ext_resource type="Script" path="res://Scenes/UI/battle_over_panel.gd" id="1_xxefs"]
+[ext_resource type="Script" uid="uid://bopxnwkkwik12" path="res://Scenes/UI/battle_over_panel.gd" id="1_xxefs"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="2_pgayi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahphi"]

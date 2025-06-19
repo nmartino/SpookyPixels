@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5lfr6iekpgsw"]
 
 [ext_resource type="Texture2D" uid="uid://bwdpq8f3p1yss" path="res://art/1bit/heart.png" id="1_62xfw"]
-[ext_resource type="Script" path="res://Scenes/UI/health_ui.gd" id="1_fcecc"]
+[ext_resource type="Script" uid="uid://bmxka2a7phucd" path="res://Scenes/UI/health_ui.gd" id="1_fcecc"]
 
 [node name="HealthUI" type="HBoxContainer"]
 theme_override_constants/separation = 1

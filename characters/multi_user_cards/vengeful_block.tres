@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://brhbuicpboast"]
 
 [ext_resource type="Texture2D" uid="uid://otwerlg3c0eh" path="res://art/1bit/orcoArt/shield_mega_block.png" id="1_yset0"]
-[ext_resource type="Script" path="res://characters/multi_user_cards/vengeful_block.gd" id="2_hq2k3"]
+[ext_resource type="Script" uid="uid://d0dl4lran8nnd" path="res://characters/multi_user_cards/vengeful_block.gd" id="2_hq2k3"]
 [ext_resource type="AudioStream" uid="uid://w44kpqqqopkd" path="res://art/sounds/Attack - Hit 01.wav" id="3_boebb"]
 
 [resource]

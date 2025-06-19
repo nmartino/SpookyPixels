@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bnk4qwr531lrr"]
 
-[ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
+[ext_resource type="Script" uid="uid://cbfi8jby8cmtm" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_5owke"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://lu61xmastwqs" path="res://art/1bit/orcoArt/32x32/Esqueleto_hachota.png" id="12_wh6ri"]
 [ext_resource type="Texture2D" uid="uid://clw3s1ru82l6b" path="res://art/1bit/orcoArt/32x32/Esqueleto_overlord.png" id="13_in5jf"]
 [ext_resource type="Texture2D" uid="uid://dtw1xfrtdjn35" path="res://art/1bit/orcoArt/32x32/esqueleto_espectro.png" id="14_gkvna"]
-[ext_resource type="Shader" path="res://CrtShader.gdshader" id="14_vi80r"]
+[ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
 [ext_resource type="Texture2D" uid="uid://bg62rqpel73w6" path="res://art/1bit/orcoArt/32x32/esqueleto_escudo_espada.png" id="15_845dv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_reaam"]
@@ -89,9 +89,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ie85"]
 _data = {
-"RESET": SubResource("Animation_wgfis"),
-"fade_in": SubResource("Animation_sd6vq"),
-"fade_out": SubResource("Animation_mhcjx")
+&"RESET": SubResource("Animation_wgfis"),
+&"fade_in": SubResource("Animation_sd6vq"),
+&"fade_out": SubResource("Animation_mhcjx")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]

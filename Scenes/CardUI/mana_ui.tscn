@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bg7tf3vrpwfff"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_v6lqg"]
-[ext_resource type="Script" path="res://Scenes/CardUI/mana_ui.gd" id="2_yt5ru"]
+[ext_resource type="Script" uid="uid://6aephh7wkuty" path="res://Scenes/CardUI/mana_ui.gd" id="2_yt5ru"]
 
 [node name="ManaUI" type="Panel"]
 custom_minimum_size = Vector2(30, 15)

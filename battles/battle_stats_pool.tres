@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="BattleStatsPool" load_steps=8 format=3 uid="uid://bjyvrnscnwhb5"]
 
-[ext_resource type="Script" path="res://custom_resources/battle_stats.gd" id="1_i2mpr"]
+[ext_resource type="Script" uid="uid://fwhxb7x0wj1p" path="res://custom_resources/battle_stats.gd" id="1_i2mpr"]
 [ext_resource type="Resource" uid="uid://l2i73kmduj2a" path="res://battles/tier_0_2fireheads.tres" id="2_ttu1m"]
-[ext_resource type="Script" path="res://custom_resources/battle_stats_pool.gd" id="2_wpf5q"]
+[ext_resource type="Script" uid="uid://bglm4yq21hfnn" path="res://custom_resources/battle_stats_pool.gd" id="2_wpf5q"]
 [ext_resource type="Resource" uid="uid://bimpuqoe6o478" path="res://battles/tier_0_hammerSkel.tres" id="3_gjj1s"]
 [ext_resource type="Resource" uid="uid://cnnynlwew4xt" path="res://battles/tier_1_3fireheads.tres" id="4_syjbd"]
 [ext_resource type="Resource" uid="uid://bsqv6nc3owf4a" path="res://battles/tier_1_firehead_hammerSkel.tres" id="5_3hygf"]

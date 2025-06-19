@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://7dw8xyhwd53o"]
 
-[ext_resource type="Script" path="res://Scenes/EventsRoom/gamble_event.gd" id="1_das3k"]
+[ext_resource type="Script" uid="uid://dg0ausav8pt6p" path="res://Scenes/EventsRoom/gamble_event.gd" id="1_das3k"]
 [ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_l1hpl"]
 [ext_resource type="Texture2D" uid="uid://bfb7ydgrgei22" path="res://art/1bit/orcoArt/Sprite Fondos testeo1.png" id="2_frf8f"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_sjgc0"]

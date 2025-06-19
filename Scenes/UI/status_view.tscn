@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://camxsiavn7baf"]
 
-[ext_resource type="Script" path="res://Scenes/UI/status_view.gd" id="1_ctorn"]
+[ext_resource type="Script" uid="uid://byutrrnt6wp1r" path="res://Scenes/UI/status_view.gd" id="1_ctorn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3arv1"]
 bg_color = Color(0.333333, 1, 1, 1)

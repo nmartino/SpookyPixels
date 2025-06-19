@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://bsqv6nc3owf4a"]
 
-[ext_resource type="Script" path="res://custom_resources/battle_stats.gd" id="1_0iiv2"]
+[ext_resource type="Script" uid="uid://fwhxb7x0wj1p" path="res://custom_resources/battle_stats.gd" id="1_0iiv2"]
 [ext_resource type="PackedScene" uid="uid://lf1f1wpu7g61" path="res://battles/tier_1_fire_head_hammer_skel.tscn" id="1_2wjwd"]
 
 [resource]

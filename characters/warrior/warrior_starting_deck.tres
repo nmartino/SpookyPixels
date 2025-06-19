@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CardPile" load_steps=7 format=3 uid="uid://bfgshyuysugtg"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_v4las"]
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_v4las"]
 [ext_resource type="Resource" uid="uid://4brkbifpqwrp" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="2_4jng2"]
-[ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="2_leqlw"]
+[ext_resource type="Script" uid="uid://8n1y0j3hlrdl" path="res://custom_resources/card_pile.gd" id="2_leqlw"]
 [ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/warrior/cards/warrior_slash_attack.tres" id="3_wt6ge"]
 [ext_resource type="Resource" uid="uid://db62ldp41o22" path="res://characters/warrior/cards/warrior_block.tres" id="3_xqxuy"]
 [ext_resource type="Resource" uid="uid://cpjuqdlmkcaya" path="res://characters/warrior/cards/warrior_big_slam.tres" id="5_mtow7"]

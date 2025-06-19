@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://cbqxrujgnl8x6"]
 
-[ext_resource type="Script" path="res://Scenes/relics_handler/relic_handler.gd" id="1_448oj"]
+[ext_resource type="Script" uid="uid://bh2mbiqchms1s" path="res://Scenes/relics_handler/relic_handler.gd" id="1_448oj"]
 [ext_resource type="PackedScene" uid="uid://b4w60288l0pwt" path="res://Scenes/relics_handler/relic_ui.tscn" id="1_sojnw"]
 [ext_resource type="Texture2D" uid="uid://c57inlu2fwoxe" path="res://art/1bit/Relics Sources/action-bar.png" id="1_ymmri"]
 [ext_resource type="Texture2D" uid="uid://x4ijcdqm3r4o" path="res://art/1bit/arrow-right.png" id="2_iygm0"]
-[ext_resource type="Script" path="res://Scenes/relics_handler/relics_control.gd" id="3_f3pcq"]
+[ext_resource type="Script" uid="uid://degh6ug3p0iyh" path="res://Scenes/relics_handler/relics_control.gd" id="3_f3pcq"]
 [ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="5_8qn4g"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="6_iw5cu"]
 [ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="7_bg3sr"]

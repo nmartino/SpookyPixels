@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://23m70gis0q5w"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_a8vfp"]
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_a8vfp"]
 [ext_resource type="Texture2D" uid="uid://di3wea06db0vc" path="res://art/1bit/toxic_card_icon.png" id="1_rcjip"]
 [ext_resource type="AudioStream" uid="uid://s8g2uhb46knt" path="res://art/sounds/Item - Gold Coin 01.wav" id="3_l7vo6"]
 

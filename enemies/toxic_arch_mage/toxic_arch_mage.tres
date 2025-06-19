@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvesomtqpihp0" path="res://art/1bit/orcoArt/Boss 01.png" id="1_lw1b0"]
 [ext_resource type="PackedScene" uid="uid://cl2k52sin0o2p" path="res://enemies/toxic_arch_mage/toxic_arch_mage_ai.tscn" id="1_tmgtf"]
-[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_yk4dh"]
+[ext_resource type="Script" uid="uid://b54vkl5pj64pi" path="res://custom_resources/enemy_stats.gd" id="1_yk4dh"]
 [ext_resource type="Texture2D" uid="uid://dyjsg3sdsf4g0" path="res://art/1bit/orcoArt/Boss 03.png" id="2_cwa21"]
 
 [resource]

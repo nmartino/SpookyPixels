@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Spooky Pixels"
 run/main_scene="res://Scenes/splash/splash_screen.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/show_image=false
 config/icon="res://Icon3.png"
 

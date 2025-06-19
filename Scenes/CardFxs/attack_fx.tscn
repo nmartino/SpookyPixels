@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=3 uid="uid://c3kvhrba56b8c"]
 
-[ext_resource type="Script" path="res://Scenes/CardFxs/attack_fx.gd" id="1_6l4vf"]
+[ext_resource type="Script" uid="uid://dl3m2o21uhuxc" path="res://Scenes/CardFxs/attack_fx.gd" id="1_6l4vf"]
 [ext_resource type="Texture2D" uid="uid://du24smld0skrv" path="res://art/1bit/ice/animation-battle-icespike-002.png" id="2_gwmrt"]
 [ext_resource type="Texture2D" uid="uid://c5me5yyvtuswy" path="res://art/1bit/ice/animation-battle-icespike-003.png" id="3_lki41"]
 [ext_resource type="Texture2D" uid="uid://7xxrvdrwofkm" path="res://art/1bit/fast_100x100px.png" id="3_nisfj"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EventRoomPool" load_steps=4 format=3 uid="uid://c8acdg4631a23"]
 
-[ext_resource type="Script" path="res://custom_resources/event_room_pool.gd" id="1_aactt"]
+[ext_resource type="Script" uid="uid://bdg1d3su8vxfw" path="res://custom_resources/event_room_pool.gd" id="1_aactt"]
 [ext_resource type="PackedScene" uid="uid://7dw8xyhwd53o" path="res://Scenes/EventsRoom/gamble_event.tscn" id="1_wdqam"]
 [ext_resource type="PackedScene" uid="uid://bon4mgkl3m0f1" path="res://Scenes/EventsRoom/the_eternal_feast.tscn" id="2_vfimo"]
 

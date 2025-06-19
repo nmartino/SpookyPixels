@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnxnm2nk6s6v0"]
 
-[ext_resource type="Script" path="res://Scenes/UI/card_tool_tip_pop_up.gd" id="1_kgfmj"]
+[ext_resource type="Script" uid="uid://cnig0b25bu4rk" path="res://Scenes/UI/card_tool_tip_pop_up.gd" id="1_kgfmj"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_yawff"]
 [ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="3_nludm"]
 

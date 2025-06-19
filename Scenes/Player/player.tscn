@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bjpre2elyenf6"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_807gn"]
+[ext_resource type="Script" uid="uid://byqam4oevxvrh" path="res://Scenes/Player/player.gd" id="1_807gn"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="2_dsp15"]
 [ext_resource type="Material" uid="uid://dc88iqpm1m1o1" path="res://Scenes/Player/test_shader_aura.tres" id="2_kxi6w"]
 [ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="3_lv57f"]

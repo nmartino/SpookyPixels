@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://c6r8mdjpsdpo7"]
 
 [ext_resource type="Texture2D" uid="uid://b6nh4ehchu7i7" path="res://art/1bit/potHP.png" id="1_xgfs0"]
-[ext_resource type="Script" path="res://relics/healing_potion.gd" id="2_qfjru"]
+[ext_resource type="Script" uid="uid://1ldpepms2o83" path="res://relics/healing_potion.gd" id="2_qfjru"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="3_nnwkf"]
 
 [resource]

@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="CardPile" load_steps=10 format=3 uid="uid://q1pjq8kfa1mq"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_x3ydj"]
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_x3ydj"]
 [ext_resource type="Resource" uid="uid://xpf2ucmmnhcq" path="res://characters/Mage/cards/mage_lighting_strike.tres" id="3_0blp4"]
 [ext_resource type="Resource" uid="uid://8ld4noecrxf8" path="res://characters/Mage/cards/mage_block.tres" id="4_2wohk"]
 [ext_resource type="Resource" uid="uid://vsoj6huc0udw" path="res://characters/Mage/cards/mage_fire_ball_attack.tres" id="5_8wnt1"]
 [ext_resource type="Resource" uid="uid://bbn8i0uecn3lp" path="res://characters/Mage/cards/mage_ice_spike_attack.tres" id="5_p7rsu"]
 [ext_resource type="Resource" uid="uid://b5qfpj2e5sqeb" path="res://characters/Mage/cards/mage_wind_form.tres" id="6_ue8gw"]
 [ext_resource type="Resource" uid="uid://cebs24ymycnxn" path="res://characters/multi_user_cards/phantom_trick.tres" id="7_tsakc"]
-[ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="7_wtopg"]
+[ext_resource type="Script" uid="uid://8n1y0j3hlrdl" path="res://custom_resources/card_pile.gd" id="7_wtopg"]
 [ext_resource type="Resource" uid="uid://brhbuicpboast" path="res://characters/multi_user_cards/vengeful_block.tres" id="8_x178r"]
 
 [resource]

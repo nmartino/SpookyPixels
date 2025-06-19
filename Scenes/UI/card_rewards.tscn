@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cwq3ah0g822hv" path="res://art/1bit/background/bg-rewards.png" id="1_0o6lu"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_j787s"]
-[ext_resource type="Script" path="res://Scenes/UI/card_rewards.gd" id="1_keahq"]
+[ext_resource type="Script" uid="uid://dirqybj7qh7kc" path="res://Scenes/UI/card_rewards.gd" id="1_keahq"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="2_4nuhm"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_5x5ra"]
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="2_5x5ra"]
 [ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/warrior/cards/warrior_slash_attack.tres" id="3_veqo2"]
 [ext_resource type="Resource" uid="uid://cpjuqdlmkcaya" path="res://characters/warrior/cards/warrior_big_slam.tres" id="4_x8i7v"]
 [ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_ryg4x"]

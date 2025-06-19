@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://dmhsokr2rj750"]
 
-[ext_resource type="Script" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
-[ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_0re27"]
+[ext_resource type="Script" uid="uid://i3mn841vgq1n" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
+[ext_resource type="Script" uid="uid://dvkyibkqq8n0d" path="res://custom_resources/relic.gd" id="2_0re27"]
 [ext_resource type="AudioStream" uid="uid://brurpddkw5j74" path="res://art/(Loop) Peaceful Village.wav" id="2_hrsch"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_x0c2s"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="4_itqgr"]
@@ -123,10 +123,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_llkgq"]
 _data = {
-"RESET": SubResource("Animation_cxch1"),
-"fondo_a": SubResource("Animation_i0rm8"),
-"fondo_b": SubResource("Animation_43crv"),
-"fondo_c": SubResource("Animation_e0f3m")
+&"RESET": SubResource("Animation_cxch1"),
+&"fondo_a": SubResource("Animation_i0rm8"),
+&"fondo_b": SubResource("Animation_43crv"),
+&"fondo_c": SubResource("Animation_e0f3m")
 }
 
 [sub_resource type="Animation" id="Animation_74qjp"]
@@ -163,8 +163,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eddim"]
 _data = {
-"RESET": SubResource("Animation_74qjp"),
-"blink": SubResource("Animation_nyktx")
+&"RESET": SubResource("Animation_74qjp"),
+&"blink": SubResource("Animation_nyktx")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_peme3"]

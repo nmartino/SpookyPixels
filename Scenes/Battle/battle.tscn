@@ -1,13 +1,13 @@
 [gd_scene load_steps=42 format=3 uid="uid://bremjy710enpy"]
 
-[ext_resource type="Script" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
+[ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
-[ext_resource type="Script" path="res://Scenes/UI/hand.gd" id="2_x8kit"]
+[ext_resource type="Script" uid="uid://c2oa66hae52le" path="res://Scenes/UI/hand.gd" id="2_x8kit"]
 [ext_resource type="PackedScene" uid="uid://css6f6l0luv0i" path="res://Scenes/card_target_selector/card_target_selector.tscn" id="3_n30ip"]
 [ext_resource type="PackedScene" uid="uid://bjpre2elyenf6" path="res://Scenes/Player/player.tscn" id="3_spkpv"]
 [ext_resource type="AudioStream" uid="uid://dlxq3kaphatmb" path="res://art/Tyrant_s-Downfall.mp3" id="3_vgqd8"]
 [ext_resource type="AudioStream" uid="uid://bok4njnqsu2tv" path="res://art/sounds/Retro Success Melody 01 - sawtooth lead 1.wav" id="4_4l47w"]
-[ext_resource type="Script" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
+[ext_resource type="Script" uid="uid://cj70n1speektp" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
 [ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
 [ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="4_ui3ls"]
 [ext_resource type="Texture2D" uid="uid://bfb7ydgrgei22" path="res://art/1bit/orcoArt/Sprite Fondos testeo1.png" id="5_12wn7"]
@@ -15,15 +15,15 @@
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="6_6e1tc"]
 [ext_resource type="Texture2D" uid="uid://talqes4x000t" path="res://art/1bit/orcoArt/Sprite Fondos testeo2.png" id="6_sgv1m"]
 [ext_resource type="Texture2D" uid="uid://bf1cx3ocwat64" path="res://art/1bit/orcoArt/Sprite Fondos testeo3.png" id="7_ew1yi"]
-[ext_resource type="Script" path="res://Scenes/Player/player_handeler.gd" id="8_1ftam"]
-[ext_resource type="Script" path="res://Scenes/UI/battle_ui.gd" id="8_7h1jk"]
+[ext_resource type="Script" uid="uid://bli60g76wg0tb" path="res://Scenes/Player/player_handeler.gd" id="8_1ftam"]
+[ext_resource type="Script" uid="uid://ixhaaql0jloi" path="res://Scenes/UI/battle_ui.gd" id="8_7h1jk"]
 [ext_resource type="Resource" uid="uid://vyfgwimrjqh0" path="res://enemies/enemy2/enemy2.tres" id="8_bk2s1"]
 [ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="8_e7p4s"]
 [ext_resource type="Texture2D" uid="uid://ya4u5dsov6xe" path="res://art/1bit/orcoArt/Sprite Fondos testeo5.png" id="9_i8imm"]
 [ext_resource type="PackedScene" uid="uid://bg7tf3vrpwfff" path="res://Scenes/CardUI/mana_ui.tscn" id="11_6goif"]
 [ext_resource type="PackedScene" uid="uid://xlssvxwqgfut" path="res://Scenes/UI/tool_tip.tscn" id="12_rw2qe"]
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="13_3eywo"]
-[ext_resource type="Script" path="res://Scenes/UI/white_flash.gd" id="15_2ee3c"]
+[ext_resource type="Script" uid="uid://bihv6wnb8k7kh" path="res://Scenes/UI/white_flash.gd" id="15_2ee3c"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="17_3lvuc"]
 [ext_resource type="PackedScene" uid="uid://bjijnp3e7egu2" path="res://Scenes/UI/battle_over_panel.tscn" id="17_4r3ak"]
 [ext_resource type="Texture2D" uid="uid://bshnd2xf8nna4" path="res://art/1bit/deck-icon05.png" id="17_xesn7"]
@@ -125,8 +125,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v0du8"]
 _data = {
-"RESET": SubResource("Animation_nun6g"),
-"reloj": SubResource("Animation_tt5v4")
+&"RESET": SubResource("Animation_nun6g"),
+&"reloj": SubResource("Animation_tt5v4")
 }
 
 [node name="Battle" type="Node2D"]

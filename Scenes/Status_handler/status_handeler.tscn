@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuqex5rqjyym"]
 
-[ext_resource type="Script" path="res://Scenes/Status_handler/status_handler.gd" id="1_vjhn6"]
+[ext_resource type="Script" uid="uid://cmt4uwiae48yd" path="res://Scenes/Status_handler/status_handler.gd" id="1_vjhn6"]
 
 [node name="StatusHandler" type="GridContainer"]
 offset_right = 20.0

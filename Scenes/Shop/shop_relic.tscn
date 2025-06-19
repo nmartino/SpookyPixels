@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bx48fv2thmpnp"]
 
-[ext_resource type="Script" path="res://Scenes/Shop/shop_relic.gd" id="1_os0vl"]
+[ext_resource type="Script" uid="uid://dr2oqqk4a00yn" path="res://Scenes/Shop/shop_relic.gd" id="1_os0vl"]
 [ext_resource type="PackedScene" uid="uid://b4w60288l0pwt" path="res://Scenes/relics_handler/relic_ui.tscn" id="1_u22ps"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="2_kpsjt"]
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="4_o0n2n"]

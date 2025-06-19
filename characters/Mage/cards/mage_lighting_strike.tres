@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://xpf2ucmmnhcq"]
 
 [ext_resource type="Texture2D" uid="uid://bspqkcs0gdwf4" path="res://art/1bit/spell-icon-lightbolt-003.png" id="1_24j56"]
-[ext_resource type="Script" path="res://characters/Mage/cards/mage_lighting_strike.gd" id="2_jfosr"]
+[ext_resource type="Script" uid="uid://es6ggtnj0tdf" path="res://characters/Mage/cards/mage_lighting_strike.gd" id="2_jfosr"]
 [ext_resource type="AudioStream" uid="uid://ydy7ki4xskrm" path="res://art/sounds/Retro Magic 06.wav" id="3_htjtx"]
 
 [resource]

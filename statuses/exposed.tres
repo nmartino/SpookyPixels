@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ExposedStatus" load_steps=4 format=3 uid="uid://cutw4jkdqxtyb"]
 
 [ext_resource type="Texture2D" uid="uid://dntlrdsuieply" path="res://art/1bit/exposed_icon.png" id="1_07mme"]
-[ext_resource type="Script" path="res://statuses/exposed.gd" id="2_j8g3k"]
+[ext_resource type="Script" uid="uid://1eewb2dc3ffn" path="res://statuses/exposed.gd" id="2_j8g3k"]
 [ext_resource type="AudioStream" uid="uid://dyojd7c378jc1" path="res://art/sounds/Creature - Call 01.wav" id="3_y3vty"]
 
 [resource]

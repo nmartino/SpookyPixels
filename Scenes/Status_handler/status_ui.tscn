@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cvbyxh8xxsuvx"]
 
-[ext_resource type="Script" path="res://Scenes/Status_handler/status_ui.gd" id="1_k212r"]
+[ext_resource type="Script" uid="uid://dw6xc61fu5vtr" path="res://Scenes/Status_handler/status_ui.gd" id="1_k212r"]
 [ext_resource type="Resource" uid="uid://cutw4jkdqxtyb" path="res://statuses/exposed.tres" id="2_k4nnf"]
 [ext_resource type="Texture2D" uid="uid://dwykbosnetmmx" path="res://art/1bit/orcoArt/exposed.png" id="3_6yuy8"]
 

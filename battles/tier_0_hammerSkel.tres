@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="BattleClass" load_steps=3 format=3 uid="uid://bimpuqoe6o478"]
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://bimpuqoe6o478"]
 
 [ext_resource type="PackedScene" uid="uid://bf2vx13flsstm" path="res://battles/tier_0_hammer_skel.tscn" id="1_30ir0"]
-[ext_resource type="Script" path="res://custom_resources/battle_stats.gd" id="1_bj1mp"]
+[ext_resource type="Script" uid="uid://fwhxb7x0wj1p" path="res://custom_resources/battle_stats.gd" id="1_bj1mp"]
 
 [resource]
 script = ExtResource("1_bj1mp")

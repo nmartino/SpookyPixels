@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ii2y16pi1y56"]
 
-[ext_resource type="Script" path="res://global/sound_player.gd" id="1_4a0pf"]
+[ext_resource type="Script" uid="uid://ngprr7mcjd1t" path="res://global/sound_player.gd" id="1_4a0pf"]
 
 [node name="SFXPlayer" type="Node"]
 process_mode = 3

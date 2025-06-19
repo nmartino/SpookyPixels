@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c0511bjl6j8f3"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_utljw"]
-[ext_resource type="Shader" path="res://Scenes/Player/testshader.gdshader" id="2_ao8bp"]
+[ext_resource type="Script" uid="uid://bxbjclwvdxmsp" path="res://Scenes/Enemy/enemy.gd" id="1_utljw"]
+[ext_resource type="Shader" uid="uid://bur1r7h85iwhj" path="res://Scenes/Player/testshader.gdshader" id="2_ao8bp"]
 [ext_resource type="Texture2D" uid="uid://cvesomtqpihp0" path="res://art/1bit/orcoArt/Boss 01.png" id="2_r6ddg"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_wbtpx"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="3_qxoj6"]

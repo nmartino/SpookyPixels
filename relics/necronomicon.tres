@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://bupu28ochu3f4"]
 
 [ext_resource type="Texture2D" uid="uid://c47twgkv3nqr4" path="res://art/1bit/Relics Sources/Relics Sources/toxic_buff_icon.png" id="1_aboef"]
-[ext_resource type="Script" path="res://relics/necronomicon.gd" id="2_l2wov"]
+[ext_resource type="Script" uid="uid://ix15b0bt26fb" path="res://relics/necronomicon.gd" id="2_l2wov"]
 [ext_resource type="AudioStream" uid="uid://dgfp7m2x53t1n" path="res://art/sounds/Retro Instrument - choir bass - C12.wav" id="3_jt0l3"]
 
 [resource]

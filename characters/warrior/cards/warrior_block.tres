@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://db62ldp41o22"]
 
 [ext_resource type="Texture2D" uid="uid://b2qwxd464ud" path="res://art/1bit/orcoArt/shield_block.png" id="1_qh5fc"]
-[ext_resource type="Script" path="res://characters/warrior/cards/warrior_block.gd" id="2_e08lc"]
+[ext_resource type="Script" uid="uid://cmea5jqd2r3cs" path="res://characters/warrior/cards/warrior_block.gd" id="2_e08lc"]
 [ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/block.ogg" id="3_gp8ue"]
 
 [resource]

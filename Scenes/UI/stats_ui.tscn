@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://opviovqbht4t"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_ear25"]
-[ext_resource type="Script" path="res://Scenes/UI/stats_ui.gd" id="2_ry41p"]
+[ext_resource type="Script" uid="uid://q8isr1dva70n" path="res://Scenes/UI/stats_ui.gd" id="2_ry41p"]
 [ext_resource type="Texture2D" uid="uid://b2qwxd464ud" path="res://art/1bit/orcoArt/shield_block.png" id="3_3ima4"]
 [ext_resource type="PackedScene" uid="uid://c5lfr6iekpgsw" path="res://Scenes/UI/health_ui.tscn" id="4_pyua6"]
 

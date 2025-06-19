@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WindFormStatus" load_steps=3 format=3 uid="uid://c7806uxjs6gvh"]
 
 [ext_resource type="Texture2D" uid="uid://bi15vou701s3b" path="res://art/1bit/orcoArt/wind_attack.png" id="1_vkh31"]
-[ext_resource type="Script" path="res://statuses/wind_form.gd" id="2_egqas"]
+[ext_resource type="Script" uid="uid://vwc16hslwcru" path="res://statuses/wind_form.gd" id="2_egqas"]
 
 [resource]
 script = ExtResource("2_egqas")

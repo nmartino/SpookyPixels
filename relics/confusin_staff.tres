@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://3m1te8fvfg00"]
 
 [ext_resource type="Texture2D" uid="uid://djn14kn16qo0e" path="res://art/1bit/Relics Sources/Relics Sources/staff1.png" id="1_0w0sq"]
-[ext_resource type="Script" path="res://relics/confusing_staff.gd" id="2_tpv41"]
+[ext_resource type="Script" uid="uid://7nicw75vesg5" path="res://relics/confusing_staff.gd" id="2_tpv41"]
 [ext_resource type="AudioStream" uid="uid://bggtts1xw3bve" path="res://art/sounds/Retro Magic Protection 25.wav" id="3_72qvu"]
 
 [resource]

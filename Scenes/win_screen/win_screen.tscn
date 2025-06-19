@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://6rbvvyq7afbr"]
 
-[ext_resource type="Script" path="res://Scenes/win_screen/win_screen.gd" id="1_srglc"]
+[ext_resource type="Script" uid="uid://bpboihbbqd1bv" path="res://Scenes/win_screen/win_screen.gd" id="1_srglc"]
 [ext_resource type="AudioStream" uid="uid://cyt5v3tg2yt1h" path="res://art/(Loop) Powerful Relic Theme.wav" id="2_uuijm"]
 [ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="3_rujfh"]
 [ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="4_8ihud"]

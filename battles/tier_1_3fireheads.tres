@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="BattleClass" load_steps=3 format=3 uid="uid://cnnynlwew4xt"]
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://cnnynlwew4xt"]
 
-[ext_resource type="Script" path="res://custom_resources/battle_stats.gd" id="1_i8tg8"]
+[ext_resource type="Script" uid="uid://fwhxb7x0wj1p" path="res://custom_resources/battle_stats.gd" id="1_i8tg8"]
 [ext_resource type="PackedScene" uid="uid://bmq3nbvvyxpmg" path="res://battles/tier_1_3fire_heads.tscn" id="1_lisr3"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://rypemqa7vwy7"]
 
-[ext_resource type="Script" path="res://relics/battle_axe.gd" id="1_tq2a8"]
+[ext_resource type="Script" uid="uid://q467w7yn2op" path="res://relics/battle_axe.gd" id="1_tq2a8"]
 [ext_resource type="Texture2D" uid="uid://bw8hs17ewgsml" path="res://art/1bit/Relics Sources/Relics Sources/dobleaxe1.png" id="1_yvnfp"]
 [ext_resource type="AudioStream" uid="uid://753mq7xqylm0" path="res://art/sounds/Attack - Explosion 01.wav" id="2_3krxq"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="2_78rv3"]

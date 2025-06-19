@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfj77qt303ooj"]
 
-[ext_resource type="Script" path="res://Scenes/Shop/shop_card.gd" id="1_qme08"]
+[ext_resource type="Script" uid="uid://vto8ydo6t6g5" path="res://Scenes/Shop/shop_card.gd" id="1_qme08"]
 [ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_p2lu6"]
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="2_twn1e"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="3_we4h3"]

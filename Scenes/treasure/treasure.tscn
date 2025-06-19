@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://b700f06xtqt3l"]
 
-[ext_resource type="Script" path="res://Scenes/treasure/treasure.gd" id="1_pxeoq"]
-[ext_resource type="Script" path="res://custom_resources/relic.gd" id="2_8tegm"]
+[ext_resource type="Script" uid="uid://bl70p2fam542a" path="res://Scenes/treasure/treasure.gd" id="1_pxeoq"]
+[ext_resource type="Script" uid="uid://dvkyibkqq8n0d" path="res://custom_resources/relic.gd" id="2_8tegm"]
 [ext_resource type="AudioStream" uid="uid://dqhy4ko0r1q1" path="res://art/(Loop) Dungeon.wav" id="2_dbys1"]
 [ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="3_mq4tk"]
 [ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="4_ovqvi"]
@@ -124,9 +124,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_53s2s"]
 _data = {
-"RESET": SubResource("Animation_nwvdk"),
-"highlight": SubResource("Animation_k6h1x"),
-"open": SubResource("Animation_a16f6")
+&"RESET": SubResource("Animation_nwvdk"),
+&"highlight": SubResource("Animation_k6h1x"),
+&"open": SubResource("Animation_a16f6")
 }
 
 [sub_resource type="Curve" id="Curve_hnuf8"]

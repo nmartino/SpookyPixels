@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://cgwmut228jk5r"]
 
 [ext_resource type="Texture2D" uid="uid://bw8kgbvqemy8o" path="res://art/1bit/orcoArt/bow_attack.png" id="1_dmj2q"]
-[ext_resource type="Script" path="res://characters/Assassin/cards/assassin_shot_attack.gd" id="1_eoa6k"]
+[ext_resource type="Script" uid="uid://dd6w62m7rgj61" path="res://characters/Assassin/cards/assassin_shot_attack.gd" id="1_eoa6k"]
 [ext_resource type="AudioStream" uid="uid://bl8plqfmjp3di" path="res://art/sounds/Retro Weapon Gun LoFi 03.wav" id="3_u0d7v"]
 
 [resource]

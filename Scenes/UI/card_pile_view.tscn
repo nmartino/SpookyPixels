@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://wq4bxyhc88bc"]
 
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_5iuwu"]
-[ext_resource type="Script" path="res://Scenes/UI/card_pile_view.gd" id="1_j5pp2"]
+[ext_resource type="Script" uid="uid://b1nw78ajnubir" path="res://Scenes/UI/card_pile_view.gd" id="1_j5pp2"]
 [ext_resource type="Texture2D" uid="uid://ckv2ajsqvw13m" path="res://art/1bit/background/bg-decks2.png" id="2_m7kd4"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="2_pkyia"]
 [ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="2_vt2xp"]

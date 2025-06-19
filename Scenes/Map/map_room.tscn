@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://t3ic5ankyihq"]
 
-[ext_resource type="Script" path="res://Scenes/Map/map_room.gd" id="1_68xlo"]
+[ext_resource type="Script" uid="uid://d0d0g54ycygfp" path="res://Scenes/Map/map_room.gd" id="1_68xlo"]
 [ext_resource type="AudioStream" uid="uid://ctlogjpti8efc" path="res://art/sounds/dungeon door opens.mp3" id="2_bokjj"]
 [ext_resource type="Texture2D" uid="uid://coqy8mfv72ply" path="res://art/1bit/pruebas mapa/Piezas mapa (2).png" id="2_eslyf"]
 [ext_resource type="Texture2D" uid="uid://bgitfv5ohpy2l" path="res://art/1bit/pruebas mapa/background_2_prueba.png" id="2_h844r"]
@@ -125,9 +125,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cf47s"]
 _data = {
-"RESET": SubResource("Animation_3l2ps"),
-"highlight": SubResource("Animation_025qm"),
-"selected": SubResource("Animation_wj2f7")
+&"RESET": SubResource("Animation_3l2ps"),
+&"highlight": SubResource("Animation_025qm"),
+&"selected": SubResource("Animation_wj2f7")
 }
 
 [node name="MapRoom" type="Area2D"]

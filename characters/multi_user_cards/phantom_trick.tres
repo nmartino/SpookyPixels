@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://cebs24ymycnxn"]
 
 [ext_resource type="Texture2D" uid="uid://dwykbosnetmmx" path="res://art/1bit/orcoArt/exposed.png" id="1_vt6wp"]
-[ext_resource type="Script" path="res://characters/multi_user_cards/phantom_trick.gd" id="2_5fhvv"]
+[ext_resource type="Script" uid="uid://blsp1bo6ih1ok" path="res://characters/multi_user_cards/phantom_trick.gd" id="2_5fhvv"]
 [ext_resource type="AudioStream" uid="uid://2po4mntvprdm" path="res://art/sounds/Retro Magic 11.wav" id="3_4dxhs"]
 
 [resource]

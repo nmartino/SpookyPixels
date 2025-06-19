@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://c6m6xaiqd0isn"]
 
 [ext_resource type="Texture2D" uid="uid://c637p4bdyegyn" path="res://art/1bit/Relics Sources/Relics Sources/bow1.png" id="1_r65xi"]
-[ext_resource type="Script" path="res://relics/short_bow.gd" id="2_p5405"]
+[ext_resource type="Script" uid="uid://cn7spudl8t38v" path="res://relics/short_bow.gd" id="2_p5405"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="2_pt8d6"]
 [ext_resource type="AudioStream" uid="uid://bl8plqfmjp3di" path="res://art/sounds/Retro Weapon Gun LoFi 03.wav" id="3_82ra2"]
 

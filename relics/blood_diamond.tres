@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://q6aht1wbr44b"]
 
-[ext_resource type="Script" path="res://relics/blood_diamond.gd" id="1_48w2w"]
+[ext_resource type="Script" uid="uid://b7uyb2cmd50v7" path="res://relics/blood_diamond.gd" id="1_48w2w"]
 [ext_resource type="Texture2D" uid="uid://bj45hxec8vttx" path="res://art/1bit/Relics Sources/Relics Sources/blood_diamond.png" id="1_b7foh"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="2_vt42n"]
 

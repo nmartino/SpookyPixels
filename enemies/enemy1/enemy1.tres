@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://cmh05sjnhljf"]
 
 [ext_resource type="PackedScene" uid="uid://dl631ujncn6q8" path="res://enemies/enemy1/enemy1_ai.tscn" id="1_kwka6"]
-[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_omr5h"]
+[ext_resource type="Script" uid="uid://b54vkl5pj64pi" path="res://custom_resources/enemy_stats.gd" id="1_omr5h"]
 [ext_resource type="Texture2D" uid="uid://brkbann6cndd" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo.png" id="2_5jx8i"]
 [ext_resource type="Texture2D" uid="uid://dbirc5hejn6f3" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo_lastimado.png" id="3_qq5od"]
 
