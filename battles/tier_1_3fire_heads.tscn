@@ -6,13 +6,13 @@
 [node name="Tier13FireHeads" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_v3og5")]
-position = Vector2(144, 63)
+position = Vector2(91, 69)
 stats = ExtResource("2_ro21q")
 
 [node name="Enemy3" parent="." instance=ExtResource("1_v3og5")]
-position = Vector2(200, 45)
+position = Vector2(176, 51)
 stats = ExtResource("2_ro21q")
 
 [node name="Enemy2" parent="." instance=ExtResource("1_v3og5")]
-position = Vector2(261, 65)
+position = Vector2(263, 72)
 stats = ExtResource("2_ro21q")

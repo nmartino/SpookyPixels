@@ -168,7 +168,7 @@ shape = SubResource("CircleShape2D_ehmdb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_cf47s")
+&"": SubResource("AnimationLibrary_cf47s")
 }
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
