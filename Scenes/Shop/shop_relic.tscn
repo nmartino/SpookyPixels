@@ -10,7 +10,7 @@ outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="ShopRelic" type="VBoxContainer"]
-custom_minimum_size = Vector2(50, 90)
+custom_minimum_size = Vector2(80, 90)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 2
@@ -22,7 +22,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="RelicUI" parent="RelicContainer" instance=ExtResource("1_u22ps")]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
 [node name="Control" type="Control" parent="."]

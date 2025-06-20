@@ -283,9 +283,10 @@ animations = [{
 script = ExtResource("1_6l4vf")
 
 [node name="explosion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yx4m4")
-animation = &"Ice_attack"
-frame = 6
+animation = &"player_fx"
+frame = 15
 frame_progress = 1.0
 
 [connection signal="animation_finished" from="explosion" to="." method="_on_explosion_animation_finished"]

@@ -1,19 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://xlssvxwqgfut"]
+[gd_scene load_steps=4 format=3 uid="uid://xlssvxwqgfut"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_p0cnb"]
 [ext_resource type="Script" uid="uid://b1vklnpfae6xi" path="res://Scenes/UI/tool_tip.gd" id="2_qqdyy"]
 [ext_resource type="Texture2D" uid="uid://5sryc72ckfy2" path="res://art/1bit/orcoArt/axe_attack.png" id="3_ewojc"]
-[ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="4_jfbah"]
 
 [node name="ToolTip" type="PanelContainer"]
 process_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -55.0
-offset_right = 55.0
-offset_bottom = 36.0
+offset_left = -122.0
+offset_top = 8.0
+offset_right = 122.0
+offset_bottom = 71.0
 grow_horizontal = 2
+size_flags_horizontal = 4
 theme = ExtResource("1_p0cnb")
 script = ExtResource("2_qqdyy")
 
@@ -30,7 +31,7 @@ alignment = 1
 
 [node name="ToolTipIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("3_ewojc")
 expand_mode = 1
@@ -47,12 +48,10 @@ size_flags_horizontal = 3
 
 [node name="ToolTipText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(220, 50)
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/normal_font = ExtResource("4_jfbah")
-theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[center]At the start of your turn, gain[color='55ffff'] 2 Strength[/color].[/center]"

@@ -65,9 +65,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 20)
 layout_mode = 2
 offset_top = 1.0
-offset_right = 172.0
-offset_bottom = 19.0
-theme_override_constants/separation = 2
+offset_right = 284.0
+offset_bottom = 33.0
 
 [node name="RelicUI" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2

@@ -1,6 +1,6 @@
 extends CardState
 
-const MOUSE_Y_SNAPBACK_THRESHOLD := 288
+const MOUSE_Y_SNAPBACK_THRESHOLD := 360
 
 
 func enter() -> void:

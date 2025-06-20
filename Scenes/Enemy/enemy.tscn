@@ -20,7 +20,7 @@ shader_parameter/color = Color(1, 0.333333, 1, 1)
 shader_parameter/tolerance = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyi54"]
-size = Vector2(30, 31)
+size = Vector2(54, 69)
 
 [node name="Enemy" type="Area2D" groups=["enemies"]]
 collision_layer = 4
@@ -28,35 +28,35 @@ script = ExtResource("1_utljw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_q78at")
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_r6ddg")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(13, 0)
+position = Vector2(73, 0)
 rotation = -1.5708
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_wbtpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_vyi54")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_qxoj6")]
-offset_left = -43.0
-offset_top = 29.0
-offset_right = 47.0
-offset_bottom = 45.0
+offset_left = -44.0
+offset_top = 39.0
+offset_right = 46.0
+offset_bottom = 55.0
 
 [node name="IntentUI" parent="." groups=["intent"] instance=ExtResource("5_xhtot")]
-offset_left = -22.0
-offset_top = -53.0
-offset_right = 18.0
-offset_bottom = -28.0
+offset_top = -66.0
+offset_bottom = -41.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_x0tw5")]
-offset_left = -40.0
-offset_top = -76.0
-offset_right = -40.0
-offset_bottom = -76.0
+offset_left = -25.0
+offset_top = -63.0
+offset_right = -25.0
+offset_bottom = -63.0
 status_owner = NodePath("..")
 
 [node name="ModifierHandler" parent="." instance=ExtResource("7_kn7cp")]

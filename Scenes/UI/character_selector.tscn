@@ -370,7 +370,7 @@ stretch_mode = 5
 
 [node name="transition" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jdilk")
+&"": SubResource("AnimationLibrary_jdilk")
 }
 
 [node name="ColorRect" type="ColorRect" parent="transition"]

@@ -3,25 +3,27 @@
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_8p8kn"]
 [ext_resource type="StyleBox" uid="uid://div08pvywxm5d" path="res://Scenes/CardUI/card_base_stylebox.tres" id="2_oplt0"]
 [ext_resource type="Script" uid="uid://bv685d44fchvj" path="res://Scenes/UI/card_visuals.gd" id="2_u13nj"]
-[ext_resource type="Texture2D" uid="uid://dxmqfbt6cm28k" path="res://art/1bit/daga1.png" id="3_6v158"]
 [ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/warrior/cards/warrior_slash_attack.tres" id="3_v7cy3"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="4_764yn"]
+[ext_resource type="Texture2D" uid="uid://5sryc72ckfy2" path="res://art/1bit/orcoArt/axe_attack.png" id="5_6pjps"]
 
 [node name="CardVisuals" type="Control"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 25.0
-offset_bottom = 30.0
+offset_right = 80.0
+offset_bottom = 108.0
 theme = ExtResource("1_8p8kn")
 script = ExtResource("2_u13nj")
 card = ExtResource("3_v7cy3")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 1.6
+anchor_bottom = 1.8
+offset_right = -48.0
+offset_bottom = -86.4
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -46,19 +48,17 @@ vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 17.0
-offset_bottom = 16.0
-grow_horizontal = 2
+offset_left = 8.0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = 2.0
 grow_vertical = 2
+scale = Vector2(2, 2)
 mouse_filter = 2
-texture = ExtResource("3_6v158")
+texture = ExtResource("5_6pjps")
 expand_mode = 1
 stretch_mode = 5
 
@@ -68,9 +68,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -11.0
-offset_top = 4.0
+offset_top = 5.0
 offset_right = -5.0
-offset_bottom = 10.0
+offset_bottom = 11.0
 grow_horizontal = 0
 texture = ExtResource("4_764yn")
 expand_mode = 1
