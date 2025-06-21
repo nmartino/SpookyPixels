@@ -17,6 +17,7 @@ texture = ExtResource("1_ymmri")
 [sub_resource type="ImageTexture" id="ImageTexture_c3gj0"]
 
 [node name="RelicHandler" type="HBoxContainer"]
+visible = false
 offset_left = 13.0
 offset_top = 2.0
 offset_right = 125.0

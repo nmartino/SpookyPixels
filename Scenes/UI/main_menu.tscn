@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=17 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" uid="uid://cbfi8jby8cmtm" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
@@ -26,78 +26,12 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
 
-[sub_resource type="Animation" id="Animation_wgfis"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("transition/ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("transition/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_sd6vq"]
-resource_name = "fade_in"
-
-[sub_resource type="Animation" id="Animation_mhcjx"]
-resource_name = "fade_out"
-length = 0.5
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("transition/ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("transition/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ie85"]
-_data = {
-&"RESET": SubResource("Animation_wgfis"),
-&"fade_in": SubResource("Animation_sd6vq"),
-&"fade_out": SubResource("Animation_mhcjx")
-}
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]
 shader = ExtResource("14_vi80r")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.402
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.1
+shader_parameter/noise_amount = 0.167
 shader_parameter/interference_amount = 0.09
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
@@ -193,58 +127,44 @@ text = "Exit
 "
 
 [node name="Player3" type="Sprite2D" parent="."]
-position = Vector2(107, 219)
-scale = Vector2(1.5, 1.5)
+position = Vector2(107, 224)
+scale = Vector2(2, 2)
 texture = ExtResource("6_hn4ct")
 
 [node name="Player2" type="Sprite2D" parent="."]
-position = Vector2(72, 258)
-scale = Vector2(1.5, 1.5)
+position = Vector2(65, 276)
+scale = Vector2(2, 2)
 texture = ExtResource("7_263bx")
 
 [node name="Player4" type="Sprite2D" parent="."]
-position = Vector2(142, 260)
-scale = Vector2(1.5, 1.5)
+position = Vector2(167, 277)
+scale = Vector2(2, 2)
 texture = ExtResource("8_yt480")
 
 [node name="Enemy5" type="Sprite2D" parent="."]
-position = Vector2(584, 207)
-scale = Vector2(1.5, 1.5)
+position = Vector2(589, 212)
+scale = Vector2(2, 2)
 texture = ExtResource("9_ebv7x")
 
 [node name="Enemy2" type="Sprite2D" parent="."]
-position = Vector2(496, 210)
-scale = Vector2(1.5, 1.5)
+position = Vector2(489, 214)
+scale = Vector2(2, 2)
 texture = ExtResource("10_m6d2t")
 
 [node name="Enemy3" type="Sprite2D" parent="."]
-position = Vector2(535, 240)
-scale = Vector2(1.5, 1.5)
+position = Vector2(541, 241)
+scale = Vector2(2, 2)
 texture = ExtResource("11_2cot0")
 
 [node name="Enemy8" type="Sprite2D" parent="."]
-position = Vector2(584, 268)
-scale = Vector2(1.5, 1.5)
+position = Vector2(583, 277)
+scale = Vector2(2, 2)
 texture = ExtResource("15_845dv")
 
 [node name="Enemy4" type="Sprite2D" parent="."]
-position = Vector2(491, 265)
-scale = Vector2(1.5, 1.5)
+position = Vector2(489, 274)
+scale = Vector2(2, 2)
 texture = ExtResource("12_wh6ri")
-
-[node name="transition" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6ie85")
-}
-
-[node name="ColorRect" type="ColorRect" parent="transition"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.333333, 1, 1)
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 5
@@ -263,4 +183,3 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/New Run" to="." method="_on_new_run_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="animation_finished" from="transition" to="." method="_on_transition_animation_finished"]
