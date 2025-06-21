@@ -17,7 +17,7 @@ width = 30
 script = ExtResource("1_ski2f")
 
 [node name="Pared de entrada" type="Node2D" parent="."]
-position = Vector2(109, 72)
+position = Vector2(135, 108)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pared de entrada"]
 position = Vector2(16, 107)
@@ -89,6 +89,22 @@ texture = ExtResource("4_o7i3w")
 
 [node name="Sprite2D18" type="Sprite2D" parent="Pared de entrada"]
 position = Vector2(-101, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-131, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-160, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-190, 107)
+texture = ExtResource("4_o7i3w")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(426, 107)
 texture = ExtResource("4_o7i3w")
 
 [node name="Visuals" type="Node2D" parent="."]

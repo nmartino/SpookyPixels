@@ -5,24 +5,21 @@ const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
 const ASSASSIN_STATS := preload("res://characters/Assassin/Assassin.tres")
 const WARRIOR_STATS := preload("res://characters/warrior/warrior.tres")
 const MAGE_STATS := preload("res://characters/Mage/mage.tres")
+const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
 @export var run_startup: RunStartup
-
+@onready var carousel_container: CarouselContainer = %CarouselContainer
+@onready var character: Sprite2D = $Character
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var start_button: Button = $StartButton
+@onready var right: TextureButton = $Carousel/Right
+@onready var left: TextureButton = $Carousel/Left
 @onready var title: Label = %Title
 @onready var description: Label = %Description
-@onready var mage_portrait: TextureRect = $MagePortrait
-@onready var archer_portrait: TextureRect = $ArcherPortrait
-@onready var vanguard_portrait: TextureRect = $VanguardPortrait
-@onready var mage_portrait_sin_shader: TextureRect = $MagePortrait_SinShader
-@onready var archer_portrait_2_sin_shader: TextureRect = $ArcherPortrait2_SinShader
-@onready var vanguard_portrait_2_sin_shader: TextureRect = $VanguardPortrait2_SinShader
-
-@onready var transition: AnimationPlayer = $transition
 
 var current_character: CharacterStats : set = set_current_character
 
 func _ready() -> void:
-	transition.play("fade_in")
 	set_current_character(WARRIOR_STATS)
 	
 func set_current_character(new_character: CharacterStats) -> void:
@@ -30,39 +27,52 @@ func set_current_character(new_character: CharacterStats) -> void:
 	title.text = current_character.character_name
 	description.text = current_character.description
 
-
 func _on_start_button_pressed() -> void:
 	run_startup.type = RunStartup.TYPE.NEW_RUN
 	run_startup.picked_character = current_character
 	get_tree().change_scene_to_packed(RUN_SCENE)
 
+func _on_left_pressed() -> void:
+	if carousel_container.selected_index == 0:
+		carousel_container.selected_index = carousel_container.position_offset_node.get_child_count()-1
+		print(carousel_container.selected_index)
+	else:
+		carousel_container._left()
+	update_character()
 
-func _on_warrior_button_pressed() -> void:
-	vanguard_portrait.show()
-	mage_portrait.hide()
-	archer_portrait.hide()
-	vanguard_portrait_2_sin_shader.hide()
-	mage_portrait_sin_shader.show()
-	archer_portrait_2_sin_shader.show()
-	current_character = WARRIOR_STATS
+func _on_right_pressed() -> void:
+	if carousel_container.selected_index == carousel_container.position_offset_node.get_child_count()-1:
+		carousel_container.selected_index = 0
+		print(carousel_container.selected_index)
+	else:
+		carousel_container._right()
+	update_character()
 	
+func update_character() ->void:
+	match carousel_container.position_offset_node.get_child(carousel_container.selected_index).name:
+		"WarriorButton":
+				playAnimations(WARRIOR_STATS)				
+		"MageButton":
+				playAnimations(MAGE_STATS)
+		"AssasinButton":
+				playAnimations(ASSASSIN_STATS)
+				
+	
+func playAnimations(character : CharacterStats) ->void:
+	animation_player.play("characterSale")
+	current_character = character
+	start_button.disabled = carousel_container.position_offset_node.get_child(carousel_container.selected_index).disabled
+	
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "characterSale":
+		match current_character:
+			WARRIOR_STATS:
+				character.texture = WARRIOR_STATS.art
+			MAGE_STATS:
+				character.texture = MAGE_STATS.art
+			ASSASSIN_STATS:
+				character.texture = ASSASSIN_STATS.art
+		animation_player.play("characterEntra")
 
-
-func _on_mage_button_pressed() -> void:
-	vanguard_portrait.hide()
-	mage_portrait.show()
-	mage_portrait_sin_shader.hide()
-	archer_portrait.hide()
-	vanguard_portrait_2_sin_shader.show()
-	archer_portrait_2_sin_shader.show()
-	current_character = MAGE_STATS
-
-
-func _on_assasin_button_pressed() -> void:
-	vanguard_portrait.hide()
-	mage_portrait.hide()
-	archer_portrait.show()
-	archer_portrait_2_sin_shader.hide()
-	vanguard_portrait_2_sin_shader.show()
-	mage_portrait_sin_shader.show()
-	current_character = ASSASSIN_STATS
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file(MAIN_MENU_PATH)

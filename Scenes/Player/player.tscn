@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjpre2elyenf6"]
+[gd_scene load_steps=7 format=3 uid="uid://bjpre2elyenf6"]
 
 [ext_resource type="Script" uid="uid://byqam4oevxvrh" path="res://Scenes/Player/player.gd" id="1_807gn"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="2_dsp15"]
-[ext_resource type="Material" uid="uid://dc88iqpm1m1o1" path="res://Scenes/Player/test_shader_aura.tres" id="2_kxi6w"]
 [ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="3_lv57f"]
 [ext_resource type="PackedScene" uid="uid://cuqex5rqjyym" path="res://Scenes/Status_handler/status_handeler.tscn" id="4_who66"]
 [ext_resource type="PackedScene" uid="uid://caj6eeau7nkcr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="5_r3k8i"]
@@ -12,23 +11,22 @@
 script = ExtResource("1_807gn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("2_kxi6w")
 position = Vector2(-3, -19)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("3_lv57f")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_dsp15")]
 custom_minimum_size = Vector2(16, 16)
 offset_left = -47.0
-offset_top = 22.0
+offset_top = 38.0
 offset_right = 43.0
-offset_bottom = 38.0
+offset_bottom = 54.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("4_who66")]
 offset_left = -37.0
-offset_top = -68.0
+offset_top = -76.0
 offset_right = 27.0
-offset_bottom = -68.0
+offset_bottom = -76.0
 status_owner = NodePath("../Sprite2D")
 
 [node name="ModifierHandler" parent="." instance=ExtResource("5_r3k8i")]

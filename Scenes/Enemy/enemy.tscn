@@ -1,35 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0511bjl6j8f3"]
+[gd_scene load_steps=10 format=3 uid="uid://c0511bjl6j8f3"]
 
 [ext_resource type="Script" uid="uid://bxbjclwvdxmsp" path="res://Scenes/Enemy/enemy.gd" id="1_utljw"]
-[ext_resource type="Shader" uid="uid://bur1r7h85iwhj" path="res://Scenes/Player/testshader.gdshader" id="2_ao8bp"]
-[ext_resource type="Texture2D" uid="uid://cvesomtqpihp0" path="res://art/1bit/orcoArt/Boss 01.png" id="2_r6ddg"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_wbtpx"]
+[ext_resource type="Texture2D" uid="uid://brkbann6cndd" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo.png" id="3_kiqm3"]
 [ext_resource type="PackedScene" uid="uid://opviovqbht4t" path="res://Scenes/UI/stats_ui.tscn" id="3_qxoj6"]
 [ext_resource type="PackedScene" uid="uid://c1ljp0670bmc6" path="res://Scenes/UI/intent_ui.tscn" id="5_xhtot"]
 [ext_resource type="PackedScene" uid="uid://cuqex5rqjyym" path="res://Scenes/Status_handler/status_handeler.tscn" id="6_x0tw5"]
 [ext_resource type="PackedScene" uid="uid://caj6eeau7nkcr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="7_kn7cp"]
 [ext_resource type="PackedScene" uid="uid://c5iuw4qotc0vy" path="res://Scenes/modifier_handler/modifier.tscn" id="8_h3nno"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q78at"]
-shader = ExtResource("2_ao8bp")
-shader_parameter/maxLineWidth = 1.0
-shader_parameter/minLineWidth = 2.0
-shader_parameter/speed = 5.0
-shader_parameter/blockSize = 2.0
-shader_parameter/color = Color(1, 0.333333, 1, 1)
-shader_parameter/tolerance = 0.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyi54"]
-size = Vector2(54, 69)
+size = Vector2(60, 87)
 
 [node name="Enemy" type="Area2D" groups=["enemies"]]
 collision_layer = 4
 script = ExtResource("1_utljw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_q78at")
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_r6ddg")
+scale = Vector2(2, 2)
+texture = ExtResource("3_kiqm3")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false
@@ -39,24 +28,24 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_wbtpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(-3, 5.5)
 shape = SubResource("RectangleShape2D_vyi54")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_qxoj6")]
 offset_left = -44.0
-offset_top = 39.0
+offset_top = 52.0
 offset_right = 46.0
-offset_bottom = 55.0
+offset_bottom = 68.0
 
 [node name="IntentUI" parent="." groups=["intent"] instance=ExtResource("5_xhtot")]
 offset_top = -66.0
 offset_bottom = -41.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_x0tw5")]
-offset_left = -25.0
-offset_top = -63.0
-offset_right = -25.0
-offset_bottom = -63.0
+offset_left = -41.0
+offset_top = -88.0
+offset_right = -41.0
+offset_bottom = -88.0
 status_owner = NodePath("..")
 
 [node name="ModifierHandler" parent="." instance=ExtResource("7_kn7cp")]
