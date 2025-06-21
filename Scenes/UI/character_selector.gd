@@ -16,16 +16,41 @@ const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 @onready var left: TextureButton = $Carousel/Left
 @onready var title: Label = %Title
 @onready var description: Label = %Description
+@onready var warrior_icon: Button = $CharacterButtons/WarriorIcon
+@onready var mage_icon: Button = $CharacterButtons/MageIcon
+@onready var assassin_icon: Button = $CharacterButtons/AssassinIcon
+@onready var hp_label: Label = $HPLabel
+@onready var cards_per_turn_label: Label = $CardsPerTurnLabel
+@onready var weapon_label: Label = $WeaponLabel
 
 var current_character: CharacterStats : set = set_current_character
 
 func _ready() -> void:
 	set_current_character(WARRIOR_STATS)
+	warrior_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mage_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	assassin_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func set_current_character(new_character: CharacterStats) -> void:
 	current_character = new_character
+	match new_character:
+		WARRIOR_STATS:
+			warrior_icon.button_pressed = true
+			mage_icon.button_pressed = false
+			assassin_icon.button_pressed = false
+		MAGE_STATS:
+			warrior_icon.button_pressed = false
+			mage_icon.button_pressed = true
+			assassin_icon.button_pressed = false
+		ASSASSIN_STATS:
+			warrior_icon.button_pressed = false
+			mage_icon.button_pressed = false
+			assassin_icon.button_pressed = true
 	title.text = current_character.character_name
 	description.text = current_character.description
+	hp_label.text = "HP: "+str(current_character.max_health)
+	cards_per_turn_label.text = "Cards Per Turn: "+str(current_character.cards_per_turn)
+	weapon_label.text = "Weapon: "+current_character.starting_relic.relic_name
 
 func _on_start_button_pressed() -> void:
 	run_startup.type = RunStartup.TYPE.NEW_RUN

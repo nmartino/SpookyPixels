@@ -13,8 +13,7 @@ script = ExtResource("1_wqils")
 character_name = "Sharpshadow"
 description = "Wind carries his aim.
 Distance is his strength.
-Uses the short bow.
---- On Vacations, not able yet ---"
+--- On Vacations, not available yet ---"
 portrait = ExtResource("1_l30c4")
 starting_deck = ExtResource("6_nhtah")
 draftable_cards = ExtResource("3_3sxae")

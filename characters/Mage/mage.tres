@@ -12,8 +12,7 @@
 script = ExtResource("1_uswfi")
 character_name = "Spellbinder"
 description = "Magic bends to him.
-Elements heed his call.
-Uses the Confusing Staff"
+Elements heed his call."
 portrait = ExtResource("1_qk567")
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
