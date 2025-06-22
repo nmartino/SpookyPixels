@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=17 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" uid="uid://cbfi8jby8cmtm" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
-[ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="2_c0bsd"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
+[ext_resource type="Texture2D" uid="uid://cedaxsa0nwywd" path="res://art/1bit/orcoArt/Background/image.png" id="3_ypsd1"]
 [ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_5owke"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
 [ext_resource type="Texture2D" uid="uid://bgdx73h81jcek" path="res://art/1bit/orcoArt/32x32/Mage.png" id="6_hn4ct"]
@@ -12,94 +12,25 @@
 [ext_resource type="Texture2D" uid="uid://e18s025lyfub" path="res://art/1bit/orcoArt/32x32/Esqueleto_lanza.png" id="10_m6d2t"]
 [ext_resource type="Texture2D" uid="uid://brkbann6cndd" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo.png" id="11_2cot0"]
 [ext_resource type="Texture2D" uid="uid://lu61xmastwqs" path="res://art/1bit/orcoArt/32x32/Esqueleto_hachota.png" id="12_wh6ri"]
-[ext_resource type="Texture2D" uid="uid://clw3s1ru82l6b" path="res://art/1bit/orcoArt/32x32/Esqueleto_overlord.png" id="13_in5jf"]
-[ext_resource type="Texture2D" uid="uid://dtw1xfrtdjn35" path="res://art/1bit/orcoArt/32x32/esqueleto_espectro.png" id="14_gkvna"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
 [ext_resource type="Texture2D" uid="uid://bg62rqpel73w6" path="res://art/1bit/orcoArt/32x32/esqueleto_escudo_espada.png" id="15_845dv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_reaam"]
-line_spacing = 5.0
+[sub_resource type="LabelSettings" id="LabelSettings_ypsd1"]
 font = ExtResource("5_ridyb")
-font_size = 48
+font_size = 32
 font_color = Color(0.105882, 0.992157, 1, 1)
-outline_size = 4
+outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(3, 1)
-
-[sub_resource type="Animation" id="Animation_wgfis"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("transition/ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("transition/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_sd6vq"]
-resource_name = "fade_in"
-
-[sub_resource type="Animation" id="Animation_mhcjx"]
-resource_name = "fade_out"
-length = 0.5
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("transition/ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("transition/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ie85"]
-_data = {
-&"RESET": SubResource("Animation_wgfis"),
-&"fade_in": SubResource("Animation_sd6vq"),
-&"fade_out": SubResource("Animation_mhcjx")
-}
+shadow_offset = Vector2(3, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]
 shader = ExtResource("14_vi80r")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.402
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.1
+shader_parameter/noise_amount = 0.167
 shader_parameter/interference_amount = 0.09
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
@@ -121,6 +52,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_2cy6r")
 run_startup = ExtResource("3_6nrva")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -129,34 +61,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_c0bsd")
+texture = ExtResource("3_ypsd1")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="torch" parent="." instance=ExtResource("5_5owke")]
-position = Vector2(29, 26)
+visible = false
+position = Vector2(36, 101)
 scale = Vector2(2, 2)
 
 [node name="torch2" parent="." instance=ExtResource("5_5owke")]
-position = Vector2(368, 25)
+visible = false
+position = Vector2(459, 100)
 scale = Vector2(2, 2)
 frame_progress = 0.3646
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = -82.0
-offset_right = 204.0
-offset_bottom = -22.0
+offset_left = -61.0
+offset_top = 3.0
+offset_right = 347.0
+offset_bottom = 126.0
 grow_horizontal = 2
-grow_vertical = 2
 text = "Spooky Pixels"
-label_settings = SubResource("LabelSettings_reaam")
+label_settings = SubResource("LabelSettings_ypsd1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -167,86 +98,79 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = 33.0
-offset_right = 40.0
-offset_bottom = 93.0
+offset_left = -211.0
+offset_top = -22.0
+offset_right = -121.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-theme_override_font_sizes/font_size = 0
 text = "Continue"
 
 [node name="New Run" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_vertical = 3
 text = "New Game"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 text = "Exit
 "
 
 [node name="Player3" type="Sprite2D" parent="."]
-position = Vector2(100, 178)
+visible = false
+position = Vector2(107, 224)
+scale = Vector2(2, 2)
 texture = ExtResource("6_hn4ct")
 
 [node name="Player2" type="Sprite2D" parent="."]
-position = Vector2(73, 208)
+visible = false
+position = Vector2(65, 276)
+scale = Vector2(2, 2)
 texture = ExtResource("7_263bx")
 
 [node name="Player4" type="Sprite2D" parent="."]
-position = Vector2(129, 208)
+visible = false
+position = Vector2(167, 277)
+scale = Vector2(2, 2)
 texture = ExtResource("8_yt480")
 
 [node name="Enemy5" type="Sprite2D" parent="."]
-position = Vector2(454, 178)
+visible = false
+position = Vector2(589, 212)
+scale = Vector2(2, 2)
 texture = ExtResource("9_ebv7x")
 
 [node name="Enemy2" type="Sprite2D" parent="."]
-position = Vector2(386, 184)
+visible = false
+position = Vector2(489, 214)
+scale = Vector2(2, 2)
 texture = ExtResource("10_m6d2t")
 
 [node name="Enemy3" type="Sprite2D" parent="."]
-position = Vector2(420, 200)
+visible = false
+position = Vector2(541, 241)
+scale = Vector2(2, 2)
 texture = ExtResource("11_2cot0")
 
-[node name="Enemy4" type="Sprite2D" parent="."]
-position = Vector2(390, 224)
-texture = ExtResource("12_wh6ri")
-
-[node name="Enemy6" type="Sprite2D" parent="."]
-position = Vector2(462, 218)
-texture = ExtResource("13_in5jf")
-
-[node name="Enemy7" type="Sprite2D" parent="."]
-position = Vector2(427, 235)
-texture = ExtResource("14_gkvna")
-
 [node name="Enemy8" type="Sprite2D" parent="."]
-position = Vector2(353, 209)
+visible = false
+position = Vector2(583, 277)
+scale = Vector2(2, 2)
 texture = ExtResource("15_845dv")
 
-[node name="transition" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6ie85")
-}
-
-[node name="ColorRect" type="ColorRect" parent="transition"]
+[node name="Enemy4" type="Sprite2D" parent="."]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.333333, 1, 1)
+position = Vector2(489, 274)
+scale = Vector2(2, 2)
+texture = ExtResource("12_wh6ri")
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 5
@@ -265,4 +189,3 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/New Run" to="." method="_on_new_run_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="animation_finished" from="transition" to="." method="_on_transition_animation_finished"]

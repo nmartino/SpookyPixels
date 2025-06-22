@@ -188,7 +188,7 @@ layer = 0
 
 [node name="Background" type="Sprite2D" parent="BackgroundLayer"]
 unique_name_in_owner = true
-scale = Vector2(1.99609, 1.99306)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_x0c2s")
 centered = false
 
@@ -217,28 +217,31 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoC" type="TextureRect" parent="DecorationLayer"]
-offset_left = 74.0
-offset_top = 186.0
-offset_right = 138.0
-offset_bottom = 226.0
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 124.0
+offset_bottom = 240.0
+scale = Vector2(2, 2)
 texture = ExtResource("9_n21ru")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoB" type="TextureRect" parent="DecorationLayer"]
-offset_left = 10.0
-offset_top = 186.0
-offset_right = 74.0
-offset_bottom = 226.0
+offset_left = -4.0
+offset_top = 200.0
+offset_right = 60.0
+offset_bottom = 240.0
+scale = Vector2(2, 2)
 texture = ExtResource("10_ax832")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoA" type="TextureRect" parent="DecorationLayer"]
-offset_left = 10.0
-offset_top = 218.0
-offset_right = 154.0
-offset_bottom = 258.0
+offset_left = -4.0
+offset_top = 232.0
+offset_right = 140.0
+offset_bottom = 272.0
+scale = Vector2(2, 2)
 texture = ExtResource("11_3d1o5")
 expand_mode = 1
 stretch_mode = 5
@@ -246,7 +249,7 @@ stretch_mode = 5
 [node name="FondoAnimation" type="AnimationPlayer" parent="DecorationLayer"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_llkgq")
+&"": SubResource("AnimationLibrary_llkgq")
 }
 
 [node name="FondoAnimationTimer" type="Timer" parent="DecorationLayer"]
@@ -258,11 +261,12 @@ unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 72.0
-offset_top = -71.0
-offset_right = 104.0
-offset_bottom = -39.0
+offset_left = 117.0
+offset_top = -131.0
+offset_right = 149.0
+offset_bottom = -99.0
 grow_vertical = 0
+scale = Vector2(2, 2)
 texture = ExtResource("9_m4x3p")
 expand_mode = 1
 stretch_mode = 4
@@ -271,7 +275,7 @@ stretch_mode = 4
 unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_eddim")
+&"": SubResource("AnimationLibrary_eddim")
 }
 
 [node name="BlinkTimer" type="Timer" parent="DecorationLayer/ShopKeeper"]
@@ -285,10 +289,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -241.0
-offset_top = 20.0
-offset_right = -122.0
-offset_bottom = 49.0
+offset_left = -223.0
+offset_top = -57.0
+offset_right = -73.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
@@ -312,10 +316,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = 115.0
-offset_right = -171.0
-offset_bottom = 130.0
+offset_left = 210.0
+offset_top = 135.0
+offset_right = 294.0
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Leave Shop"
@@ -326,10 +330,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.0
-offset_top = -44.0
-offset_right = 123.0
-offset_bottom = 63.0
+offset_left = 25.0
+offset_top = -138.0
+offset_right = 275.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 

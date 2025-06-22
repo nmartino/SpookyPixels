@@ -68,7 +68,7 @@ _data = {
 }
 
 [node name="RelicUI" type="Control"]
-custom_minimum_size = Vector2(18, 18)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 20.0
@@ -77,7 +77,7 @@ script = ExtResource("1_a4rr3")
 relic = ExtResource("2_go5q4")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 18.0
@@ -88,7 +88,7 @@ stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3ig8v")
+&"": SubResource("AnimationLibrary_3ig8v")
 }
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

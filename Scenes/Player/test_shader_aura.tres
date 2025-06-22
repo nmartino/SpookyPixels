@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dc88iqpm1m1o1"]
 
-[ext_resource type="Shader" path="res://Scenes/Player/testshader.gdshader" id="1_i22js"]
+[ext_resource type="Shader" uid="uid://bur1r7h85iwhj" path="res://Scenes/Player/testshader.gdshader" id="1_i22js"]
 
 [resource]
 shader = ExtResource("1_i22js")

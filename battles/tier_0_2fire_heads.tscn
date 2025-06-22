@@ -6,9 +6,9 @@
 [node name="Tier02FireHeads" type="Node2D"]
 
 [node name="Enemy2" parent="." instance=ExtResource("1_3321i")]
-position = Vector2(169, 57)
+position = Vector2(163, 57)
 stats = ExtResource("2_jvmjf")
 
 [node name="Enemy" parent="." instance=ExtResource("1_3321i")]
-position = Vector2(224, 70)
+position = Vector2(247, 69)
 stats = ExtResource("2_jvmjf")
