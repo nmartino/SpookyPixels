@@ -13,7 +13,7 @@ script = ExtResource("1_rj4dh")
 character_name = "Vanguard"
 description = "Steel answers his command.
 Honor guides her strikes.
-Uses the Battle Axe"
+"
 portrait = ExtResource("1_tokje")
 starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")
