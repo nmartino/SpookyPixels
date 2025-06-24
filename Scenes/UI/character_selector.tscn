@@ -1,11 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://kcpqegmrn1e"]
+[gd_scene load_steps=30 format=3 uid="uid://kcpqegmrn1e"]
 
 [ext_resource type="Script" uid="uid://bdvkl3osqqou1" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_yqcao"]
 [ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="3_emkbn"]
+[ext_resource type="Texture2D" uid="uid://dctjruuddgs2u" path="res://art/weapon-inventary-box.png" id="4_dhrln"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="4_l4q53"]
+[ext_resource type="Texture2D" uid="uid://qsstg4eh427t" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-hover.png" id="6_pq4lo"]
 [ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="7_0sdjj"]
+[ext_resource type="Texture2D" uid="uid://c431ix6cmlg2h" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-press.png" id="7_1unow"]
 [ext_resource type="Texture2D" uid="uid://eatio5jgv1er" path="res://art/1bit/arrow-right-disable.png" id="7_5ny7k"]
+[ext_resource type="Texture2D" uid="uid://e8nckytn4ald" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-default.png" id="8_l2v8p"]
 [ext_resource type="Texture2D" uid="uid://bw8hs17ewgsml" path="res://art/1bit/Relics Sources/Relics Sources/dobleaxe1.png" id="8_pyjfa"]
 [ext_resource type="Texture2D" uid="uid://djn14kn16qo0e" path="res://art/1bit/Relics Sources/Relics Sources/staff1.png" id="9_2mas7"]
 [ext_resource type="Script" uid="uid://bvrrdf342v2ld" path="res://Scenes/UI/carousel_container.gd" id="10_af71j"]
@@ -40,6 +44,35 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(5, 3)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pq4lo"]
+texture = ExtResource("8_l2v8p")
+texture_margin_left = 9.0
+texture_margin_top = 5.0
+texture_margin_right = 9.0
+texture_margin_bottom = 7.0
+modulate_color = Color(1, 1, 1, 0.654902)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_so2th"]
+texture = ExtResource("6_pq4lo")
+texture_margin_left = 9.0
+texture_margin_top = 5.0
+texture_margin_right = 9.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5020j"]
+texture = ExtResource("7_1unow")
+texture_margin_left = 9.0
+texture_margin_top = 5.0
+texture_margin_right = 9.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1eoj"]
+texture = ExtResource("8_l2v8p")
+texture_margin_left = 9.0
+texture_margin_top = 5.0
+texture_margin_right = 9.0
+texture_margin_bottom = 7.0
 
 [sub_resource type="Animation" id="Animation_5ny7k"]
 length = 0.001
@@ -133,17 +166,45 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_emkbn")
 expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 177.0
+offset_right = 526.0
+offset_bottom = 232.0
+texture = ExtResource("4_dhrln")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Panel2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 68.0
+offset_right = 526.0
+offset_bottom = 167.0
+texture = ExtResource("4_dhrln")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="CharSelectionLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -145.0
-offset_top = 16.0
+offset_top = -167.0
 offset_right = 145.0
-offset_bottom = 46.0
+offset_bottom = -137.0
 grow_horizontal = 2
+grow_vertical = 2
 text = "Character Selection"
 label_settings = SubResource("LabelSettings_af71j")
 
@@ -167,9 +228,9 @@ label_settings = SubResource("LabelSettings_8oyos")
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
-offset_left = 245.0
+offset_left = 234.0
 offset_top = 105.0
-offset_right = 594.0
+offset_right = 446.0
 offset_bottom = 170.0
 text = "Steel answers his command.
 Honor guides her strikes.
@@ -178,28 +239,28 @@ label_settings = SubResource("LabelSettings_r508y")
 
 [node name="HPLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 276.0
-offset_top = 174.0
-offset_right = 362.0
-offset_bottom = 189.0
+offset_left = 234.0
+offset_top = 184.0
+offset_right = 320.0
+offset_bottom = 199.0
 text = "Test"
 label_settings = SubResource("LabelSettings_r508y")
 
 [node name="CardsPerTurnLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 174.0
-offset_right = 456.0
-offset_bottom = 189.0
-text = "Test"
+offset_left = 358.0
+offset_top = 184.0
+offset_right = 476.0
+offset_bottom = 199.0
+text = "Cards Per Turn:"
 label_settings = SubResource("LabelSettings_r508y")
 
 [node name="WeaponLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 276.0
-offset_top = 197.0
-offset_right = 361.0
-offset_bottom = 212.0
+offset_left = 234.0
+offset_top = 207.0
+offset_right = 319.0
+offset_bottom = 222.0
 text = "Test"
 label_settings = SubResource("LabelSettings_r508y")
 
@@ -217,6 +278,10 @@ offset_right = -12.0
 offset_bottom = -46.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pq4lo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_so2th")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5020j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_p1eoj")
 text = "Start"
 
 [node name="BackButton" type="Button" parent="."]
@@ -233,6 +298,9 @@ offset_right = -12.0
 offset_bottom = -9.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_so2th")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5020j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_p1eoj")
 text = "Back"
 
 [node name="CharacterButtons" type="HBoxContainer" parent="."]
@@ -242,10 +310,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = 46.0
-offset_right = 80.0
-offset_bottom = 94.0
+offset_left = -83.0
+offset_top = 60.0
+offset_right = 91.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -324,20 +392,20 @@ libraries = {
 layer = 4
 
 [node name="Right" type="TextureButton" parent="Carousel"]
-offset_left = 410.0
-offset_top = 242.0
-offset_right = 422.0
-offset_bottom = 254.0
+offset_left = 421.0
+offset_top = 256.0
+offset_right = 433.0
+offset_bottom = 268.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_fps6m")
 texture_disabled = ExtResource("7_5ny7k")
 metadata/_edit_use_anchors_ = true
 
 [node name="Left" type="TextureButton" parent="Carousel"]
-offset_left = 194.0
-offset_top = 242.0
-offset_right = 206.0
-offset_bottom = 254.0
+offset_left = 204.0
+offset_top = 256.0
+offset_right = 216.0
+offset_bottom = 268.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_fps6m")
 texture_disabled = ExtResource("7_5ny7k")
