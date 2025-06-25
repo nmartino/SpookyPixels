@@ -17,7 +17,7 @@ width = 30
 script = ExtResource("1_ski2f")
 
 [node name="Pared de entrada" type="Node2D" parent="."]
-position = Vector2(135, 108)
+position = Vector2(202, 108)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pared de entrada"]
 position = Vector2(16, 107)
@@ -118,8 +118,8 @@ unique_name_in_owner = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -1)
-offset = Vector2(256, 60)
+position = Vector2(-3, 1)
+offset = Vector2(320, 50)
 
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("2_bwd4j")

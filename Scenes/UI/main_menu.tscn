@@ -1,22 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=20 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" uid="uid://cbfi8jby8cmtm" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
-[ext_resource type="Texture2D" uid="uid://cedaxsa0nwywd" path="res://art/1bit/orcoArt/Background/image.png" id="3_ypsd1"]
+[ext_resource type="Texture2D" uid="uid://cl6h0gmj4ohnp" path="res://art/1bit/orcoArt/MainMenu/Inicio 01.png" id="3_lrjdf"]
+[ext_resource type="Texture2D" uid="uid://yysxd8oxl31" path="res://art/1bit/orcoArt/MainMenu/Inicio 02.png" id="4_wqme5"]
 [ext_resource type="Texture2D" uid="uid://e8nckytn4ald" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-default.png" id="5_3h8o7"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_5owke"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
-[ext_resource type="Texture2D" uid="uid://bgdx73h81jcek" path="res://art/1bit/orcoArt/32x32/Mage.png" id="6_hn4ct"]
 [ext_resource type="Texture2D" uid="uid://qsstg4eh427t" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-hover.png" id="6_q6o50"]
 [ext_resource type="Texture2D" uid="uid://c431ix6cmlg2h" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-press.png" id="7_46hhv"]
-[ext_resource type="Texture2D" uid="uid://dutr0q0643yu1" path="res://art/1bit/orcoArt/32x32/Arquero.png" id="7_263bx"]
-[ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="8_yt480"]
-[ext_resource type="Texture2D" uid="uid://br4wexixsxnkc" path="res://art/1bit/orcoArt/32x32/Esqueleto_fuego.png" id="9_ebv7x"]
-[ext_resource type="Texture2D" uid="uid://e18s025lyfub" path="res://art/1bit/orcoArt/32x32/Esqueleto_lanza.png" id="10_m6d2t"]
-[ext_resource type="Texture2D" uid="uid://brkbann6cndd" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo.png" id="11_2cot0"]
-[ext_resource type="Texture2D" uid="uid://lu61xmastwqs" path="res://art/1bit/orcoArt/32x32/Esqueleto_hachota.png" id="12_wh6ri"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
-[ext_resource type="Texture2D" uid="uid://bg62rqpel73w6" path="res://art/1bit/orcoArt/32x32/esqueleto_escudo_espada.png" id="15_845dv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oslnl"]
 texture = ExtResource("5_3h8o7")
@@ -74,6 +66,119 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.713
 
+[sub_resource type="Animation" id="Animation_jewm6"]
+resource_name = "AnimacionMainMenu"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("backgroundCastillo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 220), Vector2(320, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("backgroundCharacter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 325), Vector2(320, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_cejvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("backgroundCastillo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("backgroundCharacter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 325)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ru8vt"]
+resource_name = "aparicionTituloMenu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.998299),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.998299),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypsd1"]
+_data = {
+&"AnimacionMainMenu": SubResource("Animation_jewm6"),
+&"RESET": SubResource("Animation_cejvf"),
+&"aparicionTituloMenu": SubResource("Animation_ru8vt")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -86,29 +191,28 @@ script = ExtResource("1_2cy6r")
 run_startup = ExtResource("3_6nrva")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ypsd1")
-expand_mode = 1
+color = Color(0, 0, 0, 1)
+
+[node name="backgroundCastillo" type="Sprite2D" parent="."]
+position = Vector2(320, 325)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_lrjdf")
 metadata/_edit_lock_ = true
 
-[node name="torch" parent="." instance=ExtResource("5_5owke")]
-visible = false
-position = Vector2(36, 101)
-scale = Vector2(2, 2)
-
-[node name="torch2" parent="." instance=ExtResource("5_5owke")]
-visible = false
-position = Vector2(459, 100)
-scale = Vector2(2, 2)
-frame_progress = 0.3646
+[node name="backgroundCharacter" type="Sprite2D" parent="."]
+position = Vector2(320, 325)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wqme5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,70 +257,23 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_0gipi")
 text = "Exit
 "
 
-[node name="Player3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(107, 224)
-scale = Vector2(2, 2)
-texture = ExtResource("6_hn4ct")
-
 [node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -93.0
-offset_top = -40.0
-offset_right = 387.0
-offset_bottom = 197.0
+offset_left = -95.0
+offset_top = -10.0
+offset_right = 385.0
+offset_bottom = 227.0
 grow_horizontal = 2
-text = "Spooky Pixel
-(nombre provisional)
+text = "Keepers of Vyrellia
+
 "
 label_settings = SubResource("LabelSettings_ypsd1")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Player2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(65, 276)
-scale = Vector2(2, 2)
-texture = ExtResource("7_263bx")
-
-[node name="Player4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(167, 277)
-scale = Vector2(2, 2)
-texture = ExtResource("8_yt480")
-
-[node name="Enemy5" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(589, 212)
-scale = Vector2(2, 2)
-texture = ExtResource("9_ebv7x")
-
-[node name="Enemy2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(489, 214)
-scale = Vector2(2, 2)
-texture = ExtResource("10_m6d2t")
-
-[node name="Enemy3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(541, 241)
-scale = Vector2(2, 2)
-texture = ExtResource("11_2cot0")
-
-[node name="Enemy8" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(583, 277)
-scale = Vector2(2, 2)
-texture = ExtResource("15_845dv")
-
-[node name="Enemy4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(489, 274)
-scale = Vector2(2, 2)
-texture = ExtResource("12_wh6ri")
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 5
@@ -231,6 +288,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ypsd1")
+}
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/New Run" to="." method="_on_new_run_pressed"]

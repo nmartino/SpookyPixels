@@ -1,12 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://kcpqegmrn1e"]
+[gd_scene load_steps=38 format=3 uid="uid://kcpqegmrn1e"]
 
 [ext_resource type="Script" uid="uid://bdvkl3osqqou1" path="res://Scenes/UI/character_selector.gd" id="1_u3k8x"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_yqcao"]
-[ext_resource type="Texture2D" uid="uid://du54saoaeg2v5" path="res://art/1bit/background/OgSEhkif.png" id="3_emkbn"]
+[ext_resource type="Texture2D" uid="uid://1nyyjcuta3tg" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection Background 01.png" id="3_l2v8p"]
 [ext_resource type="Texture2D" uid="uid://dctjruuddgs2u" path="res://art/weapon-inventary-box.png" id="4_dhrln"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="4_l4q53"]
+[ext_resource type="Texture2D" uid="uid://r6wjs5yvqttf" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection Background 02.png" id="4_so2th"]
+[ext_resource type="Texture2D" uid="uid://coc5yelrtieql" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection Background 03.png" id="5_5020j"]
 [ext_resource type="Texture2D" uid="uid://qsstg4eh427t" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-hover.png" id="6_pq4lo"]
-[ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="7_0sdjj"]
 [ext_resource type="Texture2D" uid="uid://c431ix6cmlg2h" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-press.png" id="7_1unow"]
 [ext_resource type="Texture2D" uid="uid://eatio5jgv1er" path="res://art/1bit/arrow-right-disable.png" id="7_5ny7k"]
 [ext_resource type="Texture2D" uid="uid://e8nckytn4ald" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-default.png" id="8_l2v8p"]
@@ -16,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://x4ijcdqm3r4o" path="res://art/1bit/arrow-right.png" id="10_fps6m"]
 [ext_resource type="Texture2D" uid="uid://c637p4bdyegyn" path="res://art/1bit/Relics Sources/Relics Sources/bow1.png" id="10_h3dxt"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="11_sb4j1"]
+[ext_resource type="Texture2D" uid="uid://bvs6wfxtsmfek" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 01.png" id="14_p1eoj"]
+[ext_resource type="Texture2D" uid="uid://beme406vul1na" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 01.png" id="14_so2th"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_af71j"]
 font = ExtResource("4_l4q53")
@@ -74,6 +77,90 @@ texture_margin_top = 5.0
 texture_margin_right = 9.0
 texture_margin_bottom = 7.0
 
+[sub_resource type="Animation" id="Animation_p1eoj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_vtalv"]
+resource_name = "auraEntra"
+length = 0.16667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-91, 182), Vector2(120, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_so2th"]
+resource_name = "auraSale"
+length = 0.16667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(120, 182), Vector2(-91, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_5020j"]
+resource_name = "warrior"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtalv"]
+_data = {
+&"RESET": SubResource("Animation_p1eoj"),
+&"auraEntra": SubResource("Animation_vtalv"),
+&"auraSale": SubResource("Animation_so2th"),
+&"rotar": SubResource("Animation_5020j")
+}
+
 [sub_resource type="Animation" id="Animation_5ny7k"]
 length = 0.001
 tracks/0/type = "value"
@@ -86,7 +173,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(135, 200)]
+"values": [Vector2(135, 219)]
 }
 
 [sub_resource type="Animation" id="Animation_32bc6"]
@@ -102,7 +189,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-91, 200), Vector2(135, 200)]
+"values": [Vector2(-91, 219), Vector2(135, 219)]
 }
 
 [sub_resource type="Animation" id="Animation_dhrln"]
@@ -118,7 +205,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.16667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(135, 200), Vector2(-91, 200)]
+"values": [Vector2(135, 219), Vector2(-91, 219)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_af71j"]
@@ -157,22 +244,24 @@ grow_vertical = 2
 script = ExtResource("1_u3k8x")
 run_startup = ExtResource("2_yqcao")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_emkbn")
-expand_mode = 1
-metadata/_edit_lock_ = true
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(320, 127)
+texture = ExtResource("3_l2v8p")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(320, 283)
+texture = ExtResource("4_so2th")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 335)
+texture = ExtResource("5_5020j")
 
 [node name="Panel" type="NinePatchRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 204.0
-offset_top = 177.0
-offset_right = 526.0
+offset_top = 175.0
+offset_right = 564.0
 offset_bottom = 232.0
 texture = ExtResource("4_dhrln")
 patch_margin_left = 6
@@ -181,10 +270,11 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="Panel2" type="NinePatchRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 204.0
-offset_top = 68.0
-offset_right = 526.0
+offset_top = 48.0
+offset_right = 564.0
 offset_bottom = 167.0
 texture = ExtResource("4_dhrln")
 patch_margin_left = 6
@@ -214,10 +304,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -101.0
-offset_top = 79.0
-offset_right = 189.0
-offset_bottom = 109.0
+offset_left = -37.0
+offset_top = 56.0
+offset_right = 253.0
+offset_bottom = 86.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 text = "Vanguard
@@ -228,10 +318,10 @@ label_settings = SubResource("LabelSettings_8oyos")
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
-offset_left = 234.0
-offset_top = 105.0
-offset_right = 446.0
-offset_bottom = 170.0
+offset_left = 298.0
+offset_top = 82.0
+offset_right = 510.0
+offset_bottom = 147.0
 text = "Steel answers his command.
 Honor guides her strikes.
 "
@@ -239,28 +329,28 @@ label_settings = SubResource("LabelSettings_r508y")
 
 [node name="HPLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 234.0
-offset_top = 184.0
-offset_right = 320.0
-offset_bottom = 199.0
+offset_left = 298.0
+offset_top = 164.0
+offset_right = 384.0
+offset_bottom = 179.0
 text = "Test"
 label_settings = SubResource("LabelSettings_r508y")
 
 [node name="CardsPerTurnLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 358.0
-offset_top = 184.0
-offset_right = 476.0
-offset_bottom = 199.0
+offset_left = 422.0
+offset_top = 164.0
+offset_right = 540.0
+offset_bottom = 179.0
 text = "Cards Per Turn:"
 label_settings = SubResource("LabelSettings_r508y")
 
 [node name="WeaponLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 234.0
-offset_top = 207.0
-offset_right = 319.0
-offset_bottom = 222.0
+offset_left = 298.0
+offset_top = 187.0
+offset_right = 383.0
+offset_bottom = 202.0
 text = "Test"
 label_settings = SubResource("LabelSettings_r508y")
 
@@ -310,10 +400,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = 60.0
-offset_right = 91.0
-offset_bottom = 108.0
+offset_left = -53.0
+offset_top = 42.0
+offset_right = 121.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -378,10 +468,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_h3dxt")
 
+[node name="CharacterAura" type="Sprite2D" parent="."]
+position = Vector2(120, 182)
+texture = ExtResource("14_so2th")
+
+[node name="AnimationAura" type="AnimationPlayer" parent="CharacterAura"]
+libraries = {
+&"": SubResource("AnimationLibrary_vtalv")
+}
+
 [node name="Character" type="Sprite2D" parent="."]
-position = Vector2(135, 200)
-scale = Vector2(4, 4)
-texture = ExtResource("7_0sdjj")
+position = Vector2(135, 219)
+texture = ExtResource("14_p1eoj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -392,25 +490,23 @@ libraries = {
 layer = 4
 
 [node name="Right" type="TextureButton" parent="Carousel"]
-offset_left = 421.0
-offset_top = 256.0
-offset_right = 433.0
-offset_bottom = 268.0
+offset_left = 451.0
+offset_top = 238.0
+offset_right = 463.0
+offset_bottom = 250.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_fps6m")
 texture_disabled = ExtResource("7_5ny7k")
-metadata/_edit_use_anchors_ = true
 
 [node name="Left" type="TextureButton" parent="Carousel"]
-offset_left = 204.0
-offset_top = 256.0
-offset_right = 216.0
-offset_bottom = 268.0
+offset_left = 234.0
+offset_top = 238.0
+offset_right = 246.0
+offset_bottom = 250.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_fps6m")
 texture_disabled = ExtResource("7_5ny7k")
 flip_h = true
-metadata/_edit_use_anchors_ = true
 
 [node name="CarouselContainer" type="Node2D" parent="Carousel" node_paths=PackedStringArray("position_offset_node")]
 unique_name_in_owner = true
@@ -518,9 +614,9 @@ z_index = -2
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
 offset_left = -30.0
-offset_top = -34.0
+offset_top = -33.9999
 offset_right = 30.0
-offset_bottom = 26.0
+offset_bottom = 26.0001
 scale = Vector2(0.21, 0.21)
 pivot_offset = Vector2(30, 30)
 focus_mode = 0

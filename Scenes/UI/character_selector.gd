@@ -22,6 +22,8 @@ const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 @onready var hp_label: Label = $HPLabel
 @onready var cards_per_turn_label: Label = $CardsPerTurnLabel
 @onready var weapon_label: Label = $WeaponLabel
+@onready var character_aura: Sprite2D = $CharacterAura
+@onready var animation_aura: AnimationPlayer = $CharacterAura/AnimationAura
 
 var current_character: CharacterStats : set = set_current_character
 
@@ -30,6 +32,7 @@ func _ready() -> void:
 	warrior_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mage_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	assassin_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	animation_aura.play("rotar")
 	
 func set_current_character(new_character: CharacterStats) -> void:
 	current_character = new_character
@@ -84,6 +87,7 @@ func update_character() ->void:
 				
 	
 func playAnimations(character : CharacterStats) ->void:
+	animation_aura.play("auraSale")
 	animation_player.play("characterSale")
 	current_character = character
 	start_button.disabled = carousel_container.position_offset_node.get_child(carousel_container.selected_index).disabled
@@ -92,12 +96,18 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "characterSale":
 		match current_character:
 			WARRIOR_STATS:
-				character.texture = WARRIOR_STATS.art
+				character.texture = WARRIOR_STATS.portrait
+				character_aura.texture = WARRIOR_STATS.aura
 			MAGE_STATS:
-				character.texture = MAGE_STATS.art
+				character.texture = MAGE_STATS.portrait
+				character_aura.texture = MAGE_STATS.aura
 			ASSASSIN_STATS:
-				character.texture = ASSASSIN_STATS.art
+				character.texture = ASSASSIN_STATS.portrait
+				character_aura.texture = ASSASSIN_STATS.aura
 		animation_player.play("characterEntra")
+		animation_aura.play("auraEntra")
+		await animation_aura.animation_finished
+		animation_aura.play("rotar")
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
