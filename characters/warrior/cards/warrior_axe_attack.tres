@@ -13,6 +13,8 @@ rarity = 0
 cost = 1
 exhausts = false
 dmg_type = 1
+special_stats_type = 0
+special_stats_value = 0
 icon = ExtResource("1_q7sat")
 tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color].[/center]"
 sound = ExtResource("3_r0jlm")

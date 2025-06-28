@@ -46,7 +46,10 @@ signal treasure_room_exited(found_relic: Relic)
 
 #relic-related events
 signal relic_tooltip_requested(relic: Relic)
+signal relic_combat_manual_activation
+signal relic_edge_decrease(amount: int)
 
 #random-event-room-related events
 signal event_room_exited
+
 @warning_ignore_restore("unused_signal")

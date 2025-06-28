@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ceehm6wddscik"]
+
+[ext_resource type="Texture2D" uid="uid://di117qdf3phmo" path="res://art/1bit/campfire_icon_map.png" id="1_gplt6"]
+[ext_resource type="Script" uid="uid://cjwoegoijh0nc" path="res://relics/vanguards_edge.gd" id="2_g042v"]
+[ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="2_gplt6"]
+
+[resource]
+script = ExtResource("2_g042v")
+max_edge = 15
+relic_name = "Vanguard's Edge"
+id = "vanguards_edge"
+type = 4
+character_type = 2
+starter_relic = true
+icon = ExtResource("1_gplt6")
+sound_fx = ExtResource("2_gplt6")
+tooltip = "WIP: Arranca re filosa pero se gasta cuando usás cartas que requieren filo. Descartá una carta para afilarla"
+metadata/_custom_type_script = "uid://dvkyibkqq8n0d"

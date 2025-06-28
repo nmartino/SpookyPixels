@@ -12,6 +12,8 @@ extends Stats
 @export var cards_per_turn: int
 @export var max_mana: int
 @export var starting_relic : Relic
+@export var special_stats_type : Card.SpecialStatsTypes = Card.SpecialStatsTypes.NONE
+@export var special_stats_value : int = 0
 
 var mana: int : set = set_mana
 var deck: CardPile
@@ -36,7 +38,13 @@ func take_damage(damage: int) -> void:
 
 
 func can_play_card(card: Card) -> bool:
-	return mana >= card.cost
+	#var special_requirement_met : bool 
+	if card.special_stats_type != Card.SpecialStatsTypes.NONE:
+		return mana >= card.cost and \
+			card.special_stats_type == self.special_stats_type and \
+			self.special_stats_value >= card.special_stats_value
+	else:
+		return mana >= card.cost
 
 
 func create_instance() -> Resource:

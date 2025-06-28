@@ -19,7 +19,7 @@ const HOVER_STYLEBOX := preload("res://Scenes/CardUI/new_hover_box_flat.tres")
 var original_index := 0
 var parent: Control
 var tween: Tween
-var playable := true: set = _set_playable
+var playable := false: set = _set_playable
 var disabled := false
 
 

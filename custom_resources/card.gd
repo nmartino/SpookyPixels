@@ -4,6 +4,7 @@ extends Resource
 enum Rarity {COMMON, UNCOMMON, RARE}
 enum Type {ATTACK, SKILL, POWER}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
+enum SpecialStatsTypes {NONE, EDGE}
 
 const RARITY_COLORS := {
 	Card.Rarity.COMMON: Color.WHITE,
@@ -19,6 +20,9 @@ const RARITY_COLORS := {
 @export var cost: int
 @export var exhausts: bool = false
 @export var dmg_type: Effect.Type
+@export var special_stats_type : SpecialStatsTypes = SpecialStatsTypes.NONE
+@export var special_stats_value : int = 0
+#: Dictionary = {SpecialStatsTypes.NONE: 0}#[SpecialStatsTypes: Int]
 
 @export_group("Card Visuals")
 @export var icon: Texture

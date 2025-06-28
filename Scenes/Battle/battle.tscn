@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=43 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
 [ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
 [ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
+[ext_resource type="Texture2D" uid="uid://dfjfoy7k8vqhr" path="res://art/1bit/Axe/animation-battle-axe-001.png" id="33_gp70a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
 animations = [{
@@ -318,6 +319,13 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_v0du8")
 }
+
+[node name="WeaponButton" type="TextureButton" parent="BattleUI"]
+offset_left = 77.0
+offset_top = 225.0
+offset_right = 157.0
+offset_bottom = 305.0
+texture_normal = ExtResource("33_gp70a")
 
 [node name="WhiteFlash" type="CanvasLayer" parent="."]
 layer = 2
