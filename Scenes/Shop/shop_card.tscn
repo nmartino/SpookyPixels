@@ -1,13 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfj77qt303ooj"]
+[gd_scene load_steps=13 format=3 uid="uid://cfj77qt303ooj"]
 
 [ext_resource type="Script" uid="uid://vto8ydo6t6g5" path="res://Scenes/Shop/shop_card.gd" id="1_qme08"]
 [ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_p2lu6"]
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="2_twn1e"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="3_we4h3"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="5_hg8sc"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_vj7jc"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_sx5p8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnk3o"]
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rwcrt"]
+texture = ExtResource("5_hg8sc")
+modulate_color = Color(1, 1, 1, 0.603922)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5p35r"]
+texture = ExtResource("6_vj7jc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bvjoj"]
+texture = ExtResource("7_sx5p8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ohi61"]
+texture = ExtResource("5_hg8sc")
 
 [node name="ShopCard" type="VBoxContainer"]
 custom_minimum_size = Vector2(50, 90)
@@ -44,8 +60,12 @@ stretch_mode = 5
 
 [node name="BuyButton" type="Button" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rwcrt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5p35r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bvjoj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ohi61")
 text = "Buy"
 
 [connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

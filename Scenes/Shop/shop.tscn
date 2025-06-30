@@ -1,9 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://dmhsokr2rj750"]
+[gd_scene load_steps=47 format=3 uid="uid://dmhsokr2rj750"]
 
 [ext_resource type="Script" uid="uid://i3mn841vgq1n" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
 [ext_resource type="Script" uid="uid://dvkyibkqq8n0d" path="res://custom_resources/relic.gd" id="2_0re27"]
 [ext_resource type="AudioStream" uid="uid://brurpddkw5j74" path="res://art/(Loop) Peaceful Village.wav" id="2_hrsch"]
-[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_x0c2s"]
 [ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="4_itqgr"]
 [ext_resource type="Resource" uid="uid://bjbl6k4rw8lo" path="res://relics/coupons.tres" id="6_y0xxl"]
 [ext_resource type="Texture2D" uid="uid://uy26l5wvm8l6" path="res://art/1bit/shop_label.png" id="7_kca75"]
@@ -15,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c1601ybxwaibt" path="res://art/1bit/orcoArt/Comerciante FondoC1.png" id="9_n21ru"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="9_ns37w"]
 [ext_resource type="Texture2D" uid="uid://dbxob13qdw1r4" path="res://art/1bit/orcoArt/Comerciante FondoB4.png" id="10_ax832"]
+[ext_resource type="Texture2D" uid="uid://dn1tf4nualhfo" path="res://art/1bit/background/Background_undead_06.png" id="10_v7wqc"]
 [ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="10_y2vs0"]
 [ext_resource type="Texture2D" uid="uid://bbdif1yxeqagj" path="res://art/1bit/orcoArt/Comerciante FondoA1.png" id="11_3d1o5"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="11_68d70"]
 [ext_resource type="Texture2D" uid="uid://d2muvef41ph4i" path="res://art/1bit/orcoArt/Comerciante2.png" id="11_cb5j8"]
 [ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="11_x71sg"]
 [ext_resource type="Texture2D" uid="uid://c6nyl3v2j187" path="res://art/1bit/orcoArt/Comerciante FondoA2.png" id="12_kj5cl"]
@@ -32,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://bpyyf88rxqfen" path="res://art/1bit/orcoArt/Comerciante FondoC3.png" id="19_n543s"]
 [ext_resource type="Texture2D" uid="uid://44empju5u6xu" path="res://art/1bit/orcoArt/Comerciante FondoC4.png" id="20_r7byq"]
 [ext_resource type="Texture2D" uid="uid://dvvb4x1njryd3" path="res://art/1bit/orcoArt/Comerciante1-2.png" id="23_2k04f"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="27_qydip"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="28_wdfyn"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="29_gp0wy"]
 
 [sub_resource type="Animation" id="Animation_cxch1"]
 length = 0.001
@@ -171,6 +173,15 @@ _data = {
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5veni"]
+texture = ExtResource("27_qydip")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkp36"]
+texture = ExtResource("28_wdfyn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrquv"]
+texture = ExtResource("29_gp0wy")
+
 [node name="Shop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -186,61 +197,55 @@ music = ExtResource("2_hrsch")
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = 0
 
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Background" type="Sprite2D" parent="BackgroundLayer"]
 unique_name_in_owner = true
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("3_x0c2s")
+texture = ExtResource("10_v7wqc")
 centered = false
-
-[node name="torch" parent="BackgroundLayer" instance=ExtResource("11_68d70")]
-position = Vector2(92, 108)
-scale = Vector2(2, 2)
-
-[node name="torch2" parent="BackgroundLayer" instance=ExtResource("11_68d70")]
-position = Vector2(257, 108)
-scale = Vector2(2, 2)
-
-[node name="torch3" parent="BackgroundLayer" instance=ExtResource("11_68d70")]
-position = Vector2(419, 108)
-scale = Vector2(2, 2)
-frame_progress = 0.762502
 
 [node name="DecorationLayer" type="CanvasLayer" parent="."]
 
 [node name="ShopLabel" type="TextureRect" parent="DecorationLayer"]
-offset_left = 193.0
-offset_top = 32.0
-offset_right = 241.0
-offset_bottom = 73.0
+offset_left = 96.0
+offset_top = 50.0
+offset_right = 144.0
+offset_bottom = 91.0
 texture = ExtResource("7_kca75")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoC" type="TextureRect" parent="DecorationLayer"]
-offset_left = 60.0
-offset_top = 200.0
-offset_right = 124.0
-offset_bottom = 240.0
+offset_left = 127.0
+offset_top = 144.0
+offset_right = 191.0
+offset_bottom = 184.0
 scale = Vector2(2, 2)
 texture = ExtResource("9_n21ru")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoB" type="TextureRect" parent="DecorationLayer"]
-offset_left = -4.0
-offset_top = 200.0
-offset_right = 60.0
-offset_bottom = 240.0
+offset_left = -1.0
+offset_top = 144.0
+offset_right = 63.0
+offset_bottom = 184.0
 scale = Vector2(2, 2)
 texture = ExtResource("10_ax832")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FondoA" type="TextureRect" parent="DecorationLayer"]
-offset_left = -4.0
-offset_top = 232.0
-offset_right = 140.0
-offset_bottom = 272.0
+offset_left = -1.0
+offset_top = 208.0
+offset_right = 143.0
+offset_bottom = 248.0
 scale = Vector2(2, 2)
 texture = ExtResource("11_3d1o5")
 expand_mode = 1
@@ -261,10 +266,10 @@ unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 117.0
-offset_top = -131.0
-offset_right = 149.0
-offset_bottom = -99.0
+offset_left = 118.0
+offset_top = -159.0
+offset_right = 150.0
+offset_bottom = -127.0
 grow_vertical = 0
 scale = Vector2(2, 2)
 texture = ExtResource("9_m4x3p")
@@ -289,10 +294,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -223.0
-offset_top = -57.0
-offset_right = -73.0
-offset_bottom = -6.0
+offset_left = -229.0
+offset_top = -64.0
+offset_right = -79.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
@@ -310,7 +315,7 @@ unique_name_in_owner = true
 layer = 2
 
 [node name="BackButton" type="Button" parent="UILayer"]
-custom_minimum_size = Vector2(48, 0)
+custom_minimum_size = Vector2(120, 32)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -322,7 +327,10 @@ offset_right = 294.0
 offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Leave Shop"
+theme_override_styles/hover = SubResource("StyleBoxTexture_5veni")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jkp36")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lrquv")
+text = "Leave"
 
 [node name="ShopContent" type="VBoxContainer" parent="UILayer"]
 anchors_preset = 8
@@ -330,10 +338,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -138.0
-offset_right = 275.0
-offset_bottom = 108.0
+offset_left = -69.0
+offset_top = -142.0
+offset_right = 301.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
