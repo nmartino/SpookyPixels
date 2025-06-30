@@ -15,12 +15,6 @@ const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 @export var run_startup: RunStartup
 
 @onready var map: Map = $Map
-@onready var treasure_button: Button = %TreasureButton
-@onready var map_button: Button = %MapButton
-@onready var battle_button: Button = %BattleButton
-@onready var shop_button: Button = %ShopButton
-@onready var reward_button: Button = %RewardButton
-@onready var campfire_button: Button = %CampfireButton
 @onready var current_view: Node = $CurrentView
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
@@ -114,13 +108,6 @@ func _setup_event_connection() -> void:
 	Events.shop_exited.connect(_show_map)
 	Events.treasure_room_exited.connect(_on_treasue_room_exited)
 	Events.event_room_exited.connect(_show_map)
-	
-	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
-	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
-	map_button.pressed.connect(_show_map)
-	reward_button.pressed.connect(_change_view.bind(BATTLE_REWARD_SCENE))
-	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
-	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 
 func _setup_top_bar():
 	character.stats_changed.connect(health_ui.update_stats.bind(character))

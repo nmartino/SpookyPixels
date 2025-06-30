@@ -1,10 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://citmqnnx5h0l6"]
+[gd_scene load_steps=7 format=3 uid="uid://citmqnnx5h0l6"]
 
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="1_53r3o"]
 [ext_resource type="Script" uid="uid://bgtfcurq0ljyy" path="res://Scenes/EventsRoom/event_room_button.gd" id="1_aqa3b"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53r3o"]
+texture = ExtResource("1_53r3o")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1, 1, 1, 0.647059)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lqhwb"]
+texture = ExtResource("1_53r3o")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jr5kt"]
+texture = ExtResource("1_53r3o")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltu8i"]
+texture = ExtResource("1_53r3o")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 12.0
+
 [node name="EventRoomButton" type="Button"]
-offset_right = 10.0
-offset_bottom = 8.0
+offset_right = 35.0
+offset_bottom = 21.0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_53r3o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lqhwb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jr5kt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ltu8i")
 text = "ok"
 script = ExtResource("1_aqa3b")
 

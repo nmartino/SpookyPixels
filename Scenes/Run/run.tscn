@@ -48,51 +48,6 @@ position = Vector2(0, 3)
 
 [node name="CurrentView" type="Node" parent="."]
 
-[node name="DebugButtons" type="VBoxContainer" parent="."]
-visible = false
-anchors_preset = 9
-anchor_bottom = 1.0
-grow_vertical = 2
-alignment = 1
-
-[node name="MapButton" type="Button" parent="DebugButtons"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "MapButton"
-
-[node name="BattleButton" type="Button" parent="DebugButtons"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "BattleButton"
-
-[node name="ShopButton" type="Button" parent="DebugButtons"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "ShopButton"
-
-[node name="RewardButton" type="Button" parent="DebugButtons"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "RewardButton"
-
-[node name="CampfireButton" type="Button" parent="DebugButtons"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "CampfireButton
-"
-
-[node name="TreasureButton" type="Button" parent="DebugButtons"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "TreasureButton
-"
-
 [node name="TopBar" type="CanvasLayer" parent="."]
 layer = 5
 

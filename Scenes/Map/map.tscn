@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
 [ext_resource type="Texture2D" uid="uid://sb5mjvcc4w85" path="res://art/1bit/pruebas mapa/Piezas mapa_ladrillos.png" id="4_o7i3w"]
 [ext_resource type="Resource" uid="uid://c8acdg4631a23" path="res://Scenes/EventsRoom/event_room_pool.tres" id="5_ytk4a"]
-[ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="6_fyo8k"]
+[ext_resource type="Texture2D" uid="uid://dbpi8qt5xgwv" path="res://art/1bit/background/negro.png" id="6_fyo8k"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ski2f")
@@ -112,7 +112,6 @@ unique_name_in_owner = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-3, 1)
 offset = Vector2(320, 50)
 
 [node name="MapGenerator" type="Node" parent="."]
@@ -130,5 +129,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_fyo8k")
+expand_mode = 1
 
 [connection signal="gui_input" from="MapBackground/Background" to="." method="_on_background_gui_input"]
