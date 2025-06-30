@@ -5,8 +5,10 @@ extends Stats
 @export var character_name: String
 @export_multiline var description: String
 @export var portrait: Texture
+@export var aura: Texture
 
 @export_group("Gameplay Data")
+@export var isDisable: bool
 @export var starting_deck: CardPile
 @export var draftable_cards: CardPile
 @export var cards_per_turn: int

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blqao8wibecx2"]
+[gd_scene load_steps=16 format=3 uid="uid://blqao8wibecx2"]
 
 [ext_resource type="Script" uid="uid://cppcaq31r2roc" path="res://Scenes/battle_reward/battle_reward.gd" id="1_bkddk"]
 [ext_resource type="Texture2D" uid="uid://bux5cyl52642c" path="res://art/1bit/Relics Sources/bg-rewards-1.png" id="2_kt53k"]
@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bwm806agkeipd" path="res://Scenes/UI/reward_button.tscn" id="3_2xt0f"]
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="4_1t0mw"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="5_tf7e2"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="7_xtloi"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="8_4mh8e"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="9_w3bih"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vrum6"]
 font = ExtResource("2_woval")
+font_size = 32
 font_color = Color(0.333333, 1, 1, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
@@ -18,6 +22,19 @@ shadow_offset = Vector2(3, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpqe1"]
 bg_color = Color(0.317647, 0.317647, 0.317647, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c70w2"]
+texture = ExtResource("7_xtloi")
+modulate_color = Color(1, 1, 1, 0.580392)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5vnb"]
+texture = ExtResource("8_4mh8e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ois3g"]
+texture = ExtResource("9_w3bih")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02j4s"]
+texture = ExtResource("7_xtloi")
 
 [node name="BattleReward" type="Control"]
 layout_mode = 3
@@ -49,6 +66,17 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0.333333, 1, 0.368627)
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 211.0
+offset_top = 76.0
+offset_right = 429.0
+offset_bottom = 139.0
+text = "Battle Rewards
+"
+label_settings = SubResource("LabelSettings_vrum6")
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 1
@@ -63,13 +91,6 @@ offset_right = 55.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Battle Rewards
-"
-label_settings = SubResource("LabelSettings_vrum6")
-horizontal_alignment = 1
 
 [node name="RewardContainer" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(110, 80)
@@ -101,9 +122,13 @@ reward_text = "Add new card"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 20)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c70w2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w5vnb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ois3g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_02j4s")
 disabled = true
 text = "Continue"
 
