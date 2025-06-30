@@ -19,6 +19,7 @@ first outbreak of corruption.
 "
 portrait = ExtResource("5_a70qt")
 aura = ExtResource("2_kr1ar")
+isDisable = false
 starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")
 cards_per_turn = 4

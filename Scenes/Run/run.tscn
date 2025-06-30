@@ -228,7 +228,6 @@ layer = 99
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4
-visible = false
 material = SubResource("ShaderMaterial_s3ded")
 anchors_preset = 15
 anchor_right = 1.0

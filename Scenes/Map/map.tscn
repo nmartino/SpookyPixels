@@ -1,17 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8kl0n2023ls"]
+[gd_scene load_steps=7 format=3 uid="uid://b8kl0n2023ls"]
 
 [ext_resource type="Script" uid="uid://dpf1tlgfkrn8y" path="res://Scenes/Map/map.gd" id="1_ski2f"]
 [ext_resource type="Script" uid="uid://ms4e0nmte2ay" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
 [ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
 [ext_resource type="Texture2D" uid="uid://sb5mjvcc4w85" path="res://art/1bit/pruebas mapa/Piezas mapa_ladrillos.png" id="4_o7i3w"]
 [ext_resource type="Resource" uid="uid://c8acdg4631a23" path="res://Scenes/EventsRoom/event_room_pool.tres" id="5_ytk4a"]
-
-[sub_resource type="Gradient" id="Gradient_6gqa1"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_70edj"]
-gradient = SubResource("Gradient_6gqa1")
-width = 30
+[ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="6_fyo8k"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ski2f")
@@ -135,6 +129,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture1D_70edj")
+texture = ExtResource("6_fyo8k")
 
 [connection signal="gui_input" from="MapBackground/Background" to="." method="_on_background_gui_input"]

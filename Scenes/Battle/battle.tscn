@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=41 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://0hnlrypvn7du" path="res://art/1bit/background/Background_undead_05.png" id="10_xsaun"]
 [ext_resource type="PackedScene" uid="uid://bg7tf3vrpwfff" path="res://Scenes/CardUI/mana_ui.tscn" id="11_6goif"]
 [ext_resource type="PackedScene" uid="uid://xlssvxwqgfut" path="res://Scenes/UI/tool_tip.tscn" id="12_rw2qe"]
-[ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="13_3eywo"]
 [ext_resource type="Script" uid="uid://bihv6wnb8k7kh" path="res://Scenes/UI/white_flash.gd" id="15_2ee3c"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="17_3lvuc"]
 [ext_resource type="PackedScene" uid="uid://bjijnp3e7egu2" path="res://Scenes/UI/battle_over_panel.tscn" id="17_4r3ak"]
@@ -34,11 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://wnjmjp4d7usd" path="res://art/1bit/deck-icon04-hover.png" id="22_ds3ue"]
 [ext_resource type="Texture2D" uid="uid://cu2pwwfthlhay" path="res://art/1bit/reloj/5.png" id="22_jodwu"]
 [ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
-[ext_resource type="Texture2D" uid="uid://e8nckytn4ald" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-default.png" id="24_gp70a"]
 [ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
 [ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
-[ext_resource type="Texture2D" uid="uid://qsstg4eh427t" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-hover.png" id="25_ri5ov"]
-[ext_resource type="Texture2D" uid="uid://c431ix6cmlg2h" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-press.png" id="26_o05jw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
 animations = [{
@@ -93,35 +89,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skmmx"]
 size = Vector2(639.5, 207.5)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsaun"]
-texture = ExtResource("24_gp70a")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
-modulate_color = Color(1, 1, 1, 0.654902)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0jjjk"]
-texture = ExtResource("25_ri5ov")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u65ja"]
-texture = ExtResource("26_o05jw")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f24gg"]
-texture = ExtResource("24_gp70a")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
 
 [sub_resource type="Animation" id="Animation_nun6g"]
 length = 0.001
@@ -256,8 +223,8 @@ player = NodePath("../../Player")
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("11_6goif")]
 offset_left = 5.0
 offset_top = -111.0
-offset_right = 53.0
-offset_bottom = -79.0
+offset_right = 68.0
+offset_bottom = -69.0
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
@@ -267,18 +234,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -63.0
-offset_top = -109.0
-offset_right = -12.0
-offset_bottom = -62.0
+offset_left = -57.0
+offset_top = -118.0
+offset_right = -16.0
+offset_bottom = -78.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("13_3eywo")
 theme_override_icons/icon = ExtResource("17_xesn7")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_xsaun")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0jjjk")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_u65ja")
-theme_override_styles/normal = SubResource("StyleBoxTexture_f24gg")
 icon_alignment = 1
 expand_icon = true
 
@@ -344,6 +306,7 @@ layer = 6
 unique_name_in_owner = true
 process_mode = 0
 anchors_preset = -1
+anchor_right = 0.51875
 anchor_bottom = 0.0555556
 offset_top = 3.0
 offset_bottom = 46.0

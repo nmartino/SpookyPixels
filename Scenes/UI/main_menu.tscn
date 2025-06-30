@@ -4,40 +4,24 @@
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
 [ext_resource type="Texture2D" uid="uid://cl6h0gmj4ohnp" path="res://art/1bit/orcoArt/MainMenu/Inicio 01.png" id="3_lrjdf"]
 [ext_resource type="Texture2D" uid="uid://yysxd8oxl31" path="res://art/1bit/orcoArt/MainMenu/Inicio 02.png" id="4_wqme5"]
-[ext_resource type="Texture2D" uid="uid://e8nckytn4ald" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-default.png" id="5_3h8o7"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="5_lrjdf"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
-[ext_resource type="Texture2D" uid="uid://qsstg4eh427t" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-hover.png" id="6_q6o50"]
-[ext_resource type="Texture2D" uid="uid://c431ix6cmlg2h" path="res://art/1bit/XaviArt/buttons-ui/button-big-01-press.png" id="7_46hhv"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_wqme5"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_jewm6"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oslnl"]
-texture = ExtResource("5_3h8o7")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
+texture = ExtResource("5_lrjdf")
 modulate_color = Color(1, 1, 1, 0.654902)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tr32r"]
-texture = ExtResource("6_q6o50")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
+texture = ExtResource("6_wqme5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbsmt"]
-texture = ExtResource("7_46hhv")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
+texture = ExtResource("7_jewm6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gipi"]
-texture = ExtResource("5_3h8o7")
-texture_margin_left = 9.0
-texture_margin_top = 5.0
-texture_margin_right = 9.0
-texture_margin_bottom = 7.0
+texture = ExtResource("5_lrjdf")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ypsd1"]
 font = ExtResource("5_ridyb")
@@ -106,7 +90,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(320, 325)]
+"values": [Vector2(320, 220)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -144,6 +128,42 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Continue:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/New Run:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer/Exit:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ru8vt"]
 resource_name = "aparicionTituloMenu"
@@ -170,6 +190,42 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Continue:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/New Run:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Exit:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ypsd1"]
@@ -201,7 +257,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="backgroundCastillo" type="Sprite2D" parent="."]
-position = Vector2(320, 325)
+position = Vector2(320, 220)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_lrjdf")
 metadata/_edit_lock_ = true
@@ -235,6 +291,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_oslnl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_tr32r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hbsmt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0gipi")
+disabled = true
 text = "Continue"
 
 [node name="New Run" type="Button" parent="VBoxContainer"]
@@ -245,6 +302,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_oslnl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_tr32r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hbsmt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0gipi")
+disabled = true
 text = "New Game"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
@@ -254,6 +312,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_oslnl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_tr32r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hbsmt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0gipi")
+disabled = true
 text = "Exit
 "
 

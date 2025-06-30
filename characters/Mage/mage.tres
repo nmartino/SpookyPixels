@@ -18,6 +18,7 @@ of the Abyss and fears that his lineage
 is tied to the origin of the Soul Drinker."
 portrait = ExtResource("5_obafq")
 aura = ExtResource("2_lqvbr")
+isDisable = false
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
 cards_per_turn = 3

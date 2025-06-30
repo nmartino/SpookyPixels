@@ -19,19 +19,19 @@ const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 @onready var warrior_icon: Button = $CharacterButtons/WarriorIcon
 @onready var mage_icon: Button = $CharacterButtons/MageIcon
 @onready var assassin_icon: Button = $CharacterButtons/AssassinIcon
-@onready var hp_label: Label = $HPLabel
-@onready var cards_per_turn_label: Label = $CardsPerTurnLabel
-@onready var weapon_label: Label = $WeaponLabel
 @onready var character_aura: Sprite2D = $CharacterAura
 @onready var animation_aura: AnimationPlayer = $CharacterAura/AnimationAura
+@onready var hp_label: Label = %HPLabel
+@onready var cards_per_turn_label: Label = %CardsPerTurnLabel
+@onready var weapon_label: Label = %WeaponLabel
 
 var current_character: CharacterStats : set = set_current_character
 
 func _ready() -> void:
 	set_current_character(WARRIOR_STATS)
-	warrior_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	mage_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	assassin_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#warrior_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#mage_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#assassin_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	animation_aura.play("rotar")
 	
 func set_current_character(new_character: CharacterStats) -> void:
@@ -90,7 +90,7 @@ func playAnimations(character : CharacterStats) ->void:
 	animation_aura.play("auraSale")
 	animation_player.play("characterSale")
 	current_character = character
-	start_button.disabled = carousel_container.position_offset_node.get_child(carousel_container.selected_index).disabled
+	start_button.disabled = current_character.isDisable
 	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "characterSale":
@@ -111,3 +111,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
+
+
+func _on_warrior_icon_pressed() -> void:
+	playAnimations(WARRIOR_STATS)
+
+
+func _on_mage_icon_pressed() -> void:
+	playAnimations(MAGE_STATS)
+
+
+func _on_assassin_icon_pressed() -> void:
+	playAnimations(ASSASSIN_STATS)

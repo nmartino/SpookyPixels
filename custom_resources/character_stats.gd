@@ -8,6 +8,7 @@ extends Stats
 @export var aura: Texture
 
 @export_group("Gameplay Data")
+@export var isDisable: bool
 @export var starting_deck: CardPile
 @export var draftable_cards: CardPile
 @export var cards_per_turn: int

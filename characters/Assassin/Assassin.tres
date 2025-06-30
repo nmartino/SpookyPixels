@@ -19,6 +19,7 @@ depths.
 --- On Vacations, not available yet ---"
 portrait = ExtResource("5_fmouy")
 aura = ExtResource("2_bi0wc")
+isDisable = true
 starting_deck = ExtResource("6_nhtah")
 draftable_cards = ExtResource("3_3sxae")
 cards_per_turn = 4
