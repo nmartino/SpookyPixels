@@ -20,7 +20,7 @@ func _ready() -> void:
 		animation_player.queue(a)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("spacebar") && !skip_spamming_locked:
+	if Input.is_anything_pressed() && !skip_spamming_locked:
 		skip_spamming_locked = true
 		animation_player.seek(animation_player.current_animation_length - 0.01)
 		get_tree().create_timer(0.5).timeout.connect(

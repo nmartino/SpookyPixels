@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dg8jrtamtfy70" path="res://Scenes/splash/splash_screen.gd" id="1_b277h"]
 [ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_7jm5s"]
-[ext_resource type="Texture2D" uid="uid://cedaxsa0nwywd" path="res://art/1bit/orcoArt/Background/image.png" id="3_j33iv"]
+[ext_resource type="Texture2D" uid="uid://cl6h0gmj4ohnp" path="res://art/1bit/orcoArt/MainMenu/Inicio 01.png" id="3_j33iv"]
 [ext_resource type="Texture2D" uid="uid://bb2763pkv43su" path="res://art/splash/godot-Logo.png" id="3_wcs12"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_c4ymf"]
 [ext_resource type="Texture2D" uid="uid://c2hc42bhuexvr" path="res://art/splash/animate01.png" id="5_rtbld"]
@@ -151,12 +151,12 @@ _data = {
 &"logos": SubResource("Animation_gsg80")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ludkq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j33iv"]
 shader = ExtResource("27_s7hlb")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.402
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.1
+shader_parameter/noise_amount = 0.167
 shader_parameter/interference_amount = 0.09
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
@@ -178,12 +178,19 @@ grow_vertical = 2
 script = ExtResource("1_b277h")
 music = ExtResource("2_7jm5s")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-offset_right = 640.0
-offset_bottom = 360.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(320, 220)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_j33iv")
-expand_mode = 1
 
 [node name="GhostPixel" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -252,7 +259,7 @@ layer = 5
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4
-material = SubResource("ShaderMaterial_ludkq")
+material = SubResource("ShaderMaterial_j33iv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

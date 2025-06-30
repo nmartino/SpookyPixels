@@ -1,20 +1,25 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://bj4cudlc1sj74"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=10 format=3 uid="uid://bj4cudlc1sj74"]
 
 [ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_rj4dh"]
 [ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="1_tokje"]
 [ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_7i7c4"]
+[ext_resource type="Texture2D" uid="uid://beme406vul1na" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 01.png" id="2_kr1ar"]
 [ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="2_yxaf8"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_xt1eb"]
 [ext_resource type="Texture2D" uid="uid://de1pardmna4le" path="res://art/1bit/orcoArt/32x32/vanguard_lastimado.png" id="4_qj7df"]
+[ext_resource type="Texture2D" uid="uid://bvs6wfxtsmfek" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 01.png" id="5_a70qt"]
 [ext_resource type="Resource" uid="uid://rypemqa7vwy7" path="res://relics/battle_axe.tres" id="6_4yk1n"]
 
 [resource]
 script = ExtResource("1_rj4dh")
-character_name = "Vanguard"
-description = "Steel answers his command.
-Honor guides her strikes.
+character_name = "The Vanguard"
+description = "He seeks redemption after failing in
+an ancient battle that allowed the
+first outbreak of corruption.
 "
-portrait = ExtResource("1_tokje")
+portrait = ExtResource("5_a70qt")
+aura = ExtResource("2_kr1ar")
+isDisable = false
 starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")
 cards_per_turn = 4

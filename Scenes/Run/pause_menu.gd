@@ -2,6 +2,7 @@ class_name PauseMenu
 extends CanvasLayer
 
 signal save_and_quit
+const MUSIC = preload("res://art/(Loop) Forest Exploration.wav")
 
 @onready var back_to_game_button: Button = %BackToGameButton
 @onready var save_and_quit_button: Button = %SaveAndQuitButton
@@ -31,5 +32,6 @@ func _unpause()-> void:
 	get_tree().paused = false
 
 func _on_save_and_quit_button_pressed() -> void:
+	MusicPlayer.play(MUSIC, true)
 	get_tree().paused = false
 	save_and_quit.emit()

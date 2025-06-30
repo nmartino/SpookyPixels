@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg7tf3vrpwfff"]
+[gd_scene load_steps=4 format=3 uid="uid://bg7tf3vrpwfff"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_v6lqg"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="2_u31i2"]
 [ext_resource type="Script" uid="uid://6aephh7wkuty" path="res://Scenes/CardUI/mana_ui.gd" id="2_yt5ru"]
 
-[node name="ManaUI" type="Panel"]
+[node name="ManaUI" type="NinePatchRect"]
 custom_minimum_size = Vector2(48, 32)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
-offset_top = -26.0
-offset_right = 25.0
+offset_top = -43.0
+offset_right = 62.0
 offset_bottom = -8.0
 grow_vertical = 0
 theme = ExtResource("1_v6lqg")
+texture = ExtResource("2_u31i2")
+patch_margin_left = 14
+patch_margin_top = 12
+patch_margin_right = 14
+patch_margin_bottom = 12
 script = ExtResource("2_yt5ru")
 
 [node name="ManaLabel" type="Label" parent="."]
