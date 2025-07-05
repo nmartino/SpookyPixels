@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=42 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
