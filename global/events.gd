@@ -49,6 +49,11 @@ signal relic_tooltip_requested(relic: Relic)
 signal relic_combat_manual_activation
 signal relic_edge_decrease(amount: int)
 
+#Weapon-related events
+signal weapon_start_of_combat_activation
+signal weapon_combat_activation
+signal weapon_end_of_combat_activation
+
 #random-event-room-related events
 signal event_room_exited
 

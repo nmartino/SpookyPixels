@@ -22,6 +22,7 @@ var backgrounds := [
 @onready var player_handeler: PlayerHandeler = $PlayerHandeler 
 @onready var enemy_handeler: EnemyHandeler = $EnemyHandeler 
 @onready var player: Player = $Player
+@onready var weapon_ui: WeaponUI = $WeaponUI
 @onready var torch_left: AnimatedSprite2D = $torchLeft
 @onready var torch_middle: AnimatedSprite2D = $torchMiddle
 @onready var torch_right: AnimatedSprite2D = $torchRight
@@ -76,6 +77,7 @@ func start_battle()-> void:
 	enemy_handeler.reset_enemy_actions()
 	relics.relics_activated.connect(_on_relics_activated)
 	relics.activate_relic_by_type(Relic.Type.START_OF_COMBAT)
+	weapon_ui.initialize(player.stats.weapon)
 
 func _on_enemies_child_order_changed()->void:
 	if enemy_handeler.get_child_count() == 0 and is_instance_valid(relics):

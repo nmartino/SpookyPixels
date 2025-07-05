@@ -53,7 +53,7 @@ func set_current_character(new_character: CharacterStats) -> void:
 	description.text = current_character.description
 	hp_label.text = "HP: "+str(current_character.max_health)
 	cards_per_turn_label.text = "Cards Per Turn: "+str(current_character.cards_per_turn)
-	weapon_label.text = "Weapon: "+current_character.starting_relic.relic_name
+	weapon_label.text = "Weapon: "+ current_character.weapon.name
 
 func _on_start_button_pressed() -> void:
 	run_startup.type = RunStartup.TYPE.NEW_RUN

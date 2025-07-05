@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
 [ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
 [ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
-[ext_resource type="Texture2D" uid="uid://dfjfoy7k8vqhr" path="res://art/1bit/Axe/animation-battle-axe-001.png" id="33_gp70a"]
+[ext_resource type="PackedScene" uid="uid://xaevvjaxcha6" path="res://Weapons/WeaponUI.tscn" id="36_f8ycv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
 animations = [{
@@ -318,13 +318,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_v0du8")
 }
 
-[node name="WeaponButton" type="TextureButton" parent="BattleUI"]
-offset_left = 77.0
-offset_top = 225.0
-offset_right = 157.0
-offset_bottom = 305.0
-texture_normal = ExtResource("33_gp70a")
-
 [node name="WhiteFlash" type="CanvasLayer" parent="."]
 layer = 2
 script = ExtResource("15_2ee3c")
@@ -365,3 +358,6 @@ layer = 4
 
 [node name="StatusView" parent="StatusViewLayer" instance=ExtResource("21_qqhbv")]
 visible = false
+
+[node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
+position = Vector2(105, 286)

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://kgslrefuvd1v"]
+
+[ext_resource type="Script" uid="uid://bcmrivxa60jlb" path="res://Weapons/weapon_attachment.gd" id="1_idveg"]
+[ext_resource type="Script" uid="uid://b50lgsimwxov2" path="res://Weapons/vanguards_axe.gd" id="2_idveg"]
+[ext_resource type="Texture2D" uid="uid://bwbj1dxegykaq" path="res://event2.png" id="2_le0aw"]
+[ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="3_u2ilk"]
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="4_dyi2t"]
+
+[resource]
+script = ExtResource("2_idveg")
+name = &"Vanguard\'s Axe"
+starting_cards = Array[ExtResource("4_dyi2t")]([])
+max_attachment_slots = 0
+attachments = Array[ExtResource("1_idveg")]([])
+stat_type = 1
+max_char_stat_value = 10
+icon = ExtResource("2_le0aw")
+sound_fx = ExtResource("3_u2ilk")
+tooltip = "The Vanguard's Axe. Hone its edge to deal more damage, blunt it down for some thumping effects.
+Dealing damage with your axe consumes that much edge. Discard a card to it to replenish it."
+metadata/_custom_type_script = "uid://bygclcvftycfb"

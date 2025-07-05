@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="2_yxaf8"]
 [ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="3_xt1eb"]
 [ext_resource type="Texture2D" uid="uid://de1pardmna4le" path="res://art/1bit/orcoArt/32x32/vanguard_lastimado.png" id="4_qj7df"]
-[ext_resource type="Resource" uid="uid://ceehm6wddscik" path="res://relics/vanguards_edge.tres" id="7_imjtc"]
+[ext_resource type="Resource" uid="uid://kgslrefuvd1v" path="res://Weapons/vanguards_axe.tres" id="7_imjtc"]
 
 [resource]
 script = ExtResource("1_rj4dh")
@@ -19,10 +19,9 @@ isDisable = false
 starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")
 cards_per_turn = 4
-max_mana = 3
-starting_relic = ExtResource("7_imjtc")
-special_stats_type = 0
-special_stats_value = 0
+weapon = ExtResource("7_imjtc")
+special_stat_type = 1
+special_stat_value = 0
 max_health = 35
 art = ExtResource("1_tokje")
 hurt = ExtResource("4_qj7df")
