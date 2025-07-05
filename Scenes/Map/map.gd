@@ -16,12 +16,12 @@ var map_data: Array[Array]
 var floors_climbed: int
 var last_room: Room
 var camera_edge_y: float
-var camera_edge_x:= 256
+var camera_edge_x:= 640
 
 var touchPoints: Dictionary = {}
 
 func _ready() -> void:
-	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1)
+	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1) - (360/2)
 
 
 func _unhandled_input(event: InputEvent) -> void:

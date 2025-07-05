@@ -1,22 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://bon4mgkl3m0f1"]
+[gd_scene load_steps=14 format=3 uid="uid://bon4mgkl3m0f1"]
 
 [ext_resource type="PackedScene" uid="uid://citmqnnx5h0l6" path="res://Scenes/EventsRoom/event_room_button.tscn" id="1_b31ms"]
 [ext_resource type="Script" uid="uid://bstqjp0u5t5id" path="res://Scenes/EventsRoom/the_eternal_feast.gd" id="1_cxwdx"]
 [ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="2_ccujr"]
-[ext_resource type="Texture2D" uid="uid://bfb7ydgrgei22" path="res://art/1bit/orcoArt/Sprite Fondos testeo1.png" id="2_kuq67"]
-[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="2_lpsfq"]
-[ext_resource type="Texture2D" uid="uid://talqes4x000t" path="res://art/1bit/orcoArt/Sprite Fondos testeo2.png" id="3_nxxnn"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="3_ra3gj"]
+[ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="2_ltljs"]
+[ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="3_wjbni"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="3_xtdj4"]
-[ext_resource type="Texture2D" uid="uid://bf1cx3ocwat64" path="res://art/1bit/orcoArt/Sprite Fondos testeo3.png" id="4_wyrdo"]
-[ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="5_wa1rt"]
-[ext_resource type="Texture2D" uid="uid://ya4u5dsov6xe" path="res://art/1bit/orcoArt/Sprite Fondos testeo5.png" id="6_rv0te"]
+[ext_resource type="Texture2D" uid="uid://dkx8grnamt822" path="res://art/1bit/background/Background_undead_03.png" id="4_3p7e2"]
+[ext_resource type="Texture2D" uid="uid://da34arawf2yu5" path="res://art/1bit/background/Background_undead_04.png" id="5_g6dqv"]
+[ext_resource type="Texture2D" uid="uid://0hnlrypvn7du" path="res://art/1bit/background/Background_undead_05.png" id="6_p831o"]
+[ext_resource type="Texture2D" uid="uid://dn1tf4nualhfo" path="res://art/1bit/background/Background_undead_06.png" id="7_e0mfi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sid72"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_kuq67")
+"texture": ExtResource("2_ltljs")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"background1",
@@ -24,7 +26,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_nxxnn")
+"texture": ExtResource("3_wjbni")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"background2",
@@ -32,7 +37,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_wyrdo")
+"texture": ExtResource("4_3p7e2")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"background3",
@@ -40,7 +48,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_wa1rt")
+"texture": ExtResource("5_g6dqv")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"background4",
@@ -48,7 +59,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_rv0te")
+"texture": ExtResource("6_p831o")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"background5",
@@ -56,7 +70,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lpsfq")
+"texture": ExtResource("7_e0mfi")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"background6",
@@ -65,10 +82,11 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_aw05h"]
 font = ExtResource("3_xtdj4")
+font_size = 32
 font_color = Color(0.333333, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 2
+shadow_size = 6
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
 
@@ -92,21 +110,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cxwdx")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Background" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_sid72")
 animation = &"background6"
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="torchLeft" parent="." instance=ExtResource("3_ra3gj")]
-position = Vector2(47, 44)
-
-[node name="torchMiddle" parent="." instance=ExtResource("3_ra3gj")]
-position = Vector2(129, 44)
-
-[node name="torchRight" parent="." instance=ExtResource("3_ra3gj")]
-position = Vector2(211, 44)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -115,16 +133,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -41.0
-offset_right = 140.0
-offset_bottom = -15.0
+offset_left = -180.0
+offset_top = -98.0
+offset_right = 180.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 32
 text = "The Eternal Feast Event"
 label_settings = SubResource("LabelSettings_aw05h")
 horizontal_alignment = 1
@@ -158,6 +176,7 @@ layout_mode = 2
 text = "Gain +5 cursed vitality"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(50, 77)
+position = Vector2(126, 238)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mn55c")
 frame_progress = 1.0

@@ -1,12 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwm806agkeipd"]
+[gd_scene load_steps=10 format=3 uid="uid://bwm806agkeipd"]
 
 [ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="1_6i70p"]
 [ext_resource type="Script" uid="uid://ball11x0vpugh" path="res://Scenes/UI/reward_button.gd" id="1_l2wak"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="1_xb7v4"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="2_iindv"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="3_445f1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkjj8"]
+texture = ExtResource("1_xb7v4")
+modulate_color = Color(1, 1, 1, 0.607843)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ati0w"]
+texture = ExtResource("2_iindv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8fwe"]
+texture = ExtResource("3_445f1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rf8pq"]
+texture = ExtResource("1_xb7v4")
 
 [node name="RewardButton" type="Button"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(120, 32)
 offset_right = 75.0
 offset_bottom = 14.0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_xkjj8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ati0w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c8fwe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rf8pq")
 script = ExtResource("1_l2wak")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -16,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 4
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 2
@@ -27,7 +47,7 @@ theme_override_constants/separation = 2
 
 [node name="CustomIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(15, 15)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("1_6i70p")
 expand_mode = 1

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://xlssvxwqgfut"]
+[gd_scene load_steps=5 format=3 uid="uid://xlssvxwqgfut"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_p0cnb"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="2_lolm4"]
 [ext_resource type="Script" uid="uid://b1vklnpfae6xi" path="res://Scenes/UI/tool_tip.gd" id="2_qqdyy"]
 [ext_resource type="Texture2D" uid="uid://5sryc72ckfy2" path="res://art/1bit/orcoArt/axe_attack.png" id="3_ewojc"]
 
-[node name="ToolTip" type="PanelContainer"]
+[node name="ToolTip" type="NinePatchRect"]
 process_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -16,17 +17,27 @@ offset_bottom = 71.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_p0cnb")
+texture = ExtResource("2_lolm4")
+patch_margin_left = 14
+patch_margin_top = 12
+patch_margin_right = 14
+patch_margin_bottom = 12
 script = ExtResource("2_qqdyy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 3
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 243.0
+offset_bottom = 62.0
+theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 3
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="ToolTipIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]

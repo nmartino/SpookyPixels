@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=41 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://0hnlrypvn7du" path="res://art/1bit/background/Background_undead_05.png" id="10_xsaun"]
 [ext_resource type="PackedScene" uid="uid://bg7tf3vrpwfff" path="res://Scenes/CardUI/mana_ui.tscn" id="11_6goif"]
 [ext_resource type="PackedScene" uid="uid://xlssvxwqgfut" path="res://Scenes/UI/tool_tip.tscn" id="12_rw2qe"]
-[ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="13_3eywo"]
 [ext_resource type="Script" uid="uid://bihv6wnb8k7kh" path="res://Scenes/UI/white_flash.gd" id="15_2ee3c"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="17_3lvuc"]
 [ext_resource type="PackedScene" uid="uid://bjijnp3e7egu2" path="res://Scenes/UI/battle_over_panel.tscn" id="17_4r3ak"]
@@ -225,8 +224,8 @@ player = NodePath("../../Player")
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("11_6goif")]
 offset_left = 5.0
 offset_top = -111.0
-offset_right = 53.0
-offset_bottom = -79.0
+offset_right = 68.0
+offset_bottom = -69.0
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
@@ -236,13 +235,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = -109.0
-offset_right = -12.0
-offset_bottom = -69.0
+offset_left = -57.0
+offset_top = -118.0
+offset_right = -16.0
+offset_bottom = -78.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("13_3eywo")
 theme_override_icons/icon = ExtResource("17_xesn7")
 icon_alignment = 1
 expand_icon = true
@@ -285,7 +283,6 @@ offset_right = -17.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("18_48cb5")
 texture_pressed = ExtResource("18_48cb5")
 texture_hover = ExtResource("22_ds3ue")
 counter = NodePath("Counter")
@@ -309,6 +306,7 @@ layer = 6
 unique_name_in_owner = true
 process_mode = 0
 anchors_preset = -1
+anchor_right = 0.51875
 anchor_bottom = 0.0555556
 offset_top = 3.0
 offset_bottom = 46.0

@@ -1,5 +1,5 @@
 class_name ToolTip
-extends PanelContainer
+extends NinePatchRect
 
 @export var fade_seconds := 0.2
 

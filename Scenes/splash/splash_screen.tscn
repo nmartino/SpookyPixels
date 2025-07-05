@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://6onqv2vn673u"]
+[gd_scene load_steps=32 format=3 uid="uid://6onqv2vn673u"]
 
 [ext_resource type="Script" uid="uid://dg8jrtamtfy70" path="res://Scenes/splash/splash_screen.gd" id="1_b277h"]
 [ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_7jm5s"]
-[ext_resource type="Texture2D" uid="uid://do7u42s2u2qfh" path="res://art/1bit/orcoArt/Sprite Fondos testeo4.png" id="2_37sf6"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="3_3qp6d"]
+[ext_resource type="Texture2D" uid="uid://cl6h0gmj4ohnp" path="res://art/1bit/orcoArt/MainMenu/Inicio 01.png" id="3_j33iv"]
 [ext_resource type="Texture2D" uid="uid://bb2763pkv43su" path="res://art/splash/godot-Logo.png" id="3_wcs12"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_c4ymf"]
 [ext_resource type="Texture2D" uid="uid://c2hc42bhuexvr" path="res://art/splash/animate01.png" id="5_rtbld"]
@@ -152,12 +151,12 @@ _data = {
 &"logos": SubResource("Animation_gsg80")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ludkq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j33iv"]
 shader = ExtResource("27_s7hlb")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.402
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.1
+shader_parameter/noise_amount = 0.167
 shader_parameter/interference_amount = 0.09
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
@@ -179,26 +178,23 @@ grow_vertical = 2
 script = ExtResource("1_b277h")
 music = ExtResource("2_7jm5s")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_37sf6")
+color = Color(0, 0, 0, 1)
 
-[node name="torch" parent="." instance=ExtResource("3_3qp6d")]
-position = Vector2(29, 26)
-scale = Vector2(2, 2)
-
-[node name="torch2" parent="." instance=ExtResource("3_3qp6d")]
-position = Vector2(368, 25)
-scale = Vector2(2, 2)
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(320, 220)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_j33iv")
 
 [node name="GhostPixel" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(340, 186)
+position = Vector2(320, 180)
 scale = Vector2(2, 2)
 texture = ExtResource("5_rtbld")
 
@@ -239,9 +235,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = 36.5
-offset_bottom = 66.5
+offset_left = -93.0
+offset_top = 40.0
+offset_right = 1.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -262,7 +259,7 @@ layer = 5
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4
-material = SubResource("ShaderMaterial_ludkq")
+material = SubResource("ShaderMaterial_j33iv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
