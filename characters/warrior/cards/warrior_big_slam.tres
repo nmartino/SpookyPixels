@@ -10,11 +10,10 @@ id = "warrior_big_slam"
 type = 0
 target = 1
 rarity = 1
-cost = 2
 exhausts = true
 dmg_type = 1
-special_stats_type = 0
-special_stats_value = 0
+special_stat_type = 0
+special_stat_cost = 0
 icon = ExtResource("1_3d10t")
 tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color]  and apply[color='55ffff'] 2 Exposed[/color].[/center]"
 sound = ExtResource("3_bbl4a")
