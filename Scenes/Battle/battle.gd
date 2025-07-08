@@ -77,18 +77,18 @@ func start_battle()-> void:
 	enemy_handeler.reset_enemy_actions()
 	relics.relics_activated.connect(_on_relics_activated)
 	relics.activate_relic_by_type(Relic.Type.START_OF_COMBAT)
-	weapon_ui.initialize(player.stats.weapon)
+	weapon_ui.initialize(player.stats.weapon, player_handeler)
 
-func _on_enemies_child_order_changed()->void:
+func _on_enemies_child_order_changed() -> void:
 	if enemy_handeler.get_child_count() == 0 and is_instance_valid(relics):
 		SFXPlayer.play(battle_won,true)
 		relics.activate_relic_by_type(Relic.Type.END_OF_COMBAT)
 
-func _on_player_died()-> void:
+func _on_player_died() -> void:
 	Events.battle_over_screen_requested.emit("You Lose!!", BattleOverPanel.Type.LOSE)
 	SaveGame.delete_data()
 
-func _on_enemy_turn_ended()-> void:
+func _on_enemy_turn_ended() -> void:
 	player_handeler.start_turn()
 	enemy_handeler.reset_enemy_actions()
 

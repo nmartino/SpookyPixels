@@ -35,6 +35,10 @@ mouse_cursor/custom_image="res://art/cursor.png"
 
 movie_writer/movie_file="D:/Godot/1bitSlayTheSpire/1BitCardGame/videos/video1.avi"
 
+[global_group]
+
+weaponUI="For weaponUI related nodes"
+
 [gui]
 
 theme/custom="res://mainTheme.tres"
@@ -83,6 +87,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_2="cardDropArea"
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="map_rooms"
+2d_physics/layer_5="weapon_UI"
 
 [rendering]
 

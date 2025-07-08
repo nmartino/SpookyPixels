@@ -1,22 +1,18 @@
 extends BaseWeapon
 
-func start_of_combat():#_owner: RelicUI) -> void:
+func start_of_combat(p_h: PlayerHandeler):#_owner: RelicUI) -> void:
+	player_handler = p_h
 	Events.weapon_combat_activation.connect(_on_weapon_activated)
-	
-	#Events.card_played.connect(_on_card_played)
-	#Events.relic_edge_decrease.connect(_on_edge_decrease)
+
 
 func end_of_combat() -> void:
 	Events.weapon_end_of_combat_activation.emit()
-	pass
 
 
-func _on_weapon_activated(card: CardUI) -> void:
-	
-	pass
-
-# este metodo se deberia implementar para relics de base-event
-# que conecta al eventBus para asegurarse que son desconectados
-# cuando una relic es removida
-#func deactivate_relic(_owner: RelicUI) -> void:
-	#pass
+func _on_weapon_activated(card_ui: CardUI) -> void:
+	#Así descartan cartas desde PlayerHandler
+	#tween.tween_callback(character.discard.add_card.bind(card_ui.card))
+	#tween.tween_callback(hand.discard_card.bind(card_ui))
+	player_handler.character.discard.add_card(card_ui.card)
+	player_handler.hand.discard_card(card_ui)
+	player_handler.character.reset_special_stat_value()

@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7c50"]
 size = Vector2(67.5, 95.5)
 
-[node name="WeaponUI" type="Area2D"]
+[node name="WeaponUI" type="Area2D" groups=["weaponUI"]]
+collision_layer = 17
 script = ExtResource("1_l7c50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

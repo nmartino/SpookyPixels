@@ -13,11 +13,12 @@ enum WeaponStatType {DEFAULT, EDGE, MANA, ROGUE_STAT}
 @export var sound_fx: AudioStream = preload("res://art/enemy_hit_02.wav")
 @export_multiline var tooltip: String
 
-
+var player_handler: PlayerHandeler
 #callback de activación?
 
-func start_of_combat() -> void:
-	pass
+func start_of_combat(p_h: PlayerHandeler) -> void:
+	player_handler = p_h
+
 
 func end_of_combat() -> void:
 	pass

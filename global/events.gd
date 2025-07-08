@@ -51,7 +51,7 @@ signal relic_edge_decrease(amount: int)
 
 #Weapon-related events
 signal weapon_start_of_combat_activation
-signal weapon_combat_activation
+signal weapon_combat_activation(card: CardUI)
 signal weapon_end_of_combat_activation
 
 #random-event-room-related events

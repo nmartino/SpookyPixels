@@ -165,6 +165,9 @@ position = Vector2(258, 102)
 [node name="torchRight" parent="." instance=ExtResource("6_6e1tc")]
 position = Vector2(423, 103)
 
+[node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
+position = Vector2(107, 261)
+
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
 
@@ -358,6 +361,3 @@ layer = 4
 
 [node name="StatusView" parent="StatusViewLayer" instance=ExtResource("21_qqhbv")]
 visible = false
-
-[node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
-position = Vector2(105, 286)
