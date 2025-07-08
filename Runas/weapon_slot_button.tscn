@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxxlcpi4c0wi3"]
+
+[ext_resource type="Texture2D" uid="uid://b3vgnfpmik2lq" path="res://art/1bit/XaviArt/gemslots/gem-slot03-base.png" id="1_2ttno"]
+[ext_resource type="Texture2D" uid="uid://dhudpwe2pkm8r" path="res://art/1bit/XaviArt/gemslots/gem-slot03-hover.png" id="2_50k1m"]
+
+[node name="weaponSlotButton" type="TextureButton"]
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 1
+texture_normal = ExtResource("1_2ttno")
+texture_hover = ExtResource("2_50k1m")
+stretch_mode = 3

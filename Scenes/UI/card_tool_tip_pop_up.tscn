@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnig0b25bu4rk" path="res://Scenes/UI/card_tool_tip_pop_up.gd" id="1_kgfmj"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_yawff"]
-[ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="3_nludm"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="3_sophq"]
 
 [node name="CardToolTipPopUp" type="Control"]
 layout_mode = 3
@@ -52,7 +52,7 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("3_nludm")
+theme_override_fonts/normal_font = ExtResource("3_sophq")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "Card Description Card Description Card Description Card Description Card Description "

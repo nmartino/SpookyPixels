@@ -69,10 +69,11 @@ color = Color(1, 0.333333, 1, 0.368627)
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 offset_left = 211.0
-offset_top = 76.0
+offset_top = 47.0
 offset_right = 429.0
-offset_bottom = 139.0
-text = "Battle Rewards
+offset_bottom = 143.0
+text = "Take your
+Battle Rewards
 "
 label_settings = SubResource("LabelSettings_vrum6")
 horizontal_alignment = 1
@@ -118,7 +119,7 @@ reward_text = "127 gold"
 [node name="CardReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_2xt0f")]
 layout_mode = 2
 reward_icon = ExtResource("5_tf7e2")
-reward_text = "Add new card"
+reward_text = "+1 new card"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true

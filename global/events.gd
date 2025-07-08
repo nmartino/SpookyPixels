@@ -49,4 +49,7 @@ signal relic_tooltip_requested(relic: Relic)
 
 #random-event-room-related events
 signal event_room_exited
+
+#weapon-rune-inventory-related events
+signal inventory_exited
 @warning_ignore_restore("unused_signal")

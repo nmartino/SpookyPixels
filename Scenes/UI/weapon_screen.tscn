@@ -1,0 +1,474 @@
+[gd_scene load_steps=36 format=3 uid="uid://om13b4iixuh"]
+
+[ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="1_f6spv"]
+[ext_resource type="Script" uid="uid://bk5bal8qa5mj" path="res://Scenes/UI/weapon_screen.gd" id="1_yxphm"]
+[ext_resource type="Texture2D" uid="uid://u86kfhutetsm" path="res://art/1bit/orcoArt/weaponScreen/Weapon_ArcaneCircle2.png" id="2_nwvjn"]
+[ext_resource type="Texture2D" uid="uid://crchnjisb5bpk" path="res://art/1bit/orcoArt/weaponScreen/Weapon_ArcaneCircle1.png" id="3_6orwj"]
+[ext_resource type="Texture2D" uid="uid://x60jst1wucsf" path="res://art/1bit/orcoArt/weaponScreen/Weapon_01.png" id="4_i7eaj"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_8c8wy"]
+[ext_resource type="PackedScene" uid="uid://dpxyg62nbq47h" path="res://Scenes/Map/map_line.tscn" id="5_i7eaj"]
+[ext_resource type="Texture2D" uid="uid://vidyfomnoc8w" path="res://art/1bit/XaviArt/mapline/map line.png" id="6_8c8wy"]
+[ext_resource type="PackedScene" uid="uid://bwl4te12tn2i7" path="res://Scenes/UI/slot_weapon.tscn" id="7_6orwj"]
+[ext_resource type="Texture2D" uid="uid://i6pg8cdvs2mp" path="res://art/1bit/XaviArt/mapline/map line2.png" id="8_tbxnk"]
+[ext_resource type="Texture2D" uid="uid://bhxnstfcj66nm" path="res://art/1bit/XaviArt/gemslots/intenvory-box-frame.png" id="9_cltdo"]
+[ext_resource type="Texture2D" uid="uid://ch4scojg4ac8h" path="res://art/1bit/XaviArt/mapline/map line3.png" id="9_ie1x4"]
+[ext_resource type="Texture2D" uid="uid://ccrn741eeej3q" path="res://art/1bit/XaviArt/mapline/map line4.png" id="10_8fs55"]
+[ext_resource type="PackedScene" uid="uid://cogj56q10r2hp" path="res://Runas/inventory_slot.tscn" id="10_ao6t2"]
+[ext_resource type="Texture2D" uid="uid://5ba3vpmvo8qy" path="res://art/1bit/XaviArt/mapline/map line5.png" id="11_tdwmn"]
+[ext_resource type="Texture2D" uid="uid://dkdgax4nuyjai" path="res://art/1bit/XaviArt/mapline/map line6.png" id="12_p1jal"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="13_tbxnk"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="14_7s7of"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="15_1vp7u"]
+[ext_resource type="Texture2D" uid="uid://bgm8dryneu5uj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-lineUp.png" id="15_o5jgv"]
+[ext_resource type="Texture2D" uid="uid://ck8k7wriarkie" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-lineDown.png" id="16_k1okh"]
+[ext_resource type="Texture2D" uid="uid://ba7i5pvxq6kvj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-sliderThumb.png" id="17_x5cwt"]
+[ext_resource type="Texture2D" uid="uid://1unhfdqrs8l4" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-line2.png" id="18_2rqla"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ivj6k"]
+frames = 6
+frame_0/texture = ExtResource("6_8c8wy")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("8_tbxnk")
+frame_1/duration = 0.5
+frame_2/texture = ExtResource("9_ie1x4")
+frame_2/duration = 0.5
+frame_3/texture = ExtResource("10_8fs55")
+frame_3/duration = 0.5
+frame_4/texture = ExtResource("11_tdwmn")
+frame_4/duration = 0.5
+frame_5/texture = ExtResource("12_p1jal")
+frame_5/duration = 0.5
+
+[sub_resource type="Animation" id="Animation_ivj6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circulo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cuadrados:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Circulo:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yxphm"]
+resource_name = "girar"
+length = 8.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Circulo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-0.785398, -1.5708, -2.35619, -3.14159, -3.92699, -4.71239, -5.49779, -6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Cuadrados:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Circulo:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(4, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ao6t2"]
+_data = {
+&"RESET": SubResource("Animation_ivj6k"),
+&"girar": SubResource("Animation_yxphm")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbxnk"]
+font = ExtResource("5_8c8wy")
+font_size = 32
+font_color = Color(0.333333, 1, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7s7of"]
+font = ExtResource("5_8c8wy")
+font_color = Color(0.333333, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcuft"]
+texture = ExtResource("17_x5cwt")
+texture_margin_top = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqay5"]
+texture = ExtResource("18_2rqla")
+
+[sub_resource type="Theme" id="Theme_y5vhk"]
+default_font_size = 0
+VScrollBar/icons/decrement = ExtResource("15_o5jgv")
+VScrollBar/icons/decrement_highlight = ExtResource("15_o5jgv")
+VScrollBar/icons/decrement_pressed = ExtResource("15_o5jgv")
+VScrollBar/icons/increment = ExtResource("16_k1okh")
+VScrollBar/icons/increment_highlight = ExtResource("16_k1okh")
+VScrollBar/icons/increment_pressed = ExtResource("16_k1okh")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_gcuft")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_gcuft")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_gcuft")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_sqay5")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_sqay5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2ot4"]
+texture = ExtResource("13_tbxnk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie1x4"]
+texture = ExtResource("14_7s7of")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fs55"]
+texture = ExtResource("15_1vp7u")
+
+[node name="WeaponScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_yxphm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(321, 80)
+texture = ExtResource("1_f6spv")
+
+[node name="Cuadrados" type="Sprite2D" parent="."]
+position = Vector2(139, 221)
+texture = ExtResource("2_nwvjn")
+
+[node name="Cuadrados2" type="Sprite2D" parent="."]
+position = Vector2(632, -11)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nwvjn")
+
+[node name="Circulo" type="Sprite2D" parent="."]
+position = Vector2(139, 220)
+texture = ExtResource("3_6orwj")
+
+[node name="Circulo2" type="Sprite2D" parent="."]
+position = Vector2(631, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6orwj")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(141, 217)
+texture = ExtResource("4_i7eaj")
+
+[node name="MapLine" parent="." instance=ExtResource("5_i7eaj")]
+points = PackedVector2Array(94, 126, 189, 159, 73, 223, 164, 301)
+width = 4.0
+texture = SubResource("AnimatedTexture_ivj6k")
+sharp_limit = 1.0
+round_precision = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ao6t2")
+}
+autoplay = "girar"
+
+[node name="InventoryLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 10.0
+offset_right = 417.0
+offset_bottom = 40.0
+text = "Inventory"
+label_settings = SubResource("LabelSettings_tbxnk")
+
+[node name="RuneLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -103.0
+offset_right = 83.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Runes"
+label_settings = SubResource("LabelSettings_7s7of")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RuneInventory" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 110.0
+offset_right = 595.0
+offset_bottom = 202.0
+texture = ExtResource("9_cltdo")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RuneInventory"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 273.0
+offset_bottom = 86.0
+theme = SubResource("Theme_y5vhk")
+
+[node name="RuneSlots" type="GridContainer" parent="RuneInventory/ScrollContainer"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
+
+[node name="InventorySlot" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot2" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot3" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot4" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot5" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot6" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot7" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot8" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot9" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot10" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot11" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot12" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot13" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot14" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot15" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot16" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot17" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot18" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot19" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot20" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot21" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot22" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot23" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot24" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot25" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot26" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot27" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot28" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot29" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot30" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="SlotWeapon" parent="." instance=ExtResource("7_6orwj")]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 114.0
+offset_right = 81.0
+offset_bottom = 114.0
+
+[node name="SlotWeapon2" parent="." instance=ExtResource("7_6orwj")]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 147.0
+offset_right = 201.0
+offset_bottom = 173.0
+
+[node name="SlotWeapon3" parent="." instance=ExtResource("7_6orwj")]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 211.0
+offset_right = 86.0
+offset_bottom = 237.0
+
+[node name="SlotWeapon4" parent="." instance=ExtResource("7_6orwj")]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 289.0
+offset_right = 177.0
+offset_bottom = 315.0
+
+[node name="WeaponInfoButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -79.0
+offset_right = -12.0
+offset_bottom = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_v2ot4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ie1x4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8fs55")
+text = "Weapon"
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -41.0
+offset_right = -12.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_v2ot4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ie1x4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8fs55")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

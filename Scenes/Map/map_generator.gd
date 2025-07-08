@@ -5,7 +5,7 @@ const X_DIST := 60
 const Y_DIST := 40
 const PLACEMENT_RANDOMNESS := 0
 const FLOORS := 15
-const MAP_WIDTH := 6
+const MAP_WIDTH := 5
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 17.0
 const EVENT_ROOM_WEIGHT := 2.0
@@ -168,8 +168,8 @@ func _setup_room_types() -> void:
 
 func _set_room_randomly(room_to_set: Room) -> void:
 	var campfire_below_4 := true
-	var consecutive_campfire := true
-	var consecutive_shop := true
+	var consecutive_campfire := false
+	var consecutive_shop := false
 	var campfire_on_13 := true
 	
 	var type_candidate: Room.Type

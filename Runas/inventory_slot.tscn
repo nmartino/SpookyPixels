@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cogj56q10r2hp"]
+
+[ext_resource type="Texture2D" uid="uid://c4r3rt4g21drv" path="res://art/1bit/XaviArt/gemslots/intenvory-box-item.png" id="1_cod4a"]
+[ext_resource type="Script" uid="uid://d1426w2vavn5v" path="res://Scenes/UI/inventory_slot.gd" id="2_lvmh3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cod4a"]
+texture = ExtResource("1_cod4a")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[node name="InventorySlot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cod4a")
+script = ExtResource("2_lvmh3")
