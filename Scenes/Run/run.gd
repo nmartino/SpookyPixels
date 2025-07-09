@@ -8,6 +8,7 @@ const CAMPFIRE_SCENE := preload("res://Scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://Scenes/Shop/shop.tscn")
 const TREASURE_SCENE = preload("res://Scenes/treasure/treasure.tscn")
 const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
+const INVENTORY_SCENE := preload("res://Scenes/UI/weapon_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
 @export var music: AudioStream
@@ -23,6 +24,8 @@ const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 @onready var relic_handler: RelicHandler = %RelicHandler
 @onready var relic_tool_tip: RelicTooltip = %RelicToolTip
 @onready var pause_menu: PauseMenu = $PauseMenu
+@onready var weapon_inventory: WeaponInventory = %WeaponScreen
+@onready var inventory_button: Button = %InventoryButton
 
 var stats: RunStats
 var character: CharacterStats
@@ -106,6 +109,7 @@ func _setup_event_connection() -> void:
 	Events.campfire_exited.connect(_show_map)
 	Events.map_exited.connect(_on_map_exited)
 	Events.shop_exited.connect(_show_map)
+	Events.inventory_exited.connect(_show_map)
 	Events.treasure_room_exited.connect(_on_treasue_room_exited)
 	Events.event_room_exited.connect(_show_map)
 
@@ -118,6 +122,7 @@ func _setup_top_bar():
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+	inventory_button.pressed.connect(weapon_inventory.show_weapon_inventory)
 
 func _show_regular_battle_rewards() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward

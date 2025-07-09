@@ -6,7 +6,7 @@ const REWARD_BUTTON = preload("res://Scenes/UI/reward_button.tscn")
 const GOLD_ICON := preload("res://art/1bit/gold_icon.png")
 const GOLD_TEXT := "%s Gold"
 const CARD_ICON := preload("res://art/1bit/rarity.png")
-const CARD_TEXT := "Add New Card"
+const CARD_TEXT := "New Card"
 
 @export var run_stats: RunStats
 @export var character_stats : CharacterStats

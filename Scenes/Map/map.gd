@@ -21,7 +21,7 @@ var camera_edge_x:= 640
 var touchPoints: Dictionary = {}
 
 func _ready() -> void:
-	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1) - (360/2)
+	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1) - 60
 
 
 func _unhandled_input(event: InputEvent) -> void:

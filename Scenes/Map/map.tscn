@@ -1,105 +1,125 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8kl0n2023ls"]
+[gd_scene load_steps=11 format=3 uid="uid://b8kl0n2023ls"]
 
 [ext_resource type="Script" uid="uid://dpf1tlgfkrn8y" path="res://Scenes/Map/map.gd" id="1_ski2f"]
 [ext_resource type="Script" uid="uid://ms4e0nmte2ay" path="res://Scenes/Map/map_generator.gd" id="2_bwd4j"]
+[ext_resource type="Texture2D" uid="uid://fm53f2nh6tcj" path="res://art/1bit/orcoArt/Map/Map_Tower_undead_01.png" id="2_xdmry"]
 [ext_resource type="Resource" uid="uid://bjyvrnscnwhb5" path="res://battles/battle_stats_pool.tres" id="3_bdjgx"]
-[ext_resource type="Texture2D" uid="uid://sb5mjvcc4w85" path="res://art/1bit/pruebas mapa/Piezas mapa_ladrillos.png" id="4_o7i3w"]
+[ext_resource type="Texture2D" uid="uid://hii7ejlesywh" path="res://art/1bit/orcoArt/Map/Map_Wall_undead_01.png" id="3_l00y7"]
+[ext_resource type="Texture2D" uid="uid://dgcsxitjk62ju" path="res://art/1bit/orcoArt/Map/Map_Wall_undead_02.png" id="4_qtk15"]
+[ext_resource type="Texture2D" uid="uid://b4ft7xk22xk3q" path="res://art/1bit/orcoArt/Map/Map_Wall_undead_03.png" id="5_ogfrb"]
 [ext_resource type="Resource" uid="uid://c8acdg4631a23" path="res://Scenes/EventsRoom/event_room_pool.tres" id="5_ytk4a"]
+[ext_resource type="Texture2D" uid="uid://lprnausag3px" path="res://art/1bit/orcoArt/Map/Map_Wall_undead_04.png" id="6_4f523"]
 [ext_resource type="Texture2D" uid="uid://dbpi8qt5xgwv" path="res://art/1bit/background/negro.png" id="6_fyo8k"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ski2f")
 
 [node name="Pared de entrada" type="Node2D" parent="."]
-position = Vector2(202, 108)
+position = Vector2(203, 148)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(16, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Tower" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-184, 78)
+texture = ExtResource("2_xdmry")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(46, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-154, 78)
+texture = ExtResource("3_l00y7")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(75, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall2" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-58, 78)
+texture = ExtResource("4_qtk15")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(105, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall3" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-82, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(134, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall4" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(38, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(164, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall5" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-130, 78)
+texture = ExtResource("3_l00y7")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(194, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall6" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(158, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(224, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall7" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-10, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(253, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall8" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(14, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D10" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(281, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall9" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-106, 78)
+texture = ExtResource("6_4f523")
 
-[node name="Sprite2D11" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(310, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall10" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(62, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D12" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(338, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall11" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(86, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D13" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(367, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall12" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(110, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D14" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(396, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall13" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(134, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D15" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-12, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall14" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(-34, 78)
+texture = ExtResource("3_l00y7")
 
-[node name="Sprite2D16" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-42, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall15" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(182, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D17" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-72, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall16" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(206, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D18" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-101, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall17" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(350, 78)
+texture = ExtResource("6_4f523")
 
-[node name="Sprite2D19" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-131, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall18" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(254, 78)
+texture = ExtResource("5_ogfrb")
 
-[node name="Sprite2D21" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-160, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall19" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(278, 78)
+texture = ExtResource("3_l00y7")
 
-[node name="Sprite2D22" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(-190, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall20" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(302, 78)
+texture = ExtResource("4_qtk15")
 
-[node name="Sprite2D23" type="Sprite2D" parent="Pared de entrada"]
-position = Vector2(426, 107)
-texture = ExtResource("4_o7i3w")
+[node name="Wall21" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(326, 78)
+texture = ExtResource("5_ogfrb")
+
+[node name="Wall22" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(230, 78)
+texture = ExtResource("5_ogfrb")
+
+[node name="Wall23" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(374, 78)
+texture = ExtResource("3_l00y7")
+
+[node name="Wall24" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(398, 78)
+texture = ExtResource("3_l00y7")
+
+[node name="Tower2" type="Sprite2D" parent="Pared de entrada"]
+position = Vector2(420, 78)
+texture = ExtResource("2_xdmry")
 
 [node name="Visuals" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -112,7 +132,7 @@ unique_name_in_owner = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(320, 50)
+anchor_mode = 0
 
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("2_bwd4j")
@@ -130,5 +150,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_fyo8k")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [connection signal="gui_input" from="MapBackground/Background" to="." method="_on_background_gui_input"]

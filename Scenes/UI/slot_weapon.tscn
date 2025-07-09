@@ -1,0 +1,194 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwl4te12tn2i7"]
+
+[ext_resource type="Script" uid="uid://rg5h0aawetc8" path="res://Scenes/UI/slot.gd" id="1_7hw7a"]
+[ext_resource type="Texture2D" uid="uid://b3vgnfpmik2lq" path="res://art/1bit/XaviArt/gemslots/gem-slot03-base.png" id="1_gswik"]
+[ext_resource type="Texture2D" uid="uid://dvay0w4lixbfc" path="res://art/1bit/XaviArt/gemslots/gem-slot03-decoration-03.png" id="2_7hw7a"]
+[ext_resource type="Script" uid="uid://ckqtukrrlhshh" path="res://Scenes/Run/rune_panel.gd" id="3_sdnuc"]
+[ext_resource type="Texture2D" uid="uid://b0jtrco1m4jnx" path="res://art/1bit/XaviArt/gemslots/gem-slot03-decoration-02.png" id="4_1xkx1"]
+[ext_resource type="Texture2D" uid="uid://dhudpwe2pkm8r" path="res://art/1bit/XaviArt/gemslots/gem-slot03-hover.png" id="4_ip7n1"]
+[ext_resource type="Texture2D" uid="uid://cexxmdtlurnc7" path="res://art/1bit/XaviArt/gemslots/gem-slot03-decoration-01.png" id="5_sdnuc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sterw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ip7n1")
+}],
+"loop": true,
+"name": &"big",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gswik")
+}],
+"loop": true,
+"name": &"small",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdnuc"]
+
+[sub_resource type="Animation" id="Animation_qugvy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_7hw7a")]
+}
+
+[sub_resource type="Animation" id="Animation_x07xl"]
+resource_name = "girar1"
+length = 10.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_7hw7a")]
+}
+
+[sub_resource type="Animation" id="Animation_ip7n1"]
+resource_name = "girar2"
+length = 10.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_1xkx1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_sterw"]
+resource_name = "girar3"
+length = 10.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_sdnuc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pt58i"]
+_data = {
+&"RESET": SubResource("Animation_qugvy"),
+&"girar1": SubResource("Animation_x07xl"),
+&"girar2": SubResource("Animation_ip7n1"),
+&"girar3": SubResource("Animation_sterw")
+}
+
+[node name="SlotWeapon" type="TextureRect"]
+custom_minimum_size = Vector2(26, 26)
+script = ExtResource("1_7hw7a")
+
+[node name="smallBig" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 14)
+sprite_frames = SubResource("SpriteFrames_sterw")
+animation = &"small"
+
+[node name="RunePanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sdnuc")
+script = ExtResource("3_sdnuc")
+
+[node name="AnimatedAura" type="Sprite2D" parent="."]
+position = Vector2(13, 13)
+texture = ExtResource("2_7hw7a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedAura"]
+libraries = {
+&"": SubResource("AnimationLibrary_pt58i")
+}
+autoplay = "girar1"
+
+[connection signal="mouse_entered" from="RunePanel" to="." method="_on_rune_panel_mouse_entered"]
+[connection signal="mouse_exited" from="RunePanel" to="." method="_on_rune_panel_mouse_exited"]

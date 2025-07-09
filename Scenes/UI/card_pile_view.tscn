@@ -1,32 +1,62 @@
-[gd_scene load_steps=9 format=3 uid="uid://wq4bxyhc88bc"]
+[gd_scene load_steps=21 format=3 uid="uid://wq4bxyhc88bc"]
 
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_5iuwu"]
 [ext_resource type="Script" uid="uid://b1nw78ajnubir" path="res://Scenes/UI/card_pile_view.gd" id="1_j5pp2"]
 [ext_resource type="Texture2D" uid="uid://ckv2ajsqvw13m" path="res://art/1bit/background/bg-decks2.png" id="2_m7kd4"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="2_pkyia"]
-[ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="2_vt2xp"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="3_pal0a"]
+[ext_resource type="Texture2D" uid="uid://bgm8dryneu5uj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-lineUp.png" id="4_qa46q"]
+[ext_resource type="Texture2D" uid="uid://ck8k7wriarkie" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-lineDown.png" id="5_djuyu"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="5_pal0a"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_1d1dl"]
+[ext_resource type="Texture2D" uid="uid://ba7i5pvxq6kvj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-sliderThumb.png" id="6_qa46q"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_34ufw"]
+[ext_resource type="Texture2D" uid="uid://1unhfdqrs8l4" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-line2.png" id="7_gcuft"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ers1"]
-font = ExtResource("2_vt2xp")
+font = ExtResource("3_pal0a")
+font_size = 32
+font_color = Color(0.333333, 1, 1, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3arv1"]
-bg_color = Color(0.333333, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcuft"]
+texture = ExtResource("6_qa46q")
+texture_margin_top = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqay5"]
+texture = ExtResource("7_gcuft")
 
 [sub_resource type="Theme" id="Theme_mf0ls"]
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_3arv1")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_3arv1")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_3arv1")
+default_font_size = 0
+VScrollBar/icons/decrement = ExtResource("4_qa46q")
+VScrollBar/icons/decrement_highlight = ExtResource("4_qa46q")
+VScrollBar/icons/decrement_pressed = ExtResource("4_qa46q")
+VScrollBar/icons/increment = ExtResource("5_djuyu")
+VScrollBar/icons/increment_highlight = ExtResource("5_djuyu")
+VScrollBar/icons/increment_pressed = ExtResource("5_djuyu")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_gcuft")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_gcuft")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_gcuft")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_sqay5")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_sqay5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25unn"]
+texture = ExtResource("5_pal0a")
+modulate_color = Color(1, 1, 1, 0.6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qa46q"]
+texture = ExtResource("6_1d1dl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djuyu"]
+texture = ExtResource("7_34ufw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t5ev"]
+texture = ExtResource("5_pal0a")
 
 [node name="CardPileView" type="Control"]
 layout_mode = 3
@@ -65,7 +95,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 18
 theme_override_constants/margin_bottom = 25
 
@@ -188,7 +218,7 @@ layout_mode = 2
 
 [node name="BackButton" type="Button" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -198,6 +228,10 @@ offset_top = 7.0
 offset_right = -7.0
 offset_bottom = 27.0
 grow_horizontal = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_25unn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qa46q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djuyu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8t5ev")
 text = "Back
 "
 

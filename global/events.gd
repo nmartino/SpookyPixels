@@ -57,4 +57,6 @@ signal weapon_end_of_combat_activation
 #random-event-room-related events
 signal event_room_exited
 
+#weapon-rune-inventory-related events
+signal inventory_exited
 @warning_ignore_restore("unused_signal")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=29 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" uid="uid://drcivwhyd1qeg" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
@@ -10,16 +10,48 @@
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
 [ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
 [ext_resource type="Texture2D" uid="uid://cxqqa66631vx" path="res://art/1bit/deck-icon02.png" id="9_3xvi7"]
+[ext_resource type="PackedScene" uid="uid://om13b4iixuh" path="res://Scenes/UI/weapon_screen.tscn" id="10_8pevd"]
 [ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="13_3pt4t"]
 [ext_resource type="Script" uid="uid://bdhhvid2mjpp7" path="res://Scenes/Run/pause_menu.gd" id="13_c70su"]
-[ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="13_hyx0u"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="14_8pevd"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_ehit0"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="15_k4lll"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="16_gnhhf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1dda"]
-font = ExtResource("13_hyx0u")
+font = ExtResource("13_3pt4t")
 font_size = 32
+font_color = Color(0, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_db0nm"]
+texture = ExtResource("14_8pevd")
+modulate_color = Color(1, 1, 1, 0.635294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u7fs"]
+texture = ExtResource("15_k4lll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1mpk"]
+texture = ExtResource("16_gnhhf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60lvd"]
+texture = ExtResource("14_8pevd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42cnb"]
+texture = ExtResource("14_8pevd")
+modulate_color = Color(1, 1, 1, 0.635294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3lsc"]
+texture = ExtResource("15_k4lll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tv7gb"]
+texture = ExtResource("16_gnhhf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx4rf"]
+texture = ExtResource("14_8pevd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
 shader = ExtResource("14_ehit0")
@@ -49,6 +81,7 @@ position = Vector2(0, 3)
 [node name="CurrentView" type="Node" parent="."]
 
 [node name="TopBar" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 layer = 5
 
 [node name="Background" type="ColorRect" parent="TopBar"]
@@ -99,6 +132,12 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
+[node name="InventoryButton" type="Button" parent="TopBar/MarginsTopBar/BarItems/RelicHandlerContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+text = "inventory"
+
 [node name="DeckButton" parent="TopBar/MarginsTopBar/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_bxmm5")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
@@ -118,6 +157,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 text = "99"
 horizontal_alignment = 2
+
+[node name="WeaponScreen" parent="TopBar" instance=ExtResource("10_8pevd")]
+unique_name_in_owner = true
+visible = false
 
 [node name="DeckView" parent="TopBar" instance=ExtResource("7_724ho")]
 unique_name_in_owner = true
@@ -168,14 +211,22 @@ theme_override_constants/separation = 10
 
 [node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 14)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxTexture_db0nm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3u7fs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mpk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_60lvd")
 text = "Back"
 
 [node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 14)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxTexture_42cnb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o3lsc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tv7gb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mx4rf")
 text = "Main Menu"
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
@@ -191,3 +242,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="TopBar/MarginsTopBar/BarItems/RelicHandlerContainer/InventoryButton" to="." method="_on_button_inventory_pressed"]

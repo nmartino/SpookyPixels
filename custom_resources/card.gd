@@ -27,6 +27,7 @@ var cost: int = 999 #TODO sacar esto, o dejar de hablar de "tipo especial" para 
 
 @export_group("Card Visuals")
 @export var icon: Texture
+@export var arte: Texture
 @export_multiline var tooltip_text: String
 @export var sound: AudioStream
 
