@@ -22,6 +22,7 @@ const RARITY_COLORS := {
 
 @export_group("Card Visuals")
 @export var icon: Texture
+@export var arte: Texture
 @export_multiline var tooltip_text: String
 @export var sound: AudioStream
 

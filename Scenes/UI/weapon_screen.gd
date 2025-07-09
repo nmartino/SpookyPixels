@@ -7,6 +7,10 @@ var InventorySize = 12
 
 @export var itemsLoad = [
 	"res://Runas/mocked_gem.tres",
+	"res://Runas/mocked_rune.tres",
+	"res://Runas/mocked_gem.tres",
+	"res://Runas/mocked_rune.tres",
+	"res://Runas/mocked_gem.tres",
 	"res://Runas/mocked_rune.tres"
 	]
 
