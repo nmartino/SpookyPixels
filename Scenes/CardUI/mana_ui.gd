@@ -19,4 +19,5 @@ func _set_char_stats(value: CharacterStats) -> void:
 	_on_stats_changed()
 
 func _on_stats_changed() -> void:
-	mana_label.text = "%s/%s" % [char_stats.mana, char_stats.max_mana]
+	mana_label.text = "%s/%s" % [char_stats.special_stat_value, char_stats.weapon.max_char_stat_value]
+	#mana_label.text = "%s/%s" % [char_stats.mana, char_stats.max_mana]

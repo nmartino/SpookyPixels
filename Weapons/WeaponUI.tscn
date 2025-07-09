@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://xaevvjaxcha6"]
+
+[ext_resource type="Script" uid="uid://jcvwo8n8y8oe" path="res://Weapons/weapon_ui.gd" id="1_l7c50"]
+[ext_resource type="AudioStream" uid="uid://bsvg77nq184ov" path="res://Weapons/axe_sharpened.wav" id="2_sroc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7c50"]
+size = Vector2(67.5, 95.5)
+
+[node name="WeaponUI" type="Area2D" groups=["weaponUI"]]
+collision_layer = 17
+script = ExtResource("1_l7c50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l7c50")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sroc6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -33.0
+offset_top = -48.0
+offset_right = 34.0
+offset_bottom = 48.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -15.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "99/99"
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2

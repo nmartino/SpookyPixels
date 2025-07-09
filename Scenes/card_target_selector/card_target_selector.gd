@@ -42,6 +42,7 @@ func ease_out_cubic(number: float)-> float:
 	
 func _on_card_aim_started(card: CardUI) -> void:
 	if not card.card.is_single_targeted():
+		#pass
 		return
 	targeting = true
 	area_2d.monitoring = true
@@ -63,6 +64,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if not current_card.targets.has(area):
 		current_card.targets.append(area)
 		current_card.request_tooltip()
+
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if not current_card or not targeting:

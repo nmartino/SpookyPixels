@@ -12,9 +12,10 @@ id = ""
 type = 2
 target = 0
 rarity = 2
-cost = 3
 exhausts = true
 dmg_type = 4
+special_stat_type = 0
+special_stat_cost = 0
 icon = ExtResource("1_qj7n5")
 tooltip_text = "[center]At the start of your turn, gain[color='55ffff'] 2 Mana[/color].[/center]"
 sound = ExtResource("3_gl52p")

@@ -4,6 +4,8 @@ extends Resource
 enum Rarity {COMMON, UNCOMMON, RARE}
 enum Type {ATTACK, SKILL, POWER}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
+#TODO este type o el de las cartas tiene que quedar, pero solo uno
+enum SpecialStatsTypes {NONE, EDGE, MANA, ROGUE_STAT}
 
 const RARITY_COLORS := {
 	Card.Rarity.COMMON: Color.WHITE,
@@ -16,9 +18,12 @@ const RARITY_COLORS := {
 @export var type: Type
 @export var target: Target
 @export var rarity: Rarity
-@export var cost: int
 @export var exhausts: bool = false
 @export var dmg_type: Effect.Type
+var cost: int = 999 #TODO sacar esto, o dejar de hablar de "tipo especial" para las stats
+@export var special_stat_type : SpecialStatsTypes = SpecialStatsTypes.NONE
+@export var special_stat_cost: int = 0
+#: Dictionary = {SpecialStatsTypes.NONE: 0}#[SpecialStatsTypes: Int]
 
 @export_group("Card Visuals")
 @export var icon: Texture
@@ -51,7 +56,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 
 func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
-	char_stats.mana -= cost
+	char_stats.special_stat_value -= special_stat_cost
 	
 	if is_single_targeted():
 		apply_effects(targets, modifiers)

@@ -10,9 +10,10 @@ id = "phantom_trick"
 type = 1
 target = 0
 rarity = 1
-cost = 0
 exhausts = true
 dmg_type = 4
+special_stat_type = 0
+special_stat_cost = 0
 icon = ExtResource("1_vt6wp")
 tooltip_text = "[center]Gain [color='55ffff']%s Block[/color] and draw [color='55ffff']1 card[/color].[/center]"
 sound = ExtResource("3_4dxhs")

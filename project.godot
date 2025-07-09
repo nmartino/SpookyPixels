@@ -28,15 +28,16 @@ RNG="*res://global/rng.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=3
-window/size/window_width_override=1920
-window/size/window_height_override=1080
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://art/cursor.png"
 
 [editor]
 
 movie_writer/movie_file="D:/Godot/1bitSlayTheSpire/1BitCardGame/videos/video1.avi"
+
+[global_group]
+
+weaponUI="For weaponUI related nodes"
 
 [gui]
 
@@ -86,6 +87,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_2="cardDropArea"
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="map_rooms"
+2d_physics/layer_5="weapon_UI"
 
 [rendering]
 

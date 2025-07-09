@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=42 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
 [ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
 [ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
+[ext_resource type="PackedScene" uid="uid://xaevvjaxcha6" path="res://Weapons/WeaponUI.tscn" id="36_f8ycv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
 animations = [{
@@ -163,6 +164,9 @@ position = Vector2(258, 102)
 
 [node name="torchRight" parent="." instance=ExtResource("6_6e1tc")]
 position = Vector2(423, 103)
+
+[node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
+position = Vector2(107, 261)
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2

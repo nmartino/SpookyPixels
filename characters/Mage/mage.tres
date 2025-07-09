@@ -1,14 +1,12 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=10 format=3 uid="uid://b86t384c0ch53"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://b86t384c0ch53"]
 
 [ext_resource type="Texture2D" uid="uid://bgdx73h81jcek" path="res://art/1bit/orcoArt/32x32/Mage.png" id="1_qk567"]
 [ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_uswfi"]
-[ext_resource type="Texture2D" uid="uid://c14a5m8itjhop" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 02.png" id="2_lqvbr"]
 [ext_resource type="Resource" uid="uid://q1pjq8kfa1mq" path="res://characters/Mage/mage_draftable_cards.tres" id="2_rhcce"]
 [ext_resource type="Texture2D" uid="uid://b02sfaobss4f2" path="res://art/1bit/orcoArt/Fogata/fogata mago.png" id="2_wllxb"]
 [ext_resource type="Texture2D" uid="uid://i3xdqsv0rrox" path="res://art/1bit/orcoArt/32x32/Mage_lastimado.png" id="4_s31yb"]
 [ext_resource type="Resource" uid="uid://cfmtwhuxrdy1n" path="res://characters/Mage/mage_starting_deck.tres" id="5_h1e8s"]
 [ext_resource type="Texture2D" uid="uid://cwl2smf36ci0u" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 02.png" id="5_obafq"]
-[ext_resource type="Resource" uid="uid://3m1te8fvfg00" path="res://relics/confusin_staff.tres" id="6_hayqi"]
 
 [resource]
 script = ExtResource("1_uswfi")
@@ -17,13 +15,12 @@ description = "She has felt a resonance with the energy
 of the Abyss and fears that his lineage
 is tied to the origin of the Soul Drinker."
 portrait = ExtResource("5_obafq")
-aura = ExtResource("2_lqvbr")
 isDisable = false
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
 cards_per_turn = 3
-max_mana = 4
-starting_relic = ExtResource("6_hayqi")
+special_stat_type = 0
+special_stat_value = 0
 max_health = 30
 art = ExtResource("1_qk567")
 hurt = ExtResource("4_s31yb")
