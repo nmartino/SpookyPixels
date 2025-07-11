@@ -11,6 +11,8 @@ const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 const INVENTORY_SCENE := preload("res://Scenes/UI/weapon_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
+const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres") as RuneData
+
 @export var music: AudioStream
 
 @export var run_startup: RunStartup
@@ -43,6 +45,7 @@ func _ready() -> void:
 	match run_startup.type:
 		RunStartup.TYPE.NEW_RUN:
 			character = run_startup.picked_character.create_instance()
+			
 			_start_run()
 		RunStartup.TYPE.CONTINUED_RUN:
 			_load_run()
@@ -56,6 +59,7 @@ func _start_run() -> void:
 	
 	map.generate_new_map()
 	map.unlock_floor(0)
+	
 	
 	save_data = SaveGame.new()
 	_save_run(true)
@@ -122,7 +126,7 @@ func _setup_top_bar():
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
-	inventory_button.pressed.connect(weapon_inventory.show_weapon_inventory)
+	inventory_button.pressed.connect(_on_inventory_open)
 
 func _show_regular_battle_rewards() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -204,3 +208,11 @@ func _show_map()->void:
 	map.show_map()
 	map.unlock_next_rooms()
 	_save_run(true)
+	
+func _on_inventory_open() ->void:
+	print("entro")
+	weapon_inventory.show_weapon_inventory(character.weapon)
+
+
+func _on_button_runa_pressed() -> void:
+	weapon_inventory.register_rune(MOCKED_RUNE)

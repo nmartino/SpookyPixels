@@ -103,4 +103,3 @@ func _on_relics_activated(type: Relic.Type) -> void:
 		Relic.Type.END_OF_COMBAT:
 			Events.tooltip_hide_requested.emit()
 			Events.battle_over_screen_requested.emit("Perfection!!", BattleOverPanel.Type.WIN)
-	

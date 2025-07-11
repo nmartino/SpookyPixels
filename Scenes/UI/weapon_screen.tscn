@@ -407,6 +407,7 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
 [node name="SlotWeapon" parent="." instance=ExtResource("7_6orwj")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 81.0
 offset_top = 114.0
@@ -414,6 +415,7 @@ offset_right = 81.0
 offset_bottom = 114.0
 
 [node name="SlotWeapon2" parent="." instance=ExtResource("7_6orwj")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 175.0
 offset_top = 147.0
@@ -421,6 +423,7 @@ offset_right = 201.0
 offset_bottom = 173.0
 
 [node name="SlotWeapon3" parent="." instance=ExtResource("7_6orwj")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 60.0
 offset_top = 211.0
@@ -428,6 +431,7 @@ offset_right = 86.0
 offset_bottom = 237.0
 
 [node name="SlotWeapon4" parent="." instance=ExtResource("7_6orwj")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 151.0
 offset_top = 289.0

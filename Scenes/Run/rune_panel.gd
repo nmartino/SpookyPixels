@@ -1,7 +1,7 @@
 extends PanelContainer
 
 @export var raresa: RuneData.Raresa
-
+signal attachment_dragged(runa: InventoryRune)
 
 func init(r: RuneData.Raresa, cms: Vector2) ->void:
 	raresa = r
@@ -26,4 +26,6 @@ func _drop_data(_at_position: Vector2, data: Variant):
 		if runa == data:
 			return
 		runa.reparent(data.get_parent())
+		data.get_parent().attachment_dragged.emit(runa)
 	data.reparent(self)
+	attachment_dragged.emit(data)

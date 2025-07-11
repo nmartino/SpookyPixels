@@ -20,9 +20,8 @@ card = ExtResource("3_v7cy3")
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.6
+anchor_right = 1.0
 anchor_bottom = 1.8
-offset_right = -48.0
 offset_bottom = -86.4
 grow_horizontal = 2
 grow_vertical = 2

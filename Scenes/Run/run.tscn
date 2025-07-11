@@ -122,6 +122,11 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 show_max_hp = true
 
+[node name="Button" type="Button" parent="TopBar/MarginsTopBar/BarItems"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+text = "runa"
+
 [node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/MarginsTopBar/BarItems"]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -243,4 +248,5 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
+[connection signal="pressed" from="TopBar/MarginsTopBar/BarItems/Button" to="." method="_on_button_runa_pressed"]
 [connection signal="pressed" from="TopBar/MarginsTopBar/BarItems/RelicHandlerContainer/InventoryButton" to="." method="_on_button_inventory_pressed"]
