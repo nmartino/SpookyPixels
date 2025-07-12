@@ -1,10 +1,10 @@
 class_name WeaponInventory
 extends Control
-
 var InventorySize = 12
+@onready var weapon_slots: Array[Control] = [%SlotWeapon, %SlotWeapon2, %SlotWeapon3, %SlotWeapon4]
 @onready var rune_slots: GridContainer = %RuneSlots
 @onready var back_button: Button = $BackButton
-@onready var weapon_slots: Array[Control] = [%SlotWeapon, %SlotWeapon2, %SlotWeapon3, %SlotWeapon4]
+
 var unattachedRunes: Dictionary[Control, InventoryRune] = {}
 var attachedRunes: Dictionary[Control, InventoryRune] = {}
 var weapon: BaseWeapon

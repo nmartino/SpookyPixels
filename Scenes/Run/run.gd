@@ -64,6 +64,7 @@ func _start_run() -> void:
 	save_data = SaveGame.new()
 	_save_run(true)
 	
+	
 func _save_run(was_on_map: bool) -> void:
 	save_data.rng_seed = RNG.instance.seed
 	save_data.rng_state = RNG.instance.state
@@ -91,9 +92,11 @@ func _load_run() ->void:
 	_setup_top_bar()
 	_setup_event_connection()
 	
+	
 	map.load_map(save_data.map_data, save_data.floors_climbed, save_data.last_room)
 	if save_data.last_room and not save_data.was_on_map:
 		_on_map_exited(save_data.last_room)
+	
 	
 	
 func _change_view(scene: PackedScene) -> Node:
@@ -210,7 +213,6 @@ func _show_map()->void:
 	_save_run(true)
 	
 func _on_inventory_open() ->void:
-	print("entro")
 	weapon_inventory.show_weapon_inventory(character.weapon)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=41 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -11,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
 [ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="5_f8ycv"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="6_6e1tc"]
 [ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="6_gp70a"]
 [ext_resource type="Texture2D" uid="uid://dn1tf4nualhfo" path="res://art/1bit/background/Background_undead_06.png" id="7_f24gg"]
 [ext_resource type="Script" uid="uid://bli60g76wg0tb" path="res://Scenes/Player/player_handeler.gd" id="8_1ftam"]
@@ -155,15 +154,6 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_gu1tp")
 animation = &"background2"
 centered = false
-
-[node name="torchLeft" parent="." instance=ExtResource("6_6e1tc")]
-position = Vector2(93, 102)
-
-[node name="torchMiddle" parent="." instance=ExtResource("6_6e1tc")]
-position = Vector2(258, 102)
-
-[node name="torchRight" parent="." instance=ExtResource("6_6e1tc")]
-position = Vector2(423, 103)
 
 [node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
 position = Vector2(107, 261)

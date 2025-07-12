@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7i5pvxq6kvj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-sliderThumb.png" id="17_x5cwt"]
 [ext_resource type="Texture2D" uid="uid://1unhfdqrs8l4" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-line2.png" id="18_2rqla"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_ivj6k"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_o5jgv"]
 frames = 6
 frame_0/texture = ExtResource("6_8c8wy")
 frame_0/duration = 0.5
@@ -221,7 +221,7 @@ texture = ExtResource("4_i7eaj")
 [node name="MapLine" parent="." instance=ExtResource("5_i7eaj")]
 points = PackedVector2Array(94, 126, 189, 159, 73, 223, 164, 301)
 width = 4.0
-texture = SubResource("AnimatedTexture_ivj6k")
+texture = SubResource("AnimatedTexture_o5jgv")
 sharp_limit = 1.0
 round_precision = 1
 
@@ -411,8 +411,9 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 81.0
 offset_top = 114.0
-offset_right = 81.0
-offset_bottom = 114.0
+offset_right = 107.0
+offset_bottom = 140.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotWeapon2" parent="." instance=ExtResource("7_6orwj")]
 unique_name_in_owner = true
@@ -421,6 +422,7 @@ offset_left = 175.0
 offset_top = 147.0
 offset_right = 201.0
 offset_bottom = 173.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotWeapon3" parent="." instance=ExtResource("7_6orwj")]
 unique_name_in_owner = true
@@ -429,6 +431,7 @@ offset_left = 60.0
 offset_top = 211.0
 offset_right = 86.0
 offset_bottom = 237.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotWeapon4" parent="." instance=ExtResource("7_6orwj")]
 unique_name_in_owner = true
@@ -437,6 +440,7 @@ offset_left = 151.0
 offset_top = 289.0
 offset_right = 177.0
 offset_bottom = 315.0
+metadata/_edit_use_anchors_ = true
 
 [node name="WeaponInfoButton" type="Button" parent="."]
 layout_mode = 1
