@@ -1,11 +1,7 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://dvl208uagk2op"]
 
 [resource]
-<<<<<<< HEAD
-bus/0/volume_db = 1.06049
-=======
-bus/0/mute = true
->>>>>>> Develop
+bus/0/volume_db = 1.25825
 bus/1/name = &"SFX"
 bus/1/solo = false
 bus/1/mute = false
@@ -16,5 +12,5 @@ bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -21.0931
+bus/2/volume_db = -7.63072
 bus/2/send = &"Master"

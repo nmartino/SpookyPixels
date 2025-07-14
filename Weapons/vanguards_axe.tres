@@ -10,7 +10,7 @@
 script = ExtResource("2_idveg")
 name = &"Vanguard\'s Axe"
 starting_cards = Array[ExtResource("4_dyi2t")]([])
-max_attachment_slots = 0
+max_attachment_slots = 4
 attachments = Array[ExtResource("1_idveg")]([])
 stat_type = 1
 max_char_stat_value = 10

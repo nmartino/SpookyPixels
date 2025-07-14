@@ -11,6 +11,8 @@ const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 const INVENTORY_SCENE := preload("res://Scenes/UI/weapon_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
+const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres")
+
 @export var music: AudioStream
 
 @export var run_startup: RunStartup
@@ -20,12 +22,12 @@ const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var gold_ui: GoldUI = %GoldUI
-@onready var health_ui: HealthUI = %HealthUI
+#@onready var health_ui: HealthUI = %HealthUI
 @onready var relic_handler: RelicHandler = %RelicHandler
 @onready var relic_tool_tip: RelicTooltip = %RelicToolTip
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var weapon_inventory: WeaponInventory = %WeaponScreen
-@onready var inventory_button: Button = %InventoryButton
+@onready var avatar_ui: AvatarUI = %AvatarUi
 
 var stats: RunStats
 var character: CharacterStats
@@ -43,6 +45,7 @@ func _ready() -> void:
 	match run_startup.type:
 		RunStartup.TYPE.NEW_RUN:
 			character = run_startup.picked_character.create_instance()
+			
 			_start_run()
 		RunStartup.TYPE.CONTINUED_RUN:
 			_load_run()
@@ -57,8 +60,10 @@ func _start_run() -> void:
 	map.generate_new_map()
 	map.unlock_floor(0)
 	
+	
 	save_data = SaveGame.new()
 	_save_run(true)
+	
 	
 func _save_run(was_on_map: bool) -> void:
 	save_data.rng_seed = RNG.instance.seed
@@ -87,9 +92,11 @@ func _load_run() ->void:
 	_setup_top_bar()
 	_setup_event_connection()
 	
+	
 	map.load_map(save_data.map_data, save_data.floors_climbed, save_data.last_room)
 	if save_data.last_room and not save_data.was_on_map:
 		_on_map_exited(save_data.last_room)
+	
 	
 	
 func _change_view(scene: PackedScene) -> Node:
@@ -114,15 +121,18 @@ func _setup_event_connection() -> void:
 	Events.event_room_exited.connect(_show_map)
 
 func _setup_top_bar():
-	character.stats_changed.connect(health_ui.update_stats.bind(character))
-	health_ui.update_stats(character)
+	character.stats_changed.connect(avatar_ui.update_stats.bind(character))
+	#character.stats_changed.connect(avatar_ui._on_stats_updated.bind(character))
+	avatar_ui.update_stats(character)
 	gold_ui.run_stats = stats
 	#relic_handler.add_relic(character.starting_relic)
 	Events.relic_tooltip_requested.connect(relic_tool_tip.show_tooltip)
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
-	inventory_button.pressed.connect(weapon_inventory.show_weapon_inventory)
+	character.weapon.start_of_combat(character)
+	avatar_ui.avatar_button.pressed.connect(_on_inventory_open)
+	
 
 func _show_regular_battle_rewards() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -133,6 +143,7 @@ func _show_regular_battle_rewards() -> void:
 	reward_scene.add_card_reward()
 
 func _on_battle_room_entered(room: Room) ->void:
+	avatar_ui.avatar_button.disabled = true
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
 	battle_scene.battle_stats = room.battle_stats
@@ -189,6 +200,7 @@ func _on_map_exited(room: Room) -> void:
 			_on_event_room_entered(room)
 
 func _on_battle_won() -> void:
+	avatar_ui.avatar_button.disabled = false
 	if map.floors_climbed == MapGenerator.FLOORS:
 		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
 		win_screen.character = character
@@ -204,3 +216,10 @@ func _show_map()->void:
 	map.show_map()
 	map.unlock_next_rooms()
 	_save_run(true)
+	
+func _on_inventory_open() ->void:
+	weapon_inventory.show_weapon_inventory(character.weapon)
+
+
+func _on_button_runa_pressed() -> void:
+	weapon_inventory.register_rune(MOCKED_RUNE)

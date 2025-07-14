@@ -9,14 +9,14 @@ extends Area2D
 
 var card_is_hovering: bool = false
 
-func initialize(weapon_data: BaseWeapon, player_handler: PlayerHandeler) -> void:
+func initialize(weapon_data: BaseWeapon, character: CharacterStats) -> void:
 	#TODO ahhh, seguro hay que usar duplicate(). Mmmmmm
 	weapon = weapon_data
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	texture_rect.texture = weapon.icon
 	label.text = str(weapon.max_char_stat_value)
-	weapon.start_of_combat(player_handler)
+	weapon.start_of_combat(character)
 	Events.weapon_combat_activation.connect(activate_weapon)
 
 func activate_weapon(card: CardUI) -> void:

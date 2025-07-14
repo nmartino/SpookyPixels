@@ -1,6 +1,7 @@
 class_name CardUI
 extends Control
 
+@warning_ignore("unused_signal")
 signal reparent_requested(which_card_ui: CardUI)
 
 const BASE_STYLEBOX := preload("res://Scenes/CardUI/card_base_stylebox.tres")

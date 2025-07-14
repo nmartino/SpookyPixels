@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://6onqv2vn673u"]
+[gd_scene load_steps=33 format=3 uid="uid://6onqv2vn673u"]
 
 [ext_resource type="Script" uid="uid://dg8jrtamtfy70" path="res://Scenes/splash/splash_screen.gd" id="1_b277h"]
-[ext_resource type="AudioStream" uid="uid://dkjpfxwnnav7n" path="res://art/(Loop) Forest Exploration.wav" id="2_7jm5s"]
+[ext_resource type="AudioStream" uid="uid://eoespe02ndne" path="res://art/sounds/The dungeon remains.mp3" id="2_j33iv"]
 [ext_resource type="Texture2D" uid="uid://cl6h0gmj4ohnp" path="res://art/1bit/orcoArt/MainMenu/Inicio 01.png" id="3_j33iv"]
 [ext_resource type="Texture2D" uid="uid://bb2763pkv43su" path="res://art/splash/godot-Logo.png" id="3_wcs12"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_c4ymf"]
@@ -65,6 +65,35 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("5_rtbld")]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("background:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j33iv"]
+resource_name = "fade_in_background"
+length = 4.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_4ch2d"]
 resource_name = "logoPixel"
@@ -89,7 +118,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 1.2, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
@@ -147,6 +176,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_32gla"]
 _data = {
 &"RESET": SubResource("Animation_0wcks"),
+&"fade_in_background": SubResource("Animation_j33iv"),
 &"logoPixel": SubResource("Animation_4ch2d"),
 &"logos": SubResource("Animation_gsg80")
 }
@@ -176,7 +206,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b277h")
-music = ExtResource("2_7jm5s")
+music = ExtResource("2_j33iv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -188,6 +218,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(320, 220)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_j33iv")

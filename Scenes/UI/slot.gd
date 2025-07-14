@@ -1,3 +1,4 @@
+class_name WeaponSlot
 extends TextureRect
 const GEM_SLOT_SMALL = preload("res://art/1bit/XaviArt/gemslots/gem-slot03-base.png")
 const GEM_SLOT_BIG = preload("res://art/1bit/XaviArt/gemslots/gem-slot03-hover.png")

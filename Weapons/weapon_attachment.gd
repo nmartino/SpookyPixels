@@ -16,3 +16,9 @@ func can_add_cards() -> bool:
 
 func get_cards_to_add() -> Array[Card]:
 	return cards_to_add.duplicate(true)
+	
+func apply_effect(character: CharacterStats) -> void:
+	pass
+
+func remove_effect(character: CharacterStats) ->void:
+	pass 
