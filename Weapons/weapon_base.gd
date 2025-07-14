@@ -8,15 +8,15 @@ enum WeaponStatType {DEFAULT, EDGE, MANA, ROGUE_STAT}
 @export var max_attachment_slots: int = 0
 @export var attachments: Array[WeaponAttachment] = []
 @export var stat_type: WeaponStatType = WeaponStatType.DEFAULT
-@export var max_char_stat_value: int = 1
+@export var max_char_stat_value: int = 0
 @export var icon: Texture
 @export var sound_fx: AudioStream = preload("res://art/enemy_hit_02.wav")
 @export_multiline var tooltip: String
 
-var player_handler: PlayerHandeler
+var player_handler: CharacterStats
 #callback de activación?
 
-func start_of_combat(p_h: PlayerHandeler) -> void:
+func start_of_combat(p_h: CharacterStats) -> void:
 	player_handler = p_h
 
 
@@ -41,13 +41,18 @@ func get_attachments() -> Array[WeaponAttachment]:
 func add_attachment(new_att: WeaponAttachment) -> void:
 	if attachments.size() >= max_attachment_slots:
 		return
+	var duplicated_att:= new_att.duplicate()
 	#TODO ahhh, wazowzki, revisaste si deberías pasarle un true?
-	attachments.append(new_att.duplicate())
+	attachments.append(duplicated_att)
+	duplicated_att.apply_effect(player_handler)
+	
+	#TODO crear  
 
 func remove_attachment(remove_att: WeaponAttachment) -> void:
 	if attachments.is_empty():
 		return
 	for att in attachments:
 		if att.name == remove_att.name:
+			remove_att.remove_effect(player_handler)
 			attachments.erase(att)
 			break

@@ -11,7 +11,7 @@ const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 const INVENTORY_SCENE := preload("res://Scenes/UI/weapon_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
-const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres") as RuneData
+const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres")
 
 @export var music: AudioStream
 
@@ -22,12 +22,12 @@ const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres") as RuneData
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var gold_ui: GoldUI = %GoldUI
-@onready var health_ui: HealthUI = %HealthUI
+#@onready var health_ui: HealthUI = %HealthUI
 @onready var relic_handler: RelicHandler = %RelicHandler
 @onready var relic_tool_tip: RelicTooltip = %RelicToolTip
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var weapon_inventory: WeaponInventory = %WeaponScreen
-@onready var inventory_button: Button = %InventoryButton
+@onready var avatar_ui: AvatarUI = %AvatarUi
 
 var stats: RunStats
 var character: CharacterStats
@@ -121,15 +121,18 @@ func _setup_event_connection() -> void:
 	Events.event_room_exited.connect(_show_map)
 
 func _setup_top_bar():
-	character.stats_changed.connect(health_ui.update_stats.bind(character))
-	health_ui.update_stats(character)
+	character.stats_changed.connect(avatar_ui.update_stats.bind(character))
+	#character.stats_changed.connect(avatar_ui._on_stats_updated.bind(character))
+	avatar_ui.update_stats(character)
 	gold_ui.run_stats = stats
 	#relic_handler.add_relic(character.starting_relic)
 	Events.relic_tooltip_requested.connect(relic_tool_tip.show_tooltip)
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
-	inventory_button.pressed.connect(_on_inventory_open)
+	character.weapon.start_of_combat(character)
+	avatar_ui.avatar_button.pressed.connect(_on_inventory_open)
+	
 
 func _show_regular_battle_rewards() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -140,6 +143,7 @@ func _show_regular_battle_rewards() -> void:
 	reward_scene.add_card_reward()
 
 func _on_battle_room_entered(room: Room) ->void:
+	avatar_ui.avatar_button.disabled = true
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
 	battle_scene.battle_stats = room.battle_stats
@@ -196,6 +200,7 @@ func _on_map_exited(room: Room) -> void:
 			_on_event_room_entered(room)
 
 func _on_battle_won() -> void:
+	avatar_ui.avatar_button.disabled = false
 	if map.floors_climbed == MapGenerator.FLOORS:
 		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
 		win_screen.character = character

@@ -6,10 +6,10 @@
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="2_frqca"]
 [ext_resource type="PackedScene" uid="uid://h8raeqewus5h" path="res://Scenes/UI/gold_ui.tscn" id="4_176gq"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
-[ext_resource type="PackedScene" uid="uid://c5lfr6iekpgsw" path="res://Scenes/UI/health_ui.tscn" id="5_d6yos"]
+[ext_resource type="Texture2D" uid="uid://c1vf40ygtc1fy" path="res://art/1bit/XaviArt/avatarUI/deck-x32.png" id="7_8pevd"]
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
 [ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
-[ext_resource type="Texture2D" uid="uid://cxqqa66631vx" path="res://art/1bit/deck-icon02.png" id="9_3xvi7"]
+[ext_resource type="PackedScene" uid="uid://8qxndi2yrha4" path="res://Scenes/UI/avatar_ui.tscn" id="9_k4lll"]
 [ext_resource type="PackedScene" uid="uid://om13b4iixuh" path="res://Scenes/UI/weapon_screen.tscn" id="10_8pevd"]
 [ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="13_3pt4t"]
@@ -76,7 +76,7 @@ music = ExtResource("2_8pevd")
 run_startup = ExtResource("2_frqca")
 
 [node name="Map" parent="." instance=ExtResource("1_lttax")]
-position = Vector2(0, 3)
+metadata/_edit_lock_ = true
 
 [node name="CurrentView" type="Node" parent="."]
 
@@ -93,6 +93,7 @@ grow_horizontal = 2
 color = Color(1, 0.333333, 1, 0.592157)
 
 [node name="MarginsTopBar" type="MarginContainer" parent="TopBar"]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 40.0
@@ -102,67 +103,73 @@ size_flags_vertical = 0
 theme_override_constants/margin_left = 7
 theme_override_constants/margin_right = 2
 
-[node name="GoldUI" parent="TopBar/MarginsTopBar" instance=ExtResource("4_176gq")]
+[node name="Button" type="Button" parent="TopBar"]
+custom_minimum_size = Vector2(50, 20)
+offset_left = 11.0
+offset_top = 55.0
+offset_right = 61.0
+offset_bottom = 87.0
+text = "runa"
+
+[node name="GoldUI" parent="TopBar" instance=ExtResource("4_176gq")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
+offset_left = 139.0
+offset_top = 15.0
+offset_right = 184.0
+offset_bottom = 31.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="BarItems" type="HBoxContainer" parent="TopBar/MarginsTopBar"]
-custom_minimum_size = Vector2(0, 18)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-
-[node name="HealthUI" parent="TopBar/MarginsTopBar/BarItems" instance=ExtResource("5_d6yos")]
+[node name="DeckButton" parent="TopBar" node_paths=PackedStringArray("counter") instance=ExtResource("4_bxmm5")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-show_max_hp = true
-
-[node name="Button" type="Button" parent="TopBar/MarginsTopBar/BarItems"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-text = "runa"
-
-[node name="InventoryButton" type="Button" parent="TopBar/MarginsTopBar/BarItems"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 30)
-layout_mode = 2
-text = "inventory"
-
-[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/MarginsTopBar/BarItems"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="RelicHandler" parent="TopBar/MarginsTopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="DeckButton" parent="TopBar/MarginsTopBar/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_bxmm5")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture_normal = ExtResource("9_3xvi7")
-texture_pressed = ExtResource("9_3xvi7")
-texture_hover = ExtResource("9_3xvi7")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = 9.0
+offset_right = -12.0
+offset_bottom = 41.0
+grow_horizontal = 0
+mouse_force_pass_scroll_events = false
+texture_normal = ExtResource("7_8pevd")
+texture_pressed = ExtResource("7_8pevd")
+texture_hover = ExtResource("7_8pevd")
 counter = NodePath("Label")
 
-[node name="Label" type="Label" parent="TopBar/MarginsTopBar/BarItems/DeckButton"]
+[node name="Label" type="Label" parent="TopBar/DeckButton"]
 layout_mode = 0
 offset_left = -2.0
-offset_top = 13.0
-offset_right = 8.0
-offset_bottom = 19.0
+offset_top = 18.0
+offset_right = 16.0
+offset_bottom = 33.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 text = "99"
 horizontal_alignment = 2
+
+[node name="BarItems" type="HBoxContainer" parent="TopBar"]
+custom_minimum_size = Vector2(0, 18)
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 638.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="AvatarUi" parent="TopBar/BarItems" instance=ExtResource("9_k4lll")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="WeaponScreen" parent="TopBar" instance=ExtResource("10_8pevd")]
 unique_name_in_owner = true
@@ -249,5 +256,4 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="TopBar/MarginsTopBar/BarItems/Button" to="." method="_on_button_runa_pressed"]
-[connection signal="pressed" from="TopBar/MarginsTopBar/BarItems/InventoryButton" to="." method="_on_button_inventory_pressed"]
+[connection signal="pressed" from="TopBar/Button" to="." method="_on_button_runa_pressed"]
