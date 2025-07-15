@@ -13,6 +13,8 @@ texture_margin_bottom = 6.0
 [node name="InventorySlot" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_cod4a")
 script = ExtResource("2_lvmh3")
 

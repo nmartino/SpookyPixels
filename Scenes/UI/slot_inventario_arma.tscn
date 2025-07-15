@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://chbdffdw6ha8p"]
+
+[ext_resource type="Script" uid="uid://bd3c7kkpkmahx" path="res://Scenes/UI/slot_inventario_arma.gd" id="1_23t56"]
+[ext_resource type="Texture2D" uid="uid://c4r3rt4g21drv" path="res://art/1bit/XaviArt/gemslots/intenvory-box-item.png" id="1_kmivt"]
+[ext_resource type="Texture2D" uid="uid://cvlq53t4m8033" path="res://art/1bit/XaviArt/gemslots/intenvory-box-item-hover.png" id="2_23t56"]
+[ext_resource type="PackedScene" uid="uid://cogj56q10r2hp" path="res://Runas/inventory_slot.tscn" id="3_n8yy2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcvi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kmivt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_23t56")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23t56"]
+
+[node name="SlotInventarioArma" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+script = ExtResource("1_23t56")
+
+[node name="animacion" type="AnimatedSprite2D" parent="."]
+position = Vector2(20, 20)
+sprite_frames = SubResource("SpriteFrames_mcvi4")
+autoplay = "default"
+
+[node name="InventorySlot" parent="." instance=ExtResource("3_n8yy2")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_23t56")
+
+[connection signal="mouse_entered" from="InventorySlot" to="." method="_on_inventory_slot_mouse_entered"]
+[connection signal="mouse_exited" from="InventorySlot" to="." method="_on_inventory_slot_mouse_exited"]
