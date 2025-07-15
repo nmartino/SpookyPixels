@@ -16,7 +16,7 @@ func initialize(weapon_data: BaseWeapon, character: CharacterStats) -> void:
 	area_exited.connect(_on_area_exited)
 	texture_rect.texture = weapon.icon
 	label.text = str(weapon.max_char_stat_value)
-	weapon.start_of_combat(character)
+	#weapon.start_of_combat(character)
 	Events.weapon_combat_activation.connect(activate_weapon)
 
 func activate_weapon(card: CardUI) -> void:
