@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://i3xdqsv0rrox" path="res://art/1bit/orcoArt/32x32/Mage_lastimado.png" id="4_s31yb"]
 [ext_resource type="Resource" uid="uid://cfmtwhuxrdy1n" path="res://characters/Mage/mage_starting_deck.tres" id="5_h1e8s"]
 [ext_resource type="Texture2D" uid="uid://cwl2smf36ci0u" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 02.png" id="5_obafq"]
-[ext_resource type="Resource" uid="uid://3m1te8fvfg00" path="res://relics/confusin_staff.tres" id="6_hayqi"]
+[ext_resource type="Resource" uid="uid://kgslrefuvd1v" path="res://Weapons/vanguards_axe.tres" id="8_obafq"]
 
 [resource]
 script = ExtResource("1_uswfi")
@@ -22,8 +22,9 @@ isDisable = false
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
 cards_per_turn = 3
-max_mana = 4
-starting_relic = ExtResource("6_hayqi")
+weapon = ExtResource("8_obafq")
+special_stat_type = 0
+special_stat_value = 0
 max_health = 30
 art = ExtResource("1_qk567")
 hurt = ExtResource("4_s31yb")

@@ -22,9 +22,7 @@ var backgrounds := [
 @onready var player_handeler: PlayerHandeler = $PlayerHandeler 
 @onready var enemy_handeler: EnemyHandeler = $EnemyHandeler 
 @onready var player: Player = $Player
-@onready var torch_left: AnimatedSprite2D = $torchLeft
-@onready var torch_middle: AnimatedSprite2D = $torchMiddle
-@onready var torch_right: AnimatedSprite2D = $torchRight
+@onready var weapon_ui: WeaponUI = $WeaponUI
 @onready var tool_tip: ToolTip = $BattleUI/ToolTipLayer/ToolTip
 
 
@@ -33,31 +31,6 @@ var backgrounds := [
 func _ready() -> void:
 
 	background.animation = RNG.array_pick_random(backgrounds)
-	match background.animation:
-		"background1":
-			torch_left.global_position.x = 64
-			torch_middle.global_position.x = 184
-			torch_right.hide()
-		"background2":
-			torch_left.global_position.x = 64
-			torch_middle.global_position.x = 184
-			torch_right.hide()
-		"background3":
-			torch_left.global_position.x = 14
-			torch_middle.global_position.x = 184
-			torch_right.hide()
-		"background4":
-			torch_left.global_position.x = 14
-			torch_middle.global_position.x = 184
-			torch_right.hide()
-		"background5":
-			torch_left.global_position.x = 47
-			torch_middle.global_position.x = 129
-			torch_right.global_position.x = 211
-		"background6":
-			torch_left.global_position.x = 47
-			torch_middle.global_position.x = 129
-			torch_right.global_position.x = 211
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	enemy_handeler.child_order_changed.connect(_on_enemies_child_order_changed)	
 	Events.player_turn_ended.connect(player_handeler.end_turn)
@@ -76,17 +49,18 @@ func start_battle()-> void:
 	enemy_handeler.reset_enemy_actions()
 	relics.relics_activated.connect(_on_relics_activated)
 	relics.activate_relic_by_type(Relic.Type.START_OF_COMBAT)
+	weapon_ui.initialize(player.stats.weapon, char_stats)
 
-func _on_enemies_child_order_changed()->void:
+func _on_enemies_child_order_changed() -> void:
 	if enemy_handeler.get_child_count() == 0 and is_instance_valid(relics):
-		SFXPlayer.play(battle_won,true)
+		MusicPlayer.play(battle_won,false)
 		relics.activate_relic_by_type(Relic.Type.END_OF_COMBAT)
 
-func _on_player_died()-> void:
+func _on_player_died() -> void:
 	Events.battle_over_screen_requested.emit("You Lose!!", BattleOverPanel.Type.LOSE)
 	SaveGame.delete_data()
 
-func _on_enemy_turn_ended()-> void:
+func _on_enemy_turn_ended() -> void:
 	player_handeler.start_turn()
 	enemy_handeler.reset_enemy_actions()
 
@@ -101,4 +75,3 @@ func _on_relics_activated(type: Relic.Type) -> void:
 		Relic.Type.END_OF_COMBAT:
 			Events.tooltip_hide_requested.emit()
 			Events.battle_over_screen_requested.emit("Perfection!!", BattleOverPanel.Type.WIN)
-	

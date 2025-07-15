@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eoespe02ndne"
+path="res://.godot/imported/The dungeon remains.mp3-d7a0be95316d0eea40758cc6571970aa.mp3str"
+
+[deps]
+
+source_file="res://art/sounds/The dungeon remains.mp3"
+dest_files=["res://.godot/imported/The dungeon remains.mp3-d7a0be95316d0eea40758cc6571970aa.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

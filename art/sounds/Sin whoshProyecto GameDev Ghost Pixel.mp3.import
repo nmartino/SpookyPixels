@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buwbsgv0ojjnr"
+path="res://.godot/imported/Sin whoshProyecto GameDev Ghost Pixel.mp3-1ae07d3ad8d0eeb0006211c9c35a5071.mp3str"
+
+[deps]
+
+source_file="res://art/sounds/Sin whoshProyecto GameDev Ghost Pixel.mp3"
+dest_files=["res://.godot/imported/Sin whoshProyecto GameDev Ghost Pixel.mp3-1ae07d3ad8d0eeb0006211c9c35a5071.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

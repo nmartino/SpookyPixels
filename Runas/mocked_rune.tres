@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://122smgl7xdvr"]
+
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_t0g07"]
+[ext_resource type="Script" uid="uid://y2l0m2m4x4yg" path="res://Runas/mocked_rune.gd" id="2_06l3p"]
+[ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="3_8nbgy"]
+[ext_resource type="Texture2D" uid="uid://n2xo5tdd2ubj" path="res://Runas/rune-base2.png" id="4_otmtd"]
+
+[resource]
+script = ExtResource("2_06l3p")
+edge = 50
+raresa = 0
+description = "Add 50 health points"
+texture = ExtResource("4_otmtd")
+name = &"Hp Inflation"
+cards_to_add = Array[ExtResource("1_t0g07")]([])
+activation_type = 0
+sound_fx = ExtResource("3_8nbgy")
+tooltip = ""

@@ -10,9 +10,10 @@ id = "warrior_true_strenghth"
 type = 2
 target = 0
 rarity = 2
-cost = 2
 exhausts = false
 dmg_type = 4
+special_stat_type = 0
+special_stat_cost = 0
 icon = ExtResource("1_fyy5a")
 tooltip_text = "[center]At the start of your turn, gain[color='55ffff'] 2 Strength[/color].[/center]"
 sound = ExtResource("3_jtvor")

@@ -32,7 +32,7 @@ func start_battle(char_stats: CharacterStats)-> void:
 
 func start_turn()-> void:
 	character.block = 0
-	character.reset_mana()
+	#character.reset_special_stat_value()
 	relics.activate_relic_by_type(Relic.Type.START_OF_TURN)
 
 func end_turn()-> void:

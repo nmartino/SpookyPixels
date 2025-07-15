@@ -11,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
 [ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="5_f8ycv"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="6_6e1tc"]
 [ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="6_gp70a"]
 [ext_resource type="Texture2D" uid="uid://dn1tf4nualhfo" path="res://art/1bit/background/Background_undead_06.png" id="7_f24gg"]
 [ext_resource type="Script" uid="uid://bli60g76wg0tb" path="res://Scenes/Player/player_handeler.gd" id="8_1ftam"]
@@ -35,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
 [ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
 [ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
+[ext_resource type="PackedScene" uid="uid://xaevvjaxcha6" path="res://Weapons/WeaponUI.tscn" id="36_f8ycv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
 animations = [{
@@ -152,17 +152,11 @@ metadata/_edit_lock_ = true
 [node name="Background" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_gu1tp")
-animation = &"background1"
+animation = &"background2"
 centered = false
 
-[node name="torchLeft" parent="." instance=ExtResource("6_6e1tc")]
-position = Vector2(93, 102)
-
-[node name="torchMiddle" parent="." instance=ExtResource("6_6e1tc")]
-position = Vector2(258, 102)
-
-[node name="torchRight" parent="." instance=ExtResource("6_6e1tc")]
-position = Vector2(423, 103)
+[node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
+position = Vector2(107, 261)
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -282,7 +276,6 @@ offset_right = -17.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("18_48cb5")
 texture_pressed = ExtResource("18_48cb5")
 texture_hover = ExtResource("22_ds3ue")
 counter = NodePath("Counter")

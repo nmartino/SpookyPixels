@@ -10,7 +10,7 @@ size = Vector2(4, 4)
 script = ExtResource("1_unok5")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 4
+collision_mask = 20
 monitoring = false
 monitorable = false
 

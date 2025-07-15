@@ -15,8 +15,7 @@ func add_card(card: Card)-> void:
 	new_card_ui.parent = self
 	new_card_ui.char_stats = char_stats
 	new_card_ui.player_modifier = player.modifier_handler
-	
-	
+
 
 func discard_card(card: CardUI)-> void:
 	card.queue_free()

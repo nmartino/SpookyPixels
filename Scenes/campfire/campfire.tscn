@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://ds4hjaky65w3y"]
+[gd_scene load_steps=29 format=3 uid="uid://ds4hjaky65w3y"]
 
 [ext_resource type="Script" uid="uid://bxwl1r3eo2duk" path="res://Scenes/campfire/campfire.gd" id="1_n3jar"]
 [ext_resource type="AudioStream" uid="uid://bko3lvy4b04i" path="res://art/(Loop) Sanctuary.wav" id="2_75l24"]
-[ext_resource type="Texture2D" uid="uid://cjnfi0k448g7u" path="res://art/1bit/orcoArt/Sprite Fondos testeo6.png" id="3_8cjsj"]
 [ext_resource type="Resource" uid="uid://b86t384c0ch53" path="res://characters/Mage/mage.tres" id="3_om08r"]
-[ext_resource type="PackedScene" uid="uid://dqeh5nty43nu7" path="res://Scenes/UI/torch.tscn" id="5_cjcmv"]
+[ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="4_f2e3d"]
 [ext_resource type="Texture2D" uid="uid://b3a2hrd3glc13" path="res://art/1bit/orcoArt/Fogata/carpa.png" id="5_oldlx"]
 [ext_resource type="Texture2D" uid="uid://b8yx4v3luesc1" path="res://art/1bit/orcoArt/Fogata/fogata1.png" id="6_i2ctl"]
 [ext_resource type="Texture2D" uid="uid://cmr0hbibw82ns" path="res://art/1bit/orcoArt/Fogata/fogata alfombra.png" id="6_r50cl"]
@@ -15,7 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dueb7vh2ymwe2" path="res://art/1bit/orcoArt/Fogata/fogata5.png" id="10_ssist"]
 [ext_resource type="Texture2D" uid="uid://cyw3p6c0uofrn" path="res://art/1bit/orcoArt/Fogata/fogata6.png" id="11_xl68m"]
 [ext_resource type="Texture2D" uid="uid://crrqmp10jw7g5" path="res://art/1bit/orcoArt/Fogata/fogata7.png" id="12_oijvl"]
-[ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="15_6tsqk"]
+[ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="15_1f70b"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="16_6dln7"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="17_beqob"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="18_ujudd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mnufc"]
 animations = [{
@@ -47,15 +49,27 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61pu2"]
-font = ExtResource("15_6tsqk")
+font = ExtResource("15_1f70b")
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3s3vp"]
+texture = ExtResource("16_6dln7")
+modulate_color = Color(1, 1, 1, 0.556863)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwywu"]
+texture = ExtResource("17_beqob")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxmhw"]
+texture = ExtResource("18_ujudd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyr3k"]
+texture = ExtResource("16_6dln7")
+
 [sub_resource type="LabelSettings" id="LabelSettings_nvyko"]
-font_size = 6
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 3
@@ -175,38 +189,40 @@ char_stats = ExtResource("3_om08r")
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = 0
 
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Background" type="Sprite2D" parent="BackgroundLayer"]
 unique_name_in_owner = true
-texture = ExtResource("3_8cjsj")
+texture = ExtResource("4_f2e3d")
 centered = false
-metadata/_edit_lock_ = true
-
-[node name="torch" parent="BackgroundLayer" instance=ExtResource("5_cjcmv")]
-position = Vector2(47, 51)
-
-[node name="torch2" parent="BackgroundLayer" instance=ExtResource("5_cjcmv")]
-position = Vector2(129, 51)
-
-[node name="torch3" parent="BackgroundLayer" instance=ExtResource("5_cjcmv")]
-position = Vector2(211, 51)
 
 [node name="Carpa" type="Sprite2D" parent="BackgroundLayer"]
-position = Vector2(129, 86)
+position = Vector2(287, 216.5)
+scale = Vector2(2, 2)
 texture = ExtResource("5_oldlx")
 
 [node name="Alfombra" type="Sprite2D" parent="BackgroundLayer"]
-position = Vector2(39.5, 111)
+position = Vector2(95, 271)
+scale = Vector2(2, 2)
 texture = ExtResource("6_r50cl")
 
 [node name="ParticlesLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerSprite" type="Sprite2D" parent="ParticlesLayer"]
 unique_name_in_owner = true
-position = Vector2(38.5, 100)
+position = Vector2(93, 245)
+scale = Vector2(2, 2)
 texture = ExtResource("7_nsexx")
 
 [node name="Fogata" type="AnimatedSprite2D" parent="ParticlesLayer"]
-position = Vector2(93, 108)
+position = Vector2(174, 252)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mnufc")
 animation = &"new_animation"
 autoplay = "new_animation"
@@ -241,9 +257,13 @@ layout_mode = 2
 
 [node name="RestButton" type="Button" parent="UILayer/UI"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 14)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3s3vp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uwywu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xxmhw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wyr3k")
 text = "Rest"
 
 [node name="Description" type="Label" parent="UILayer/UI"]
@@ -254,7 +274,7 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b3v32")
+&"": SubResource("AnimationLibrary_b3v32")
 }
 
 [connection signal="pressed" from="UILayer/UI/RestButton" to="." method="_on_rest_button_pressed"]

@@ -2,7 +2,7 @@ class_name PauseMenu
 extends CanvasLayer
 
 signal save_and_quit
-const MUSIC = preload("res://art/(Loop) Forest Exploration.wav")
+const MUSIC = preload("res://art/sounds/The dungeon remains.mp3")
 
 @onready var back_to_game_button: Button = %BackToGameButton
 @onready var save_and_quit_button: Button = %SaveAndQuitButton
