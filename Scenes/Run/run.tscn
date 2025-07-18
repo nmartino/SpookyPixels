@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=32 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" uid="uid://drcivwhyd1qeg" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
@@ -18,6 +18,8 @@
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_ehit0"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="15_k4lll"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="16_gnhhf"]
+[ext_resource type="Texture2D" uid="uid://c4r3rt4g21drv" path="res://art/1bit/XaviArt/gemslots/intenvory-box-item.png" id="18_gnhhf"]
+[ext_resource type="PackedScene" uid="uid://diwoq55r64qyd" path="res://Scenes/UI/volumen_slider.tscn" id="19_db0nm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1dda"]
 font = ExtResource("13_3pt4t")
@@ -53,13 +55,20 @@ texture = ExtResource("16_gnhhf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx4rf"]
 texture = ExtResource("14_8pevd")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3otj"]
+texture = ExtResource("18_gnhhf")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 12.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
 shader = ExtResource("14_ehit0")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.1
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.167
-shader_parameter/interference_amount = 0.185
+shader_parameter/noise_amount = 0.207
+shader_parameter/interference_amount = 0.2
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
 shader_parameter/vignette_amount = 0.0
@@ -83,25 +92,6 @@ metadata/_edit_lock_ = true
 [node name="TopBar" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 layer = 5
-
-[node name="Background" type="ColorRect" parent="TopBar"]
-visible = false
-custom_minimum_size = Vector2(0, 40)
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-color = Color(1, 0.333333, 1, 0.592157)
-
-[node name="MarginsTopBar" type="MarginContainer" parent="TopBar"]
-visible = false
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 40.0
-grow_horizontal = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/margin_left = 7
-theme_override_constants/margin_right = 2
 
 [node name="Button" type="Button" parent="TopBar"]
 custom_minimum_size = Vector2(50, 20)
@@ -156,18 +146,21 @@ offset_right = 638.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="AvatarUi" parent="TopBar/BarItems" instance=ExtResource("9_k4lll")]
 unique_name_in_owner = true
 layout_mode = 2
 
 [node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
 [node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
 unique_name_in_owner = true
+visible = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
@@ -241,6 +234,68 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_o3lsc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tv7gb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_mx4rf")
 text = "Main Menu"
+
+[node name="ConfigurationPanel" type="Panel" parent="PauseMenu"]
+offset_left = 453.0
+offset_top = 223.0
+offset_right = 623.0
+offset_bottom = 343.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_c3otj")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/ConfigurationPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ConfigurationMenu" type="VBoxContainer" parent="PauseMenu/ConfigurationPanel/MarginContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Master" type="Label" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Master Volume"
+
+[node name="VolumenSlider" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu" instance=ExtResource("19_db0nm")]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SFX" type="Label" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "SFX"
+
+[node name="VolumenSlider2" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu" instance=ExtResource("19_db0nm")]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+bus_name = "SFX"
+
+[node name="Music" type="Label" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Music"
+
+[node name="VolumenSlider3" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu" instance=ExtResource("19_db0nm")]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+bus_name = "Music"
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 99

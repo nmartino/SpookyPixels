@@ -168,12 +168,12 @@ position = Vector2(36, 0)
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Pared de entrada/verticalIzquierda"]
 position = Vector2(-185, -57)
 sprite_frames = SubResource("SpriteFrames_l8e3b")
-animation = &"Map_TowerWall_undead_01"
+animation = &"Map_TowerWall_undead_04"
 
 [node name="Sprite2D2" type="AnimatedSprite2D" parent="Pared de entrada/verticalIzquierda"]
 position = Vector2(-185, -185)
 sprite_frames = SubResource("SpriteFrames_l8e3b")
-animation = &"Map_TowerWall_undead_02"
+animation = &"Map_TowerWall_undead_03"
 
 [node name="Sprite2D3" type="AnimatedSprite2D" parent="Pared de entrada/verticalIzquierda"]
 position = Vector2(-185, -313)

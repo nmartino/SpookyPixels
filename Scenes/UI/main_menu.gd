@@ -3,11 +3,14 @@ extends Control
 const CHAR_SELECTOR_SCENE := preload("res://Scenes/UI/character_selector.tscn")
 const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var configuration_panel: Panel = $ConfigurationPanel
+@onready var conf_menu_container: MarginContainer = $ConfigurationPanel/ConfMenuContainer
 
 @export var run_startup: RunStartup
 @onready var continue_button: Button = %Continue
 
 var skip_spamming_locked: bool = false
+var its_config_displayed : bool = false
 
 
 func _ready() -> void:
@@ -37,4 +40,19 @@ func _on_new_run_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
-	
+func _on_config_pressed() -> void:
+	if not its_config_displayed:
+		configuration_panel.show()
+		animation_player.play("open_conf_menu")
+		await animation_player.animation_finished
+		conf_menu_container.show()
+		its_config_displayed = true
+
+
+func _on_hide_pressed() -> void:
+	if its_config_displayed:
+		conf_menu_container.hide()
+		animation_player.play("close_conf_menu")
+		await animation_player.animation_finished
+		configuration_panel.hide()
+		its_config_displayed = false

@@ -130,7 +130,7 @@ func _setup_top_bar():
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
-	character.weapon.start_of_combat(character)
+	character.weapon.start_of_run(character)
 	avatar_ui.avatar_button.pressed.connect(_on_inventory_open)
 	
 

@@ -12,7 +12,7 @@ script = ExtResource("1_g0162")
 card = ExtResource("2_0k5n1")
 
 [node name="Visuals" parent="." instance=ExtResource("3_wum0t")]
-custom_minimum_size = Vector2(80, 108)
+custom_minimum_size = Vector2(82, 110)
 layout_mode = 2
 
 [connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]

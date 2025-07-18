@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://t3ic5ankyihq"]
+[gd_scene load_steps=16 format=3 uid="uid://t3ic5ankyihq"]
 
 [ext_resource type="Script" uid="uid://d0d0g54ycygfp" path="res://Scenes/Map/map_room.gd" id="1_68xlo"]
 [ext_resource type="AudioStream" uid="uid://ctlogjpti8efc" path="res://art/sounds/dungeon door opens.mp3" id="2_bokjj"]
@@ -36,6 +36,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehmdb"]
 radius = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq2jf"]
+size = Vector2(30, 34)
 
 [sub_resource type="Animation" id="Animation_3l2ps"]
 length = 0.001
@@ -164,6 +167,11 @@ texture = ExtResource("5_5trap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ehmdb")
+
+[node name="entranceCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 53)
+shape = SubResource("RectangleShape2D_oq2jf")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
