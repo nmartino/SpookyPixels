@@ -13,6 +13,7 @@ var backgrounds := [
 @export var battle_stats: BattleStats
 @export var char_stats: CharacterStats
 @export var music: AudioStream
+@export var discard_sound: AudioStream
 @export var battle_won: AudioStream
 @export var relics: RelicHandler
 
@@ -42,9 +43,12 @@ func _ready() -> void:
 	
 	
 	
+	
+	
 func start_battle()-> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
+	char_stats.set_special_stat(10)
 	battle_ui.char_stats = char_stats
 	player.stats = char_stats
 	player_handeler.relics = relics
@@ -80,6 +84,7 @@ func _on_relics_activated(type: Relic.Type) -> void:
 			Events.battle_over_screen_requested.emit("Perfection!!", BattleOverPanel.Type.WIN)
 
 func _on_aim_started(card: CardUI)->void:
+	SFXPlayer.play(discard_sound)
 	edge_ui.discard_sprite.show()
 	edge_ui.mana_label.hide()
 	edge_ui.name_label.hide()

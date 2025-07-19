@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=39 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dlxq3kaphatmb" path="res://art/Tyrant_s-Downfall.mp3" id="3_vgqd8"]
 [ext_resource type="AudioStream" uid="uid://bok4njnqsu2tv" path="res://art/sounds/Retro Success Melody 01 - sawtooth lead 1.wav" id="4_4l47w"]
 [ext_resource type="Script" uid="uid://cj70n1speektp" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
+[ext_resource type="AudioStream" uid="uid://c64k2v3nrmlp1" path="res://art/sounds/UI - Switch 01.wav" id="4_pebnb"]
 [ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
 [ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="5_f8ycv"]
@@ -129,6 +130,7 @@ _data = {
 script = ExtResource("1_l8vlc")
 char_stats = ExtResource("4_q8sq6")
 music = ExtResource("3_vgqd8")
+discard_sound = ExtResource("4_pebnb")
 battle_won = ExtResource("4_4l47w")
 metadata/_edit_lock_ = true
 

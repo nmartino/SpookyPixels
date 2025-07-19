@@ -2,6 +2,7 @@ extends Control
 
 const CHAR_SELECTOR_SCENE := preload("res://Scenes/UI/character_selector.tscn")
 const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
+const OBJECT_LEVER_SWITCH = preload("res://art/sounds/Object - Lever Switch.wav")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var configuration_panel: Panel = $ConfigurationPanel
 @onready var conf_menu_container: MarginContainer = $ConfigurationPanel/ConfMenuContainer
@@ -43,6 +44,7 @@ func _on_exit_pressed() -> void:
 func _on_config_pressed() -> void:
 	if not its_config_displayed:
 		configuration_panel.show()
+		SFXPlayer.play(OBJECT_LEVER_SWITCH)
 		animation_player.play("open_conf_menu")
 		await animation_player.animation_finished
 		conf_menu_container.show()
@@ -52,6 +54,7 @@ func _on_config_pressed() -> void:
 func _on_hide_pressed() -> void:
 	if its_config_displayed:
 		conf_menu_container.hide()
+		SFXPlayer.play(OBJECT_LEVER_SWITCH)
 		animation_player.play("close_conf_menu")
 		await animation_player.animation_finished
 		configuration_panel.hide()
