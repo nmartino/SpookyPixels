@@ -25,7 +25,10 @@ var draw_pile: CardPile
 
 
 func set_special_stat(value: int) -> void:
-	special_stat_value = value
+	if value < 0:
+		special_stat_value = 0
+	else:
+		special_stat_value = value
 	stats_changed.emit()
 
 

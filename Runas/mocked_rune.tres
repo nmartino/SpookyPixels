@@ -9,9 +9,9 @@
 script = ExtResource("2_06l3p")
 edge = 50
 raresa = 0
-description = "When played restore 1 sharp"
+description = "Add 50 health points"
 texture = ExtResource("4_otmtd")
-name = &""
+name = &"Hp Inflation"
 cards_to_add = Array[ExtResource("1_t0g07")]([])
 activation_type = 0
 sound_fx = ExtResource("3_8nbgy")

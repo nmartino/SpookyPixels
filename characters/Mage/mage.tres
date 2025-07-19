@@ -13,12 +13,11 @@
 [resource]
 script = ExtResource("1_uswfi")
 character_name = "The Dark Mage"
-description = "She has felt a resonance with the energy
-of the Abyss and fears that his lineage
-is tied to the origin of the Soul Drinker."
+description = "She has felt a resonance with the energy of the Abyss and fears that his lineage is tied to the origin of the Soul Drinker.
+--- On Vacations, not available yet ---"
 portrait = ExtResource("5_obafq")
 aura = ExtResource("2_lqvbr")
-isDisable = false
+isDisable = true
 starting_deck = ExtResource("5_h1e8s")
 draftable_cards = ExtResource("2_rhcce")
 cards_per_turn = 3

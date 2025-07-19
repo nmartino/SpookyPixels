@@ -18,7 +18,7 @@ func set_health(value : int) -> void:
 
 
 func set_block(value : int) -> void:
-	block = clampi(value, 0, 999)
+	block = clampi(value, 0, 10)
 	stats_changed.emit()
 
 func set_max_health(value: int) ->void:

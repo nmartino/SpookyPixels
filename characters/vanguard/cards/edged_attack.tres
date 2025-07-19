@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_pes53")
-id = "Edged Attack"
+id = "Guardian of Vyrellia"
 type = 0
 target = 1
 rarity = 0

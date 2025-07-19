@@ -9,7 +9,7 @@ extends Area2D
 
 var card_is_hovering: bool = false
 
-func initialize(weapon_data: BaseWeapon, character: CharacterStats) -> void:
+func initialize(weapon_data: BaseWeapon, character: PlayerHandeler) -> void:
 	#TODO ahhh, seguro hay que usar duplicate(). Mmmmmm
 	weapon = weapon_data
 	area_entered.connect(_on_area_entered)

@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bhxnstfcj66nm" path="res://art/1bit/XaviArt/gemslots/intenvory-box-frame.png" id="9_cltdo"]
 [ext_resource type="Texture2D" uid="uid://ch4scojg4ac8h" path="res://art/1bit/XaviArt/mapline/map line3.png" id="9_ie1x4"]
 [ext_resource type="Texture2D" uid="uid://ccrn741eeej3q" path="res://art/1bit/XaviArt/mapline/map line4.png" id="10_8fs55"]
-[ext_resource type="PackedScene" uid="uid://cogj56q10r2hp" path="res://Runas/inventory_slot.tscn" id="10_ao6t2"]
 [ext_resource type="Texture2D" uid="uid://5ba3vpmvo8qy" path="res://art/1bit/XaviArt/mapline/map line5.png" id="11_tdwmn"]
 [ext_resource type="Texture2D" uid="uid://dkdgax4nuyjai" path="res://art/1bit/XaviArt/mapline/map line6.png" id="12_p1jal"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="13_tbxnk"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ck8k7wriarkie" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-lineDown.png" id="16_k1okh"]
 [ext_resource type="Texture2D" uid="uid://ba7i5pvxq6kvj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-sliderThumb.png" id="17_x5cwt"]
 [ext_resource type="Texture2D" uid="uid://1unhfdqrs8l4" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-line2.png" id="18_2rqla"]
+[ext_resource type="PackedScene" uid="uid://chbdffdw6ha8p" path="res://Scenes/UI/slot_inventario_arma.tscn" id="19_o5jgv"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_o5jgv"]
 frames = 6
@@ -286,124 +286,94 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
 
-[node name="InventorySlot" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma2" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma3" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma4" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma5" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma6" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot7" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma7" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot8" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma8" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot9" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma9" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot10" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma10" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot11" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma11" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot12" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma12" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot13" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma13" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot14" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma14" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot15" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma15" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot16" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma16" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot17" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma17" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot18" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma18" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot19" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma19" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot20" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma20" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot21" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma21" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot22" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma22" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot23" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma23" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot24" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma24" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot25" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma25" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot26" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma26" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot27" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma27" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot28" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma28" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot29" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma29" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
-[node name="InventorySlot30" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("10_ao6t2")]
-custom_minimum_size = Vector2(40, 40)
+[node name="SlotInventarioArma30" parent="RuneInventory/ScrollContainer/RuneSlots" instance=ExtResource("19_o5jgv")]
 layout_mode = 2
 
 [node name="SlotWeapon" parent="." instance=ExtResource("7_6orwj")]
