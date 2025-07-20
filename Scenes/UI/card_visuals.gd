@@ -9,6 +9,7 @@ extends Control
 @onready var icon: TextureRect = $Icon
 @onready var rarity: TextureRect = $Rarity
 @onready var card_name: Label = $CardName
+@onready var card_description: RichTextLabel = $CardDescription
 
 func set_card(value: Card) -> void:
 	if not is_node_ready():
@@ -23,3 +24,4 @@ func set_card(value: Card) -> void:
 	icon.texture = card.icon
 	rarity.modulate = Card.RARITY_COLORS[card.rarity]
 	card_name.text = value.id
+	card_description.text = "⚔︎5☠︎"

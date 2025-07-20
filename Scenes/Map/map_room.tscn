@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bgitfv5ohpy2l" path="res://art/1bit/pruebas mapa/background_2_prueba.png" id="2_h844r"]
 [ext_resource type="Texture2D" uid="uid://dxk4voa46m67n" path="res://art/1bit/orcoArt/Map/puerta1.png" id="3_oq2jf"]
 [ext_resource type="Texture2D" uid="uid://ewo8moq7ueql" path="res://art/1bit/orcoArt/Map/puerta2.png" id="4_h3427"]
-[ext_resource type="Texture2D" uid="uid://cvjgmgvo2d8kb" path="res://art/1bit/pruebas mapa/doble_espada_mapa.png" id="4_tkybg"]
 [ext_resource type="Texture2D" uid="uid://bxn3uqk2u0jad" path="res://art/1bit/pruebas mapa/finished_map.png" id="5_5trap"]
 [ext_resource type="Texture2D" uid="uid://cs4idxxqq66de" path="res://art/1bit/orcoArt/Map/puerta3.png" id="5_jl4px"]
+[ext_resource type="Texture2D" uid="uid://qrg6awfi26rt" path="res://art/1bit/pruebas mapa/event2-2.png" id="7_oq2jf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_clw2c"]
 animations = [{
@@ -92,7 +92,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
 }
 
 [sub_resource type="Animation" id="Animation_wj2f7"]
@@ -158,7 +158,8 @@ width = 2.0
 default_color = Color(0.333333, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("4_tkybg")
+scale = Vector2(1.06154, 1.06154)
+texture = ExtResource("7_oq2jf")
 
 [node name="Finished" type="Sprite2D" parent="Visuals"]
 unique_name_in_owner = true

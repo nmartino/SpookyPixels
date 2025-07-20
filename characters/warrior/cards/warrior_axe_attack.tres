@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_lyjar")
-id = "warrior_axe_attack"
+id = "Chop"
 type = 0
 target = 1
 rarity = 0

@@ -14,5 +14,5 @@ dmg_type = 1
 special_stat_type = 1
 special_stat_cost = 4
 icon = ExtResource("1_j7de0")
-tooltip_text = "[center]Costs %s edge, deals %s damage.[/center]"
+tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color].[/center]"
 metadata/_custom_type_script = "uid://c4bgrvlu74qhr"

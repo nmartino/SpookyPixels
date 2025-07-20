@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmvfg5yegqglk"]
+[gd_scene load_steps=11 format=3 uid="uid://bmvfg5yegqglk"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_8p8kn"]
 [ext_resource type="Script" uid="uid://bv685d44fchvj" path="res://Scenes/UI/card_visuals.gd" id="2_u13nj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0usp007p1y8" path="res://art/1bit/orcoArt/Cards/Cardbase_02.png" id="5_m4ekm"]
 [ext_resource type="FontFile" uid="uid://bjuo1v8slm0rd" path="res://art/mago3.ttf" id="8_7jsmu"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="9_1yskt"]
+[ext_resource type="FontFile" uid="uid://dbn0cf2bfcclr" path="res://art/Ac437_IBM_CGA.ttf" id="10_hotxv"]
 
 [node name="CardVisuals" type="Control"]
 custom_minimum_size = Vector2(50, 60)
@@ -89,13 +90,28 @@ stretch_mode = 5
 [node name="CardName" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 25.0
+offset_left = 23.0
 offset_top = 6.0
 offset_right = 77.0
 offset_bottom = 29.0
 theme_override_fonts/font = ExtResource("9_1yskt")
 theme_override_font_sizes/font_size = 8
-text = "Hemorrhage"
+text = "Chop"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="CardDescription" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 70.0
+offset_right = 77.0
+offset_bottom = 104.0
+theme_override_fonts/normal_font = ExtResource("10_hotxv")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "⚔︎5☠︎"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
