@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=30 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" uid="uid://drcivwhyd1qeg" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
@@ -8,10 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
 [ext_resource type="Texture2D" uid="uid://c1vf40ygtc1fy" path="res://art/1bit/XaviArt/avatarUI/deck-x32.png" id="7_8pevd"]
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
-[ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
 [ext_resource type="PackedScene" uid="uid://8qxndi2yrha4" path="res://Scenes/UI/avatar_ui.tscn" id="9_k4lll"]
 [ext_resource type="PackedScene" uid="uid://om13b4iixuh" path="res://Scenes/UI/weapon_screen.tscn" id="10_8pevd"]
-[ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="13_3pt4t"]
 [ext_resource type="Script" uid="uid://bdhhvid2mjpp7" path="res://Scenes/Run/pause_menu.gd" id="13_c70su"]
 [ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="14_8pevd"]
@@ -152,27 +150,11 @@ mouse_filter = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
-unique_name_in_owner = true
-visible = true
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
 [node name="WeaponScreen" parent="TopBar" instance=ExtResource("10_8pevd")]
 unique_name_in_owner = true
 visible = false
 
 [node name="DeckView" parent="TopBar" instance=ExtResource("7_724ho")]
-unique_name_in_owner = true
-visible = false
-
-[node name="RelicToolTip" parent="TopBar" instance=ExtResource("12_v2hpe")]
 unique_name_in_owner = true
 visible = false
 

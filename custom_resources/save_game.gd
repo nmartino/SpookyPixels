@@ -9,7 +9,6 @@ const SAVE_PATH := "user://savegame.res"
 @export var char_stats: CharacterStats
 @export var current_deck: CardPile
 @export var current_health: int
-#@export var relics: Array[Relic]
 @export var map_data: Array[Array]
 @export var last_room: Room
 @export var floors_climbed: int

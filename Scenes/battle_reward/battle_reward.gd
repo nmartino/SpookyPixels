@@ -22,6 +22,7 @@ var card_rarity_weights :={
 }
 
 func _ready() -> void:
+	back_button.pressed.connect(_on_back_button_pressed)
 	for node: Node in rewards.get_children():
 		node.queue_free()
 	
@@ -46,8 +47,8 @@ func _on_gold_reward_taken(amount: int) -> void:
 	
 	run_stats.gold += amount
 	
-	if back_button.disabled:
-		back_button.disabled = false
+	#if back_button.disabled:
+		#back_button.disabled = false
 
 func _on_back_button_pressed() -> void:
 	Events.battle_reward_exited.emit()
