@@ -156,13 +156,10 @@ func _on_treasue_room_entered() -> void:
 	treasure_scene.char_stats = character
 	treasure_scene.generate_relic()
 
-func _on_treasue_room_exited(relic: Relic) -> void:
+func _on_treasue_room_exited() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
-	reward_scene.relic_handler = relic_handler
-	
-	reward_scene.add_relic_reward(relic)
 
 func _on_campfire_room_entered() -> void:
 	var campfire:= _change_view(CAMPFIRE_SCENE) as CampFire
@@ -173,7 +170,6 @@ func _on_shop_entered() -> void:
 	var shop := _change_view(SHOP_SCENE) as Shop
 	shop.char_stats = character
 	shop.run_stats = stats
-	shop.relic_handler = relic_handler
 	Events.shop_entered.emit(shop)
 	shop.populate_shop()
 	
