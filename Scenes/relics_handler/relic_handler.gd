@@ -15,25 +15,25 @@ func _ready() -> void:
 	
 
 func activate_relic_by_type(type: Relic.Type) -> void:
-	if type == Relic.Type.EVENT_BASED:
-		return
+	relics_activated.emit(type)
+	return
+	#if type == Relic.Type.EVENT_BASED:
+		#return
 	
-	var relic_queue: Array[RelicUI] = _get_all_relic_ui_nodes().filter(
-		func(relic_ui:RelicUI):
-			return relic_ui.relic.type == type
-	)
+	#var relic_queue: Array[RelicUI] = _get_all_relic_ui_nodes().filter(
+		#func(relic_ui:RelicUI):
+			#return relic_ui.relic.type == type
+	#)
 	
-	if relic_queue.is_empty():
-		relics_activated.emit(type)
-		return
+	#if relic_queue.is_empty():
+		#relics_activated.emit(type)
+		#return
 	
-	var tween := create_tween()
-	
-	for relic_ui: RelicUI in relic_queue:
-		tween.tween_callback(relic_ui.relic.activate_relic.bind(relic_ui))
-		tween.tween_interval(RELIC_APPLY_INTERVAL)
-		
-	tween.finished.connect(func(): relics_activated.emit(type))
+	#var tween := create_tween()
+	#for relic_ui: RelicUI in relic_queue:
+		#tween.tween_callback(relic_ui.relic.activate_relic.bind(relic_ui))
+		#tween.tween_interval(RELIC_APPLY_INTERVAL)	
+	#tween.finished.connect(func(): relics_activated.emit(type))
 
 func add_relics(relics_array: Array[Relic]) -> void:
 	for relic: Relic in relics_array:

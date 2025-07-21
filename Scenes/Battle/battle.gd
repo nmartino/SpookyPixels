@@ -55,7 +55,9 @@ func start_battle()-> void:
 	enemy_handeler.setup_enemies(battle_stats)
 	enemy_handeler.reset_enemy_actions()
 	relics.relics_activated.connect(_on_relics_activated)
-	relics.activate_relic_by_type(Relic.Type.START_OF_COMBAT)
+	#relics.activate_relic_by_type(Relic.Type.START_OF_COMBAT)
+	player_handeler.start_battle(char_stats)
+	battle_ui.initialize_card_pile_ui()
 	weapon_ui.initialize(player.stats.weapon, player_handeler)
 
 func _on_enemies_child_order_changed() -> void:
