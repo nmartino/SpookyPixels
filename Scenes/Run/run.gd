@@ -72,7 +72,7 @@ func _save_run(was_on_map: bool) -> void:
 	save_data.char_stats = character
 	save_data.current_deck = character.deck
 	save_data.current_health = character.health
-	save_data.relics = relic_handler.get_all_relics()
+	#save_data.relics = relic_handler.get_all_relics()
 	save_data.last_room = map.last_room
 	save_data.map_data = map.map_data.duplicate()
 	save_data.floors_climbed = map.floors_climbed
@@ -88,7 +88,7 @@ func _load_run() ->void:
 	character = save_data.char_stats
 	character.deck = save_data.current_deck
 	character.health = save_data.current_health
-	relic_handler.add_relics(save_data.relics)
+	#relic_handler.add_relics(save_data.relics)
 	_setup_top_bar()
 	_setup_event_connection()
 	
@@ -126,7 +126,7 @@ func _setup_top_bar():
 	avatar_ui.update_stats(character)
 	gold_ui.run_stats = stats
 	#relic_handler.add_relic(character.starting_relic)
-	Events.relic_tooltip_requested.connect(relic_tool_tip.show_tooltip)
+	#Events.relic_tooltip_requested.connect(relic_tool_tip.show_tooltip)
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
@@ -152,9 +152,7 @@ func _on_battle_room_entered(room: Room) ->void:
 
 func _on_treasue_room_entered() -> void:
 	var treasure_scene := _change_view(TREASURE_SCENE) as Treasure
-	treasure_scene.relic_handler = relic_handler
 	treasure_scene.char_stats = character
-	treasure_scene.generate_relic()
 
 func _on_treasue_room_exited() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward

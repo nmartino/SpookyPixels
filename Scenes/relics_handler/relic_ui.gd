@@ -11,7 +11,7 @@ func set_relic(new_relic: Relic) -> void:
 		await ready
 	
 	relic = new_relic
-	icon.texture = relic.icon
+	#icon.texture = relic.icon
 
 func flash() -> void:
 	SFXPlayer.play(relic.sound_fx)

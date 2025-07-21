@@ -1,18 +1,98 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbqxrujgnl8x6"]
+[gd_scene load_steps=19 format=3 uid="uid://cbqxrujgnl8x6"]
 
 [ext_resource type="Script" uid="uid://bh2mbiqchms1s" path="res://Scenes/relics_handler/relic_handler.gd" id="1_448oj"]
 [ext_resource type="PackedScene" uid="uid://b4w60288l0pwt" path="res://Scenes/relics_handler/relic_ui.tscn" id="1_sojnw"]
 [ext_resource type="Texture2D" uid="uid://c57inlu2fwoxe" path="res://art/1bit/Relics Sources/action-bar.png" id="1_ymmri"]
 [ext_resource type="Texture2D" uid="uid://x4ijcdqm3r4o" path="res://art/1bit/arrow-right.png" id="2_iygm0"]
 [ext_resource type="Script" uid="uid://degh6ug3p0iyh" path="res://Scenes/relics_handler/relics_control.gd" id="3_f3pcq"]
-[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="5_8qn4g"]
-[ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="6_iw5cu"]
-[ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="7_bg3sr"]
+[ext_resource type="Texture2D" uid="uid://b6nh4ehchu7i7" path="res://art/1bit/potHP.png" id="6_xnudk"]
+[ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="7_elgl3"]
+[ext_resource type="Texture2D" uid="uid://jb5hpddjal4b" path="res://art/1bit/Relics Sources/Relics Sources/potMP.png" id="8_kqk58"]
+[ext_resource type="Texture2D" uid="uid://bj45hxec8vttx" path="res://art/1bit/Relics Sources/Relics Sources/blood_diamond.png" id="9_p4qde"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scs0c"]
 texture = ExtResource("1_ymmri")
 
 [sub_resource type="ImageTexture" id="ImageTexture_l5orv"]
+
+[sub_resource type="GDScript" id="GDScript_40mfa"]
+script/source = "extends Relic
+
+@export var heal_amount := 6
+
+func activate_relic(owner: RelicUI) -> void:
+	var player:= owner.get_tree().get_first_node_in_group(\"player\") as Player
+	if player:
+		player.stats.heal(heal_amount)
+		owner.flash()
+	
+"
+
+[sub_resource type="Resource" id="Resource_hmd6k"]
+script = SubResource("GDScript_40mfa")
+heal_amount = 6
+relic_name = "Healing Potion"
+id = "healing_potion"
+type = 3
+character_type = 0
+starter_relic = false
+icon = ExtResource("6_xnudk")
+sound_fx = ExtResource("7_elgl3")
+tooltip = "[color='ff55ff']HP Potion[/color]: At the end of the combat, heal [color='ff55ff']6 HP[/color]."
+
+[sub_resource type="GDScript" id="GDScript_niivo"]
+script/source = "extends Relic
+
+
+
+func activate_relic(owner: RelicUI) -> void:
+	Events.player_hand_drawn.connect(_add_mana.bind(owner), CONNECT_ONE_SHOT)
+	
+
+func _add_mana(owner: RelicUI) ->void:
+	owner.flash()
+	var player:= owner.get_tree().get_first_node_in_group(\"player\") as Player
+	if player:
+		player.stats.mana += 1
+"
+
+[sub_resource type="Resource" id="Resource_w7koo"]
+script = SubResource("GDScript_niivo")
+relic_name = "Mana Potion"
+id = "mana_potion"
+type = 1
+character_type = 0
+starter_relic = false
+icon = ExtResource("8_kqk58")
+sound_fx = ExtResource("7_elgl3")
+tooltip = "[color='55ffff']MP Potion[/color]: At the start of the combat, gain [color='55ffff']1 MP[/color]."
+
+[sub_resource type="GDScript" id="GDScript_xiu5v"]
+script/source = "extends Relic
+
+@export var block_bonus := 3
+
+
+func activate_relic(owner: RelicUI) -> void:
+	var player := owner.get_tree().get_nodes_in_group(\"player\")
+	var block_effect := BlockEffect.new()
+	block_effect.amount = block_bonus
+	block_effect.execute(player, Effect.Type.NONE_FX)
+	
+	owner.flash()
+"
+
+[sub_resource type="Resource" id="Resource_lp8kq"]
+script = SubResource("GDScript_xiu5v")
+block_bonus = 3
+relic_name = "Blood Diamond"
+id = "blood_diamond"
+type = 2
+character_type = 0
+starter_relic = false
+icon = ExtResource("9_p4qde")
+sound_fx = ExtResource("7_elgl3")
+tooltip = "[color='55ffff']Blood Diamond[/color]: At the end of your turn, gain [color='55ffff']3 Block[/color]."
 
 [sub_resource type="ImageTexture" id="ImageTexture_c3gj0"]
 
@@ -74,29 +154,29 @@ layout_mode = 2
 
 [node name="RelicUI2" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
-relic = ExtResource("5_8qn4g")
+relic = SubResource("Resource_hmd6k")
 
 [node name="RelicUI3" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
-relic = ExtResource("6_iw5cu")
+relic = SubResource("Resource_w7koo")
 
 [node name="RelicUI4" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
 
 [node name="RelicUI5" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
-relic = ExtResource("5_8qn4g")
+relic = SubResource("Resource_hmd6k")
 
 [node name="RelicUI6" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
-relic = ExtResource("7_bg3sr")
+relic = SubResource("Resource_lp8kq")
 
 [node name="RelicUI7" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
 
 [node name="RelicUI8" parent="PanelContainer/MarginContainer/HBoxContainer/RelicsControl/Relics" instance=ExtResource("1_sojnw")]
 layout_mode = 2
-relic = ExtResource("5_8qn4g")
+relic = SubResource("Resource_hmd6k")
 
 [node name="RightButton" type="TextureButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
