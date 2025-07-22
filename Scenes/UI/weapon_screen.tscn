@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://om13b4iixuh"]
+[gd_scene load_steps=38 format=3 uid="uid://om13b4iixuh"]
 
 [ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="1_f6spv"]
 [ext_resource type="Script" uid="uid://bk5bal8qa5mj" path="res://Scenes/UI/weapon_screen.gd" id="1_yxphm"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7i5pvxq6kvj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-sliderThumb.png" id="17_x5cwt"]
 [ext_resource type="Texture2D" uid="uid://1unhfdqrs8l4" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-line2.png" id="18_2rqla"]
 [ext_resource type="PackedScene" uid="uid://chbdffdw6ha8p" path="res://Scenes/UI/slot_inventario_arma.tscn" id="19_o5jgv"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="24_k1okh"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_o5jgv"]
 frames = 6
@@ -170,6 +171,13 @@ texture = ExtResource("14_7s7of")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fs55"]
 texture = ExtResource("15_1vp7u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5cwt"]
+texture = ExtResource("24_k1okh")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
 
 [node name="WeaponScreen" type="Control"]
 layout_mode = 3
@@ -448,5 +456,37 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_v2ot4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ie1x4")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8fs55")
 text = "Back"
+
+[node name="WeaponPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x5cwt")
+
+[node name="MarginContainer" type="MarginContainer" parent="WeaponPanel"]
+layout_mode = 0
+offset_right = 401.0
+offset_bottom = 250.0
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="WeaponTooltip" type="Label" parent="WeaponPanel/MarginContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 0
+text = "hgdfgdfgdgdgd"
+autowrap_mode = 2
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

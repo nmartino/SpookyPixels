@@ -321,7 +321,8 @@ anchors_preset = -1
 anchor_right = 0.51875
 anchor_bottom = 0.0555556
 offset_top = 3.0
-offset_bottom = 46.0
+offset_right = 116.0
+offset_bottom = 63.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonAnimation" type="AnimationPlayer" parent="BattleUI"]

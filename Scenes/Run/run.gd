@@ -11,7 +11,7 @@ const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 const INVENTORY_SCENE := preload("res://Scenes/UI/weapon_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 
-const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres")
+const MOCKED_RUNE :Array[RuneData] = [preload("res://Runas/mocked_rune.tres"), preload("res://Runas/card_mocked_rune.tres")]
 
 @export var music: AudioStream
 
@@ -222,4 +222,4 @@ func _on_inventory_open() ->void:
 
 
 func _on_button_runa_pressed() -> void:
-	weapon_inventory.register_rune(MOCKED_RUNE)
+	weapon_inventory.register_rune(MOCKED_RUNE.pick_random())

@@ -6,6 +6,7 @@ const OBJECT_LEVER_SWITCH = preload("res://art/sounds/Object - Lever Switch.wav"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var configuration_panel: Panel = $ConfigurationPanel
 @onready var conf_menu_container: MarginContainer = $ConfigurationPanel/ConfMenuContainer
+@onready var close: Button = $ConfigurationPanel/Close
 
 @export var run_startup: RunStartup
 @onready var continue_button: Button = %Continue
@@ -48,12 +49,14 @@ func _on_config_pressed() -> void:
 		animation_player.play("open_conf_menu")
 		await animation_player.animation_finished
 		conf_menu_container.show()
+		close.show()
 		its_config_displayed = true
 
 
 func _on_hide_pressed() -> void:
 	if its_config_displayed:
 		conf_menu_container.hide()
+		close.hide()
 		SFXPlayer.play(OBJECT_LEVER_SWITCH)
 		animation_player.play("close_conf_menu")
 		await animation_player.animation_finished

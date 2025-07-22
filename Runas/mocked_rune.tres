@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("2_06l3p")
 edge = 50
+RuneType = 0
 raresa = 0
 description = "Add 50 health points"
 texture = ExtResource("4_otmtd")

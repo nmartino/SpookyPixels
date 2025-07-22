@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_v4las"]
 [ext_resource type="Script" uid="uid://8n1y0j3hlrdl" path="res://custom_resources/card_pile.gd" id="2_leqlw"]
-[ext_resource type="Resource" uid="uid://4brkbifpqwrp" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="3_gobyu"]
+[ext_resource type="Resource" uid="uid://cx66pr3vilafk" path="res://characters/vanguard/cards/edged_attack.tres" id="3_gobyu"]
 [ext_resource type="Resource" uid="uid://db62ldp41o22" path="res://characters/warrior/cards/warrior_block.tres" id="3_ne0bc"]
 
 [resource]

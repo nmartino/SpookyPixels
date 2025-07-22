@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_wqme5"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_jewm6"]
-[ext_resource type="Texture2D" uid="uid://c4r3rt4g21drv" path="res://art/1bit/XaviArt/gemslots/intenvory-box-item.png" id="10_jewm6"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="10_jewm6"]
 [ext_resource type="PackedScene" uid="uid://diwoq55r64qyd" path="res://Scenes/UI/volumen_slider.tscn" id="10_wqme5"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
 
@@ -201,7 +201,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(170, 0)]
+"values": [Vector2(180, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ru8vt"]
@@ -293,7 +293,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(170, 120), Vector2(170, 0)]
+"values": [Vector2(180, 140), Vector2(180, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ypsd1"]
@@ -310,7 +310,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(170, 0), Vector2(170, 120)]
+"values": [Vector2(180, 0), Vector2(180, 140)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ypsd1"]
@@ -325,9 +325,9 @@ _data = {
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cejvf"]
 texture = ExtResource("10_jewm6")
 texture_margin_left = 14.0
-texture_margin_top = 12.0
+texture_margin_top = 14.0
 texture_margin_right = 14.0
-texture_margin_bottom = 12.0
+texture_margin_bottom = 14.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayn3n"]
 texture = ExtResource("5_lrjdf")
@@ -471,18 +471,28 @@ libraries = {
 }
 
 [node name="ConfigurationPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 2
-offset_left = 461.0
-offset_top = 201.0
-offset_right = 631.0
-offset_bottom = 201.0
+offset_left = 452.0
+offset_top = 187.0
+offset_right = 632.0
+offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cejvf")
 
 [node name="ConfMenuContainer" type="MarginContainer" parent="ConfigurationPanel"]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -60.0
+offset_right = 85.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
@@ -534,9 +544,14 @@ step = 0.1
 value = 0.5
 bus_name = "Music"
 
-[node name="Close" type="Button" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu"]
+[node name="Close" type="Button" parent="ConfigurationPanel"]
+visible = false
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+offset_left = 30.0
+offset_top = 124.0
+offset_right = 150.0
+offset_bottom = 156.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/disabled = SubResource("StyleBoxTexture_ayn3n")
@@ -549,4 +564,4 @@ text = "Close"
 [connection signal="pressed" from="MainMenu/New Run" to="." method="_on_new_run_pressed"]
 [connection signal="pressed" from="MainMenu/Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="MainMenu/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu/Close" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="ConfigurationPanel/Close" to="." method="_on_hide_pressed"]

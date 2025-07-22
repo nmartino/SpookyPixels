@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c3ns0nhty0opb"
-path="res://.godot/imported/alagard.ttf-c007330c6c56a2f7572de7f1e9517297.fontdata"
+uid="uid://d3jmuy7ikvmgy"
+path="res://.godot/imported/dnf-micro-3x4.ttf-4500dbd577e2ccc0d1e3a7325770e90a.fontdata"
 
 [deps]
 
-source_file="res://art/alagard.ttf"
-dest_files=["res://.godot/imported/alagard.ttf-c007330c6c56a2f7572de7f1e9517297.fontdata"]
+source_file="res://art/dnf-micro-3x4.ttf"
+dest_files=["res://.godot/imported/dnf-micro-3x4.ttf-4500dbd577e2ccc0d1e3a7325770e90a.fontdata"]
 
 [params]
 
@@ -22,20 +22,14 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[{
-"chars": [],
-"glyphs": [],
-"name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
-}]
+preload=[]
 language_support={}
 script_support={}
 opentype_features={}

@@ -7,33 +7,35 @@
 
 [node name="ToolTip" type="NinePatchRect"]
 process_mode = 3
+custom_minimum_size = Vector2(250, 80)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -122.0
 offset_top = 8.0
-offset_right = 122.0
-offset_bottom = 71.0
+offset_right = 128.0
+offset_bottom = 88.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_p0cnb")
 texture = ExtResource("2_lolm4")
 patch_margin_left = 14
-patch_margin_top = 12
+patch_margin_top = 14
 patch_margin_right = 14
-patch_margin_bottom = 12
+patch_margin_bottom = 14
 script = ExtResource("2_qqdyy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 243.0
-offset_bottom = 62.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 3
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -42,6 +44,7 @@ alignment = 1
 
 [node name="ToolTipIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("3_ewojc")
@@ -59,7 +62,7 @@ size_flags_horizontal = 3
 
 [node name="ToolTipText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

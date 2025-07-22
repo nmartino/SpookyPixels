@@ -18,7 +18,7 @@
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_ehit0"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="15_k4lll"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="16_gnhhf"]
-[ext_resource type="Texture2D" uid="uid://c4r3rt4g21drv" path="res://art/1bit/XaviArt/gemslots/intenvory-box-item.png" id="18_gnhhf"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="18_gnhhf"]
 [ext_resource type="PackedScene" uid="uid://diwoq55r64qyd" path="res://Scenes/UI/volumen_slider.tscn" id="19_db0nm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1dda"]
@@ -28,19 +28,6 @@ font_color = Color(0, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(1, 1, 1, 0)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_db0nm"]
-texture = ExtResource("14_8pevd")
-modulate_color = Color(1, 1, 1, 0.635294)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u7fs"]
-texture = ExtResource("15_k4lll")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1mpk"]
-texture = ExtResource("16_gnhhf")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60lvd"]
-texture = ExtResource("14_8pevd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42cnb"]
 texture = ExtResource("14_8pevd")
@@ -55,12 +42,25 @@ texture = ExtResource("16_gnhhf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx4rf"]
 texture = ExtResource("14_8pevd")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_db0nm"]
+texture = ExtResource("14_8pevd")
+modulate_color = Color(1, 1, 1, 0.635294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u7fs"]
+texture = ExtResource("15_k4lll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1mpk"]
+texture = ExtResource("16_gnhhf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60lvd"]
+texture = ExtResource("14_8pevd")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3otj"]
 texture = ExtResource("18_gnhhf")
 texture_margin_left = 14.0
-texture_margin_top = 12.0
+texture_margin_top = 14.0
 texture_margin_right = 14.0
-texture_margin_bottom = 12.0
+texture_margin_bottom = 14.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
 shader = ExtResource("14_ehit0")
@@ -167,6 +167,7 @@ layout_mode = 2
 [node name="WeaponScreen" parent="TopBar" instance=ExtResource("10_8pevd")]
 unique_name_in_owner = true
 visible = false
+mouse_filter = 0
 
 [node name="DeckView" parent="TopBar" instance=ExtResource("7_724ho")]
 unique_name_in_owner = true
@@ -196,12 +197,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = -20.0
-offset_right = 47.0
-offset_bottom = 20.0
+offset_left = -121.0
+offset_top = -96.0
+offset_right = 129.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="PauseMenu/VBoxContainer"]
@@ -211,45 +214,54 @@ label_settings = SubResource("LabelSettings_g1dda")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
+[node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_styles/disabled = SubResource("StyleBoxTexture_db0nm")
-theme_override_styles/hover = SubResource("StyleBoxTexture_3u7fs")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mpk")
-theme_override_styles/normal = SubResource("StyleBoxTexture_60lvd")
-text = "Back"
-
-[node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/disabled = SubResource("StyleBoxTexture_42cnb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_o3lsc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tv7gb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_mx4rf")
 text = "Main Menu"
 
+[node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/disabled = SubResource("StyleBoxTexture_db0nm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3u7fs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mpk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_60lvd")
+text = "Back"
+
 [node name="ConfigurationPanel" type="Panel" parent="PauseMenu"]
-offset_left = 453.0
-offset_top = 223.0
-offset_right = 623.0
-offset_bottom = 343.0
+offset_left = 233.0
+offset_top = 221.0
+offset_right = 423.0
+offset_bottom = 349.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_c3otj")
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseMenu/ConfigurationPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -66.0
+offset_right = 89.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
 
 [node name="ConfigurationMenu" type="VBoxContainer" parent="PauseMenu/ConfigurationPanel/MarginContainer"]
 custom_minimum_size = Vector2(150, 0)
@@ -302,7 +314,6 @@ layer = 99
 
 [node name="ColorRect" type="ColorRect" parent="CRTShader"]
 process_priority = 4
-visible = false
 material = SubResource("ShaderMaterial_s3ded")
 anchors_preset = 15
 anchor_right = 1.0

@@ -24,4 +24,4 @@ func set_card(value: Card) -> void:
 	icon.texture = card.icon
 	rarity.modulate = Card.RARITY_COLORS[card.rarity]
 	card_name.text = value.id
-	card_description.text = "⚔︎5☠︎"
+	card_description.text = value.get_default_tooptip()
