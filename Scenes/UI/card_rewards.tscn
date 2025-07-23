@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpnlripwd44bo"]
+[gd_scene load_steps=24 format=3 uid="uid://bpnlripwd44bo"]
 
 [ext_resource type="Texture2D" uid="uid://cwq3ah0g822hv" path="res://art/1bit/background/bg-rewards.png" id="1_0o6lu"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_j787s"]
@@ -11,15 +11,45 @@
 [ext_resource type="Resource" uid="uid://4brkbifpqwrp" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="6_1i1t0"]
 [ext_resource type="Resource" uid="uid://db62ldp41o22" path="res://characters/warrior/cards/warrior_block.tres" id="7_vsy1b"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="9_lpxbb"]
+[ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="11_jjjkc"]
+[ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="12_6fend"]
+[ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="13_n7grn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7pbba"]
 font = ExtResource("9_lpxbb")
+font_size = 32
 font_color = Color(0.333333, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiv6l"]
+texture = ExtResource("11_jjjkc")
+modulate_color = Color(1, 0.333333, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lu81s"]
+texture = ExtResource("12_6fend")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53d3i"]
+texture = ExtResource("13_n7grn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrpt2"]
+texture = ExtResource("11_jjjkc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jjjkc"]
+texture = ExtResource("11_jjjkc")
+modulate_color = Color(1, 0.333333, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fend"]
+texture = ExtResource("12_6fend")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n7grn"]
+texture = ExtResource("13_n7grn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2e6tg"]
+texture = ExtResource("11_jjjkc")
 
 [node name="CardRewards" type="ColorRect"]
 anchors_preset = 15
@@ -57,8 +87,7 @@ theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Choose a card
-"
+text = "Choose a card"
 label_settings = SubResource("LabelSettings_7pbba")
 horizontal_alignment = 1
 
@@ -78,9 +107,13 @@ layout_mode = 2
 
 [node name="SkiptCardReward" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 14)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hiv6l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lu81s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_53d3i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rrpt2")
 text = "Skip"
 
 [node name="CardToolTipPopUp" parent="." instance=ExtResource("2_4nuhm")]
@@ -90,6 +123,7 @@ background_color = Color(0, 0, 0, 0.745098)
 
 [node name="TakeButton" type="Button" parent="CardToolTipPopUp"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -102,4 +136,8 @@ offset_right = 25.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jjjkc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6fend")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n7grn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2e6tg")
 text = "Take"
