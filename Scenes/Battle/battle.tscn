@@ -371,3 +371,12 @@ layer = 4
 
 [node name="StatusView" parent="StatusViewLayer" instance=ExtResource("21_qqhbv")]
 visible = false
+
+[node name="flip" type="Button" parent="."]
+offset_left = 494.0
+offset_top = 42.0
+offset_right = 534.0
+offset_bottom = 82.0
+text = "flip"
+
+[connection signal="pressed" from="flip" to="." method="_on_flip_pressed"]

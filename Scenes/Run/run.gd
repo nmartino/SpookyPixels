@@ -205,7 +205,7 @@ func _show_map()->void:
 	_save_run(true)
 	
 func _on_inventory_open() ->void:
-	weapon_inventory.show_weapon_inventory(character.weapon)
+	weapon_inventory.show_weapon_inventory(character)
 
 
 func _on_button_runa_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=34 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" uid="uid://cbfi8jby8cmtm" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_wqme5"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_jewm6"]
+[ext_resource type="Texture2D" uid="uid://bac22vbdw65ke" path="res://art/1bit/XaviArt/Title/logo-crop-with-shadows.png" id="9_cejvf"]
 [ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="10_jewm6"]
 [ext_resource type="PackedScene" uid="uid://diwoq55r64qyd" path="res://Scenes/UI/volumen_slider.tscn" id="10_wqme5"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
@@ -53,16 +54,16 @@ shader = ExtResource("14_vi80r")
 shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 0.1
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.207
-shader_parameter/interference_amount = 0.2
+shader_parameter/noise_amount = 0.13
+shader_parameter/interference_amount = 0.1
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
 shader_parameter/vignette_amount = 0.0
 shader_parameter/vignette_intensity = 0.0
 shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.289
-shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -8.0
+shader_parameter/roll_speed = 0.5
+shader_parameter/scan_line_strength = -1.0
 shader_parameter/pixel_strength = -2.713
 
 [sub_resource type="Animation" id="Animation_jewm6"]
@@ -203,6 +204,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(180, 0)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Title2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ru8vt"]
 resource_name = "aparicionTituloMenu"
@@ -277,6 +290,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_xp0kt"]
@@ -382,10 +407,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -309.0
-offset_top = -121.0
-offset_right = -189.0
-offset_bottom = 25.0
+offset_left = -136.0
+offset_top = -58.0
+offset_right = -16.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
@@ -434,6 +459,7 @@ text = "Exit
 "
 
 [node name="Title" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -450,6 +476,11 @@ text = "Keepers of Vyrellia
 label_settings = SubResource("LabelSettings_ypsd1")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Title2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(239, 66)
+texture = ExtResource("9_cejvf")
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 5

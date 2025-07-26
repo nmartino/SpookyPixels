@@ -83,3 +83,7 @@ func _on_aim_ended(card: CardUI)->void:
 	edge_ui.name_label.show()
 	edge_ui.discard.hide()
 	
+
+
+func _on_flip_pressed() -> void:
+	Events.flip_cards.emit()

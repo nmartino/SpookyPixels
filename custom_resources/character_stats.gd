@@ -6,6 +6,7 @@ extends Stats
 @export_multiline var description: String
 @export var portrait: Texture
 @export var aura: Texture
+@export var avatar: Texture
 
 @export_group("Gameplay Data")
 @export var isDisable: bool

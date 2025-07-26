@@ -9,9 +9,11 @@ const CARD_MENU_UI_SCENE := preload("res://Scenes/UI/card_menu_ui.tscn")
 @onready var cards: GridContainer = %Cards
 @onready var back_button: Button = %BackButton
 @onready var card_tool_tip_pop_up: CardTooltipPopup = %CardToolTipPopUp
+@onready var flip_card_button: Button = %FlipCardButton
 
 func _ready() -> void:
 	back_button.pressed.connect(hide)
+	flip_card_button.pressed.connect(_on_flip_pressed)
 	
 	for card: Node in cards.get_children():
 		card.queue_free()
@@ -49,3 +51,6 @@ func _update_view(randomized: bool) -> void:
 		new_card.tooltip_requested.connect(card_tool_tip_pop_up.show_tooltip)
 		
 	show()
+
+func _on_flip_pressed()->void:
+	Events.flip_cards.emit()

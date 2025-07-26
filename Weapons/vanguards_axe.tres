@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("3_0hfm7")
-name = &"Vanguard\'s Axe"
+name = &"Edge of Ruin"
 starting_cards = Array[ExtResource("5_hrd12")]([])
 max_attachment_slots = 4
 attachments = Array[ExtResource("1_ff7bt")]([])

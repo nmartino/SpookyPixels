@@ -10,11 +10,11 @@
 script = ExtResource("3_e0yev")
 RuneType = 1
 raresa = 0
-description = "Add 4 cards to the deck"
+description = "+ 2 Chop / Brace cards  to the deck, esto es para hacerlo mas largo"
 texture = ExtResource("5_j520p")
 name = &""
-cards_to_add = Array[ExtResource("1_dqh3t")]([ExtResource("2_o3xus"), ExtResource("2_o3xus"), ExtResource("2_o3xus"), ExtResource("2_o3xus")])
+cards_to_add = Array[ExtResource("1_dqh3t")]([ExtResource("2_o3xus"), ExtResource("2_o3xus")])
 activation_type = 0
 sound_fx = ExtResource("3_o3xus")
-tooltip = ""
+tooltip = "+ 2 Chop / Brace cards  to the deck, esto es para hacerlo mas largo"
 metadata/_custom_type_script = "uid://cia0eurul08su"
