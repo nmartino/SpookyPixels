@@ -1,24 +1,16 @@
-[gd_scene load_steps=47 format=3 uid="uid://dmhsokr2rj750"]
+[gd_scene load_steps=39 format=3 uid="uid://dmhsokr2rj750"]
 
 [ext_resource type="Script" uid="uid://i3mn841vgq1n" path="res://Scenes/Shop/shop.gd" id="1_mawfq"]
-[ext_resource type="Script" uid="uid://dvkyibkqq8n0d" path="res://custom_resources/relic.gd" id="2_0re27"]
 [ext_resource type="AudioStream" uid="uid://brurpddkw5j74" path="res://art/(Loop) Peaceful Village.wav" id="2_hrsch"]
-[ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="4_itqgr"]
-[ext_resource type="Resource" uid="uid://bjbl6k4rw8lo" path="res://relics/coupons.tres" id="6_y0xxl"]
 [ext_resource type="Texture2D" uid="uid://uy26l5wvm8l6" path="res://art/1bit/shop_label.png" id="7_kca75"]
-[ext_resource type="Resource" uid="uid://bupu28ochu3f4" path="res://relics/necronomicon.tres" id="7_swc2t"]
-[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="8_sodox"]
 [ext_resource type="PackedScene" uid="uid://cfj77qt303ooj" path="res://Scenes/Shop/shop_card.tscn" id="8_tm2gn"]
-[ext_resource type="PackedScene" uid="uid://bx48fv2thmpnp" path="res://Scenes/Shop/shop_relic.tscn" id="9_fruur"]
 [ext_resource type="Texture2D" uid="uid://criap3gcf28r4" path="res://art/1bit/orcoArt/Comerciante1.png" id="9_m4x3p"]
 [ext_resource type="Texture2D" uid="uid://c1601ybxwaibt" path="res://art/1bit/orcoArt/Comerciante FondoC1.png" id="9_n21ru"]
 [ext_resource type="PackedScene" uid="uid://cnxnm2nk6s6v0" path="res://Scenes/UI/card_tool_tip_pop_up.tscn" id="9_ns37w"]
 [ext_resource type="Texture2D" uid="uid://dbxob13qdw1r4" path="res://art/1bit/orcoArt/Comerciante FondoB4.png" id="10_ax832"]
 [ext_resource type="Texture2D" uid="uid://dn1tf4nualhfo" path="res://art/1bit/background/Background_undead_06.png" id="10_v7wqc"]
-[ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="10_y2vs0"]
 [ext_resource type="Texture2D" uid="uid://bbdif1yxeqagj" path="res://art/1bit/orcoArt/Comerciante FondoA1.png" id="11_3d1o5"]
 [ext_resource type="Texture2D" uid="uid://d2muvef41ph4i" path="res://art/1bit/orcoArt/Comerciante2.png" id="11_cb5j8"]
-[ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="11_x71sg"]
 [ext_resource type="Texture2D" uid="uid://c6nyl3v2j187" path="res://art/1bit/orcoArt/Comerciante FondoA2.png" id="12_kj5cl"]
 [ext_resource type="Texture2D" uid="uid://b2bdp55ntxfd1" path="res://art/1bit/orcoArt/Comerciante FondoA3.png" id="13_5y16c"]
 [ext_resource type="Texture2D" uid="uid://bx6phe8cttb3k" path="res://art/1bit/orcoArt/Comerciante FondoA4.png" id="14_xcb6t"]
@@ -172,6 +164,9 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_peme3"]
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5veni"]
 texture = ExtResource("27_qydip")
@@ -191,7 +186,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_mawfq")
-shop_relics = Array[ExtResource("2_0re27")]([ExtResource("11_x71sg"), ExtResource("10_y2vs0"), ExtResource("4_itqgr"), ExtResource("6_y0xxl"), ExtResource("7_swc2t"), ExtResource("8_sodox")])
 music = ExtResource("2_hrsch")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
@@ -213,10 +207,10 @@ centered = false
 [node name="DecorationLayer" type="CanvasLayer" parent="."]
 
 [node name="ShopLabel" type="TextureRect" parent="DecorationLayer"]
-offset_left = 96.0
-offset_top = 50.0
-offset_right = 144.0
-offset_bottom = 91.0
+offset_left = 95.0
+offset_top = 79.0
+offset_right = 143.0
+offset_bottom = 120.0
 texture = ExtResource("7_kca75")
 expand_mode = 1
 stretch_mode = 5
@@ -295,9 +289,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -229.0
-offset_top = -64.0
+offset_top = -44.0
 offset_right = -79.0
-offset_bottom = -13.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
@@ -357,22 +351,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ShopCard3" parent="UILayer/ShopContent/Cards" instance=ExtResource("8_tm2gn")]
-layout_mode = 2
-
-[node name="Relics" type="HBoxContainer" parent="UILayer/ShopContent"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="ShopRelic" parent="UILayer/ShopContent/Relics" instance=ExtResource("9_fruur")]
-layout_mode = 2
-relic = ExtResource("6_y0xxl")
-
-[node name="ShopRelic2" parent="UILayer/ShopContent/Relics" instance=ExtResource("9_fruur")]
-layout_mode = 2
-relic = ExtResource("11_x71sg")
-
-[node name="ShopRelic3" parent="UILayer/ShopContent/Relics" instance=ExtResource("9_fruur")]
 layout_mode = 2
 
 [node name="CardToolTipPopUp" parent="UILayer" instance=ExtResource("9_ns37w")]

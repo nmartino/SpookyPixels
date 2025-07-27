@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bnk4qwr531lrr"]
+[gd_scene load_steps=34 format=3 uid="uid://bnk4qwr531lrr"]
 
 [ext_resource type="Script" uid="uid://cbfi8jby8cmtm" path="res://Scenes/UI/main_menu.gd" id="1_2cy6r"]
 [ext_resource type="Resource" uid="uid://bppubvq5o6we1" path="res://Scenes/Run/run_startup.tres" id="3_6nrva"]
@@ -8,6 +8,9 @@
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_ridyb"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_wqme5"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_jewm6"]
+[ext_resource type="Texture2D" uid="uid://bac22vbdw65ke" path="res://art/1bit/XaviArt/Title/logo-crop-with-shadows.png" id="9_cejvf"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="10_jewm6"]
+[ext_resource type="PackedScene" uid="uid://diwoq55r64qyd" path="res://Scenes/UI/volumen_slider.tscn" id="10_wqme5"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_vi80r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oslnl"]
@@ -23,6 +26,19 @@ texture = ExtResource("7_jewm6")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gipi"]
 texture = ExtResource("5_lrjdf")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6o50"]
+texture = ExtResource("5_lrjdf")
+modulate_color = Color(1, 1, 1, 0.666667)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xp0kt"]
+texture = ExtResource("6_wqme5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1yfdm"]
+texture = ExtResource("7_jewm6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3h8o7"]
+texture = ExtResource("5_lrjdf")
+
 [sub_resource type="LabelSettings" id="LabelSettings_ypsd1"]
 font = ExtResource("5_ridyb")
 font_size = 32
@@ -36,18 +52,18 @@ shadow_offset = Vector2(3, 2)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]
 shader = ExtResource("14_vi80r")
 shader_parameter/resolution = Vector2(1280, 720)
-shader_parameter/scan_line_amount = 0.402
+shader_parameter/scan_line_amount = 0.075
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.167
-shader_parameter/interference_amount = 0.09
+shader_parameter/noise_amount = 0.13
+shader_parameter/interference_amount = 0.1
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
 shader_parameter/vignette_amount = 0.0
 shader_parameter/vignette_intensity = 0.0
 shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.289
-shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -8.0
+shader_parameter/roll_speed = 3.8e-07
+shader_parameter/scan_line_strength = -1.0
 shader_parameter/pixel_strength = -2.713
 
 [sub_resource type="Animation" id="Animation_jewm6"]
@@ -107,7 +123,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/path = NodePath("MainMenu:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -131,7 +147,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/Continue:disabled")
+tracks/4/path = NodePath("MainMenu/Continue:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -143,7 +159,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("VBoxContainer/New Run:disabled")
+tracks/5/path = NodePath("MainMenu/New Run:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -155,7 +171,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("VBoxContainer/Exit:disabled")
+tracks/6/path = NodePath("MainMenu/Exit:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -164,13 +180,49 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMenu/Config:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ConfigurationPanel:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(180, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Title2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ru8vt"]
 resource_name = "aparicionTituloMenu"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/path = NodePath("MainMenu:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -194,7 +246,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/Continue:disabled")
+tracks/2/path = NodePath("MainMenu/Continue:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -206,7 +258,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/New Run:disabled")
+tracks/3/path = NodePath("MainMenu/New Run:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -218,7 +270,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/Exit:disabled")
+tracks/4/path = NodePath("MainMenu/Exit:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -227,13 +279,93 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainMenu/Config:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xp0kt"]
+resource_name = "close_conf_menu"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConfigurationPanel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(180, 140), Vector2(180, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ypsd1"]
+resource_name = "open_conf_menu"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConfigurationPanel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(180, 0), Vector2(180, 175)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ypsd1"]
 _data = {
 &"AnimacionMainMenu": SubResource("Animation_jewm6"),
 &"RESET": SubResource("Animation_cejvf"),
-&"aparicionTituloMenu": SubResource("Animation_ru8vt")
+&"aparicionTituloMenu": SubResource("Animation_ru8vt"),
+&"close_conf_menu": SubResource("Animation_xp0kt"),
+&"open_conf_menu": SubResource("Animation_ypsd1")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cejvf"]
+texture = ExtResource("10_jewm6")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayn3n"]
+texture = ExtResource("5_lrjdf")
+modulate_color = Color(1, 1, 1, 0.698039)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jewm6"]
+texture = ExtResource("6_wqme5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru8vt"]
+texture = ExtResource("7_jewm6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypsd1"]
+texture = ExtResource("5_lrjdf")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -267,7 +399,7 @@ position = Vector2(320, 325)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_wqme5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainMenu" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -275,15 +407,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.0
-offset_top = -75.0
-offset_right = -170.0
-offset_bottom = 18.0
+offset_left = -136.0
+offset_top = -58.0
+offset_right = -16.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
 
-[node name="Continue" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="MainMenu"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -294,7 +426,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_0gipi")
 disabled = true
 text = "Continue"
 
-[node name="New Run" type="Button" parent="VBoxContainer"]
+[node name="New Run" type="Button" parent="MainMenu"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 3
@@ -305,7 +437,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_0gipi")
 disabled = true
 text = "New Game"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Config" type="Button" parent="MainMenu"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxTexture_q6o50")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xp0kt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1yfdm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3h8o7")
+disabled = true
+text = "Config"
+
+[node name="Exit" type="Button" parent="MainMenu"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_styles/disabled = SubResource("StyleBoxTexture_oslnl")
@@ -317,6 +459,7 @@ text = "Exit
 "
 
 [node name="Title" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -333,6 +476,11 @@ text = "Keepers of Vyrellia
 label_settings = SubResource("LabelSettings_ypsd1")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Title2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(239, 66)
+texture = ExtResource("9_cejvf")
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 5
@@ -353,6 +501,96 @@ libraries = {
 &"": SubResource("AnimationLibrary_ypsd1")
 }
 
-[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/New Run" to="." method="_on_new_run_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="ConfigurationPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 452.0
+offset_top = 158.0
+offset_right = 632.0
+offset_bottom = 333.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cejvf")
+
+[node name="ConfigurationMenu" type="VBoxContainer" parent="ConfigurationPanel"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 164.0
+offset_bottom = 152.0
+theme_override_constants/separation = 4
+
+[node name="muteCheckBox" type="CheckBox" parent="ConfigurationPanel/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 0.333333, 1, 1)
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.333333, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_ridyb")
+disabled = true
+text = "Mute sound"
+flat = true
+
+[node name="Master" type="Label" parent="ConfigurationPanel/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Master Volume"
+
+[node name="VolumenSlider" parent="ConfigurationPanel/ConfigurationMenu" instance=ExtResource("10_wqme5")]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SFX" type="Label" parent="ConfigurationPanel/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "SFX"
+
+[node name="VolumenSlider2" parent="ConfigurationPanel/ConfigurationMenu" instance=ExtResource("10_wqme5")]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+bus_name = "SFX"
+
+[node name="Music" type="Label" parent="ConfigurationPanel/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Music"
+
+[node name="VolumenSlider3" parent="ConfigurationPanel/ConfigurationMenu" instance=ExtResource("10_wqme5")]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+bus_name = "Music"
+
+[node name="ConfClose" type="Button" parent="ConfigurationPanel"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 156.0
+offset_right = 150.0
+offset_bottom = 188.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ayn3n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jewm6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ru8vt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ypsd1")
+text = "Close"
+
+[connection signal="pressed" from="MainMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenu/New Run" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="MainMenu/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="MainMenu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ConfigurationPanel/ConfClose" to="." method="_on_hide_pressed"]

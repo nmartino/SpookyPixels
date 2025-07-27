@@ -2,12 +2,17 @@ extends Control
 
 const CHAR_SELECTOR_SCENE := preload("res://Scenes/UI/character_selector.tscn")
 const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
+const OBJECT_LEVER_SWITCH = preload("res://art/sounds/Object - Lever Switch.wav")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var configuration_panel: Panel = $ConfigurationPanel
+@onready var conf_menu_container: VBoxContainer = %ConfigurationMenu
+@onready var close: Button = %ConfClose
 
 @export var run_startup: RunStartup
 @onready var continue_button: Button = %Continue
 
 var skip_spamming_locked: bool = false
+var its_config_displayed : bool = false
 
 
 func _ready() -> void:
@@ -37,4 +42,23 @@ func _on_new_run_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
-	
+func _on_config_pressed() -> void:
+	if not its_config_displayed:
+		configuration_panel.show()
+		SFXPlayer.play(OBJECT_LEVER_SWITCH)
+		animation_player.play("open_conf_menu")
+		await animation_player.animation_finished
+		conf_menu_container.show()
+		close.show()
+		its_config_displayed = true
+
+
+func _on_hide_pressed() -> void:
+	if its_config_displayed:
+		conf_menu_container.hide()
+		close.hide()
+		SFXPlayer.play(OBJECT_LEVER_SWITCH)
+		animation_player.play("close_conf_menu")
+		await animation_player.animation_finished
+		configuration_panel.hide()
+		its_config_displayed = false

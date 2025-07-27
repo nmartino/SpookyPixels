@@ -1,14 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://b700f06xtqt3l"]
+[gd_scene load_steps=18 format=3 uid="uid://b700f06xtqt3l"]
 
 [ext_resource type="Script" uid="uid://bl70p2fam542a" path="res://Scenes/treasure/treasure.gd" id="1_pxeoq"]
-[ext_resource type="Script" uid="uid://dvkyibkqq8n0d" path="res://custom_resources/relic.gd" id="2_8tegm"]
 [ext_resource type="AudioStream" uid="uid://dqhy4ko0r1q1" path="res://art/(Loop) Dungeon.wav" id="2_dbys1"]
-[ext_resource type="Resource" uid="uid://q6aht1wbr44b" path="res://relics/blood_diamond.tres" id="3_mq4tk"]
-[ext_resource type="Resource" uid="uid://b1xsbxqwlr8h4" path="res://relics/shovel_knight_shovel.tres" id="4_ovqvi"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="5_4pmp6"]
-[ext_resource type="Resource" uid="uid://o0g4wyqtlh1g" path="res://relics/mana_potion.tres" id="5_q5cxl"]
-[ext_resource type="Resource" uid="uid://c6r8mdjpsdpo7" path="res://relics/healing_potion.tres" id="6_kb3ey"]
-[ext_resource type="Resource" uid="uid://bupu28ochu3f4" path="res://relics/necronomicon.tres" id="7_atwrd"]
 [ext_resource type="Texture2D" uid="uid://bux5cyl52642c" path="res://art/1bit/Relics Sources/bg-rewards-1.png" id="9_28usl"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="10_pdnmm"]
 [ext_resource type="Texture2D" uid="uid://b13r4xqisln7m" path="res://art/1bit/Relics Sources/bg-rewards-treasure-open-01.png" id="11_na2m4"]
@@ -162,7 +156,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_pxeoq")
-treasure_relic_pool = Array[ExtResource("2_8tegm")]([ExtResource("3_mq4tk"), ExtResource("4_ovqvi"), ExtResource("5_q5cxl"), ExtResource("6_kb3ey"), ExtResource("7_atwrd")])
 music = ExtResource("2_dbys1")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -222,5 +215,3 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 0.9
 process_material = SubResource("ParticleProcessMaterial_eo2ah")
-
-[connection signal="gui_input" from="TreasureChest" to="." method="_on_treasure_chest_gui_input"]

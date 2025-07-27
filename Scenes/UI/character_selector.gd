@@ -2,8 +2,8 @@ extends Control
 
 
 const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
-const ASSASSIN_STATS := preload("res://characters/Assassin/Assassin.tres")
-const WARRIOR_STATS := preload("res://characters/warrior/warrior.tres")
+const ASSASSIN_STATS := preload("res://characters/Rogue/Rogue.tres")
+const WARRIOR_STATS := preload("res://characters/Vanguard/Vanguard.tres")
 const MAGE_STATS := preload("res://characters/Mage/mage.tres")
 const MAIN_MENU_PATH := "res://Scenes/UI/main_menu.tscn"
 

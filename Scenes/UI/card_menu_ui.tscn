@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c68w3uq8cq68w"]
 
 [ext_resource type="Script" uid="uid://bvv3fmb470s2v" path="res://Scenes/UI/card_menu_ui.gd" id="1_g0162"]
-[ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/warrior/cards/warrior_slash_attack.tres" id="2_0k5n1"]
+[ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/Vanguard/cards/warrior_slash_attack.tres" id="2_0k5n1"]
 [ext_resource type="PackedScene" uid="uid://bmvfg5yegqglk" path="res://Scenes/UI/card_visuals.tscn" id="3_wum0t"]
 
 [node name="CardMenuUI" type="CenterContainer"]
@@ -12,7 +12,7 @@ script = ExtResource("1_g0162")
 card = ExtResource("2_0k5n1")
 
 [node name="Visuals" parent="." instance=ExtResource("3_wum0t")]
-custom_minimum_size = Vector2(80, 108)
+custom_minimum_size = Vector2(82, 110)
 layout_mode = 2
 
 [connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]

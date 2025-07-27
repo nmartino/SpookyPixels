@@ -2,7 +2,7 @@ class_name BattleOverPanel
 extends Panel
 
 enum Type {WIN, LOSE}
-const MUSIC_MAIN_MENU = preload("res://art/sounds/Begining Pixel.mp3")
+const MUSIC_MAIN_MENU = preload("res://art/sounds/The dungeon remains.mp3")
 const MAIN_MENU_PATH = "res://Scenes/UI/main_menu.tscn"
 
 @onready var label: Label = %Label

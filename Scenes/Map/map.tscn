@@ -78,14 +78,10 @@ position = Vector2(203, 148)
 position = Vector2(-1, 0)
 
 [node name="Tower" type="Sprite2D" parent="Pared de entrada/horizontal"]
-position = Vector2(-166, 59)
+position = Vector2(-142, 59)
 texture = ExtResource("2_qtk15")
 
 [node name="Wall" type="Sprite2D" parent="Pared de entrada/horizontal"]
-position = Vector2(-122, 78)
-texture = ExtResource("3_l00y7")
-
-[node name="Wall2" type="Sprite2D" parent="Pared de entrada/horizontal"]
 position = Vector2(-98, 78)
 texture = ExtResource("3_l00y7")
 
@@ -157,31 +153,27 @@ texture = ExtResource("5_ogfrb")
 position = Vector2(310, 78)
 texture = ExtResource("4_qtk15")
 
-[node name="Wall20" type="Sprite2D" parent="Pared de entrada/horizontal"]
+[node name="Wall21" type="Sprite2D" parent="Pared de entrada/horizontal"]
 position = Vector2(334, 78)
 texture = ExtResource("3_l00y7")
 
-[node name="Wall21" type="Sprite2D" parent="Pared de entrada/horizontal"]
-position = Vector2(358, 78)
-texture = ExtResource("3_l00y7")
-
 [node name="Tower2" type="Sprite2D" parent="Pared de entrada/horizontal"]
-position = Vector2(402, 59)
+position = Vector2(378, 59)
 texture = ExtResource("7_ogfrb")
 
 [node name="verticalIzquierda" type="Node2D" parent="Pared de entrada"]
 unique_name_in_owner = true
-position = Vector2(12, 0)
+position = Vector2(36, 0)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Pared de entrada/verticalIzquierda"]
 position = Vector2(-185, -57)
 sprite_frames = SubResource("SpriteFrames_l8e3b")
-animation = &"Map_TowerWall_undead_01"
+animation = &"Map_TowerWall_undead_04"
 
 [node name="Sprite2D2" type="AnimatedSprite2D" parent="Pared de entrada/verticalIzquierda"]
 position = Vector2(-185, -185)
 sprite_frames = SubResource("SpriteFrames_l8e3b")
-animation = &"Map_TowerWall_undead_02"
+animation = &"Map_TowerWall_undead_03"
 
 [node name="Sprite2D3" type="AnimatedSprite2D" parent="Pared de entrada/verticalIzquierda"]
 position = Vector2(-185, -313)
@@ -205,7 +197,7 @@ animation = &"Map_TowerWall_undead_02"
 
 [node name="verticalDerecha" type="Node2D" parent="Pared de entrada"]
 unique_name_in_owner = true
-position = Vector2(591, 0)
+position = Vector2(567, 0)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Pared de entrada/verticalDerecha"]
 position = Vector2(-185, -57)
