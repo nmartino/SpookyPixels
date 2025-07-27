@@ -12,13 +12,11 @@ const HOVER_STYLEBOX := preload("res://Scenes/CardUI/new_hover_box_flat.tres")
 
 
 func _on_visuals_mouse_entered() -> void:
-	#visuals.panel.set("theme_override_styles/panel", HOVER_STYLEBOX)
-	pass
+	visuals.panel.set("theme_override_styles/panel", HOVER_STYLEBOX)
 
 
 func _on_visuals_mouse_exited() -> void:
-	#visuals.panel.set("theme_override_styles/panel", BASE_STYLEBOX)
-	pass
+	visuals.panel.set("theme_override_styles/panel", BASE_STYLEBOX)
 
 
 func _on_visuals_gui_input(event: InputEvent) -> void:

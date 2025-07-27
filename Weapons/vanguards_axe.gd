@@ -1,11 +1,8 @@
 extends BaseWeapon
 
-func start_of_combat(p_h: PlayerHandeler) -> void:
+func start_of_combat(p_h: CharacterStats):#_owner: RelicUI) -> void:
 	player_handler = p_h
-	
-	if not Events.weapon_combat_activation.is_connected(_on_weapon_activated):
-		Events.weapon_combat_activation.connect(_on_weapon_activated)
-	
+	Events.weapon_combat_activation.connect(_on_weapon_activated)
 
 
 func end_of_combat() -> void:

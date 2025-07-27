@@ -12,6 +12,8 @@ extends Stats
 @export var starting_deck: CardPile
 @export var draftable_cards: CardPile
 @export var cards_per_turn: int
+#@export var max_mana: int
+#@export var starting_relic : Relic
 @export var weapon: BaseWeapon
 @export var special_stat_type : Card.SpecialStatsTypes = Card.SpecialStatsTypes.NONE
 @export var special_stat_value : int = 0 : set = set_special_stat
@@ -23,10 +25,7 @@ var draw_pile: CardPile
 
 
 func set_special_stat(value: int) -> void:
-	if value < 0:
-		special_stat_value = 0
-	else:
-		special_stat_value = value
+	special_stat_value = value
 	stats_changed.emit()
 
 

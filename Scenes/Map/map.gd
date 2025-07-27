@@ -13,11 +13,10 @@ const MAP_LINE= preload("res://Scenes/Map/map_line.tscn")
 @onready var map_generator: MapGenerator = $MapGenerator
 @onready var vertical_izquierda: Node2D = %verticalIzquierda
 @onready var vertical_derecha: Node2D = %verticalDerecha
-var paredes_verticales_izquierda: Array = ["Map_TowerWall_undead_01", "Map_TowerWall_undead_02",
+var paredes_verticales_izquierda: Array = ["Map_TowerWall_undead_01", "Map_TowerWall_undead_02","Map_TowerWall_undead_03",
 "Map_TowerWall_undead_04", "Map_TowerWall_undead_06"]
-var paredes_verticales_derecha: Array = ["Map_TowerWall_undead_01", "Map_TowerWall_undead_02",
+var paredes_verticales_derecha: Array = ["Map_TowerWall_undead_01", "Map_TowerWall_undead_02","Map_TowerWall_undead_03",
 "Map_TowerWall_undead_04", "Map_TowerWall_undead_05"]
-var pared_vertical_sin_torre := "Map_TowerWall_undead_03"
 
 
 var map_data: Array[Array]
@@ -31,15 +30,9 @@ var touchPoints: Dictionary = {}
 func _ready() -> void:
 	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1) - 60
 	for sprite in vertical_derecha.get_children():
-		if sprite.get_index() == 1 or sprite.get_index() == 3 or sprite.get_index() == 5:
-			sprite.play(pared_vertical_sin_torre)	
-		else:
-			sprite.play(paredes_verticales_derecha.pick_random())
+		sprite.play(paredes_verticales_derecha.pick_random())
 	for sprite in vertical_izquierda.get_children():
-		if sprite.get_index() == 1 or sprite.get_index() == 3 or sprite.get_index() == 5:
-			sprite.play(pared_vertical_sin_torre)
-		else:
-			sprite.play(paredes_verticales_izquierda.pick_random())
+		sprite.play(paredes_verticales_izquierda.pick_random())
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -23,7 +23,6 @@ const ICONS := {
 @onready var finished: Sprite2D = %Finished
 @onready var entrance: AnimatedSprite2D = %Entrance
 @onready var visuals: Node2D = $Visuals
-@onready var entrance_collision: CollisionShape2D = $entranceCollision
 
 var available := false : set = set_available
 var room: Room : set = set_room
@@ -44,7 +43,6 @@ func set_room(new_data: Room) -> void:
 	sprite_2d.scale = ICONS[room.type][1]
 	#visuals.hide()
 	if room.position.y == 0:
-		entrance_collision.disabled = false
 		entrance.show()
 	else:
 		entrance.hide()

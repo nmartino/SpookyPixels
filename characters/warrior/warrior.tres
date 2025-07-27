@@ -13,7 +13,9 @@
 [resource]
 script = ExtResource("1_rj4dh")
 character_name = "Vanguard"
-description = "He seeks redemption after failing in an ancient battle that allowed the first outbreak of corruption"
+description = "Steel answers his command.
+Honor guides her strikes.
+Uses the Battle Axe"
 portrait = ExtResource("6_ixb1j")
 aura = ExtResource("2_kr1ar")
 isDisable = false

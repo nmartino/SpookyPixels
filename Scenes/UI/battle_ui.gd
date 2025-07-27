@@ -4,8 +4,8 @@ extends CanvasLayer
 @export var char_stats: CharacterStats : set = _set_char_stats
 
 @onready var hand: Hand = $Hand as Hand
-@onready var edge_ui: EdgeUI =$EdgeUI as EdgeUI
-@onready var end_turn_button: TextureButton = %EndTurnButton
+@onready var mana_ui: ManaUI =$ManaUI as ManaUI
+@onready var end_turn_button: Button = %EndTurnButton
 @onready var draw_pile_button: CardPileOpener = %DrawPileButton
 @onready var discard_pile_button: CardPileOpener = %DiscardPileButton
 @onready var draw_pile_view: CardPileView = %DrawPileView
@@ -28,7 +28,7 @@ func initialize_card_pile_ui() -> void:
 
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
-	edge_ui.char_stats = char_stats
+	mana_ui.char_stats = char_stats
 	hand.char_stats = char_stats
 
 
@@ -37,6 +37,5 @@ func _on_player_hand_drawn()-> void:
 
 func _on_end_turn_button_pressed()-> void:
 	end_turn_button.disabled = true
-	button_animation.play("rotate")
-	await button_animation.animation_finished
+	button_animation.play("reloj")
 	Events.player_turn_ended.emit()

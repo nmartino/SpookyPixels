@@ -130,4 +130,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_c70w2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_w5vnb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ois3g")
 theme_override_styles/normal = SubResource("StyleBoxTexture_02j4s")
+disabled = true
 text = "Continue"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

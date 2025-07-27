@@ -1,93 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://bg7tf3vrpwfff"]
+[gd_scene load_steps=4 format=3 uid="uid://bg7tf3vrpwfff"]
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_v6lqg"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="2_u31i2"]
 [ext_resource type="Script" uid="uid://6aephh7wkuty" path="res://Scenes/CardUI/mana_ui.gd" id="2_yt5ru"]
-[ext_resource type="Texture2D" uid="uid://dlp8mntfmwhlu" path="res://art/1bit/XaviArt/edgeUI/discard-overlay.png" id="3_slptt"]
-[ext_resource type="Texture2D" uid="uid://dgvcr7j5fch0" path="res://art/1bit/XaviArt/edgeUI/resource-edge-bar.png" id="4_pjydq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_va502"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb4ku"]
-bg_color = Color(1, 0.333333, 1, 1)
-
-[node name="EdgeUI" type="NinePatchRect"]
+[node name="ManaUI" type="NinePatchRect"]
 custom_minimum_size = Vector2(48, 32)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
 offset_top = -43.0
-offset_right = 65.0
+offset_right = 62.0
 offset_bottom = -8.0
 grow_vertical = 0
 theme = ExtResource("1_v6lqg")
+texture = ExtResource("2_u31i2")
 patch_margin_left = 14
 patch_margin_top = 12
 patch_margin_right = 14
 patch_margin_bottom = 12
 script = ExtResource("2_yt5ru")
 
-[node name="DiscardSprite" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(27, -5)
-texture = ExtResource("3_slptt")
-
-[node name="EdgeBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 19.0
-offset_top = -9.0
-offset_right = 54.0
-offset_bottom = -1.0
-theme_override_styles/background = SubResource("StyleBoxFlat_va502")
-theme_override_styles/fill = SubResource("StyleBoxFlat_rb4ku")
-max_value = 10.0
-value = 5.0
-show_percentage = false
-
-[node name="edge" type="Sprite2D" parent="."]
-position = Vector2(28, -4)
-texture = ExtResource("4_pjydq")
-
 [node name="ManaLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.533
-anchor_right = 1.2
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 17.655
-offset_right = 19.4
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 16
 text = "3/3"
+horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Name_label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -2.0
-offset_top = -38.0
-offset_right = 38.0
-offset_bottom = -23.0
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "Edge"
-
-[node name="Discard" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -5.0
-offset_top = -53.0
-offset_right = 50.0
-offset_bottom = -38.0
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "Discard"

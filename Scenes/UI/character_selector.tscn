@@ -52,7 +52,7 @@ shadow_offset = Vector2(5, 3)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pq4lo"]
 texture = ExtResource("8_p1eoj")
-modulate_color = Color(1, 0.333333, 1, 1)
+modulate_color = Color(1, 1, 1, 0.654902)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_so2th"]
 texture = ExtResource("9_vtalv")
@@ -332,14 +332,13 @@ texture_filter = 1
 layout_mode = 2
 offset_left = 256.0
 offset_top = 87.0
-offset_right = 611.0
+offset_right = 526.0
 offset_bottom = 156.0
 text = "He seeks redemption after failing in
 an ancient battle that allowed the
 first outbreak of corruption.
 "
 label_settings = SubResource("LabelSettings_r508y")
-autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0

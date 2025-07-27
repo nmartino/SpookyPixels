@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://o0g4wyqtlh1g"]
+
+[ext_resource type="Texture2D" uid="uid://jb5hpddjal4b" path="res://art/1bit/Relics Sources/Relics Sources/potMP.png" id="1_k6eos"]
+[ext_resource type="Script" uid="uid://b1sel1yfniafh" path="res://relics/mana_potion.gd" id="2_2jx2m"]
+[ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="3_tutfs"]
+
+[resource]
+script = ExtResource("2_2jx2m")
+relic_name = "Mana Potion"
+id = "mana_potion"
+type = 1
+character_type = 0
+starter_relic = false
+icon = ExtResource("1_k6eos")
+sound_fx = ExtResource("3_tutfs")
+tooltip = "[color='55ffff']MP Potion[/color]: At the start of the combat, gain [color='55ffff']1 MP[/color]."

@@ -3,12 +3,10 @@ extends Control
 
 @export var card: Card : set = set_card
 
-@onready var panel: TextureRect = $AttackPanel
-@onready var defense_panel: TextureRect = $DefensePanel
+@onready var panel: Panel = $Panel
 @onready var cost: Label = $Cost
 @onready var icon: TextureRect = $Icon
 @onready var rarity: TextureRect = $Rarity
-@onready var card_name: Label = $CardName
 
 func set_card(value: Card) -> void:
 	if not is_node_ready():
@@ -22,4 +20,3 @@ func set_card(value: Card) -> void:
 	cost.text = str(card.cost)
 	icon.texture = card.icon
 	rarity.modulate = Card.RARITY_COLORS[card.rarity]
-	card_name.text = value.id

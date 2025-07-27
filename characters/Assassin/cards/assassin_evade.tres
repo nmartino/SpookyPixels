@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cr5kx7xmrf3eq"]
+
+[ext_resource type="Texture2D" uid="uid://eivehypyx248" path="res://art/1bit/orcoArt/arquero_block.png" id="1_yhapl"]
+[ext_resource type="Script" uid="uid://by8p3u74y0eja" path="res://characters/Assassin/cards/assassin_evade.gd" id="2_oso00"]
+[ext_resource type="AudioStream" uid="uid://c64k2v3nrmlp1" path="res://art/sounds/UI - Switch 01.wav" id="3_yd785"]
+
+[resource]
+script = ExtResource("2_oso00")
+id = "assassin_evade"
+type = 1
+target = 0
+rarity = 0
+cost = 1
+exhausts = false
+dmg_type = 4
+icon = ExtResource("1_yhapl")
+tooltip_text = "[center]Gain [color='55ffff']%s Evade[/color].[/center]"
+sound = ExtResource("3_yd785")

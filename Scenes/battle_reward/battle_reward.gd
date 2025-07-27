@@ -10,6 +10,7 @@ const CARD_TEXT := "New Card"
 
 @export var run_stats: RunStats
 @export var character_stats : CharacterStats
+@export var relic_handler: RelicHandler
 
 @onready var rewards: VBoxContainer = %Rewards
 @onready var back_button: Button = %BackButton
@@ -22,7 +23,6 @@ var card_rarity_weights :={
 }
 
 func _ready() -> void:
-	back_button.pressed.connect(_on_back_button_pressed)
 	for node: Node in rewards.get_children():
 		node.queue_free()
 	
@@ -41,14 +41,23 @@ func add_card_reward() -> void:
 	card_reward.pressed.connect(_show_card_rewards)
 	rewards.add_child.call_deferred(card_reward)
 
+func add_relic_reward(relic: Relic) -> void:
+	if not relic:
+		return
+	var relic_reward := REWARD_BUTTON.instantiate() as RewardButton
+	relic_reward.reward_icon = relic.icon
+	relic_reward.reward_text = relic.relic_name
+	relic_reward.pressed.connect(_on_relic_reward_taken.bind(relic))
+	rewards.add_child.call_deferred(relic_reward)
+
 func _on_gold_reward_taken(amount: int) -> void:
 	if not run_stats:
 		return
 	
 	run_stats.gold += amount
 	
-	#if back_button.disabled:
-		#back_button.disabled = false
+	if back_button.disabled:
+		back_button.disabled = false
 
 func _on_back_button_pressed() -> void:
 	Events.battle_reward_exited.emit()
@@ -103,3 +112,10 @@ func _on_card_reward_taken(card: Card) -> void:
 	if not character_stats or not card:
 		return
 	character_stats.deck.add_card(card)
+
+func _on_relic_reward_taken(relic: Relic) -> void:
+	if not relic or not relic_handler:
+		return
+	relic_handler.add_relic(relic)
+	if back_button.disabled:
+		back_button.disabled = false
