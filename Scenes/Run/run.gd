@@ -23,8 +23,6 @@ const MOCKED_RUNE = preload("res://Runas/mocked_rune.tres")
 @onready var deck_view: CardPileView = %DeckView
 @onready var gold_ui: GoldUI = %GoldUI
 #@onready var health_ui: HealthUI = %HealthUI
-@onready var relic_handler: RelicHandler = %RelicHandler
-@onready var relic_tool_tip: RelicTooltip = %RelicToolTip
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var weapon_inventory: WeaponInventory = %WeaponScreen
 @onready var avatar_ui: AvatarUI = %AvatarUi
@@ -72,7 +70,6 @@ func _save_run(was_on_map: bool) -> void:
 	save_data.char_stats = character
 	save_data.current_deck = character.deck
 	save_data.current_health = character.health
-	save_data.relics = relic_handler.get_all_relics()
 	save_data.last_room = map.last_room
 	save_data.map_data = map.map_data.duplicate()
 	save_data.floors_climbed = map.floors_climbed
@@ -88,7 +85,6 @@ func _load_run() ->void:
 	character = save_data.char_stats
 	character.deck = save_data.current_deck
 	character.health = save_data.current_health
-	relic_handler.add_relics(save_data.relics)
 	_setup_top_bar()
 	_setup_event_connection()
 	
@@ -125,12 +121,10 @@ func _setup_top_bar():
 	#character.stats_changed.connect(avatar_ui._on_stats_updated.bind(character))
 	avatar_ui.update_stats(character)
 	gold_ui.run_stats = stats
-	#relic_handler.add_relic(character.starting_relic)
-	Events.relic_tooltip_requested.connect(relic_tool_tip.show_tooltip)
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
-	character.weapon.start_of_combat(character)
+	character.weapon.start_of_run(character)
 	avatar_ui.avatar_button.pressed.connect(_on_inventory_open)
 	
 
@@ -147,22 +141,16 @@ func _on_battle_room_entered(room: Room) ->void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
 	battle_scene.battle_stats = room.battle_stats
-	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
 
 func _on_treasue_room_entered() -> void:
 	var treasure_scene := _change_view(TREASURE_SCENE) as Treasure
-	treasure_scene.relic_handler = relic_handler
 	treasure_scene.char_stats = character
-	treasure_scene.generate_relic()
 
-func _on_treasue_room_exited(relic: Relic) -> void:
+func _on_treasue_room_exited() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
-	reward_scene.relic_handler = relic_handler
-	
-	reward_scene.add_relic_reward(relic)
 
 func _on_campfire_room_entered() -> void:
 	var campfire:= _change_view(CAMPFIRE_SCENE) as CampFire
@@ -173,7 +161,6 @@ func _on_shop_entered() -> void:
 	var shop := _change_view(SHOP_SCENE) as Shop
 	shop.char_stats = character
 	shop.run_stats = stats
-	shop.relic_handler = relic_handler
 	Events.shop_entered.emit(shop)
 	shop.populate_shop()
 	
