@@ -5,8 +5,8 @@ const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
 const OBJECT_LEVER_SWITCH = preload("res://art/sounds/Object - Lever Switch.wav")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var configuration_panel: Panel = $ConfigurationPanel
-@onready var conf_menu_container: MarginContainer = $ConfigurationPanel/ConfMenuContainer
-@onready var close: Button = $ConfigurationPanel/Close
+@onready var conf_menu_container: VBoxContainer = %ConfigurationMenu
+@onready var close: Button = %ConfClose
 
 @export var run_startup: RunStartup
 @onready var continue_button: Button = %Continue

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RunStartup" load_steps=3 format=3 uid="uid://bppubvq5o6we1"]
 
 [ext_resource type="Script" uid="uid://c5wmm7meoe5ad" path="res://custom_resources/run_startup.gd" id="1_4cvl7"]
-[ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="1_43ypu"]
+[ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/Vanguard/Vanguard.tres" id="1_43ypu"]
 
 [resource]
 script = ExtResource("1_4cvl7")

@@ -9,7 +9,7 @@ var hasItem := false
 @onready var rune_panel: PanelContainer = $RunePanel
 @onready var small_big: AnimatedSprite2D = $smallBig
 
-
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if rune_panel.get_child_count() > 0:
 		small_big.play("big")

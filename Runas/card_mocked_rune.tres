@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=6 format=3 uid="uid://bht3vsmc120rf"]
 
 [ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_dqh3t"]
-[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_o3xus"]
+[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/Vanguard/cards/warrior_true_strength.tres" id="2_o3xus"]
 [ext_resource type="Script" uid="uid://c64unctlomt6k" path="res://Runas/Card_mocked_Rune.gd" id="3_e0yev"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="3_o3xus"]
 [ext_resource type="Texture2D" uid="uid://cwaqjos4h5qce" path="res://Runas/rune-base.png" id="5_j520p"]

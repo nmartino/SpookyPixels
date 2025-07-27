@@ -19,6 +19,7 @@ func initialize(weapon_data: BaseWeapon, character: PlayerHandeler) -> void:
 	weapon.start_of_combat(character)
 	Events.weapon_combat_activation.connect(activate_weapon)
 
+@warning_ignore("unused_parameter")
 func activate_weapon(card: CardUI) -> void:
 	pass
 

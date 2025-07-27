@@ -70,6 +70,7 @@ func _get_char_stats() -> CharacterStats:
 	return char_stats
 
 
+@warning_ignore("unused_parameter")
 func _on_aim_started(card: CardUI)->void:
 	SFXPlayer.play(discard_sound)
 	edge_ui.discard_sprite.show()
@@ -77,6 +78,7 @@ func _on_aim_started(card: CardUI)->void:
 	edge_ui.name_label.hide()
 	edge_ui.discard.show()
 
+@warning_ignore("unused_parameter")
 func _on_aim_ended(card: CardUI)->void:
 	edge_ui.discard_sprite.hide()
 	edge_ui.mana_label.show()
@@ -87,3 +89,7 @@ func _on_aim_ended(card: CardUI)->void:
 
 func _on_flip_pressed() -> void:
 	Events.flip_cards.emit()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		Events.flip_cards.emit()

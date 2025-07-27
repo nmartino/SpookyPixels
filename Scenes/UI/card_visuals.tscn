@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dxtk6uqcp4kq4" path="res://mainTheme.tres" id="1_8p8kn"]
 [ext_resource type="Script" uid="uid://bv685d44fchvj" path="res://Scenes/UI/card_visuals.gd" id="2_u13nj"]
-[ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/warrior/cards/warrior_slash_attack.tres" id="3_v7cy3"]
+[ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/Vanguard/cards/warrior_slash_attack.tres" id="3_v7cy3"]
 [ext_resource type="Texture2D" uid="uid://c68ib3e18t7hx" path="res://art/1bit/orcoArt/Cards/Cardbase_01.png" id="4_6pjps"]
 [ext_resource type="Texture2D" uid="uid://b3m4my3eil51h" path="res://art/1bit/rarity.png" id="4_764yn"]
 [ext_resource type="Texture2D" uid="uid://5sryc72ckfy2" path="res://art/1bit/orcoArt/axe_attack.png" id="5_6pjps"]

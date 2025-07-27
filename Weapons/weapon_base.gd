@@ -27,6 +27,7 @@ func start_of_combat(p_h: PlayerHandeler) -> void:
 func end_of_combat() -> void:
 	pass
 
+@warning_ignore("unused_parameter")
 func _on_weapon_activated(card: CardUI) -> void:
 	pass
 

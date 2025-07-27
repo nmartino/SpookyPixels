@@ -63,7 +63,7 @@ func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierH
 	else:
 		apply_effects(_get_targets(targets), modifiers)
 
-
+@warning_ignore("unused_parameter")
 func apply_effects(_targets: Array[Node], modifier: ModifierHandler) -> void:
 	pass
 

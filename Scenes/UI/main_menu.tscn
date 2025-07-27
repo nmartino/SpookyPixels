@@ -52,7 +52,7 @@ shadow_offset = Vector2(3, 2)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa2t2"]
 shader = ExtResource("14_vi80r")
 shader_parameter/resolution = Vector2(1280, 720)
-shader_parameter/scan_line_amount = 0.1
+shader_parameter/scan_line_amount = 0.075
 shader_parameter/warp_amount = 0.0
 shader_parameter/noise_amount = 0.13
 shader_parameter/interference_amount = 0.1
@@ -62,7 +62,7 @@ shader_parameter/vignette_amount = 0.0
 shader_parameter/vignette_intensity = 0.0
 shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.289
-shader_parameter/roll_speed = 0.5
+shader_parameter/roll_speed = 3.8e-07
 shader_parameter/scan_line_strength = -1.0
 shader_parameter/pixel_strength = -2.713
 
@@ -335,7 +335,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(180, 0), Vector2(180, 140)]
+"values": [Vector2(180, 0), Vector2(180, 175)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ypsd1"]
@@ -505,84 +505,82 @@ libraries = {
 visible = false
 layout_mode = 2
 offset_left = 452.0
-offset_top = 187.0
+offset_top = 158.0
 offset_right = 632.0
-offset_bottom = 187.0
+offset_bottom = 333.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cejvf")
 
-[node name="ConfMenuContainer" type="MarginContainer" parent="ConfigurationPanel"]
+[node name="ConfigurationMenu" type="VBoxContainer" parent="ConfigurationPanel"]
+unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -60.0
-offset_right = 85.0
-offset_bottom = 95.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ConfigurationMenu" type="VBoxContainer" parent="ConfigurationPanel/ConfMenuContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 164.0
+offset_bottom = 152.0
 theme_override_constants/separation = 4
 
-[node name="Master" type="Label" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu"]
+[node name="muteCheckBox" type="CheckBox" parent="ConfigurationPanel/ConfigurationMenu"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 0.333333, 1, 1)
+theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.333333, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_ridyb")
+disabled = true
+text = "Mute sound"
+flat = true
+
+[node name="Master" type="Label" parent="ConfigurationPanel/ConfigurationMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Master Volume"
 
-[node name="VolumenSlider" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu" instance=ExtResource("10_wqme5")]
+[node name="VolumenSlider" parent="ConfigurationPanel/ConfigurationMenu" instance=ExtResource("10_wqme5")]
 layout_mode = 2
 max_value = 1.0
 step = 0.1
 value = 0.5
 
-[node name="SFX" type="Label" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu"]
+[node name="SFX" type="Label" parent="ConfigurationPanel/ConfigurationMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "SFX"
 
-[node name="VolumenSlider2" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu" instance=ExtResource("10_wqme5")]
+[node name="VolumenSlider2" parent="ConfigurationPanel/ConfigurationMenu" instance=ExtResource("10_wqme5")]
 layout_mode = 2
 max_value = 1.0
 step = 0.1
 value = 0.5
 bus_name = "SFX"
 
-[node name="Music" type="Label" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu"]
+[node name="Music" type="Label" parent="ConfigurationPanel/ConfigurationMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Music"
 
-[node name="VolumenSlider3" parent="ConfigurationPanel/ConfMenuContainer/ConfigurationMenu" instance=ExtResource("10_wqme5")]
+[node name="VolumenSlider3" parent="ConfigurationPanel/ConfigurationMenu" instance=ExtResource("10_wqme5")]
 layout_mode = 2
 max_value = 1.0
 step = 0.1
 value = 0.5
 bus_name = "Music"
 
-[node name="Close" type="Button" parent="ConfigurationPanel"]
+[node name="ConfClose" type="Button" parent="ConfigurationPanel"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 offset_left = 30.0
-offset_top = 124.0
+offset_top = 156.0
 offset_right = 150.0
-offset_bottom = 156.0
+offset_bottom = 188.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/disabled = SubResource("StyleBoxTexture_ayn3n")
@@ -595,4 +593,4 @@ text = "Close"
 [connection signal="pressed" from="MainMenu/New Run" to="." method="_on_new_run_pressed"]
 [connection signal="pressed" from="MainMenu/Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="MainMenu/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="ConfigurationPanel/Close" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="ConfigurationPanel/ConfClose" to="." method="_on_hide_pressed"]

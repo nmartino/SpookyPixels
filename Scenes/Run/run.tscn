@@ -63,7 +63,7 @@ texture_margin_bottom = 14.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
 shader = ExtResource("14_ehit0")
 shader_parameter/resolution = Vector2(1280, 720)
-shader_parameter/scan_line_amount = 0.1
+shader_parameter/scan_line_amount = 0.075
 shader_parameter/warp_amount = 0.0
 shader_parameter/noise_amount = 0.13
 shader_parameter/interference_amount = 0.1
@@ -73,7 +73,7 @@ shader_parameter/vignette_amount = 0.0
 shader_parameter/vignette_intensity = 0.0
 shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.289
-shader_parameter/roll_speed = 0.5
+shader_parameter/roll_speed = 3.8e-07
 shader_parameter/scan_line_strength = -1.0
 shader_parameter/pixel_strength = -2.713
 

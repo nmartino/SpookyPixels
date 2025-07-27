@@ -52,6 +52,7 @@ func set_room(new_data: Room) -> void:
 func show_selected()-> void:
 	finished.modulate = Color.WHITE
 
+@warning_ignore("unused_parameter")
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if not available or not event.is_action_pressed("left_mouse"):
 		return
