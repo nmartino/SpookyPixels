@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://cfj77qt303ooj"]
 
 [ext_resource type="Script" uid="uid://vto8ydo6t6g5" path="res://Scenes/Shop/shop_card.gd" id="1_qme08"]
-[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/Vanguard/cards/warrior_true_strength.tres" id="2_p2lu6"]
+[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_p2lu6"]
+[ext_resource type="Texture2D" uid="uid://dmnaxcxfquhaj" path="res://art/1bit/gold_icon.png" id="2_twn1e"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="3_we4h3"]
-[ext_resource type="Texture2D" uid="uid://d01yxxspu0vic" path="res://art/1bit/XaviArt/avatarUI/coin-16px.png" id="4_hg8sc"]
 [ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="5_hg8sc"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="6_vj7jc"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="7_sx5p8"]
@@ -53,9 +53,9 @@ text = "999"
 label_settings = SubResource("LabelSettings_cnk3o")
 
 [node name="GoldIcon" type="TextureRect" parent="Price"]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-texture = ExtResource("4_hg8sc")
+texture = ExtResource("2_twn1e")
 stretch_mode = 5
 
 [node name="BuyButton" type="Button" parent="."]

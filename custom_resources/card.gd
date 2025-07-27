@@ -20,9 +20,9 @@ const RARITY_COLORS := {
 @export var rarity: Rarity
 @export var exhausts: bool = false
 @export var dmg_type: Effect.Type
-var cost: int = 10 #TODO sacar esto, o dejar de hablar de "tipo especial" para las stats
+var cost: int = 999 #TODO sacar esto, o dejar de hablar de "tipo especial" para las stats
 @export var special_stat_type : SpecialStatsTypes = SpecialStatsTypes.NONE
-@export var special_stat_cost:= 0
+@export var special_stat_cost: int = 0
 #: Dictionary = {SpecialStatsTypes.NONE: 0}#[SpecialStatsTypes: Int]
 
 @export_group("Card Visuals")
@@ -63,7 +63,7 @@ func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierH
 	else:
 		apply_effects(_get_targets(targets), modifiers)
 
-@warning_ignore("unused_parameter")
+
 func apply_effects(_targets: Array[Node], modifier: ModifierHandler) -> void:
 	pass
 

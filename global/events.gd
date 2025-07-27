@@ -8,7 +8,6 @@ signal card_aim_ended(card_ui: CardUI)
 signal card_played(card: Card)
 signal card_tooltip_requested(card: Card)
 signal tooltip_hide_requested
-signal flip_cards
 
 #player-related events
 signal player_hand_drawn
@@ -32,6 +31,7 @@ signal map_exited(room: Room)
 
 #shop related events
 signal shop_entered(shop: Shop)
+signal shop_relic_bought(relic: Relic, gold_cost: int)
 signal shop_card_bought(card:Card, gold_cost: int)
 signal shop_exited
 
@@ -42,7 +42,12 @@ signal campfire_exited
 signal battle_reward_exited
 
 #treasure room related events
-signal treasure_room_exited()
+signal treasure_room_exited(found_relic: Relic)
+
+#relic-related events
+signal relic_tooltip_requested(relic: Relic)
+signal relic_combat_manual_activation
+signal relic_edge_decrease(amount: int)
 
 #Weapon-related events
 signal weapon_start_of_combat_activation

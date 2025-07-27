@@ -9,7 +9,6 @@ func init(r: RuneData.Raresa, cms: Vector2) ->void:
 	raresa = r
 	custom_minimum_size = cms
 
-@warning_ignore("unused_parameter")
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	if data is InventoryRune:
 		if raresa == RuneData.Raresa.Common:

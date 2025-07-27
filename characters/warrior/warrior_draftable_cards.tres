@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=11 format=3 uid="uid://kyv6yauq8j16"]
+
+[ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_o222k"]
+[ext_resource type="Script" uid="uid://8n1y0j3hlrdl" path="res://custom_resources/card_pile.gd" id="2_pmg5b"]
+[ext_resource type="Resource" uid="uid://cpjuqdlmkcaya" path="res://characters/warrior/cards/warrior_big_slam.tres" id="4_df5bf"]
+[ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/warrior/cards/warrior_slash_attack.tres" id="4_ktuwl"]
+[ext_resource type="Resource" uid="uid://db62ldp41o22" path="res://characters/warrior/cards/warrior_block.tres" id="4_qfkmr"]
+[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_kemyx"]
+[ext_resource type="Resource" uid="uid://4brkbifpqwrp" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="6_jd1k0"]
+[ext_resource type="Resource" uid="uid://cebs24ymycnxn" path="res://characters/multi_user_cards/phantom_trick.tres" id="7_m8767"]
+[ext_resource type="Resource" uid="uid://b1jkgr5i0kbq2" path="res://characters/multi_user_cards/piercing_blade.tres" id="8_sfrne"]
+[ext_resource type="Resource" uid="uid://brhbuicpboast" path="res://characters/multi_user_cards/vengeful_block.tres" id="9_vunwj"]
+
+[resource]
+script = ExtResource("2_pmg5b")
+cards = Array[ExtResource("1_o222k")]([ExtResource("5_kemyx"), ExtResource("4_qfkmr"), ExtResource("4_qfkmr"), ExtResource("4_qfkmr"), ExtResource("4_df5bf"), ExtResource("4_qfkmr"), ExtResource("6_jd1k0"), ExtResource("6_jd1k0"), ExtResource("4_ktuwl"), ExtResource("4_ktuwl"), ExtResource("7_m8767"), ExtResource("7_m8767"), ExtResource("8_sfrne"), ExtResource("9_vunwj"), ExtResource("9_vunwj"), ExtResource("6_jd1k0")])

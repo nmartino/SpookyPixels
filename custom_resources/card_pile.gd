@@ -20,10 +20,6 @@ func add_card(card: Card) -> void:
 	cards.append(card)
 	card_pile_size_changed.emit(cards.size())
 
-func remove_card(card: Card) -> void:
-	cards.erase(card)
-	card_pile_size_changed.emit(cards.size())
-
 
 func shuffle() -> void:
 	RNG.array_shuffle(cards)

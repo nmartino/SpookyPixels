@@ -4,7 +4,6 @@ extends  Effect
 
 var amount := 1
 
-@warning_ignore("unused_parameter")
 func execute(targets: Array[Node], effect: Effect.Type) -> void:
 	if targets.is_empty():
 		return

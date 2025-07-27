@@ -1,12 +1,11 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cx66pr3vilafk"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cx66pr3vilafk"]
 
-[ext_resource type="Texture2D" uid="uid://qrg6awfi26rt" path="res://art/1bit/pruebas mapa/event2-2.png" id="1_nndwt"]
-[ext_resource type="Script" uid="uid://cg3sfyoce1yin" path="res://characters/Vanguard/cards/edged_attack.gd" id="2_higxq"]
-[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/axe.ogg" id="3_n2y6e"]
+[ext_resource type="Texture2D" uid="uid://bwbj1dxegykaq" path="res://event2.png" id="1_j7de0"]
+[ext_resource type="Script" uid="uid://cg3sfyoce1yin" path="res://characters/vanguard/cards/edged_attack.gd" id="1_pes53"]
 
 [resource]
-script = ExtResource("2_higxq")
-id = "Edge Attack"
+script = ExtResource("1_pes53")
+id = "Edged Attack"
 type = 0
 target = 1
 rarity = 0
@@ -14,9 +13,6 @@ exhausts = false
 dmg_type = 1
 special_stat_type = 1
 special_stat_cost = 4
-icon = ExtResource("1_nndwt")
-arte = ExtResource("1_nndwt")
-tooltip_text = "[center]Deal [color='ff55ff']%s damage[/color].
-Edge([color='ff55ff']2[/color]): Apply [color='ff55ff']2 bleed[/color] on target enemy.[/center]"
-sound = ExtResource("3_n2y6e")
+icon = ExtResource("1_j7de0")
+tooltip_text = "[center]Costs %s edge, deals %s damage.[/center]"
 metadata/_custom_type_script = "uid://c4bgrvlu74qhr"

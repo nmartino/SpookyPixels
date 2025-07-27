@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dl631ujncn6q8" path="res://enemies/enemy1/enemy1_ai.tscn" id="1_kwka6"]
 [ext_resource type="Script" uid="uid://b54vkl5pj64pi" path="res://custom_resources/enemy_stats.gd" id="1_omr5h"]
-[ext_resource type="Texture2D" uid="uid://lu61xmastwqs" path="res://art/1bit/orcoArt/32x32/Esqueleto_hachota.png" id="2_k6ll0"]
-[ext_resource type="Texture2D" uid="uid://ybljucqv85vy" path="res://art/1bit/orcoArt/32x32/Esqueleto_hachota_lastimado.png" id="3_fksws"]
+[ext_resource type="Texture2D" uid="uid://brkbann6cndd" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo.png" id="2_5jx8i"]
+[ext_resource type="Texture2D" uid="uid://dbirc5hejn6f3" path="res://art/1bit/orcoArt/32x32/Esqueleto_martillo_lastimado.png" id="3_qq5od"]
 
 [resource]
 script = ExtResource("1_omr5h")
 ai = ExtResource("1_kwka6")
 max_health = 20
-art = ExtResource("2_k6ll0")
-hurt = ExtResource("3_fksws")
+art = ExtResource("2_5jx8i")
+hurt = ExtResource("3_qq5od")

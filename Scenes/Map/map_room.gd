@@ -12,7 +12,7 @@ const ICONS := {
 	Room.Type.CAMPFIRE: [preload("res://art/1bit/pruebas mapa/campfire_2_prueba.png"), Vector2.ONE],
 	Room.Type.SHOP: [preload("res://art/1bit/pruebas mapa/shop_mapa.png"), Vector2.ONE],
 	Room.Type.BOSS: [preload("res://art/1bit/pruebas mapa/monster_2_prueba.png"), Vector2.ONE],
-	Room.Type.EVENT: [preload("res://art/1bit/pruebas mapa/event2-2.png"),Vector2.ONE]
+	Room.Type.EVENT: [preload("res://art/1bit/pruebas mapa/event2.png"),Vector2.ONE]
 }
 
 @export var sound: AudioStream
@@ -23,7 +23,6 @@ const ICONS := {
 @onready var finished: Sprite2D = %Finished
 @onready var entrance: AnimatedSprite2D = %Entrance
 @onready var visuals: Node2D = $Visuals
-@onready var entrance_collision: CollisionShape2D = $entranceCollision
 
 var available := false : set = set_available
 var room: Room : set = set_room
@@ -44,7 +43,6 @@ func set_room(new_data: Room) -> void:
 	sprite_2d.scale = ICONS[room.type][1]
 	#visuals.hide()
 	if room.position.y == 0:
-		entrance_collision.disabled = false
 		entrance.show()
 	else:
 		entrance.hide()
@@ -52,7 +50,6 @@ func set_room(new_data: Room) -> void:
 func show_selected()-> void:
 	finished.modulate = Color.WHITE
 
-@warning_ignore("unused_parameter")
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if not available or not event.is_action_pressed("left_mouse"):
 		return

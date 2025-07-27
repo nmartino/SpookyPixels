@@ -2,6 +2,7 @@ class_name Shop
 extends Control
 
 const SHOP_CARD = preload("res://Scenes/Shop/shop_card.tscn")
+const SHOP_RELIC = preload("res://Scenes/Shop/shop_relic.tscn")
 
 var  dialogs := ["Dying for\nsome business,\nliterally.",
 "No\nrefunds—hauntings\nincluded!",
@@ -14,11 +15,15 @@ var bought_dialogs :=["Your doom is sealed!", "Pleasure doing\ndark business.",
 
 var fondo_animation_array := ["fondo_a","fondo_b","fondo_c"]
 
+@export var shop_relics: Array[Relic]
 @export var char_stats: CharacterStats
 @export var run_stats: RunStats
+@export var relic_handler: RelicHandler
+
 @export var music: AudioStream
 
 @onready var cards: HBoxContainer = %Cards
+@onready var relics: HBoxContainer = %Relics
 @onready var card_tool_tip_pop_up: CardTooltipPopup = %CardToolTipPopUp
 @onready var shop_keeper_animation: AnimationPlayer = %ShopKeeperAnimation
 @onready var blink_timer: Timer = %BlinkTimer
@@ -34,8 +39,11 @@ func _ready() -> void:
 	MusicPlayer.play(music, true)
 	for shop_card: ShopCard in cards.get_children():
 		shop_card.queue_free()
+	for shop_relic: ShopRelic in relics.get_children():
+		shop_relic.queue_free()
 	
 	Events.shop_card_bought.connect(_on_shop_card_bought)
+	Events.shop_relic_bought.connect(_on_shop_relic_bought)
 	
 	_blink_timer_setup()
 	blink_timer.timeout.connect(_on_blink_timer_timeout)
@@ -50,6 +58,7 @@ func _input(event: InputEvent) -> void:
 
 func populate_shop() -> void:
 	_generate_shop_cards()
+	_generate_shop_relics()
 
 func _blink_timer_setup()-> void:
 	blink_timer.wait_time = randf_range(1.0,5.0)
@@ -91,18 +100,40 @@ func _generate_shop_cards() -> void:
 		new_shop_card.gold_cost = _get_updated_shop_cost(new_shop_card.gold_cost)
 		new_shop_card.update(run_stats)
 
+func _generate_shop_relics() -> void:
+	var shop_relics_array: Array[Relic] = []
+	var available_relics := shop_relics.filter(
+		func(relic: Relic):
+			var can_appear := relic.can_appear_as_reward(char_stats)
+			var already_had_it := relic_handler.has_relic(relic.id)
+			return can_appear and not already_had_it
+	)
+	RNG.array_shuffle(available_relics)
+	shop_relics_array = available_relics.slice(0,3)
+	
+	for relic: Relic in shop_relics_array:
+		var new_shop_relic := SHOP_RELIC.instantiate() as ShopRelic
+		relics.add_child(new_shop_relic)
+		new_shop_relic.relic = relic
+		new_shop_relic.gold_cost = _get_updated_shop_cost(new_shop_relic.gold_cost)
+		new_shop_relic.update(run_stats)
 
 func _update_items() -> void:
 	for shop_card: ShopCard in cards.get_children():
 		shop_card.update(run_stats)
-
+	
+	for shop_relic: ShopRelic in relics.get_children():
+		shop_relic.update(run_stats)
 
 func _update_item_cost() -> void:
 	for shop_card: ShopCard in cards.get_children():
 		shop_card.gold_cost = _get_updated_shop_cost(shop_card.gold_cost)
 		shop_card.update(run_stats)
-
-
+	
+	for shop_relic: ShopRelic in relics.get_children():
+		shop_relic.gold_cost = _get_updated_shop_cost(shop_relic.gold_cost)
+		shop_relic.update(run_stats)
+	
 func _get_updated_shop_cost(original_cost: int) -> int:
 	return modifier_handler.get_modified_value(original_cost, Modifier.Type.SHOP_COST)
 
@@ -114,4 +145,19 @@ func _on_shop_card_bought(card:Card, gold_cost: int) -> void:
 	run_stats.gold -= gold_cost
 	shop_keeper_dialogs.text = bought_dialogs.pick_random()
 	_update_items()
+	_dialog_timer_setup(2.5)
+
+func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
+	relic_handler.add_relic(relic)
+	run_stats.gold -= gold_cost
+	
+	
+	if relic is CouponsRelic:
+		var coupons_relic := relic as CouponsRelic
+		coupons_relic.add_shop_modifier(self)
+		_update_item_cost()
+	else:
+		_update_items()
+		
+	shop_keeper_dialogs.text = bought_dialogs.pick_random()
 	_dialog_timer_setup(2.5)

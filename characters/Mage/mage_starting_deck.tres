@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=3 format=3 uid="uid://cfmtwhuxrdy1n"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=7 format=3 uid="uid://cfmtwhuxrdy1n"]
 
 [ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_w7mlx"]
+[ext_resource type="Resource" uid="uid://vsoj6huc0udw" path="res://characters/Mage/cards/mage_fire_ball_attack.tres" id="2_d07j2"]
 [ext_resource type="Script" uid="uid://8n1y0j3hlrdl" path="res://custom_resources/card_pile.gd" id="2_y1h1n"]
+[ext_resource type="Resource" uid="uid://8ld4noecrxf8" path="res://characters/Mage/cards/mage_block.tres" id="3_xidli"]
+[ext_resource type="Resource" uid="uid://bbn8i0uecn3lp" path="res://characters/Mage/cards/mage_ice_spike_attack.tres" id="4_jjl8i"]
+[ext_resource type="Resource" uid="uid://xpf2ucmmnhcq" path="res://characters/Mage/cards/mage_lighting_strike.tres" id="4_r3ilk"]
 
 [resource]
 script = ExtResource("2_y1h1n")
-cards = Array[ExtResource("1_w7mlx")]([])
+cards = Array[ExtResource("1_w7mlx")]([ExtResource("3_xidli"), ExtResource("3_xidli"), ExtResource("3_xidli"), ExtResource("2_d07j2"), ExtResource("2_d07j2"), ExtResource("2_d07j2"), ExtResource("4_jjl8i"), ExtResource("4_jjl8i"), ExtResource("4_r3ilk"), ExtResource("4_r3ilk")])

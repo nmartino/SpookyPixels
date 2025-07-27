@@ -8,12 +8,11 @@
 [resource]
 script = ExtResource("2_06l3p")
 edge = 50
-RuneType = 0
 raresa = 0
-description = "+ 50 health points"
+description = "Add 50 health points"
 texture = ExtResource("4_otmtd")
 name = &"Hp Inflation"
 cards_to_add = Array[ExtResource("1_t0g07")]([])
 activation_type = 0
 sound_fx = ExtResource("3_8nbgy")
-tooltip = "+ 50 health points"
+tooltip = ""

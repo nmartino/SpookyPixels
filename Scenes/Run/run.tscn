@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cxc7hdh2bfaua"]
+[gd_scene load_steps=29 format=3 uid="uid://cxc7hdh2bfaua"]
 
 [ext_resource type="Script" uid="uid://drcivwhyd1qeg" path="res://Scenes/Run/run.gd" id="1_677sc"]
 [ext_resource type="PackedScene" uid="uid://b8kl0n2023ls" path="res://Scenes/Map/map.tscn" id="1_lttax"]
@@ -8,16 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="4_bxmm5"]
 [ext_resource type="Texture2D" uid="uid://c1vf40ygtc1fy" path="res://art/1bit/XaviArt/avatarUI/deck-x32.png" id="7_8pevd"]
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="7_724ho"]
+[ext_resource type="PackedScene" uid="uid://cbqxrujgnl8x6" path="res://Scenes/relics_handler/relic_handler.tscn" id="7_fyylk"]
 [ext_resource type="PackedScene" uid="uid://8qxndi2yrha4" path="res://Scenes/UI/avatar_ui.tscn" id="9_k4lll"]
 [ext_resource type="PackedScene" uid="uid://om13b4iixuh" path="res://Scenes/UI/weapon_screen.tscn" id="10_8pevd"]
+[ext_resource type="PackedScene" uid="uid://q42tn6ne8vk" path="res://Scenes/relics_handler/relic_tool_tip_pop_up.tscn" id="12_v2hpe"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="13_3pt4t"]
 [ext_resource type="Script" uid="uid://bdhhvid2mjpp7" path="res://Scenes/Run/pause_menu.gd" id="13_c70su"]
 [ext_resource type="Texture2D" uid="uid://bsimhus5mhmwx" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-base.png" id="14_8pevd"]
 [ext_resource type="Shader" uid="uid://uxfeb0jpn21l" path="res://CrtShader.gdshader" id="14_ehit0"]
 [ext_resource type="Texture2D" uid="uid://bur56kawfytjy" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-hover.png" id="15_k4lll"]
 [ext_resource type="Texture2D" uid="uid://c3rcoj2njnhkd" path="res://art/1bit/XaviArt/buttons-ui/button-big-02-press.png" id="16_gnhhf"]
-[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="18_gnhhf"]
-[ext_resource type="PackedScene" uid="uid://diwoq55r64qyd" path="res://Scenes/UI/volumen_slider.tscn" id="19_db0nm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1dda"]
 font = ExtResource("13_3pt4t")
@@ -26,19 +26,6 @@ font_color = Color(0, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(1, 1, 1, 0)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42cnb"]
-texture = ExtResource("14_8pevd")
-modulate_color = Color(1, 1, 1, 0.635294)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3lsc"]
-texture = ExtResource("15_k4lll")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tv7gb"]
-texture = ExtResource("16_gnhhf")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx4rf"]
-texture = ExtResource("14_8pevd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_db0nm"]
 texture = ExtResource("14_8pevd")
@@ -53,28 +40,34 @@ texture = ExtResource("16_gnhhf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60lvd"]
 texture = ExtResource("14_8pevd")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3otj"]
-texture = ExtResource("18_gnhhf")
-texture_margin_left = 14.0
-texture_margin_top = 14.0
-texture_margin_right = 14.0
-texture_margin_bottom = 14.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42cnb"]
+texture = ExtResource("14_8pevd")
+modulate_color = Color(1, 1, 1, 0.635294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3lsc"]
+texture = ExtResource("15_k4lll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tv7gb"]
+texture = ExtResource("16_gnhhf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx4rf"]
+texture = ExtResource("14_8pevd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3ded"]
 shader = ExtResource("14_ehit0")
 shader_parameter/resolution = Vector2(1280, 720)
-shader_parameter/scan_line_amount = 0.075
+shader_parameter/scan_line_amount = 0.1
 shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.13
-shader_parameter/interference_amount = 0.1
+shader_parameter/noise_amount = 0.167
+shader_parameter/interference_amount = 0.185
 shader_parameter/grille_amount = 0.005
 shader_parameter/grille_size = 1.0
 shader_parameter/vignette_amount = 0.0
 shader_parameter/vignette_intensity = 0.0
 shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.289
-shader_parameter/roll_speed = 3.8e-07
-shader_parameter/scan_line_strength = -1.0
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.713
 
 [node name="Run" type="Node" groups=["run"]]
@@ -90,6 +83,25 @@ metadata/_edit_lock_ = true
 [node name="TopBar" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 layer = 5
+
+[node name="Background" type="ColorRect" parent="TopBar"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(1, 0.333333, 1, 0.592157)
+
+[node name="MarginsTopBar" type="MarginContainer" parent="TopBar"]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_right = 2
 
 [node name="Button" type="Button" parent="TopBar"]
 custom_minimum_size = Vector2(50, 20)
@@ -144,18 +156,30 @@ offset_right = 638.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-mouse_filter = 2
 
 [node name="AvatarUi" parent="TopBar/BarItems" instance=ExtResource("9_k4lll")]
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" instance=ExtResource("7_fyylk")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="WeaponScreen" parent="TopBar" instance=ExtResource("10_8pevd")]
 unique_name_in_owner = true
 visible = false
-mouse_filter = 0
 
 [node name="DeckView" parent="TopBar" instance=ExtResource("7_724ho")]
+unique_name_in_owner = true
+visible = false
+
+[node name="RelicToolTip" parent="TopBar" instance=ExtResource("12_v2hpe")]
 unique_name_in_owner = true
 visible = false
 
@@ -179,14 +203,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -121.0
-offset_top = -96.0
-offset_right = 129.0
-offset_bottom = 18.0
+offset_left = -47.0
+offset_top = -20.0
+offset_right = 47.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="PauseMenu/VBoxContainer"]
@@ -196,100 +218,29 @@ label_settings = SubResource("LabelSettings_g1dda")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 32)
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/disabled = SubResource("StyleBoxTexture_42cnb")
-theme_override_styles/hover = SubResource("StyleBoxTexture_o3lsc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_tv7gb")
-theme_override_styles/normal = SubResource("StyleBoxTexture_mx4rf")
-text = "Main Menu"
+theme_override_constants/separation = 10
 
-[node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer"]
+[node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme_override_styles/disabled = SubResource("StyleBoxTexture_db0nm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3u7fs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mpk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_60lvd")
 text = "Back"
 
-[node name="ConfigurationPanel" type="Panel" parent="PauseMenu"]
-offset_left = 233.0
-offset_top = 221.0
-offset_right = 423.0
-offset_bottom = 349.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_c3otj")
-
-[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/ConfigurationPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -66.0
-offset_right = 89.0
-offset_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_top = 14
-theme_override_constants/margin_right = 14
-theme_override_constants/margin_bottom = 14
-
-[node name="ConfigurationMenu" type="VBoxContainer" parent="PauseMenu/ConfigurationPanel/MarginContainer"]
-custom_minimum_size = Vector2(150, 0)
+[node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="Master" type="Label" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "Master Volume"
-
-[node name="VolumenSlider" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu" instance=ExtResource("19_db0nm")]
-layout_mode = 2
-max_value = 1.0
-step = 0.1
-value = 0.5
-
-[node name="SFX" type="Label" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "SFX"
-
-[node name="VolumenSlider2" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu" instance=ExtResource("19_db0nm")]
-layout_mode = 2
-max_value = 1.0
-step = 0.1
-value = 0.5
-bus_name = "SFX"
-
-[node name="Music" type="Label" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "Music"
-
-[node name="VolumenSlider3" parent="PauseMenu/ConfigurationPanel/MarginContainer/ConfigurationMenu" instance=ExtResource("19_db0nm")]
-layout_mode = 2
-max_value = 1.0
-step = 0.1
-value = 0.5
-bus_name = "Music"
+theme_override_styles/disabled = SubResource("StyleBoxTexture_42cnb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o3lsc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tv7gb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mx4rf")
+text = "Main Menu"
 
 [node name="CRTShader" type="CanvasLayer" parent="."]
 layer = 99

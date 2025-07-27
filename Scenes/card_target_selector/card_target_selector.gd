@@ -49,7 +49,6 @@ func _on_card_aim_started(card: CardUI) -> void:
 	area_2d.monitorable = true
 	current_card = card
 
-
 func _on_card_aim_ended(_card: CardUI)-> void:
 	targeting = false
 	card_arc.clear_points()
@@ -57,7 +56,6 @@ func _on_card_aim_ended(_card: CardUI)-> void:
 	area_2d.monitoring = false
 	area_2d.monitorable = false
 	current_card = null
-
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if not current_card or not targeting:

@@ -1,31 +1,26 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=11 format=3 uid="uid://bj4cudlc1sj74"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=7 format=3 uid="uid://bgobapaxaykrv"]
 
-[ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_rj4dh"]
-[ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="1_tokje"]
-[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/Vanguard/vanguard_draftable_cards.tres" id="2_7i7c4"]
-[ext_resource type="Texture2D" uid="uid://beme406vul1na" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 01.png" id="2_kr1ar"]
-[ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="2_yxaf8"]
-[ext_resource type="Texture2D" uid="uid://cwgrsnu4yq2vr" path="res://art/1bit/XaviArt/avatarUI/avatar-demo.png" id="3_ixb1j"]
-[ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/Vanguard/vanguard_starting_deck.tres" id="3_xt1eb"]
-[ext_resource type="Texture2D" uid="uid://de1pardmna4le" path="res://art/1bit/orcoArt/32x32/vanguard_lastimado.png" id="4_qj7df"]
-[ext_resource type="Texture2D" uid="uid://bvs6wfxtsmfek" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 01.png" id="6_ixb1j"]
-[ext_resource type="Resource" uid="uid://kgslrefuvd1v" path="res://Weapons/vanguards_axe.tres" id="7_imjtc"]
+[ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="1_xlt2s"]
+[ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="2_p5mbd"]
+[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/warrior/warrior_draftable_cards.tres" id="3_627tj"]
+[ext_resource type="Texture2D" uid="uid://de1pardmna4le" path="res://art/1bit/orcoArt/32x32/vanguard_lastimado.png" id="4_id2q2"]
+[ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="5_sbfjf"]
+[ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/warrior/warrior_starting_deck.tres" id="6_jqst8"]
 
 [resource]
-script = ExtResource("1_rj4dh")
-character_name = "The Vanguard"
-description = "He seeks redemption after failing in an ancient battle that allowed the first outbreak of corruption"
-portrait = ExtResource("6_ixb1j")
-aura = ExtResource("2_kr1ar")
-avatar = ExtResource("3_ixb1j")
+script = ExtResource("5_sbfjf")
+character_name = "Vanguard"
+description = "Steel answers his command.
+Honor guides her strikes.
+Uses the Battle Axe"
+portrait = ExtResource("1_xlt2s")
 isDisable = false
-starting_deck = ExtResource("3_xt1eb")
-draftable_cards = ExtResource("2_7i7c4")
-cards_per_turn = 5
-weapon = ExtResource("7_imjtc")
-special_stat_type = 1
+starting_deck = ExtResource("6_jqst8")
+draftable_cards = ExtResource("3_627tj")
+cards_per_turn = 4
+special_stat_type = 0
 special_stat_value = 0
 max_health = 35
-art = ExtResource("1_tokje")
-hurt = ExtResource("4_qj7df")
-campfire_art = ExtResource("2_yxaf8")
+art = ExtResource("1_xlt2s")
+hurt = ExtResource("4_id2q2")
+campfire_art = ExtResource("2_p5mbd")

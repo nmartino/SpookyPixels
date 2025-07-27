@@ -16,11 +16,9 @@ func can_add_cards() -> bool:
 
 func get_cards_to_add() -> Array[Card]:
 	return cards_to_add.duplicate(true)
-
-@warning_ignore("unused_parameter")	
+	
 func apply_effect(character: CharacterStats) -> void:
 	pass
 
-@warning_ignore("unused_parameter")
 func remove_effect(character: CharacterStats) ->void:
 	pass 

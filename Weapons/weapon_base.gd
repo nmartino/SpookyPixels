@@ -13,21 +13,16 @@ enum WeaponStatType {DEFAULT, EDGE, MANA, ROGUE_STAT}
 @export var sound_fx: AudioStream = preload("res://art/enemy_hit_02.wav")
 @export_multiline var tooltip: String
 
-var character_stats: CharacterStats
-var player_handler: PlayerHandeler
+var player_handler: CharacterStats
 #callback de activación?
 
-func start_of_run(c_h: CharacterStats) -> void:
-	character_stats = c_h
-
-func start_of_combat(p_h: PlayerHandeler) -> void:
+func start_of_combat(p_h: CharacterStats) -> void:
 	player_handler = p_h
 
 
 func end_of_combat() -> void:
 	pass
 
-@warning_ignore("unused_parameter")
 func _on_weapon_activated(card: CardUI) -> void:
 	pass
 
@@ -49,7 +44,7 @@ func add_attachment(new_att: WeaponAttachment) -> void:
 	var duplicated_att:= new_att.duplicate()
 	#TODO ahhh, wazowzki, revisaste si deberías pasarle un true?
 	attachments.append(duplicated_att)
-	duplicated_att.apply_effect(character_stats)
+	duplicated_att.apply_effect(player_handler)
 	
 	#TODO crear  
 
@@ -58,6 +53,6 @@ func remove_attachment(remove_att: WeaponAttachment) -> void:
 		return
 	for att in attachments:
 		if att.name == remove_att.name:
-			remove_att.remove_effect(character_stats)
+			remove_att.remove_effect(player_handler)
 			attachments.erase(att)
 			break

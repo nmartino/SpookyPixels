@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=10 format=3 uid="uid://comske0a0bn8y"]
+
+[ext_resource type="Texture2D" uid="uid://dutr0q0643yu1" path="res://art/1bit/orcoArt/32x32/Arquero.png" id="1_l30c4"]
+[ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_wqils"]
+[ext_resource type="Texture2D" uid="uid://m7ynl1amt6cl" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 03.png" id="2_bi0wc"]
+[ext_resource type="Texture2D" uid="uid://b3j64c7ri64qc" path="res://art/1bit/orcoArt/Fogata/fogata arquero.png" id="2_v78kd"]
+[ext_resource type="Resource" uid="uid://cfnho6ra1x56x" path="res://characters/Assassin/assassin_draftable_cards.tres" id="3_3sxae"]
+[ext_resource type="Texture2D" uid="uid://d1r7lkc3el8nr" path="res://art/1bit/orcoArt/32x32/Arquero_lastimado.png" id="4_fmouy"]
+[ext_resource type="Texture2D" uid="uid://ct4hbxxxfjchh" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 03.png" id="5_fmouy"]
+[ext_resource type="Resource" uid="uid://l4w3bj24sjf3" path="res://characters/Assassin/assassin_starting_deck.tres" id="6_nhtah"]
+[ext_resource type="Resource" uid="uid://kgslrefuvd1v" path="res://Weapons/vanguards_axe.tres" id="8_fmouy"]
+
+[resource]
+script = ExtResource("1_wqils")
+character_name = "The Rogue"
+description = "She is not there for honor or destiny. 
+She seeks a lost relic that lies in the 
+depths.
+--- On Vacations, not available yet ---"
+portrait = ExtResource("5_fmouy")
+aura = ExtResource("2_bi0wc")
+isDisable = true
+starting_deck = ExtResource("6_nhtah")
+draftable_cards = ExtResource("3_3sxae")
+cards_per_turn = 4
+weapon = ExtResource("8_fmouy")
+special_stat_type = 0
+special_stat_value = 0
+max_health = 30
+art = ExtResource("1_l30c4")
+hurt = ExtResource("4_fmouy")
+campfire_art = ExtResource("2_v78kd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bremjy710enpy"]
+[gd_scene load_steps=41 format=3 uid="uid://bremjy710enpy"]
 
 [ext_resource type="Script" uid="uid://cflro1pcqk0lk" path="res://Scenes/Battle/battle.gd" id="1_l8vlc"]
 [ext_resource type="PackedScene" uid="uid://c0511bjl6j8f3" path="res://Scenes/Enemy/enemy.tscn" id="2_sol3y"]
@@ -8,8 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dlxq3kaphatmb" path="res://art/Tyrant_s-Downfall.mp3" id="3_vgqd8"]
 [ext_resource type="AudioStream" uid="uid://bok4njnqsu2tv" path="res://art/sounds/Retro Success Melody 01 - sawtooth lead 1.wav" id="4_4l47w"]
 [ext_resource type="Script" uid="uid://cj70n1speektp" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
-[ext_resource type="AudioStream" uid="uid://c64k2v3nrmlp1" path="res://art/sounds/UI - Switch 01.wav" id="4_pebnb"]
-[ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/Vanguard/Vanguard.tres" id="4_q8sq6"]
+[ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/warrior/warrior.tres" id="4_q8sq6"]
 [ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="5_f8ycv"]
 [ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="6_gp70a"]
@@ -25,13 +24,16 @@
 [ext_resource type="Script" uid="uid://bihv6wnb8k7kh" path="res://Scenes/UI/white_flash.gd" id="15_2ee3c"]
 [ext_resource type="PackedScene" uid="uid://bw500f1i5gcmf" path="res://Scenes/UI/card_pile_opener.tscn" id="17_3lvuc"]
 [ext_resource type="PackedScene" uid="uid://bjijnp3e7egu2" path="res://Scenes/UI/battle_over_panel.tscn" id="17_4r3ak"]
+[ext_resource type="Texture2D" uid="uid://bshnd2xf8nna4" path="res://art/1bit/deck-icon05.png" id="17_xesn7"]
+[ext_resource type="Texture2D" uid="uid://djquuf0g2308j" path="res://art/1bit/deck-icon04.png" id="18_48cb5"]
+[ext_resource type="Texture2D" uid="uid://6q0wq21igdus" path="res://art/1bit/deck-icon02-hover.png" id="20_0rjlj"]
 [ext_resource type="PackedScene" uid="uid://wq4bxyhc88bc" path="res://Scenes/UI/card_pile_view.tscn" id="21_dekfb"]
 [ext_resource type="PackedScene" uid="uid://camxsiavn7baf" path="res://Scenes/UI/status_view.tscn" id="21_qqhbv"]
-[ext_resource type="Texture2D" uid="uid://cfn1pt2ju5cm4" path="res://art/1bit/XaviArt/buttons-ui/end-turn.png" id="22_ew870"]
-[ext_resource type="Texture2D" uid="uid://ckgg75srb534v" path="res://art/1bit/XaviArt/buttons-ui/draw-pile-32.png" id="24_iifss"]
-[ext_resource type="Texture2D" uid="uid://c442li1cb5k5c" path="res://art/1bit/XaviArt/buttons-ui/draw-pile-40.png" id="25_f8ycv"]
-[ext_resource type="Texture2D" uid="uid://b8thptyynsnu1" path="res://art/1bit/XaviArt/buttons-ui/draw-pile-discard_32.png" id="26_gp70a"]
-[ext_resource type="Texture2D" uid="uid://c5xwcv46mq0ff" path="res://art/1bit/XaviArt/buttons-ui/draw-pile-discard_40.png" id="27_f24gg"]
+[ext_resource type="Texture2D" uid="uid://wnjmjp4d7usd" path="res://art/1bit/deck-icon04-hover.png" id="22_ds3ue"]
+[ext_resource type="Texture2D" uid="uid://cu2pwwfthlhay" path="res://art/1bit/reloj/5.png" id="22_jodwu"]
+[ext_resource type="Texture2D" uid="uid://cr5ljqw5f0yfi" path="res://art/1bit/reloj/3.png" id="23_gpxvd"]
+[ext_resource type="Texture2D" uid="uid://j3o5kgyuhw0a" path="res://art/1bit/reloj/4.png" id="24_t517t"]
+[ext_resource type="Texture2D" uid="uid://30susulq8hb" path="res://art/1bit/deck-iconcorazon-base.png" id="25_dk700"]
 [ext_resource type="PackedScene" uid="uid://xaevvjaxcha6" path="res://Weapons/WeaponUI.tscn" id="36_f8ycv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu1tp"]
@@ -93,44 +95,43 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%EndTurnButton:rotation")
+tracks/0/path = NodePath("%EndTurnButton:theme_override_icons/icon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [ExtResource("17_xesn7")]
 }
 
-[sub_resource type="Animation" id="Animation_ew870"]
-resource_name = "rotate"
-length = 0.5
-step = 0.5
+[sub_resource type="Animation" id="Animation_tt5v4"]
+resource_name = "reloj"
+length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%EndTurnButton:rotation")
+tracks/0/path = NodePath("%EndTurnButton:theme_override_icons/icon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("23_gpxvd"), ExtResource("24_t517t"), ExtResource("22_jodwu")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v0du8"]
 _data = {
 &"RESET": SubResource("Animation_nun6g"),
-&"rotate": SubResource("Animation_ew870")
+&"reloj": SubResource("Animation_tt5v4")
 }
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_l8vlc")
 char_stats = ExtResource("4_q8sq6")
 music = ExtResource("3_vgqd8")
-discard_sound = ExtResource("4_pebnb")
 battle_won = ExtResource("4_4l47w")
 metadata/_edit_lock_ = true
 
@@ -155,8 +156,7 @@ animation = &"background2"
 centered = false
 
 [node name="WeaponUI" parent="." instance=ExtResource("36_f8ycv")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(36, 272)
+position = Vector2(107, 261)
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -214,14 +214,13 @@ alignment = 1
 script = ExtResource("2_x8kit")
 player = NodePath("../../Player")
 
-[node name="EdgeUI" parent="BattleUI" instance=ExtResource("11_6goif")]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = -84.0
-offset_right = 76.0
-offset_bottom = -42.0
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("11_6goif")]
+offset_left = 5.0
+offset_top = -111.0
+offset_right = 68.0
+offset_bottom = -69.0
 
-[node name="EndTurnButton" type="TextureButton" parent="BattleUI"]
+[node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 anchors_preset = 3
@@ -229,52 +228,37 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -120.0
+offset_left = -57.0
+offset_top = -118.0
 offset_right = -16.0
-offset_bottom = -56.0
+offset_bottom = -78.0
 grow_horizontal = 0
 grow_vertical = 0
-pivot_offset = Vector2(31.6781, 31.0428)
-texture_normal = ExtResource("22_ew870")
-texture_pressed = ExtResource("22_ew870")
-texture_hover = ExtResource("22_ew870")
-texture_disabled = ExtResource("22_ew870")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="BattleUI"]
-offset_left = 574.0
-offset_top = 292.0
-offset_right = 614.0
-offset_bottom = 307.0
-theme_override_colors/font_color = Color(0.333333, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
-text = "Done"
+theme_override_icons/icon = ExtResource("17_xesn7")
+icon_alignment = 1
+expand_icon = true
 
 [node name="DrawPileButton" parent="BattleUI" node_paths=PackedStringArray("counter") groups=["draw_pile"] instance=ExtResource("17_3lvuc")]
 unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -40.0
-offset_right = 71.0
-offset_bottom = 0.0
+offset_left = 8.0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -18.0
 grow_vertical = 0
-texture_normal = ExtResource("24_iifss")
-texture_pressed = ExtResource("25_f8ycv")
-texture_hover = ExtResource("25_f8ycv")
-stretch_mode = 4
+texture_normal = ExtResource("25_dk700")
+texture_pressed = ExtResource("25_dk700")
+texture_hover = ExtResource("20_0rjlj")
 counter = NodePath("Counter")
 
 [node name="Counter" type="Label" parent="BattleUI/DrawPileButton"]
-visible = false
 layout_mode = 0
-offset_left = 4.0
-offset_top = 18.0
-offset_right = 22.0
-offset_bottom = 33.0
+offset_left = 18.0
+offset_top = 24.0
+offset_right = 36.0
+offset_bottom = 39.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 text = "99"
@@ -286,25 +270,22 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -40.0
-offset_right = -8.0
-offset_bottom = 0.0
+offset_left = -49.0
+offset_top = -48.0
+offset_right = -17.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("26_gp70a")
-texture_pressed = ExtResource("27_f24gg")
-texture_hover = ExtResource("27_f24gg")
-stretch_mode = 4
+texture_pressed = ExtResource("18_48cb5")
+texture_hover = ExtResource("22_ds3ue")
 counter = NodePath("Counter")
 
 [node name="Counter" type="Label" parent="BattleUI/DiscardPileButton"]
-visible = false
 layout_mode = 0
-offset_left = 4.0
-offset_top = 19.0
-offset_right = 22.0
-offset_bottom = 34.0
+offset_left = -4.0
+offset_top = 25.0
+offset_right = 14.0
+offset_bottom = 40.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 text = "99"
@@ -321,8 +302,7 @@ anchors_preset = -1
 anchor_right = 0.51875
 anchor_bottom = 0.0555556
 offset_top = 3.0
-offset_right = 116.0
-offset_bottom = 63.0
+offset_bottom = 46.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonAnimation" type="AnimationPlayer" parent="BattleUI"]
@@ -371,13 +351,3 @@ layer = 4
 
 [node name="StatusView" parent="StatusViewLayer" instance=ExtResource("21_qqhbv")]
 visible = false
-
-[node name="flip" type="Button" parent="."]
-visible = false
-offset_left = 494.0
-offset_top = 42.0
-offset_right = 534.0
-offset_bottom = 82.0
-text = "flip"
-
-[connection signal="pressed" from="flip" to="." method="_on_flip_pressed"]
