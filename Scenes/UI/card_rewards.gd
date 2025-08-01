@@ -11,6 +11,7 @@ const CARD_MENU_UI = preload("res://Scenes/UI/card_menu_ui.tscn")
 @onready var skipt_card_reward: Button = %SkiptCardReward
 @onready var card_tool_tip_pop_up: CardTooltipPopup = $CardToolTipPopUp
 @onready var take_button: Button = %TakeButton
+@onready var back_button: Button = %BackButton
 
 var selected_card: Card
 
@@ -21,6 +22,11 @@ func _ready() -> void:
 		func():
 			card_reward_selected.emit(selected_card)
 			queue_free()
+	)
+	
+	back_button.pressed.connect(
+		func():
+			card_tool_tip_pop_up.hide_tooltip()
 	)
 	
 	skipt_card_reward.pressed.connect(

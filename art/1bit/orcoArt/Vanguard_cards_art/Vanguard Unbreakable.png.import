@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lq0cmoefby52"
-path="res://.godot/imported/door-001.png-daab07ce0fefdba5bfdbdd13f36eb381.ctex"
+uid="uid://bwstcoh645m6r"
+path="res://.godot/imported/Vanguard Unbreakable.png-5ec270306513483d5707374502065f05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/1bit/pruebas mapa/puerta animacion/door-001.png"
-dest_files=["res://.godot/imported/door-001.png-daab07ce0fefdba5bfdbdd13f36eb381.ctex"]
+source_file="res://art/1bit/orcoArt/Vanguard_cards_art/Vanguard Unbreakable.png"
+dest_files=["res://.godot/imported/Vanguard Unbreakable.png-5ec270306513483d5707374502065f05.ctex"]
 
 [params]
 

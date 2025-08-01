@@ -1,19 +1,23 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://d1oci5vvegjsw"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://d1oci5vvegjsw"]
 
-[ext_resource type="Texture2D" uid="uid://cw7e2wcqdv6jd" path="res://art/1bit/true_strength_form_icon.png" id="1_fyy5a"]
-[ext_resource type="Script" uid="uid://cg2kf3ryav713" path="res://characters/Vanguard/cards/warrior_true_strength.gd" id="1_hnyir"]
+[ext_resource type="Texture2D" uid="uid://r8b6d13tsa6p" path="res://art/1bit/orcoArt/Vanguard_cards_art/Vanguard Cleave.png" id="1_30gdn"]
+[ext_resource type="Script" uid="uid://cg2kf3ryav713" path="res://characters/vanguard/cards/warrior_true_strength.gd" id="1_hnyir"]
+[ext_resource type="Texture2D" uid="uid://d1oinm23bgvn5" path="res://art/1bit/orcoArt/Vanguard_cards_art/Vanguard Demoralize.png" id="2_obwyk"]
 [ext_resource type="AudioStream" uid="uid://vbnke8vpvkkc" path="res://art/sounds/UI - Swipe 01.wav" id="3_jtvor"]
 
 [resource]
 script = ExtResource("1_hnyir")
-id = "warrior_true_strenghth"
+id = "Cleave"
+id_def = "Demoralize"
 type = 2
 target = 0
 rarity = 2
 exhausts = false
 dmg_type = 4
 special_stat_type = 0
-special_stat_cost = 0
-icon = ExtResource("1_fyy5a")
-tooltip_text = "[center]At the start of your turn, gain[color='55ffff'] 2 Strength[/color].[/center]"
+special_stat_cost = 3
+ataque = ExtResource("1_30gdn")
+defenza = ExtResource("2_obwyk")
+tooltip_text = "[center]Deal [color='ff55ff']%s[/color] damage to all enemies. Edge([color='ff55ff']4[/color]): Deal extra damage equal to 1/3 Edge.[/center]"
+tooltip_text_def = "[center]Gain [color='55ffff']3[/color] block. Enemy attack drops by [color='55ffff']3[/color] this turn. Edge([color='ff55ff']8[/color]): All enemies attack drop by [color='55ffff']3[/color] this turn.[/center]"
 sound = ExtResource("3_jtvor")

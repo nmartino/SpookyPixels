@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://c45aq5f3hrk3c" path="res://Scenes/UI/avatar_ui.gd" id="1_g1bmp"]
 [ext_resource type="Texture2D" uid="uid://rvjxlktxs5eu" path="res://art/1bit/XaviArt/avatarUI/avatar-decoration.png" id="1_mmosb"]
 [ext_resource type="PackedScene" uid="uid://c5lfr6iekpgsw" path="res://Scenes/UI/health_ui.tscn" id="2_oqe2p"]
-[ext_resource type="Texture2D" uid="uid://cwgrsnu4yq2vr" path="res://art/1bit/XaviArt/avatarUI/avatar-demo.png" id="2_wn3wv"]
-[ext_resource type="Texture2D" uid="uid://bhxiiwpgv8pa7" path="res://art/1bit/XaviArt/avatarUI/avatar-hover.png" id="3_g1bmp"]
 [ext_resource type="Texture2D" uid="uid://b4f1kwkoqt78q" path="res://art/1bit/XaviArt/avatarUI/hp-bar_under.png" id="4_oqe2p"]
 [ext_resource type="Texture2D" uid="uid://chb2ev3a1vg2a" path="res://art/1bit/XaviArt/avatarUI/hp-bar.png" id="5_pxvw1"]
 [ext_resource type="Texture2D" uid="uid://ce2yqf6f63s8b" path="res://art/1bit/XaviArt/avatarUI/hp-bar_progress.png" id="6_jlbw7"]
+[ext_resource type="Texture2D" uid="uid://wu4s1rys2b58" path="res://art/1bit/XaviArt/avatarUI/avatar-decoration_hover.png" id="7_g1bmp"]
+[ext_resource type="Texture2D" uid="uid://bgt88bagl44nr" path="res://art/1bit/XaviArt/avatarUI/avatar-heroes_vanguard.png" id="7_wn3wv"]
 
 [node name="AvatarUi" type="Control"]
 layout_mode = 3
@@ -46,20 +46,24 @@ offset_right = 164.0
 offset_bottom = 24.0
 show_max_hp = true
 
-[node name="backgroundAvatar" type="TextureRect" parent="Control"]
+[node name="AvatarButton" type="TextureButton" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -4.0
 offset_top = -5.0
 offset_right = 44.0
 offset_bottom = 43.0
-texture = ExtResource("1_mmosb")
+texture_normal = ExtResource("1_mmosb")
+texture_pressed = ExtResource("7_g1bmp")
+texture_hover = ExtResource("7_g1bmp")
+texture_disabled = ExtResource("1_mmosb")
 
-[node name="AvatarButton" type="TextureButton" parent="Control"]
+[node name="AvatarTexture" type="TextureRect" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("2_wn3wv")
-texture_pressed = ExtResource("3_g1bmp")
-texture_hover = ExtResource("3_g1bmp")
-texture_disabled = ExtResource("2_wn3wv")
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 44.0
+offset_bottom = 43.0
+mouse_filter = 2
+texture = ExtResource("7_wn3wv")

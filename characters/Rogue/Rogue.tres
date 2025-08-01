@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=10 format=3 uid="uid://comske0a0bn8y"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=11 format=3 uid="uid://comske0a0bn8y"]
 
 [ext_resource type="Texture2D" uid="uid://dutr0q0643yu1" path="res://art/1bit/orcoArt/32x32/Arquero.png" id="1_l30c4"]
 [ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_wqils"]
 [ext_resource type="Texture2D" uid="uid://m7ynl1amt6cl" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 03.png" id="2_bi0wc"]
 [ext_resource type="Texture2D" uid="uid://b3j64c7ri64qc" path="res://art/1bit/orcoArt/Fogata/fogata arquero.png" id="2_v78kd"]
+[ext_resource type="Texture2D" uid="uid://cl8ktqprqc3te" path="res://art/1bit/XaviArt/avatarUI/avatar-heroes_rogue.png" id="3_0lxs6"]
 [ext_resource type="Resource" uid="uid://cfnho6ra1x56x" path="res://characters/Rogue/rogue_draftable_cards.tres" id="3_3sxae"]
 [ext_resource type="Texture2D" uid="uid://d1r7lkc3el8nr" path="res://art/1bit/orcoArt/32x32/Arquero_lastimado.png" id="4_fmouy"]
 [ext_resource type="Texture2D" uid="uid://ct4hbxxxfjchh" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 03.png" id="5_fmouy"]
@@ -19,6 +20,7 @@ depths.
 --- On Vacations, not available yet ---"
 portrait = ExtResource("5_fmouy")
 aura = ExtResource("2_bi0wc")
+avatar = ExtResource("3_0lxs6")
 isDisable = true
 starting_deck = ExtResource("6_nhtah")
 draftable_cards = ExtResource("3_3sxae")

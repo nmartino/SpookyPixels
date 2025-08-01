@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c1t0gb07q11p6"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://c1t0gb07q11p6"]
 
-[ext_resource type="Texture2D" uid="uid://ctfcvvqxjucy7" path="res://art/1bit/orcoArt/baxe_slam_attack.png" id="1_xuai6"]
-[ext_resource type="Script" uid="uid://bf8ur7u2bvp5k" path="res://characters/Vanguard/cards/warrior_slash_attack.gd" id="2_pbh7m"]
+[ext_resource type="Texture2D" uid="uid://cqp3u80h3vk6x" path="res://art/1bit/orcoArt/Vanguard_cards_art/Vanguard Wound.png" id="1_m72v1"]
+[ext_resource type="Script" uid="uid://bf8ur7u2bvp5k" path="res://characters/vanguard/cards/warrior_slash_attack.gd" id="2_pbh7m"]
+[ext_resource type="Texture2D" uid="uid://bvaqwos34o3sd" path="res://art/1bit/orcoArt/Vanguard_cards_art/Vanguard Fatigue.png" id="2_uqu3y"]
 [ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/slash.ogg" id="3_u2q6i"]
 
 [resource]
 script = ExtResource("2_pbh7m")
-id = "warrior_slash_attack"
+id = "Wound"
+id_def = "Fatigue"
 type = 0
 target = 2
 rarity = 0
@@ -14,6 +16,8 @@ exhausts = false
 dmg_type = 1
 special_stat_type = 0
 special_stat_cost = 0
-icon = ExtResource("1_xuai6")
-tooltip_text = "[center]Deal [color='ff55ff']%s Damage[/color] to all enemies.[/center]"
+ataque = ExtResource("1_m72v1")
+defenza = ExtResource("2_uqu3y")
+tooltip_text = "[center]Deal [color='ff55ff']%s[/color] Damage to all enemies.[/center]"
+tooltip_text_def = "[center]Gain [color='55ffff']3[/color] block. Edge([color='55ffff']2[/color]): Gain [color='55ffff']3[/color] block for each bleeding enemy.[/center]"
 sound = ExtResource("3_u2q6i")

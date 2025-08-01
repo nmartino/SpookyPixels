@@ -507,7 +507,7 @@ layout_mode = 2
 offset_left = 452.0
 offset_top = 158.0
 offset_right = 632.0
-offset_bottom = 333.0
+offset_bottom = 158.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cejvf")
 
 [node name="ConfigurationMenu" type="VBoxContainer" parent="ConfigurationPanel"]

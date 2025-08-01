@@ -4,11 +4,12 @@ extends Node
 const X_DIST := 60
 const Y_DIST := 40
 const PLACEMENT_RANDOMNESS := 0
-const FLOORS := 15
+const FLOORS := 16
 const MAP_WIDTH := 6
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 17.0
 const EVENT_ROOM_WEIGHT := 2.0
+const ELITE_ROOM_WEIGHT := 2.0
 const SHOP_ROOM_WEIGHT := 5.0
 const CAMPFIRE_ROOM_WEIGHT := 6.0
 
@@ -139,8 +140,9 @@ func _setup_random_room_weights() -> void:
 	random_room_type_weights[Room.Type.CAMPFIRE] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.SHOP] =  MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.EVENT] =  EVENT_ROOM_WEIGHT + MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
+	random_room_type_weights[Room.Type.ELITE] = ELITE_ROOM_WEIGHT +EVENT_ROOM_WEIGHT + MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
 	
-	random_room_type_total_weight =  random_room_type_weights[Room.Type.EVENT]
+	random_room_type_total_weight =  random_room_type_weights[Room.Type.ELITE]
 
 func _setup_room_types() -> void:
 	#primer piso siempre es pelea
@@ -168,22 +170,30 @@ func _setup_room_types() -> void:
 
 func _set_room_randomly(room_to_set: Room) -> void:
 	var campfire_below_4 := true
+	var shop_below_4 := true
 	var consecutive_campfire := false
 	var consecutive_shop := false
 	var campfire_on_13 := true
+	var elite_below_5 := true
+	var consecutive_elite: = false
 	
 	var type_candidate: Room.Type
-	while campfire_below_4 or consecutive_campfire or consecutive_shop or campfire_on_13:
+	while campfire_below_4 or consecutive_campfire or consecutive_shop or campfire_on_13 or elite_below_5 or consecutive_elite or shop_below_4:
 		type_candidate = get_random_room_type_by_weight()
 		
 		var is_campfire := type_candidate == Room.Type.CAMPFIRE
 		var has_campfire_parent := _room_has_parent_of_type(room_to_set, Room.Type.CAMPFIRE)
 		var is_shop := type_candidate == Room.Type.SHOP
 		var has_shop_parent := _room_has_parent_of_type(room_to_set, Room.Type.SHOP)
+		var is_elite := type_candidate == Room.Type.ELITE
+		var has_elite_parent := _room_has_parent_of_type(room_to_set, Room.Type.ELITE)
 		
 		campfire_below_4 = is_campfire and room_to_set.row < 3
+		shop_below_4 = is_shop and room_to_set.row < 3
+		elite_below_5 = is_elite and room_to_set.row < 4
 		consecutive_campfire = is_campfire and has_campfire_parent
 		consecutive_shop = is_shop and has_shop_parent
+		consecutive_elite = is_elite and has_elite_parent
 		campfire_on_13 = is_campfire and room_to_set.row == 12
 	
 	room_to_set.type = type_candidate

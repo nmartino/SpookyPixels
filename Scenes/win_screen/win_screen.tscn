@@ -1,20 +1,129 @@
-[gd_scene load_steps=7 format=3 uid="uid://6rbvvyq7afbr"]
+[gd_scene load_steps=19 format=3 uid="uid://6rbvvyq7afbr"]
 
 [ext_resource type="Script" uid="uid://bpboihbbqd1bv" path="res://Scenes/win_screen/win_screen.gd" id="1_srglc"]
 [ext_resource type="AudioStream" uid="uid://cyt5v3tg2yt1h" path="res://art/(Loop) Powerful Relic Theme.wav" id="2_uuijm"]
-[ext_resource type="Texture2D" uid="uid://pnaprcf4ostx" path="res://art/1bit/background/abVMxUSc.png" id="3_rujfh"]
-[ext_resource type="Texture2D" uid="uid://btvk06rfbncc" path="res://art/1bit/orcoArt/Testeo character1 001.png" id="4_8ihud"]
+[ext_resource type="Texture2D" uid="uid://1nyyjcuta3tg" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection Background 01.png" id="3_vx2sv"]
+[ext_resource type="Texture2D" uid="uid://r6wjs5yvqttf" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection Background 02.png" id="4_5xsn0"]
+[ext_resource type="Texture2D" uid="uid://beme406vul1na" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 01.png" id="4_eyxs4"]
+[ext_resource type="Texture2D" uid="uid://bvs6wfxtsmfek" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 01.png" id="5_d70ny"]
+[ext_resource type="Texture2D" uid="uid://coc5yelrtieql" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection Background 03.png" id="5_hjr0g"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="5_jvnp4"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="7_vx2sv"]
+
+[sub_resource type="Animation" id="Animation_p1eoj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_vtalv"]
+resource_name = "auraEntra"
+length = 0.16667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-91, 182), Vector2(120, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_so2th"]
+resource_name = "auraSale"
+length = 0.16667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(120, 182), Vector2(-91, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_5020j"]
+resource_name = "warrior"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtalv"]
+_data = {
+&"RESET": SubResource("Animation_p1eoj"),
+&"auraEntra": SubResource("Animation_vtalv"),
+&"auraSale": SubResource("Animation_so2th"),
+&"rotar": SubResource("Animation_5020j")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbo2t"]
 line_spacing = 5.0
 font = ExtResource("5_jvnp4")
+font_size = 32
 font_color = Color(0.176471, 1, 1, 1)
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
-shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xsn0"]
+texture = ExtResource("7_vx2sv")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+modulate_color = Color(1, 0.333333, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hjr0g"]
+texture = ExtResource("7_vx2sv")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.333333, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bmsxp"]
+texture = ExtResource("7_vx2sv")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -26,19 +135,30 @@ grow_vertical = 2
 script = ExtResource("1_srglc")
 music = ExtResource("2_uuijm")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_rujfh")
-expand_mode = 1
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 128)
+texture = ExtResource("3_vx2sv")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(320, 283)
+texture = ExtResource("4_5xsn0")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(320, 335)
+texture = ExtResource("5_hjr0g")
+
+[node name="CharacterAura" type="Sprite2D" parent="."]
+position = Vector2(88, 210)
+texture = ExtResource("4_eyxs4")
+
+[node name="AnimationAura" type="AnimationPlayer" parent="CharacterAura"]
+libraries = {
+&"": SubResource("AnimationLibrary_vtalv")
+}
 
 [node name="CharacterPortrait" type="TextureRect" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(192, 192)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -48,7 +168,7 @@ offset_top = -69.0
 offset_right = 69.0
 offset_bottom = -9.0
 grow_vertical = 0
-texture = ExtResource("4_8ihud")
+texture = ExtResource("5_d70ny")
 expand_mode = 1
 stretch_mode = 5
 
@@ -59,10 +179,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -50.0
-offset_right = 83.0
-offset_bottom = 18.0
+offset_left = -157.0
+offset_top = -118.0
+offset_right = 157.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -81,6 +201,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(100, 14)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5xsn0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hjr0g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5xsn0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bmsxp")
 text = "Back To Main Menu"
 
 [connection signal="pressed" from="VboxContainer/StartButton" to="." method="_on_start_button_pressed"]

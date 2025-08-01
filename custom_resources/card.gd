@@ -15,6 +15,7 @@ const RARITY_COLORS := {
 
 @export_group("Card Attributes")
 @export var id: String
+@export var id_def: String
 @export var type: Type
 @export var target: Target
 @export var rarity: Rarity
@@ -26,9 +27,11 @@ var cost: int = 10 #TODO sacar esto, o dejar de hablar de "tipo especial" para l
 #: Dictionary = {SpecialStatsTypes.NONE: 0}#[SpecialStatsTypes: Int]
 
 @export_group("Card Visuals")
-@export var icon: Texture
+@export var ataque: Texture
+@export var defenza: Texture
 @export var arte: Texture
 @export_multiline var tooltip_text: String
+@export_multiline var tooltip_text_def: String
 @export var sound: AudioStream
 
 

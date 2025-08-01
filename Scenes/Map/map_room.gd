@@ -11,8 +11,9 @@ const ICONS := {
 	Room.Type.TREASURE: [preload("res://art/1bit/pruebas mapa/treasure_2_prueba.png"), Vector2.ONE],
 	Room.Type.CAMPFIRE: [preload("res://art/1bit/pruebas mapa/campfire_2_prueba.png"), Vector2.ONE],
 	Room.Type.SHOP: [preload("res://art/1bit/pruebas mapa/shop_mapa.png"), Vector2.ONE],
-	Room.Type.BOSS: [preload("res://art/1bit/pruebas mapa/monster_2_prueba.png"), Vector2.ONE],
-	Room.Type.EVENT: [preload("res://art/1bit/pruebas mapa/event2-2.png"),Vector2.ONE]
+	Room.Type.BOSS: [preload("res://art/1bit/pruebas mapa/map-icon-boss-x24.png"), Vector2.ONE],
+	Room.Type.EVENT: [preload("res://art/1bit/pruebas mapa/event2-2.png"),Vector2.ONE],
+	Room.Type.ELITE: [preload("res://art/1bit/pruebas mapa/map-icon-elites-x24.png"), Vector2.ONE]
 }
 
 @export var sound: AudioStream

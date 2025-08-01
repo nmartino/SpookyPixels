@@ -1,19 +1,20 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bht3vsmc120rf"]
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://bht3vsmc120rf"]
 
 [ext_resource type="Script" uid="uid://c4bgrvlu74qhr" path="res://custom_resources/card.gd" id="1_dqh3t"]
-[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/Vanguard/cards/warrior_true_strength.tres" id="2_o3xus"]
+[ext_resource type="Resource" uid="uid://d1oci5vvegjsw" path="res://characters/vanguard/cards/warrior_true_strength.tres" id="2_o3xus"]
 [ext_resource type="Script" uid="uid://c64unctlomt6k" path="res://Runas/Card_mocked_Rune.gd" id="3_e0yev"]
+[ext_resource type="Resource" uid="uid://c1t0gb07q11p6" path="res://characters/vanguard/cards/warrior_slash_attack.tres" id="3_j520p"]
 [ext_resource type="AudioStream" uid="uid://dd8v8gt4bg2vh" path="res://art/enemy_hit_02.wav" id="3_o3xus"]
-[ext_resource type="Texture2D" uid="uid://cwaqjos4h5qce" path="res://Runas/rune-base.png" id="5_j520p"]
+[ext_resource type="Texture2D" uid="uid://d11w274325npx" path="res://art/1bit/XaviArt/runesArt/rune-slots-A-2.png" id="7_l1wrr"]
 
 [resource]
 script = ExtResource("3_e0yev")
 RuneType = 1
 raresa = 0
-description = "+ 2 Chop / Brace cards  to the deck, esto es para hacerlo mas largo"
-texture = ExtResource("5_j520p")
+description = "+ 4 Chop / Brace cards  to the deck, esto es para hacerlo mas largo"
+texture = ExtResource("7_l1wrr")
 name = &""
-cards_to_add = Array[ExtResource("1_dqh3t")]([ExtResource("2_o3xus"), ExtResource("2_o3xus")])
+cards_to_add = Array[ExtResource("1_dqh3t")]([ExtResource("2_o3xus"), ExtResource("2_o3xus"), ExtResource("3_j520p"), ExtResource("3_j520p")])
 activation_type = 0
 sound_fx = ExtResource("3_o3xus")
 tooltip = "+ 2 Chop / Brace cards  to the deck, esto es para hacerlo mas largo"

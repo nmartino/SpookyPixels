@@ -23,8 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://ba7i5pvxq6kvj" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-sliderThumb.png" id="17_x5cwt"]
 [ext_resource type="Texture2D" uid="uid://1unhfdqrs8l4" path="res://art/1bit/XaviArt/grabber/scrollbar-custom-line2.png" id="18_2rqla"]
 [ext_resource type="PackedScene" uid="uid://chbdffdw6ha8p" path="res://Scenes/UI/slot_inventario_arma.tscn" id="19_o5jgv"]
-[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="24_k1okh"]
-[ext_resource type="Texture2D" uid="uid://cwgrsnu4yq2vr" path="res://art/1bit/XaviArt/avatarUI/avatar-demo.png" id="25_x5cwt"]
+[ext_resource type="Texture2D" uid="uid://bfnj4fkthxmau" path="res://art/1bit/XaviArt/buttons-ui/frame-charselection-icon-02-base.png" id="24_x5cwt"]
+[ext_resource type="Texture2D" uid="uid://bgt88bagl44nr" path="res://art/1bit/XaviArt/avatarUI/avatar-heroes_vanguard.png" id="25_x5cwt"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_o5jgv"]
 frames = 6
@@ -174,7 +174,7 @@ texture = ExtResource("14_7s7of")
 texture = ExtResource("15_1vp7u")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5cwt"]
-texture = ExtResource("24_k1okh")
+texture = ExtResource("24_x5cwt")
 texture_margin_left = 14.0
 texture_margin_top = 14.0
 texture_margin_right = 14.0
@@ -471,7 +471,7 @@ anchor_bottom = 0.5
 offset_left = -200.0
 offset_top = -125.0
 offset_right = 200.0
-offset_bottom = 135.0
+offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_x5cwt")
@@ -492,6 +492,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CharacterAvatar" type="TextureRect" parent="WeaponPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 texture = ExtResource("25_x5cwt")
@@ -517,56 +518,50 @@ custom_minimum_size = Vector2(0, 135)
 layout_mode = 2
 theme_override_constants/margin_left = 10
 
-[node name="runesLabels" type="Control" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="runesLabels2" type="Control" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RuneSlot1Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels"]
+[node name="runesLabels" type="VBoxContainer" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels2"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
+offset_right = 361.0
+offset_bottom = 146.0
+
+[node name="RuneSlot1Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels2/runesLabels"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-offset_top = 4.0
-offset_right = 373.0
-offset_bottom = 36.0
-size_flags_vertical = 0
 bbcode_enabled = true
 text = "Rune slot %s: %s"
+fit_content = true
 autowrap_mode = 2
 
-[node name="RuneSlot2Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels"]
+[node name="RuneSlot2Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels2/runesLabels"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-offset_top = 40.0
-offset_right = 373.0
-offset_bottom = 72.0
-size_flags_vertical = 0
 bbcode_enabled = true
 text = "Rune slot 2: %s"
+fit_content = true
 autowrap_mode = 2
 
-[node name="RuneSlot3Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels"]
+[node name="RuneSlot3Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels2/runesLabels"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-offset_top = 76.0
-offset_right = 373.0
-offset_bottom = 108.0
-size_flags_vertical = 0
 bbcode_enabled = true
 text = "Rune slot 3: %s"
+fit_content = true
 autowrap_mode = 2
 
-[node name="RuneSlot4Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels"]
+[node name="RuneSlot4Tooltip" type="RichTextLabel" parent="WeaponPanel/MarginContainer/VBoxContainer/MarginContainer2/runesLabels2/runesLabels"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-offset_top = 112.0
-offset_right = 373.0
-offset_bottom = 144.0
-size_flags_vertical = 0
 bbcode_enabled = true
 text = "Rune slot 4: %s"
+fit_content = true
 autowrap_mode = 2
 
 [node name="BackButtonWeaponPanel" type="Button" parent="WeaponPanel"]
@@ -574,9 +569,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 offset_left = 138.0
-offset_top = 242.0
+offset_top = 254.0
 offset_right = 258.0
-offset_bottom = 274.0
+offset_bottom = 286.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_v2ot4")
