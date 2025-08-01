@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://txoxiy4yygyv"
-path="res://.godot/imported/door-003.png-308c3f377be9be38bbbc4ac7dc364586.ctex"
+uid="uid://dyutrslxrc56a"
+path="res://.godot/imported/Vanguard Focused Strike.png-751549272a0d0ce36f40752bab17bd68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/1bit/pruebas mapa/puerta animacion/door-003.png"
-dest_files=["res://.godot/imported/door-003.png-308c3f377be9be38bbbc4ac7dc364586.ctex"]
+source_file="res://art/1bit/orcoArt/Vanguard_cards_art/Vanguard Focused Strike.png"
+dest_files=["res://.godot/imported/Vanguard Focused Strike.png-751549272a0d0ce36f40752bab17bd68.ctex"]
 
 [params]
 

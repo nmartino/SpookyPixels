@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlk5b4mpvawsk"
-path="res://.godot/imported/door-002.png-eb4c14ec61c03913c501eab814d3de48.ctex"
+uid="uid://d11w274325npx"
+path="res://.godot/imported/rune-slots-A-2.png-769bca355462e2891552ed8a170af3f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/1bit/pruebas mapa/puerta animacion/door-002.png"
-dest_files=["res://.godot/imported/door-002.png-eb4c14ec61c03913c501eab814d3de48.ctex"]
+source_file="res://art/1bit/XaviArt/runesArt/rune-slots-A-2.png"
+dest_files=["res://.godot/imported/rune-slots-A-2.png-769bca355462e2891552ed8a170af3f2.ctex"]
 
 [params]
 

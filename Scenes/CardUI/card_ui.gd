@@ -59,7 +59,7 @@ func get_active_enemy_modifiers() -> ModifierHandler:
 func request_tooltip() -> void:
 	var enemy_modifiers:= get_active_enemy_modifiers()
 	var updated_tooltip := card.get_updated_tooltip(player_modifier, enemy_modifiers)
-	Events.card_tooltip_requested.emit(card.icon, updated_tooltip)
+	Events.card_tooltip_requested.emit(card.ataque, updated_tooltip)
 
 
 func _on_mouse_entered() -> void:

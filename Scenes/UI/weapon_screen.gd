@@ -14,6 +14,7 @@ var InventorySize = 12
 @onready var character_stats_label: RichTextLabel = %characterStatsLabel
 @onready var character_stats: CharacterStats
 @onready var runes_labels: Control = %runesLabels
+@onready var character_avatar: TextureRect = %CharacterAvatar
 
 
 const SLOT_INVENTORY = preload("res://art/sounds/slot_inventory.wav")
@@ -37,6 +38,7 @@ func _ready() -> void:
 func show_weapon_inventory(character: CharacterStats) ->void:
 	character_stats = character
 	weapon = character.weapon
+	character_avatar.texture = character.avatar
 	for slot in attachedRunes:
 		attachedRunes[slot].queue_free()
 	attachedRunes.clear()
@@ -67,7 +69,7 @@ func runeEquiped(item: InventoryRune, slot: Control)->void:
 	unregister_rune(item)
 	attachedRunes[slot] = item
 	weapon.add_attachment(item.data)
-	SFXPlayer.play(SLOT_WEAPON)
+	SFXPlayer.play(SLOT_INVENTORY)
 
 func runeMoved(item: InventoryRune, slot:Control) ->void:
 	unregister_rune(item)

@@ -1,8 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnxnm2nk6s6v0"]
+[gd_scene load_steps=9 format=3 uid="uid://cnxnm2nk6s6v0"]
 
 [ext_resource type="Script" uid="uid://cnig0b25bu4rk" path="res://Scenes/UI/card_tool_tip_pop_up.gd" id="1_kgfmj"]
 [ext_resource type="PackedScene" uid="uid://c68w3uq8cq68w" path="res://Scenes/UI/card_menu_ui.tscn" id="1_yawff"]
+[ext_resource type="Texture2D" uid="uid://bfnj4fkthxmau" path="res://art/1bit/XaviArt/buttons-ui/frame-charselection-icon-02-base.png" id="2_ycuep"]
+[ext_resource type="Texture2D" uid="uid://bqoco2dl1y6lr" path="res://art/1bit/XaviArt/buttons-ui/box-charselection-01-sprite.png" id="3_5nwrb"]
 [ext_resource type="FontFile" uid="uid://c3ns0nhty0opb" path="res://art/alagard.ttf" id="3_sophq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc27l"]
+texture = ExtResource("2_ycuep")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycuep"]
+texture = ExtResource("3_5nwrb")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+modulate_color = Color(1, 0.333333, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rngv0"]
+texture = ExtResource("3_5nwrb")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.333333, 1, 1, 1)
 
 [node name="CardToolTipPopUp" type="Control"]
 layout_mode = 3
@@ -22,9 +47,100 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.603922)
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -163.0
+offset_right = 279.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sc27l")
+
+[node name="TooltipCardvbox" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 1.0
+offset_top = 54.0
+offset_right = 301.0
+offset_bottom = 278.0
+size_flags_horizontal = 4
+
+[node name="CardMenuUI" parent="TooltipCardvbox" instance=ExtResource("1_yawff")]
+layout_mode = 2
+
+[node name="CardMenuUI2" parent="TooltipCardvbox" instance=ExtResource("1_yawff")]
+layout_mode = 2
+
+[node name="AttkPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 54.5
+offset_right = 548.0
+offset_bottom = 164.5
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ycuep")
+
+[node name="CardDescriptionAtack" type="RichTextLabel" parent="AttkPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 326.0
+offset_bottom = 98.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_sophq")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Card Description Card Description Card Description Card Description Card Description "
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 169.5
+offset_right = 548.0
+offset_bottom = 279.5
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rngv0")
+
+[node name="CardDescriptionDef" type="RichTextLabel" parent="DefPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 327.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_sophq")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Card Description Card Description Card Description Card Description Card Description "
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,21 +157,5 @@ grow_vertical = 2
 [node name="TooltipCard" type="CenterContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="CardMenuUI" parent="VBoxContainer/TooltipCard" instance=ExtResource("1_yawff")]
-layout_mode = 2
-
-[node name="CardDescription" type="RichTextLabel" parent="VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-mouse_filter = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("3_sophq")
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "Card Description Card Description Card Description Card Description Card Description "
-fit_content = true
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

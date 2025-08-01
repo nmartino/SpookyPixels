@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bok4njnqsu2tv" path="res://art/sounds/Retro Success Melody 01 - sawtooth lead 1.wav" id="4_4l47w"]
 [ext_resource type="Script" uid="uid://cj70n1speektp" path="res://Scenes/Enemy/enemy_handeler.gd" id="4_cpenc"]
 [ext_resource type="AudioStream" uid="uid://c64k2v3nrmlp1" path="res://art/sounds/UI - Switch 01.wav" id="4_pebnb"]
-[ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/Vanguard/Vanguard.tres" id="4_q8sq6"]
+[ext_resource type="Resource" uid="uid://bj4cudlc1sj74" path="res://characters/vanguard/vanguard.tres" id="4_q8sq6"]
 [ext_resource type="Resource" uid="uid://cmh05sjnhljf" path="res://enemies/enemy1/enemy1.tres" id="5_cv3sj"]
 [ext_resource type="Texture2D" uid="uid://cxkrojsu1y5a3" path="res://art/1bit/background/Background_undead_01.png" id="5_f8ycv"]
 [ext_resource type="Texture2D" uid="uid://d1jmpkqhgfbuq" path="res://art/1bit/background/Background_undead_02.png" id="6_gp70a"]

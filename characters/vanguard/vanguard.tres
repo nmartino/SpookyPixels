@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bbnsahi7jwt6q" path="res://custom_resources/character_stats.gd" id="1_rj4dh"]
 [ext_resource type="Texture2D" uid="uid://ct046a0ubuwfo" path="res://art/1bit/orcoArt/32x32/vanguard.png" id="1_tokje"]
-[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/Vanguard/vanguard_draftable_cards.tres" id="2_7i7c4"]
+[ext_resource type="Resource" uid="uid://kyv6yauq8j16" path="res://characters/vanguard/vanguard_draftable_cards.tres" id="2_7i7c4"]
 [ext_resource type="Texture2D" uid="uid://beme406vul1na" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterCircle 01.png" id="2_kr1ar"]
 [ext_resource type="Texture2D" uid="uid://boqs6bjr37hcg" path="res://art/1bit/orcoArt/Fogata/fogatacaballero.png" id="2_yxaf8"]
-[ext_resource type="Texture2D" uid="uid://cwgrsnu4yq2vr" path="res://art/1bit/XaviArt/avatarUI/avatar-demo.png" id="3_ixb1j"]
-[ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/Vanguard/vanguard_starting_deck.tres" id="3_xt1eb"]
+[ext_resource type="Texture2D" uid="uid://bgt88bagl44nr" path="res://art/1bit/XaviArt/avatarUI/avatar-heroes_vanguard.png" id="3_54if5"]
+[ext_resource type="Resource" uid="uid://bfgshyuysugtg" path="res://characters/vanguard/vanguard_starting_deck.tres" id="3_xt1eb"]
 [ext_resource type="Texture2D" uid="uid://de1pardmna4le" path="res://art/1bit/orcoArt/32x32/vanguard_lastimado.png" id="4_qj7df"]
 [ext_resource type="Texture2D" uid="uid://bvs6wfxtsmfek" path="res://art/1bit/orcoArt/CharacterSelectionScreen/CharacterSelection 01.png" id="6_ixb1j"]
 [ext_resource type="Resource" uid="uid://kgslrefuvd1v" path="res://Weapons/vanguards_axe.tres" id="7_imjtc"]
@@ -17,7 +17,7 @@ character_name = "The Vanguard"
 description = "He seeks redemption after failing in an ancient battle that allowed the first outbreak of corruption"
 portrait = ExtResource("6_ixb1j")
 aura = ExtResource("2_kr1ar")
-avatar = ExtResource("3_ixb1j")
+avatar = ExtResource("3_54if5")
 isDisable = false
 starting_deck = ExtResource("3_xt1eb")
 draftable_cards = ExtResource("2_7i7c4")

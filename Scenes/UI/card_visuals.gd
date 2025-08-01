@@ -4,8 +4,6 @@ extends Control
 
 @export var card: Card : set = set_card
 
-@onready var panel: TextureRect = $AttackPanel
-@onready var defense_panel: TextureRect = $DefensePanel
 @onready var cost: Label = $Cost
 @onready var icon: TextureRect = $Icon
 @onready var rarity: TextureRect = $Rarity
@@ -13,6 +11,8 @@ extends Control
 @onready var card_description: RichTextLabel = $CardDescription
 @onready var animation: AnimationPlayer = $Animation
 var isAttack :bool = true
+@onready var attack_panel: Sprite2D = $AttackPanel2
+@onready var defense_panel: Sprite2D = $DefensePanel2
 
 func _ready() -> void:
 	Events.flip_cards.connect(_on_flip_cards)
@@ -26,8 +26,8 @@ func set_card(value: Card) -> void:
 		
 	
 	card = value
-	cost.text = str(card.cost)
-	icon.texture = card.icon
+	cost.text = str(card.special_stat_cost)
+	icon.texture = card.ataque
 	rarity.modulate = Card.RARITY_COLORS[card.rarity]
 	card_name.text = value.id
 	card_description.text = value.get_default_tooptip()
@@ -49,6 +49,12 @@ func _on_flip_cards()->void:
 	if isAttack:
 		isAttack = false
 		animation.play("flip_to_defenze")
+		card_name.text = card.id_def
+		card_description.text = card.tooltip_text_def
+		icon.texture = card.defenza
 	else:
 		isAttack = true
 		animation.play("flip_to_attack")
+		card_name.text = card.id
+		card_description.text = card.tooltip_text
+		icon.texture = card.ataque
